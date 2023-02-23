@@ -1,4 +1,4 @@
-# SecretFlow-learn:  Privacy-Preserving Machine Learning in Python by [SecretFlow](https://github.com/secretflow/secretflow).
+# Secret Flow Learn :  Privacy-Preserving Machine Learning in Python by [SecretFlow](https://github.com/secretflow/secretflow).
 
 
 
