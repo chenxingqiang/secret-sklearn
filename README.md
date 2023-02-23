@@ -1,4 +1,4 @@
-# Secret scikit-learn: Privacy Preserved machine learning in Python
+# Secret scikit-learn: Privacy Preserved machine learning in Python based by SecretFlow.
 
 machine learning algorithms implements  with jax.
 | IF DONE | Module Name | Reference API | Instructions |
