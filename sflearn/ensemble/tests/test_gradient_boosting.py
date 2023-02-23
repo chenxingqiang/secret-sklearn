@@ -1,5 +1,5 @@
 """
-Testing for the gradient boosting module (sklearn.ensemble.gradient_boosting).
+Testing for the gradient boosting module (sflearn.ensemble.gradient_boosting).
 """
 import re
 import warnings
@@ -13,27 +13,27 @@ from scipy.special import expit
 
 import pytest
 
-from sklearn import datasets
-from sklearn.base import clone
-from sklearn.datasets import make_classification, make_regression
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.ensemble._gradient_boosting import predict_stages
-from sklearn.preprocessing import scale
-from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import train_test_split
-from sklearn.utils import check_random_state, tosequence
-from sklearn.utils._mocking import NoSampleWeightWrapper
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import skip_if_32bit
-from sklearn.utils._param_validation import InvalidParameterError
-from sklearn.exceptions import DataConversionWarning
-from sklearn.exceptions import NotFittedError
-from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.pipeline import make_pipeline
-from sklearn.linear_model import LinearRegression
-from sklearn.svm import NuSVR
+from sflearn import datasets
+from sflearn.base import clone
+from sflearn.datasets import make_classification, make_regression
+from sflearn.ensemble import GradientBoostingClassifier
+from sflearn.ensemble import GradientBoostingRegressor
+from sflearn.ensemble._gradient_boosting import predict_stages
+from sflearn.preprocessing import scale
+from sflearn.metrics import mean_squared_error
+from sflearn.model_selection import train_test_split
+from sflearn.utils import check_random_state, tosequence
+from sflearn.utils._mocking import NoSampleWeightWrapper
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import skip_if_32bit
+from sflearn.utils._param_validation import InvalidParameterError
+from sflearn.exceptions import DataConversionWarning
+from sflearn.exceptions import NotFittedError
+from sflearn.dummy import DummyClassifier, DummyRegressor
+from sflearn.pipeline import make_pipeline
+from sflearn.linear_model import LinearRegression
+from sflearn.svm import NuSVR
 
 
 GRADIENT_BOOSTING_ESTIMATORS = [GradientBoostingClassifier, GradientBoostingRegressor]
@@ -902,7 +902,7 @@ def test_monitor_early_stopping(Cls):
 
 def test_complete_classification():
     # Test greedy trees with max_depth + 1 leafs.
-    from sklearn.tree._tree import TREE_LEAF
+    from sflearn.tree._tree import TREE_LEAF
 
     X, y = datasets.make_hastie_10_2(n_samples=100, random_state=1)
     k = 4
@@ -919,7 +919,7 @@ def test_complete_classification():
 
 def test_complete_regression():
     # Test greedy trees with max_depth + 1 leafs.
-    from sklearn.tree._tree import TREE_LEAF
+    from sflearn.tree._tree import TREE_LEAF
 
     k = 4
 
@@ -1231,7 +1231,7 @@ def _make_multiclass():
 def test_gradient_boosting_with_init(
     gb, dataset_maker, init_estimator, global_random_seed
 ):
-    # Check that GradientBoostingRegressor works when init is a sklearn
+    # Check that GradientBoostingRegressor works when init is a sflearn
     # estimator.
     # Check that an error is raised if trying to fit with sample weight but
     # initial estimator does not support sample weight

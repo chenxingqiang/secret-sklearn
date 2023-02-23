@@ -13,7 +13,7 @@ import numpy as np
 import scipy.sparse as sp
 import pytest
 
-from sklearn.utils._testing import (
+from sflearn.utils._testing import (
     assert_array_equal,
     assert_array_almost_equal,
     assert_allclose,
@@ -23,53 +23,53 @@ from sklearn.utils._testing import (
     MinimalRegressor,
     MinimalTransformer,
 )
-from sklearn.utils._mocking import CheckingClassifier, MockDataFrame
+from sflearn.utils._mocking import CheckingClassifier, MockDataFrame
 
 from scipy.stats import bernoulli, expon, uniform
 
-from sklearn.base import BaseEstimator, ClassifierMixin
-from sklearn.base import is_classifier
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_blobs
-from sklearn.datasets import make_multilabel_classification
+from sflearn.base import BaseEstimator, ClassifierMixin
+from sflearn.base import is_classifier
+from sflearn.datasets import make_classification
+from sflearn.datasets import make_blobs
+from sflearn.datasets import make_multilabel_classification
 
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import KFold
-from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import StratifiedShuffleSplit
-from sklearn.model_selection import LeaveOneGroupOut
-from sklearn.model_selection import LeavePGroupsOut
-from sklearn.model_selection import GroupKFold
-from sklearn.model_selection import GroupShuffleSplit
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.model_selection import ParameterGrid
-from sklearn.model_selection import ParameterSampler
-from sklearn.model_selection._search import BaseSearchCV
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import KFold
+from sflearn.model_selection import StratifiedKFold
+from sflearn.model_selection import StratifiedShuffleSplit
+from sflearn.model_selection import LeaveOneGroupOut
+from sflearn.model_selection import LeavePGroupsOut
+from sflearn.model_selection import GroupKFold
+from sflearn.model_selection import GroupShuffleSplit
+from sflearn.model_selection import GridSearchCV
+from sflearn.model_selection import RandomizedSearchCV
+from sflearn.model_selection import ParameterGrid
+from sflearn.model_selection import ParameterSampler
+from sflearn.model_selection._search import BaseSearchCV
 
-from sklearn.model_selection._validation import FitFailedWarning
+from sflearn.model_selection._validation import FitFailedWarning
 
-from sklearn.svm import LinearSVC, SVC
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.cluster import KMeans
-from sklearn.neighbors import KernelDensity
-from sklearn.neighbors import LocalOutlierFactor
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import f1_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import make_scorer
-from sklearn.metrics import roc_auc_score
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import r2_score
-from sklearn.metrics.pairwise import euclidean_distances
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import Ridge, SGDClassifier, LinearRegression
-from sklearn.ensemble import HistGradientBoostingClassifier
+from sflearn.svm import LinearSVC, SVC
+from sflearn.tree import DecisionTreeRegressor
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.cluster import KMeans
+from sflearn.neighbors import KernelDensity
+from sflearn.neighbors import LocalOutlierFactor
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.metrics import f1_score
+from sflearn.metrics import recall_score
+from sflearn.metrics import accuracy_score
+from sflearn.metrics import make_scorer
+from sflearn.metrics import roc_auc_score
+from sflearn.metrics import confusion_matrix
+from sflearn.metrics import r2_score
+from sflearn.metrics.pairwise import euclidean_distances
+from sflearn.impute import SimpleImputer
+from sflearn.pipeline import Pipeline
+from sflearn.linear_model import Ridge, SGDClassifier, LinearRegression
+from sflearn.ensemble import HistGradientBoostingClassifier
 
-from sklearn.model_selection.tests.common import OneTimeSplitter
+from sflearn.model_selection.tests.common import OneTimeSplitter
 
 
 # Neither of the following two estimators inherit from BaseEstimator,
@@ -205,7 +205,7 @@ def test_grid_search():
     grid_search.transform(X)
 
     # Test exception handling on scoring
-    grid_search.scoring = "sklearn"
+    grid_search.scoring = "sflearn"
     with pytest.raises(ValueError):
         grid_search.fit(X, y)
 

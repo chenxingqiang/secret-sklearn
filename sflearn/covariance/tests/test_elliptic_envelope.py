@@ -1,15 +1,15 @@
 """
-Testing for Elliptic Envelope algorithm (sklearn.covariance.elliptic_envelope).
+Testing for Elliptic Envelope algorithm (sflearn.covariance.elliptic_envelope).
 """
 
 import numpy as np
 import pytest
 
-from sklearn.covariance import EllipticEnvelope
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.exceptions import NotFittedError
+from sflearn.covariance import EllipticEnvelope
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.exceptions import NotFittedError
 
 
 def test_elliptic_envelope(global_random_seed):

@@ -13,12 +13,12 @@ from scipy import sparse
 
 import pytest
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.neighbors import NearestNeighbors
-from sklearn.cluster import DBSCAN
-from sklearn.cluster import dbscan
-from sklearn.cluster.tests.common import generate_clustered_data
-from sklearn.metrics.pairwise import pairwise_distances
+from sflearn.utils._testing import assert_array_equal
+from sflearn.neighbors import NearestNeighbors
+from sflearn.cluster import DBSCAN
+from sflearn.cluster import dbscan
+from sflearn.cluster.tests.common import generate_clustered_data
+from sflearn.metrics.pairwise import pairwise_distances
 
 
 n_clusters = 3

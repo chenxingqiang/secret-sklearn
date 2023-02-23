@@ -120,7 +120,7 @@ def kmeans_plusplus(
     Examples
     --------
 
-    >>> from sklearn.cluster import kmeans_plusplus
+    >>> from sflearn.cluster import kmeans_plusplus
     >>> import numpy as np
     >>> X = np.array([[1, 2], [1, 4], [1, 0],
     ...               [10, 2], [10, 4], [10, 0]])
@@ -1310,7 +1310,7 @@ class KMeans(_BaseKMeans):
     Examples
     --------
 
-    >>> from sklearn.cluster import KMeans
+    >>> from sflearn.cluster import KMeans
     >>> import numpy as np
     >>> X = np.array([[1, 2], [1, 4], [1, 0],
     ...               [10, 2], [10, 4], [10, 0]])
@@ -1795,7 +1795,7 @@ class MiniBatchKMeans(_BaseKMeans):
 
     Examples
     --------
-    >>> from sklearn.cluster import MiniBatchKMeans
+    >>> from sflearn.cluster import MiniBatchKMeans
     >>> import numpy as np
     >>> X = np.array([[1, 2], [1, 4], [1, 0],
     ...               [4, 2], [4, 0], [4, 4],

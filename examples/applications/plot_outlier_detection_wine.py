@@ -38,11 +38,11 @@ example, none of these could be applied that easily.
 # License: BSD 3 clause
 
 import numpy as np
-from sklearn.covariance import EllipticEnvelope
-from sklearn.svm import OneClassSVM
+from sflearn.covariance import EllipticEnvelope
+from sflearn.svm import OneClassSVM
 import matplotlib.pyplot as plt
 import matplotlib.font_manager
-from sklearn.datasets import load_wine
+from sflearn.datasets import load_wine
 
 # Define "classifiers" to be used
 classifiers = {

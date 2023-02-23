@@ -15,8 +15,8 @@ class PredictionErrorDisplay:
     preferably on held-out data points.
 
     See the details in the docstrings of
-    :func:`~sklearn.metrics.PredictionErrorDisplay.from_estimator` or
-    :func:`~sklearn.metrics.PredictionErrorDisplay.from_predictions` to
+    :func:`~sflearn.metrics.PredictionErrorDisplay.from_estimator` or
+    :func:`~sflearn.metrics.PredictionErrorDisplay.from_predictions` to
     create a visualizer. All parameters are stored as attributes.
 
     For general information regarding `scikit-learn` visualization tools, read
@@ -63,9 +63,9 @@ class PredictionErrorDisplay:
     Examples
     --------
     >>> import matplotlib.pyplot as plt
-    >>> from sklearn.datasets import load_diabetes
-    >>> from sklearn.linear_model import Ridge
-    >>> from sklearn.metrics import PredictionErrorDisplay
+    >>> from sflearn.datasets import load_diabetes
+    >>> from sflearn.linear_model import Ridge
+    >>> from sflearn.metrics import PredictionErrorDisplay
     >>> X, y = load_diabetes(return_X_y=True)
     >>> ridge = Ridge().fit(X, y)
     >>> y_pred = ridge.predict(X)
@@ -117,7 +117,7 @@ class PredictionErrorDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.plot.PredictionErrorDisplay`
+        display : :class:`~sflearn.metrics.plot.PredictionErrorDisplay`
             Object that stores computed values.
         """
         check_matplotlib_support(f"{self.__class__.__name__}.plot")
@@ -205,7 +205,7 @@ class PredictionErrorDisplay:
         Parameters
         ----------
         estimator : estimator instance
-            Fitted regressor or a fitted :class:`~sklearn.pipeline.Pipeline`
+            Fitted regressor or a fitted :class:`~sflearn.pipeline.Pipeline`
             in which the last estimator is a regressor.
 
         X : {array-like, sparse matrix} of shape (n_samples, n_features)
@@ -249,7 +249,7 @@ class PredictionErrorDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.PredictionErrorDisplay`
+        display : :class:`~sflearn.metrics.PredictionErrorDisplay`
             Object that stores the computed values.
 
         See Also
@@ -261,9 +261,9 @@ class PredictionErrorDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import load_diabetes
-        >>> from sklearn.linear_model import Ridge
-        >>> from sklearn.metrics import PredictionErrorDisplay
+        >>> from sflearn.datasets import load_diabetes
+        >>> from sflearn.linear_model import Ridge
+        >>> from sflearn.metrics import PredictionErrorDisplay
         >>> X, y = load_diabetes(return_X_y=True)
         >>> ridge = Ridge().fit(X, y)
         >>> disp = PredictionErrorDisplay.from_estimator(ridge, X, y)
@@ -349,7 +349,7 @@ class PredictionErrorDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.PredictionErrorDisplay`
+        display : :class:`~sflearn.metrics.PredictionErrorDisplay`
             Object that stores the computed values.
 
         See Also
@@ -361,9 +361,9 @@ class PredictionErrorDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import load_diabetes
-        >>> from sklearn.linear_model import Ridge
-        >>> from sklearn.metrics import PredictionErrorDisplay
+        >>> from sflearn.datasets import load_diabetes
+        >>> from sflearn.linear_model import Ridge
+        >>> from sflearn.metrics import PredictionErrorDisplay
         >>> X, y = load_diabetes(return_X_y=True)
         >>> ridge = Ridge().fit(X, y)
         >>> y_pred = ridge.predict(X)

@@ -7,7 +7,7 @@
 set -ex
 
 if [ -z $CIRCLE_PROJECT_USERNAME ];
-then USERNAME="sklearn-ci";
+then USERNAME="sflearn-ci";
 else USERNAME=$CIRCLE_PROJECT_USERNAME;
 fi
 

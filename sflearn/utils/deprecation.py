@@ -15,9 +15,9 @@ class deprecated:
     and the docstring. Note: to use this with the default value for extra, put
     in an empty of parentheses:
 
-    >>> from sklearn.utils import deprecated
+    >>> from sflearn.utils import deprecated
     >>> deprecated()
-    <sklearn.utils.deprecation.deprecated object at ...>
+    <sflearn.utils.deprecation.deprecated object at ...>
 
     >>> @deprecated()
     ... def some_function(): pass

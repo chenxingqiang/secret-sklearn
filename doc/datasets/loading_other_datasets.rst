@@ -7,7 +7,7 @@
 Loading other datasets
 ======================
 
-.. currentmodule:: sklearn.datasets
+.. currentmodule:: sflearn.datasets
 
 .. _sample_images:
 
@@ -54,7 +54,7 @@ In this module, scipy sparse CSR matrices are used for ``X`` and numpy arrays ar
 
 You may load a dataset like as follows::
 
-  >>> from sklearn.datasets import load_svmlight_file
+  >>> from sflearn.datasets import load_svmlight_file
   >>> X_train, y_train = load_svmlight_file("/path/to/train_dataset.txt")
   ...                                                         # doctest: +SKIP
 
@@ -92,13 +92,13 @@ Downloading datasets from the openml.org repository
 `openml.org <https://openml.org>`_ is a public repository for machine learning
 data and experiments, that allows everybody to upload open datasets.
 
-The ``sklearn.datasets`` package is able to download datasets
+The ``sflearn.datasets`` package is able to download datasets
 from the repository using the function
-:func:`sklearn.datasets.fetch_openml`.
+:func:`sflearn.datasets.fetch_openml`.
 
 For example, to download a dataset of gene expressions in mice brains::
 
-  >>> from sklearn.datasets import fetch_openml
+  >>> from sflearn.datasets import fetch_openml
   >>> mice = fetch_openml(name='miceprotein', version=4, parser="auto")
 
 To fully specify a dataset, you need to provide a name and a version, though
@@ -307,8 +307,8 @@ refer to:
   for reading WAV files into a numpy array
 
 Categorical (or nominal) features stored as strings (common in pandas DataFrames)
-will need converting to numerical features using :class:`~sklearn.preprocessing.OneHotEncoder`
-or :class:`~sklearn.preprocessing.OrdinalEncoder` or similar.
+will need converting to numerical features using :class:`~sflearn.preprocessing.OneHotEncoder`
+or :class:`~sflearn.preprocessing.OrdinalEncoder` or similar.
 See :ref:`preprocessing`.
 
 Note: if you manage your own numerical data it is recommended to use an

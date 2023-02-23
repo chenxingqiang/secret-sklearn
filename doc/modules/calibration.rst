@@ -4,7 +4,7 @@
 Probability calibration
 =======================
 
-.. currentmodule:: sklearn.calibration
+.. currentmodule:: sflearn.calibration
 
 
 When performing classification you often want not only to predict the class
@@ -12,7 +12,7 @@ label, but also obtain a probability of the respective label. This probability
 gives you some kind of confidence on the prediction. Some models can give you
 poor estimates of the class probabilities and some even do not support
 probability prediction (e.g., some instances of
-:class:`~sklearn.linear_model.SGDClassifier`).
+:class:`~sflearn.linear_model.SGDClassifier`).
 The calibration module allows you to better calibrate
 the probabilities of a given model, or to add support for probability
 prediction.
@@ -54,20 +54,20 @@ by showing the number of samples in each predicted probability bin.
    :target: ../auto_examples/calibration/plot_compare_calibration.html
    :align: center
 
-.. currentmodule:: sklearn.linear_model
+.. currentmodule:: sflearn.linear_model
 
 :class:`LogisticRegression` returns well calibrated predictions by default as it directly
 optimizes :ref:`log_loss`. In contrast, the other methods return biased probabilities;
 with different biases per method:
 
-.. currentmodule:: sklearn.naive_bayes
+.. currentmodule:: sflearn.naive_bayes
 
 :class:`GaussianNB` tends to push probabilities to 0 or 1 (note the counts
 in the histograms). This is mainly because it makes the assumption that
 features are conditionally independent given the class, which is not the
 case in this dataset which contains 2 redundant features.
 
-.. currentmodule:: sklearn.ensemble
+.. currentmodule:: sflearn.ensemble
 
 :class:`RandomForestClassifier` shows the opposite behavior: the histograms
 show peaks at approximately 0.2 and 0.9 probability, while probabilities
@@ -90,10 +90,10 @@ a result, the calibration curve also referred to as the reliability diagram
 classifier could trust its "intuition" more and return probabilities closer
 to 0 or 1 typically.
 
-.. currentmodule:: sklearn.svm
+.. currentmodule:: sflearn.svm
 
 Linear Support Vector Classification (:class:`LinearSVC`) shows an even more
-sigmoid curve than :class:`~sklearn.ensemble.RandomForestClassifier`, which is
+sigmoid curve than :class:`~sflearn.ensemble.RandomForestClassifier`, which is
 typical for maximum-margin methods (compare Niculescu-Mizil and Caruana [1]_),
 which focus on difficult to classify samples that are close to the decision
 boundary (the support vectors).
@@ -101,7 +101,7 @@ boundary (the support vectors).
 Calibrating a classifier
 ------------------------
 
-.. currentmodule:: sklearn.calibration
+.. currentmodule:: sflearn.calibration
 
 Calibrating a classifier consists of fitting a regressor (called a
 *calibrator*) that maps the output of the classifier (as given by
@@ -140,7 +140,7 @@ probability.
 
 When `ensemble=False`, cross-validation is used to obtain 'unbiased'
 predictions for all the data, via
-:func:`~sklearn.model_selection.cross_val_predict`.
+:func:`~sflearn.model_selection.cross_val_predict`.
 These unbiased predictions are then used to train the calibrator. The attribute
 `calibrated_classifiers_` consists of only one `(classifier, calibrator)`
 couple where the classifier is the `base_estimator` trained on all the data.
@@ -161,7 +161,7 @@ fit the regressor. It is up to the user to
 make sure that the data used for fitting the classifier is disjoint from the
 data used for fitting the regressor.
 
-:func:`sklearn.metrics.brier_score_loss` may be used to assess how
+:func:`sflearn.metrics.brier_score_loss` may be used to assess how
 well a classifier is calibrated. However, this metric should be used with care
 because a lower Brier score does not always mean a better calibrated model.
 This is because the Brier score metric is a combination of calibration loss
@@ -208,7 +208,7 @@ Isotonic
 ^^^^^^^^
 
 The 'isotonic' method fits a non-parametric isotonic regressor, which outputs
-a step-wise non-decreasing function (see :mod:`sklearn.isotonic`). It
+a step-wise non-decreasing function (see :mod:`sflearn.isotonic`). It
 minimizes:
 
 .. math::

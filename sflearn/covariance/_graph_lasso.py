@@ -25,7 +25,7 @@ from ..utils.validation import (
 from ..utils.parallel import delayed, Parallel
 from ..utils._param_validation import Interval, StrOptions
 
-# mypy error: Module 'sklearn.linear_model' has no attribute '_cd_fast'
+# mypy error: Module 'sflearn.linear_model' has no attribute '_cd_fast'
 from ..linear_model import _cd_fast as cd_fast  # type: ignore
 from ..linear_model import lars_path_gram
 from ..model_selection import check_cv, cross_val_score
@@ -420,7 +420,7 @@ class GraphicalLasso(BaseGraphicalLasso):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.covariance import GraphicalLasso
+    >>> from sflearn.covariance import GraphicalLasso
     >>> true_cov = np.array([[0.8, 0.0, 0.2, 0.0],
     ...                      [0.0, 0.4, 0.0, 0.0],
     ...                      [0.2, 0.0, 0.3, 0.1],
@@ -774,7 +774,7 @@ class GraphicalLassoCV(BaseGraphicalLasso):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.covariance import GraphicalLassoCV
+    >>> from sflearn.covariance import GraphicalLassoCV
     >>> true_cov = np.array([[0.8, 0.0, 0.2, 0.0],
     ...                      [0.0, 0.4, 0.0, 0.0],
     ...                      [0.2, 0.0, 0.3, 0.1],

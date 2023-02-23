@@ -5,18 +5,18 @@ import pytest
 from numpy.testing import assert_allclose
 import warnings
 
-from sklearn.datasets import load_diabetes
-from sklearn.datasets import load_iris
-from sklearn.datasets import make_classification, make_regression
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.linear_model import LinearRegression
-from sklearn.utils._testing import _convert_container
-from sklearn.compose import make_column_transformer
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.pipeline import make_pipeline
+from sflearn.datasets import load_diabetes
+from sflearn.datasets import load_iris
+from sflearn.datasets import make_classification, make_regression
+from sflearn.ensemble import GradientBoostingRegressor
+from sflearn.ensemble import GradientBoostingClassifier
+from sflearn.linear_model import LinearRegression
+from sflearn.utils._testing import _convert_container
+from sflearn.compose import make_column_transformer
+from sflearn.preprocessing import OneHotEncoder
+from sflearn.pipeline import make_pipeline
 
-from sklearn.inspection import PartialDependenceDisplay
+from sflearn.inspection import PartialDependenceDisplay
 
 
 # TODO: Remove when https://github.com/numpy/numpy/issues/14397 is resolved

@@ -8,48 +8,48 @@ import numpy as np
 from numpy.testing import assert_array_equal
 import scipy.sparse as sparse
 
-from sklearn.base import BaseEstimator
-from sklearn.base import ClassifierMixin
-from sklearn.base import RegressorMixin
-from sklearn.base import clone
+from sflearn.base import BaseEstimator
+from sflearn.base import ClassifierMixin
+from sflearn.base import RegressorMixin
+from sflearn.base import clone
 
-from sklearn.exceptions import ConvergenceWarning
+from sflearn.exceptions import ConvergenceWarning
 
-from sklearn.datasets import load_iris
-from sklearn.datasets import load_diabetes
-from sklearn.datasets import load_breast_cancer
-from sklearn.datasets import make_regression
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_multilabel_classification
+from sflearn.datasets import load_iris
+from sflearn.datasets import load_diabetes
+from sflearn.datasets import load_breast_cancer
+from sflearn.datasets import make_regression
+from sflearn.datasets import make_classification
+from sflearn.datasets import make_multilabel_classification
 
-from sklearn.dummy import DummyClassifier
-from sklearn.dummy import DummyRegressor
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Ridge
-from sklearn.linear_model import RidgeClassifier
-from sklearn.svm import LinearSVC
-from sklearn.svm import LinearSVR
-from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import scale
+from sflearn.dummy import DummyClassifier
+from sflearn.dummy import DummyRegressor
+from sflearn.linear_model import LogisticRegression
+from sflearn.linear_model import LinearRegression
+from sflearn.linear_model import Ridge
+from sflearn.linear_model import RidgeClassifier
+from sflearn.svm import LinearSVC
+from sflearn.svm import LinearSVR
+from sflearn.svm import SVC
+from sflearn.ensemble import RandomForestClassifier
+from sflearn.ensemble import RandomForestRegressor
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.neural_network import MLPClassifier
+from sflearn.preprocessing import scale
 
-from sklearn.ensemble import StackingClassifier
-from sklearn.ensemble import StackingRegressor
+from sflearn.ensemble import StackingClassifier
+from sflearn.ensemble import StackingRegressor
 
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import KFold
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import StratifiedKFold
+from sflearn.model_selection import KFold
 
-from sklearn.utils._mocking import CheckingClassifier
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_allclose_dense_sparse
-from sklearn.utils._testing import ignore_warnings
+from sflearn.utils._mocking import CheckingClassifier
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_allclose_dense_sparse
+from sflearn.utils._testing import ignore_warnings
 
-from sklearn.exceptions import NotFittedError
+from sflearn.exceptions import NotFittedError
 
 from unittest.mock import Mock
 
@@ -486,7 +486,7 @@ def test_stacking_classifier_sample_weight_fit_param():
     stacker.fit(X_iris, y_iris, sample_weight=np.ones(X_iris.shape[0]))
 
 
-@pytest.mark.filterwarnings("ignore::sklearn.exceptions.ConvergenceWarning")
+@pytest.mark.filterwarnings("ignore::sflearn.exceptions.ConvergenceWarning")
 @pytest.mark.parametrize(
     "stacker, X, y",
     [

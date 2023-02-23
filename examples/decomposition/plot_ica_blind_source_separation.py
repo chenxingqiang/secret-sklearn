@@ -41,7 +41,7 @@ X = np.dot(S, A.T)  # Generate observations
 # Fit ICA and PCA models
 # ----------------------
 
-from sklearn.decomposition import FastICA, PCA
+from sflearn.decomposition import FastICA, PCA
 
 # Compute ICA
 ica = FastICA(n_components=3, whiten="arbitrary-variance")

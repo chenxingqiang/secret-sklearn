@@ -147,7 +147,7 @@ def _assert_all_finite(
             msg_err += (
                 f"\n{estimator_name} does not accept missing values"
                 " encoded as NaN natively. For supervised learning, you might want"
-                " to consider sklearn.ensemble.HistGradientBoostingClassifier and"
+                " to consider sflearn.ensemble.HistGradientBoostingClassifier and"
                 " Regressor which accept missing values encoded as NaNs natively."
                 " Alternatively, it is possible to preprocess the data, for"
                 " instance by using an imputer transformer in a pipeline or drop"
@@ -1250,8 +1250,8 @@ def has_fit_parameter(estimator, parameter):
 
     Examples
     --------
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.utils.validation import has_fit_parameter
+    >>> from sflearn.svm import SVC
+    >>> from sflearn.utils.validation import has_fit_parameter
     >>> has_fit_parameter(SVC(), "sample_weight")
     True
     """
@@ -1327,7 +1327,7 @@ def check_is_fitted(estimator, attributes=None, *, msg=None, all_or_any=all):
     raises a NotFittedError with the given message.
 
     If an estimator does not set any attributes with a trailing underscore, it
-    can define a ``__sklearn_is_fitted__`` method returning a boolean to specify if the
+    can define a ``__sflearn_is_fitted__`` method returning a boolean to specify if the
     estimator is fitted or not.
 
     Parameters
@@ -1379,8 +1379,8 @@ def check_is_fitted(estimator, attributes=None, *, msg=None, all_or_any=all):
         if not isinstance(attributes, (list, tuple)):
             attributes = [attributes]
         fitted = all_or_any([hasattr(estimator, attr) for attr in attributes])
-    elif hasattr(estimator, "__sklearn_is_fitted__"):
-        fitted = estimator.__sklearn_is_fitted__()
+    elif hasattr(estimator, "__sflearn_is_fitted__"):
+        fitted = estimator.__sflearn_is_fitted__()
     else:
         fitted = [
             v for v in vars(estimator) if v.endswith("_") and not v.startswith("__")
@@ -1592,7 +1592,7 @@ def _check_psd_eigenvalues(lambdas, enable_warnings=False):
 
     Examples
     --------
-    >>> from sklearn.utils.validation import _check_psd_eigenvalues
+    >>> from sflearn.utils.validation import _check_psd_eigenvalues
     >>> _check_psd_eigenvalues([1, 2])      # nominal case
     array([1, 2])
     >>> _check_psd_eigenvalues([5, 5j])     # significant imag part

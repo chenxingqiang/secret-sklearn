@@ -177,7 +177,7 @@ mamba list
 
 # Set parallelism to 3 to overlap IO bound tasks with CPU bound tasks on CI
 # workers with 2 cores when building the compiled extensions of scikit-learn.
-export SKLEARN_BUILD_PARALLEL=3
+export SFLEARN_BUILD_PARALLEL=3
 pip install -e . --no-build-isolation
 
 echo "ccache build summary:"
@@ -205,10 +205,10 @@ affected_doc_paths() {
     files=$(git diff --name-only origin/main...$CIRCLE_SHA1)
     echo "$files" | grep ^doc/.*\.rst | sed 's/^doc\/\(.*\)\.rst$/\1.html/'
     echo "$files" | grep ^examples/.*.py | sed 's/^\(.*\)\.py$/auto_\1.html/'
-    sklearn_files=$(echo "$files" | grep '^sklearn/')
-    if [ -n "$sklearn_files" ]
+    sflearn_files=$(echo "$files" | grep '^sflearn/')
+    if [ -n "$sflearn_files" ]
     then
-        grep -hlR -f<(echo "$sklearn_files" | sed 's/^/scikit-learn\/blob\/[a-z0-9]*\//') doc/_build/html/stable/modules/generated | cut -d/ -f5-
+        grep -hlR -f<(echo "$sflearn_files" | sed 's/^/scikit-learn\/blob\/[a-z0-9]*\//') doc/_build/html/stable/modules/generated | cut -d/ -f5-
     fi
 }
 

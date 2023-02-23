@@ -2,8 +2,8 @@ import numpy as np
 
 import pytest
 
-from sklearn.utils._readonly_array_wrapper import ReadonlyArrayWrapper, _test_sum
-from sklearn.utils._testing import create_memmap_backed_data
+from sflearn.utils._readonly_array_wrapper import ReadonlyArrayWrapper, _test_sum
+from sflearn.utils._testing import create_memmap_backed_data
 
 
 def _readonly_array_copy(x):

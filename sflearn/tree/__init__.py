@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.tree` module includes decision tree-based models for
+The :mod:`sflearn.tree` module includes decision tree-based models for
 classification and regression.
 """
 

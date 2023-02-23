@@ -51,15 +51,15 @@ import argparse
 import numpy as np
 from joblib import Memory
 
-from sklearn.datasets import fetch_covtype, get_data_home
-from sklearn.svm import LinearSVC
-from sklearn.linear_model import SGDClassifier, LogisticRegression
-from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.metrics import zero_one_loss
-from sklearn.utils import check_array
+from sflearn.datasets import fetch_covtype, get_data_home
+from sflearn.svm import LinearSVC
+from sflearn.linear_model import SGDClassifier, LogisticRegression
+from sflearn.naive_bayes import GaussianNB
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
+from sflearn.ensemble import GradientBoostingClassifier
+from sflearn.metrics import zero_one_loss
+from sflearn.utils import check_array
 
 # Memoize the data extraction and memory map the resulting
 # train / test splits in readonly mode

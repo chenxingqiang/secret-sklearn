@@ -5,12 +5,12 @@ from scipy import sparse
 from numpy.testing import assert_array_equal
 from numpy.testing import assert_allclose
 
-from sklearn.datasets import load_iris
-from sklearn.utils import check_array
-from sklearn.utils import _safe_indexing
-from sklearn.utils._testing import _convert_container
+from sflearn.datasets import load_iris
+from sflearn.utils import check_array
+from sflearn.utils import _safe_indexing
+from sflearn.utils._testing import _convert_container
 
-from sklearn.utils._mocking import CheckingClassifier
+from sflearn.utils._mocking import CheckingClassifier
 
 
 @pytest.fixture

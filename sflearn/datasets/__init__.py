@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.datasets` module includes utilities to load datasets,
+The :mod:`sflearn.datasets` module includes utilities to load datasets,
 including methods to load and fetch popular reference datasets. It also
 features some artificial data generators.
 """
@@ -133,12 +133,12 @@ def __getattr__(name):
             Alternative datasets include the California housing dataset and the
             Ames housing dataset. You can load the datasets as follows::
 
-                from sklearn.datasets import fetch_california_housing
+                from sflearn.datasets import fetch_california_housing
                 housing = fetch_california_housing()
 
             for the California housing dataset and::
 
-                from sklearn.datasets import fetch_openml
+                from sflearn.datasets import fetch_openml
                 housing = fetch_openml(name="house_prices", as_frame=True)
 
             for the Ames housing dataset.

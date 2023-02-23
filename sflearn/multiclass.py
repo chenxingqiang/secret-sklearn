@@ -261,16 +261,16 @@ class OneVsRestClassifier(
     --------
     OneVsOneClassifier : One-vs-one multiclass strategy.
     OutputCodeClassifier : (Error-Correcting) Output-Code multiclass strategy.
-    sklearn.multioutput.MultiOutputClassifier : Alternate way of extending an
+    sflearn.multioutput.MultiOutputClassifier : Alternate way of extending an
         estimator for multilabel classification.
-    sklearn.preprocessing.MultiLabelBinarizer : Transform iterable of iterables
+    sflearn.preprocessing.MultiLabelBinarizer : Transform iterable of iterables
         to binary indicator matrix.
 
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.multiclass import OneVsRestClassifier
-    >>> from sklearn.svm import SVC
+    >>> from sflearn.multiclass import OneVsRestClassifier
+    >>> from sflearn.svm import SVC
     >>> X = np.array([
     ...     [10, 10],
     ...     [8, 10],
@@ -633,10 +633,10 @@ class OneVsOneClassifier(MetaEstimatorMixin, ClassifierMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.multiclass import OneVsOneClassifier
-    >>> from sklearn.svm import LinearSVC
+    >>> from sflearn.datasets import load_iris
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.multiclass import OneVsOneClassifier
+    >>> from sflearn.svm import LinearSVC
     >>> X, y = load_iris(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...     X, y, test_size=0.33, shuffle=True, random_state=0)
@@ -939,9 +939,9 @@ class OutputCodeClassifier(MetaEstimatorMixin, ClassifierMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.multiclass import OutputCodeClassifier
-    >>> from sklearn.ensemble import RandomForestClassifier
-    >>> from sklearn.datasets import make_classification
+    >>> from sflearn.multiclass import OutputCodeClassifier
+    >>> from sflearn.ensemble import RandomForestClassifier
+    >>> from sflearn.datasets import make_classification
     >>> X, y = make_classification(n_samples=100, n_features=4,
     ...                            n_informative=2, n_redundant=0,
     ...                            random_state=0, shuffle=False)

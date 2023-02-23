@@ -7,25 +7,25 @@ import scipy.sparse as sp
 import pytest
 import warnings
 
-import sklearn
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_no_warnings
-from sklearn.utils._testing import ignore_warnings
+import sflearn
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_no_warnings
+from sflearn.utils._testing import ignore_warnings
 
-from sklearn.base import BaseEstimator, clone, is_classifier
-from sklearn.svm import SVC
-from sklearn.preprocessing import StandardScaler
-from sklearn.utils._set_output import _get_output_config
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
+from sflearn.base import BaseEstimator, clone, is_classifier
+from sflearn.svm import SVC
+from sflearn.preprocessing import StandardScaler
+from sflearn.utils._set_output import _get_output_config
+from sflearn.pipeline import Pipeline
+from sflearn.model_selection import GridSearchCV
 
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.tree import DecisionTreeRegressor
-from sklearn import datasets
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.tree import DecisionTreeRegressor
+from sflearn import datasets
 
-from sklearn.base import TransformerMixin
-from sklearn.utils._mocking import MockDataFrame
-from sklearn import config_context
+from sflearn.base import TransformerMixin
+from sflearn.utils._mocking import MockDataFrame
+from sflearn import config_context
 import pickle
 
 
@@ -118,7 +118,7 @@ def test_clone():
     # (which, in this case, is the current state of the estimator),
     # and check that the obtained copy is a correct deep copy.
 
-    from sklearn.feature_selection import SelectFpr, f_classif
+    from sflearn.feature_selection import SelectFpr, f_classif
 
     selector = SelectFpr(f_classif, alpha=0.1)
     new_selector = clone(selector)
@@ -136,7 +136,7 @@ def test_clone_2():
     # make a copy of its original state. Then we check that the copy doesn't
     # have the specific attribute we manually added to the initial estimator.
 
-    from sklearn.feature_selection import SelectFpr, f_classif
+    from sflearn.feature_selection import SelectFpr, f_classif
 
     selector = SelectFpr(f_classif, alpha=0.1)
     selector.own_attribute = "test"
@@ -376,7 +376,7 @@ def test_pickle_version_warning_is_not_raised_with_matching_version():
 
 class TreeBadVersion(DecisionTreeClassifier):
     def __getstate__(self):
-        return dict(self.__dict__.items(), _sklearn_version="something")
+        return dict(self.__dict__.items(), _sflearn_version="something")
 
 
 pickle_error_message = (
@@ -395,7 +395,7 @@ def test_pickle_version_warning_is_issued_upon_different_version():
     message = pickle_error_message.format(
         estimator="TreeBadVersion",
         old_version="something",
-        current_version=sklearn.__version__,
+        current_version=sflearn.__version__,
     )
     with pytest.warns(UserWarning, match=message):
         pickle.loads(tree_pickle_other)
@@ -416,20 +416,20 @@ def test_pickle_version_warning_is_issued_when_no_version_info_in_pickle():
     message = pickle_error_message.format(
         estimator="TreeNoVersion",
         old_version="pre-0.18",
-        current_version=sklearn.__version__,
+        current_version=sflearn.__version__,
     )
     # check we got the warning about using pre-0.18 pickle
     with pytest.warns(UserWarning, match=message):
         pickle.loads(tree_pickle_noversion)
 
 
-def test_pickle_version_no_warning_is_issued_with_non_sklearn_estimator():
+def test_pickle_version_no_warning_is_issued_with_non_sflearn_estimator():
     iris = datasets.load_iris()
     tree = TreeNoVersion().fit(iris.data, iris.target)
     tree_pickle_noversion = pickle.dumps(tree)
     try:
         module_backup = TreeNoVersion.__module__
-        TreeNoVersion.__module__ = "notsklearn"
+        TreeNoVersion.__module__ = "notsflearn"
         assert_no_warnings(pickle.loads, tree_pickle_noversion)
     finally:
         TreeNoVersion.__module__ = module_backup
@@ -463,13 +463,13 @@ def test_pickling_when_getstate_is_overwritten_by_mixin():
     assert estimator_restored._restored
 
 
-def test_pickling_when_getstate_is_overwritten_by_mixin_outside_of_sklearn():
+def test_pickling_when_getstate_is_overwritten_by_mixin_outside_of_sflearn():
     try:
         estimator = MultiInheritanceEstimator()
         text = "this attribute should not be pickled"
         estimator._attribute_not_pickled = text
         old_mod = type(estimator).__module__
-        type(estimator).__module__ = "notsklearn"
+        type(estimator).__module__ = "notsflearn"
 
         serialized = estimator.__getstate__()
         assert serialized == {"_attribute_not_pickled": None, "attribute_pickled": 5}
@@ -694,7 +694,7 @@ def test_estimator_empty_instance_dict(estimator):
     ``AttributeError``. Non-regression test for gh-25188.
     """
     state = estimator.__getstate__()
-    expected = {"_sklearn_version": sklearn.__version__}
+    expected = {"_sflearn_version": sflearn.__version__}
     assert state == expected
 
     # this should not raise
@@ -712,7 +712,7 @@ def test_estimator_getstate_using_slots_error_message():
 
     msg = (
         "You cannot use `__slots__` in objects inheriting from "
-        "`sklearn.base.BaseEstimator`"
+        "`sflearn.base.BaseEstimator`"
     )
 
     with pytest.raises(TypeError, match=msg):

@@ -4,7 +4,7 @@ Plotting Learning Curves and Checking Models' Scalability
 =========================================================
 
 In this example, we show how to use the class
-:class:`~sklearn.model_selection.LearningCurveDisplay` to easily plot learning
+:class:`~sflearn.model_selection.LearningCurveDisplay` to easily plot learning
 curves. In addition, we give an interpretation to the learning curves obtained
 for a naive Bayes and SVM classifiers.
 
@@ -23,22 +23,22 @@ accuracy.
 #
 # Here, we compute the learning curve of a naive Bayes classifier and a SVM
 # classifier with a RBF kernel using the digits dataset.
-from sklearn.datasets import load_digits
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
+from sflearn.datasets import load_digits
+from sflearn.naive_bayes import GaussianNB
+from sflearn.svm import SVC
 
 X, y = load_digits(return_X_y=True)
 naive_bayes = GaussianNB()
 svc = SVC(kernel="rbf", gamma=0.001)
 
 # %%
-# The :meth:`~sklearn.model_selection.LearningCurveDisplay.from_estimator`
+# The :meth:`~sflearn.model_selection.LearningCurveDisplay.from_estimator`
 # displays the learning curve given the dataset and the predictive model to
 # analyze. To get an estimate of the scores uncertainty, this method uses
 # a cross-validation procedure.
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import LearningCurveDisplay, ShuffleSplit
+from sflearn.model_selection import LearningCurveDisplay, ShuffleSplit
 
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 6), sharey=True)
 
@@ -82,13 +82,13 @@ for ax_idx, estimator in enumerate([naive_bayes, svc]):
 # In addition to these learning curves, it is also possible to look at the
 # scalability of the predictive models in terms of training and scoring times.
 #
-# The :class:`~sklearn.model_selection.LearningCurveDisplay` class does not
+# The :class:`~sflearn.model_selection.LearningCurveDisplay` class does not
 # provide such information. We need to resort to the
-# :func:`~sklearn.model_selection.learning_curve` function instead and make
+# :func:`~sflearn.model_selection.learning_curve` function instead and make
 # the plot manually.
 
 # %%
-from sklearn.model_selection import learning_curve
+from sflearn.model_selection import learning_curve
 
 common_params = {
     "X": X,

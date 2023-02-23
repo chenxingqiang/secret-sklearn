@@ -7,19 +7,19 @@ import warnings
 
 from scipy.special import logsumexp
 
-from sklearn.datasets import load_digits, load_iris
+from sflearn.datasets import load_digits, load_iris
 
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import cross_val_score
 
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_allclose
 
-from sklearn.naive_bayes import GaussianNB, BernoulliNB
-from sklearn.naive_bayes import MultinomialNB, ComplementNB
-from sklearn.naive_bayes import CategoricalNB
+from sflearn.naive_bayes import GaussianNB, BernoulliNB
+from sflearn.naive_bayes import MultinomialNB, ComplementNB
+from sflearn.naive_bayes import CategoricalNB
 
 DISCRETE_NAIVE_BAYES_CLASSES = [BernoulliNB, CategoricalNB, ComplementNB, MultinomialNB]
 ALL_NAIVE_BAYES_CLASSES = DISCRETE_NAIVE_BAYES_CLASSES + [GaussianNB]

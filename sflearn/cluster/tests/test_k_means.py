@@ -8,29 +8,29 @@ from scipy import sparse as sp
 
 import pytest
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils.fixes import threadpool_limits
-from sklearn.base import clone
-from sklearn.exceptions import ConvergenceWarning
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils.fixes import threadpool_limits
+from sflearn.base import clone
+from sflearn.exceptions import ConvergenceWarning
 
-from sklearn.utils.extmath import row_norms
-from sklearn.metrics import pairwise_distances
-from sklearn.metrics import pairwise_distances_argmin
-from sklearn.metrics.cluster import v_measure_score
-from sklearn.cluster import KMeans, k_means, kmeans_plusplus
-from sklearn.cluster import MiniBatchKMeans
-from sklearn.cluster._kmeans import _labels_inertia
-from sklearn.cluster._kmeans import _mini_batch_step
-from sklearn.cluster._k_means_common import _relocate_empty_clusters_dense
-from sklearn.cluster._k_means_common import _relocate_empty_clusters_sparse
-from sklearn.cluster._k_means_common import _euclidean_dense_dense_wrapper
-from sklearn.cluster._k_means_common import _euclidean_sparse_dense_wrapper
-from sklearn.cluster._k_means_common import _inertia_dense
-from sklearn.cluster._k_means_common import _inertia_sparse
-from sklearn.cluster._k_means_common import _is_same_clustering
-from sklearn.utils._testing import create_memmap_backed_data
-from sklearn.datasets import make_blobs
+from sflearn.utils.extmath import row_norms
+from sflearn.metrics import pairwise_distances
+from sflearn.metrics import pairwise_distances_argmin
+from sflearn.metrics.cluster import v_measure_score
+from sflearn.cluster import KMeans, k_means, kmeans_plusplus
+from sflearn.cluster import MiniBatchKMeans
+from sflearn.cluster._kmeans import _labels_inertia
+from sflearn.cluster._kmeans import _mini_batch_step
+from sflearn.cluster._k_means_common import _relocate_empty_clusters_dense
+from sflearn.cluster._k_means_common import _relocate_empty_clusters_sparse
+from sflearn.cluster._k_means_common import _euclidean_dense_dense_wrapper
+from sflearn.cluster._k_means_common import _euclidean_sparse_dense_wrapper
+from sflearn.cluster._k_means_common import _inertia_dense
+from sflearn.cluster._k_means_common import _inertia_sparse
+from sflearn.cluster._k_means_common import _is_same_clustering
+from sflearn.utils._testing import create_memmap_backed_data
+from sflearn.datasets import make_blobs
 from io import StringIO
 
 # TODO(1.4): Remove

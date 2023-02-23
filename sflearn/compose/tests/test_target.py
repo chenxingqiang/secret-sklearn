@@ -1,25 +1,25 @@
 import numpy as np
 import pytest
 
-from sklearn.base import clone
-from sklearn.base import BaseEstimator
-from sklearn.base import TransformerMixin
+from sflearn.base import clone
+from sflearn.base import BaseEstimator
+from sflearn.base import TransformerMixin
 
-from sklearn.dummy import DummyRegressor
+from sflearn.dummy import DummyRegressor
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_no_warnings
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_no_warnings
 
-from sklearn.preprocessing import FunctionTransformer
-from sklearn.preprocessing import StandardScaler
+from sflearn.preprocessing import FunctionTransformer
+from sflearn.preprocessing import StandardScaler
 
-from sklearn.pipeline import Pipeline
+from sflearn.pipeline import Pipeline
 
-from sklearn.linear_model import LinearRegression, OrthogonalMatchingPursuit
+from sflearn.linear_model import LinearRegression, OrthogonalMatchingPursuit
 
-from sklearn import datasets
+from sflearn import datasets
 
-from sklearn.compose import TransformedTargetRegressor
+from sflearn.compose import TransformedTargetRegressor
 
 friedman = datasets.make_friedman1(random_state=0)
 

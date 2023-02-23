@@ -1,4 +1,4 @@
-from sklearn.svm import SVC
+from sflearn.svm import SVC
 
 from .common import Benchmark, Estimator, Predictor
 from .datasets import _synth_classification_dataset

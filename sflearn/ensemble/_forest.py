@@ -616,7 +616,7 @@ class BaseForest(MultiOutputMixin, BaseEnsemble, metaclass=ABCMeta):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
         Returns
         -------
@@ -1266,7 +1266,7 @@ class RandomForestClassifier(ForestClassifier):
 
     Attributes
     ----------
-    estimator_ : :class:`~sklearn.tree.DecisionTreeClassifier`
+    estimator_ : :class:`~sflearn.tree.DecisionTreeClassifier`
         The child estimator template used to create the collection of fitted
         sub-estimators.
 
@@ -1315,7 +1315,7 @@ class RandomForestClassifier(ForestClassifier):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     oob_score_ : float
         Score of the training dataset obtained using an out-of-bag estimate.
@@ -1331,8 +1331,8 @@ class RandomForestClassifier(ForestClassifier):
 
     See Also
     --------
-    sklearn.tree.DecisionTreeClassifier : A decision tree classifier.
-    sklearn.ensemble.ExtraTreesClassifier : Ensemble of extremely randomized
+    sflearn.tree.DecisionTreeClassifier : A decision tree classifier.
+    sflearn.ensemble.ExtraTreesClassifier : Ensemble of extremely randomized
         tree classifiers.
 
     Notes
@@ -1356,8 +1356,8 @@ class RandomForestClassifier(ForestClassifier):
 
     Examples
     --------
-    >>> from sklearn.ensemble import RandomForestClassifier
-    >>> from sklearn.datasets import make_classification
+    >>> from sflearn.ensemble import RandomForestClassifier
+    >>> from sflearn.datasets import make_classification
     >>> X, y = make_classification(n_samples=1000, n_features=4,
     ...                            n_informative=2, n_redundant=0,
     ...                            random_state=0, shuffle=False)
@@ -1617,7 +1617,7 @@ class RandomForestRegressor(ForestRegressor):
 
     Attributes
     ----------
-    estimator_ : :class:`~sklearn.tree.DecisionTreeRegressor`
+    estimator_ : :class:`~sflearn.tree.DecisionTreeRegressor`
         The child estimator template used to create the collection of fitted
         sub-estimators.
 
@@ -1644,7 +1644,7 @@ class RandomForestRegressor(ForestRegressor):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_features_in_ : int
         Number of features seen during :term:`fit`.
@@ -1670,8 +1670,8 @@ class RandomForestRegressor(ForestRegressor):
 
     See Also
     --------
-    sklearn.tree.DecisionTreeRegressor : A decision tree regressor.
-    sklearn.ensemble.ExtraTreesRegressor : Ensemble of extremely randomized
+    sflearn.tree.DecisionTreeRegressor : A decision tree regressor.
+    sflearn.ensemble.ExtraTreesRegressor : Ensemble of extremely randomized
         tree regressors.
 
     Notes
@@ -1702,8 +1702,8 @@ class RandomForestRegressor(ForestRegressor):
 
     Examples
     --------
-    >>> from sklearn.ensemble import RandomForestRegressor
-    >>> from sklearn.datasets import make_regression
+    >>> from sflearn.ensemble import RandomForestRegressor
+    >>> from sflearn.datasets import make_regression
     >>> X, y = make_regression(n_features=4, n_informative=2,
     ...                        random_state=0, shuffle=False)
     >>> regr = RandomForestRegressor(max_depth=2, random_state=0)
@@ -1965,7 +1965,7 @@ class ExtraTreesClassifier(ForestClassifier):
 
     Attributes
     ----------
-    estimator_ : :class:`~sklearn.tree.ExtraTreesClassifier`
+    estimator_ : :class:`~sflearn.tree.ExtraTreesClassifier`
         The child estimator template used to create the collection of fitted
         sub-estimators.
 
@@ -2000,7 +2000,7 @@ class ExtraTreesClassifier(ForestClassifier):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_features_in_ : int
         Number of features seen during :term:`fit`.
@@ -2049,8 +2049,8 @@ class ExtraTreesClassifier(ForestClassifier):
 
     Examples
     --------
-    >>> from sklearn.ensemble import ExtraTreesClassifier
-    >>> from sklearn.datasets import make_classification
+    >>> from sflearn.ensemble import ExtraTreesClassifier
+    >>> from sflearn.datasets import make_classification
     >>> X, y = make_classification(n_features=4, random_state=0)
     >>> clf = ExtraTreesClassifier(n_estimators=100, random_state=0)
     >>> clf.fit(X, y)
@@ -2307,7 +2307,7 @@ class ExtraTreesRegressor(ForestRegressor):
 
     Attributes
     ----------
-    estimator_ : :class:`~sklearn.tree.ExtraTreeRegressor`
+    estimator_ : :class:`~sflearn.tree.ExtraTreeRegressor`
         The child estimator template used to create the collection of fitted
         sub-estimators.
 
@@ -2334,7 +2334,7 @@ class ExtraTreesRegressor(ForestRegressor):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_features_in_ : int
         Number of features seen during :term:`fit`.
@@ -2379,9 +2379,9 @@ class ExtraTreesRegressor(ForestRegressor):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_diabetes
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.ensemble import ExtraTreesRegressor
+    >>> from sflearn.datasets import load_diabetes
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.ensemble import ExtraTreesRegressor
     >>> X, y = load_diabetes(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...     X, y, random_state=0)
@@ -2564,14 +2564,14 @@ class RandomTreesEmbedding(TransformerMixin, BaseForest):
 
     Attributes
     ----------
-    estimator_ : :class:`~sklearn.tree.ExtraTreeRegressor` instance
+    estimator_ : :class:`~sflearn.tree.ExtraTreeRegressor` instance
         The child estimator template used to create the collection of fitted
         sub-estimators.
 
         .. versionadded:: 1.2
            `base_estimator_` was renamed to `estimator_`.
 
-    base_estimator_ : :class:`~sklearn.tree.ExtraTreeRegressor` instance
+    base_estimator_ : :class:`~sflearn.tree.ExtraTreeRegressor` instance
         The child estimator template used to create the collection of fitted
         sub-estimators.
 
@@ -2579,7 +2579,7 @@ class RandomTreesEmbedding(TransformerMixin, BaseForest):
             `base_estimator_` is deprecated and will be removed in 1.4.
             Use `estimator_` instead.
 
-    estimators_ : list of :class:`~sklearn.tree.ExtraTreeRegressor` instances
+    estimators_ : list of :class:`~sflearn.tree.ExtraTreeRegressor` instances
         The collection of fitted sub-estimators.
 
     feature_importances_ : ndarray of shape (n_features,)
@@ -2608,9 +2608,9 @@ class RandomTreesEmbedding(TransformerMixin, BaseForest):
     ExtraTreesRegressor : An extra-trees regressor.
     RandomForestClassifier : A random forest classifier.
     RandomForestRegressor : A random forest regressor.
-    sklearn.tree.ExtraTreeClassifier: An extremely randomized
+    sflearn.tree.ExtraTreeClassifier: An extremely randomized
         tree classifier.
-    sklearn.tree.ExtraTreeRegressor : An extremely randomized
+    sflearn.tree.ExtraTreeRegressor : An extremely randomized
         tree regressor.
 
     References
@@ -2623,7 +2623,7 @@ class RandomTreesEmbedding(TransformerMixin, BaseForest):
 
     Examples
     --------
-    >>> from sklearn.ensemble import RandomTreesEmbedding
+    >>> from sflearn.ensemble import RandomTreesEmbedding
     >>> X = [[0,0], [1,0], [0,1], [-1,0], [0,-1]]
     >>> random_trees = RandomTreesEmbedding(
     ...    n_estimators=5, random_state=0, max_depth=1).fit(X)

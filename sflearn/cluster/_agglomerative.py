@@ -26,7 +26,7 @@ from ..utils.graph import _fix_connected_components
 from ..utils._param_validation import Hidden, Interval, StrOptions, HasMethods
 from ..utils.validation import check_memory
 
-# mypy error: Module 'sklearn.cluster' has no attribute '_hierarchical_fast'
+# mypy error: Module 'sflearn.cluster' has no attribute '_hierarchical_fast'
 from . import _hierarchical_fast as _hierarchical  # type: ignore
 from ._feature_agglomeration import AgglomerationTransform
 
@@ -505,7 +505,7 @@ def linkage_tree(
         if affinity == "precomputed":
             # for the linkage function of hierarchy to work on precomputed
             # data, provide as first argument an ndarray of the shape returned
-            # by sklearn.metrics.pairwise_distances.
+            # by sflearn.metrics.pairwise_distances.
             if X.shape[0] != X.shape[1]:
                 raise ValueError(
                     f"Distance matrix should be square, got matrix of shape {X.shape}"
@@ -754,7 +754,7 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
     affinity : str or callable, default='euclidean'
         The metric to use when calculating distance between instances in a
         feature array. If metric is a string or callable, it must be one of
-        the options allowed by :func:`sklearn.metrics.pairwise_distances` for
+        the options allowed by :func:`sflearn.metrics.pairwise_distances` for
         its metric parameter.
         If linkage is "ward", only "euclidean" is accepted.
         If "precomputed", a distance matrix (instead of a similarity matrix)
@@ -879,7 +879,7 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.cluster import AgglomerativeClustering
+    >>> from sflearn.cluster import AgglomerativeClustering
     >>> import numpy as np
     >>> X = np.array([[1, 2], [1, 4], [1, 0],
     ...               [4, 2], [4, 4], [4, 0]])
@@ -1117,7 +1117,7 @@ class FeatureAgglomeration(
     affinity : str or callable, default='euclidean'
         The metric to use when calculating distance between instances in a
         feature array. If metric is a string or callable, it must be one of
-        the options allowed by :func:`sklearn.metrics.pairwise_distances` for
+        the options allowed by :func:`sflearn.metrics.pairwise_distances` for
         its metric parameter.
         If linkage is "ward", only "euclidean" is accepted.
         If "precomputed", a distance matrix (instead of a similarity matrix)
@@ -1245,7 +1245,7 @@ class FeatureAgglomeration(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn import datasets, cluster
+    >>> from sflearn import datasets, cluster
     >>> digits = datasets.load_digits()
     >>> images = digits.images
     >>> X = np.reshape(images, (len(images), -1))

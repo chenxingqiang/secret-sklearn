@@ -48,19 +48,19 @@ from numpy.testing import assert_array_less
 import numpy as np
 import joblib
 
-import sklearn
-from sklearn.utils import (
+import sflearn
+from sflearn.utils import (
     IS_PYPY,
     _IS_32BIT,
     _in_unstable_openblas_configuration,
 )
-from sklearn.utils.multiclass import check_classification_targets
-from sklearn.utils.validation import (
+from sflearn.utils.multiclass import check_classification_targets
+from sflearn.utils.validation import (
     check_array,
     check_is_fitted,
     check_X_y,
 )
-from sklearn.utils.fixes import threadpool_info
+from sflearn.utils.fixes import threadpool_info
 
 
 __all__ = [
@@ -131,7 +131,7 @@ def ignore_warnings(obj=None, category=Warning):
     Examples
     --------
     >>> import warnings
-    >>> from sklearn.utils._testing import ignore_warnings
+    >>> from sflearn.utils._testing import ignore_warnings
     >>> with ignore_warnings():
     ...     warnings.warn('buhuhuhu')
 
@@ -303,7 +303,7 @@ def assert_allclose(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.utils._testing import assert_allclose
+    >>> from sflearn.utils._testing import assert_allclose
     >>> x = [1e-5, 1e-3, 1e-1]
     >>> y = np.arccos(np.cos(x))
     >>> assert_allclose(x, y, rtol=1e-5, atol=0)
@@ -431,7 +431,7 @@ except ImportError:
 
 
 def check_skip_network():
-    if int(os.environ.get("SKLEARN_SKIP_NETWORK_TESTS", 0)):
+    if int(os.environ.get("SFLEARN_SKIP_NETWORK_TESTS", 0)):
         raise SkipTest("Text tutorial requires large dataset download")
 
 
@@ -516,7 +516,7 @@ def create_memmap_backed_data(data, mmap_mode="r", return_folder=False, aligned=
         the memory mapped array will also be aligned. This is a workaround for
         https://github.com/joblib/joblib/issues/563.
     """
-    temp_folder = tempfile.mkdtemp(prefix="sklearn_testing_")
+    temp_folder = tempfile.mkdtemp(prefix="sflearn_testing_")
     atexit.register(functools.partial(_delete_folder, temp_folder, warn=True))
     # OpenBLAS is known to segfault with unaligned data on the Prescott
     # architecture so force aligned=True on Prescott. For more details, see:
@@ -623,8 +623,8 @@ def check_docstring_parameters(func, doc=None, ignore=None):
     ignore = [] if ignore is None else ignore
 
     func_name = _get_func_name(func)
-    if not func_name.startswith("sklearn.") or func_name.startswith(
-        "sklearn.externals"
+    if not func_name.startswith("sflearn.") or func_name.startswith(
+        "sflearn.externals"
     ):
         return incorrect
     # Don't check docstring for property-functions
@@ -762,13 +762,13 @@ def assert_run_python_script(source_code, timeout=60):
     timeout : int, default=60
         Time in seconds before timeout.
     """
-    fd, source_file = tempfile.mkstemp(suffix="_src_test_sklearn.py")
+    fd, source_file = tempfile.mkstemp(suffix="_src_test_sflearn.py")
     os.close(fd)
     try:
         with open(source_file, "wb") as f:
             f.write(source_code.encode("utf-8"))
         cmd = [sys.executable, source_file]
-        cwd = op.normpath(op.join(op.dirname(sklearn.__file__), ".."))
+        cwd = op.normpath(op.join(op.dirname(sflearn.__file__), ".."))
         env = os.environ.copy()
         try:
             env["PYTHONPATH"] = os.pathsep.join([cwd, env["PYTHONPATH"]])
@@ -979,7 +979,7 @@ class MinimalClassifier:
         return self.classes_[y_pred]
 
     def score(self, X, y):
-        from sklearn.metrics import accuracy_score
+        from sflearn.metrics import accuracy_score
 
         return accuracy_score(y, self.predict(X))
 
@@ -1019,7 +1019,7 @@ class MinimalRegressor:
         return np.ones(shape=(X.shape[0],)) * self._mean
 
     def score(self, X, y):
-        from sklearn.metrics import r2_score
+        from sflearn.metrics import r2_score
 
         return r2_score(y, self.predict(X))
 

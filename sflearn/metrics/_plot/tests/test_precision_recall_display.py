@@ -1,18 +1,18 @@
 import numpy as np
 import pytest
 
-from sklearn.compose import make_column_transformer
-from sklearn.datasets import load_breast_cancer, make_classification
-from sklearn.exceptions import NotFittedError
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import average_precision_score, precision_recall_curve
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC, SVR
-from sklearn.utils import shuffle
+from sflearn.compose import make_column_transformer
+from sflearn.datasets import load_breast_cancer, make_classification
+from sflearn.exceptions import NotFittedError
+from sflearn.linear_model import LogisticRegression
+from sflearn.metrics import average_precision_score, precision_recall_curve
+from sflearn.model_selection import train_test_split
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import StandardScaler
+from sflearn.svm import SVC, SVR
+from sflearn.utils import shuffle
 
-from sklearn.metrics import PrecisionRecallDisplay
+from sflearn.metrics import PrecisionRecallDisplay
 
 # TODO: Remove when https://github.com/numpy/numpy/issues/14397 is resolved
 pytestmark = pytest.mark.filterwarnings(

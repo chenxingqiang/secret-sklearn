@@ -16,7 +16,7 @@ example of this pattern that are heavily used.
     The unsupervised data reduction and the supervised estimator can be
     chained in one step. See :ref:`pipeline`.
 
-.. currentmodule:: sklearn
+.. currentmodule:: sflearn
 
 PCA: principal component analysis
 ----------------------------------
@@ -55,6 +55,6 @@ similarly.
 
    Note that if features have very different scaling or statistical
    properties, :class:`cluster.FeatureAgglomeration` may not be able to
-   capture the links between related features. Using a 
+   capture the links between related features. Using a
    :class:`preprocessing.StandardScaler` can be useful in these settings.
 

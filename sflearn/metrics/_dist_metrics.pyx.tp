@@ -17,7 +17,7 @@ implementation_specific_values = [
     # The metric mapping is adapted accordingly to route to the correct
     # implementations.
     #
-    # We also use 64bit types as defined in `sklearn.utils._typedefs`
+    # We also use 64bit types as defined in `sflearn.utils._typedefs`
     # to maintain backward compatibility at the symbol level for extra
     # safety.
     #
@@ -137,7 +137,7 @@ cdef class DistanceMetric{{name_suffix}}:
 
     Examples
     --------
-    >>> from sklearn.metrics import DistanceMetric
+    >>> from sflearn.metrics import DistanceMetric
     >>> dist = DistanceMetric.get_metric('euclidean')
     >>> X = [[0, 1, 2],
              [3, 4, 5]]
@@ -1177,7 +1177,7 @@ cdef class ChebyshevDistance{{name_suffix}}(DistanceMetric{{name_suffix}}):
 
     Examples
     --------
-    >>> from sklearn.metrics.dist_metrics import DistanceMetric
+    >>> from sflearn.metrics.dist_metrics import DistanceMetric
     >>> dist = DistanceMetric.get_metric('chebyshev')
     >>> X = [[0, 1, 2],
     ...      [3, 4, 5]]

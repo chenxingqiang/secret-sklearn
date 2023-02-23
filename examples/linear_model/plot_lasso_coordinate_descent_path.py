@@ -17,8 +17,8 @@ from itertools import cycle
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.linear_model import lasso_path, enet_path
-from sklearn import datasets
+from sflearn.linear_model import lasso_path, enet_path
+from sflearn import datasets
 
 
 X, y = datasets.load_diabetes(return_X_y=True)

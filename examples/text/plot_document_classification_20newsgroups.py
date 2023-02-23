@@ -36,8 +36,8 @@ script :ref:`sphx_glr_auto_examples_text_plot_document_clustering.py`.
 # the classification problem "too easy". This is achieved using simple
 # heuristics that are neither perfect nor standard, hence disabled by default.
 
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sflearn.datasets import fetch_20newsgroups
+from sflearn.feature_extraction.text import TfidfVectorizer
 from time import time
 
 categories = [
@@ -140,15 +140,15 @@ X_train, X_test, y_train, y_test, feature_names, target_names = load_dataset(
 
 # %%
 # Our first model is an instance of the
-# :class:`~sklearn.linear_model.RidgeClassifier` class. This is a linear
+# :class:`~sflearn.linear_model.RidgeClassifier` class. This is a linear
 # classification model that uses the mean squared error on {-1, 1} encoded
 # targets, one for each possible class. Contrary to
-# :class:`~sklearn.linear_model.LogisticRegression`,
-# :class:`~sklearn.linear_model.RidgeClassifier` does not
+# :class:`~sflearn.linear_model.LogisticRegression`,
+# :class:`~sflearn.linear_model.RidgeClassifier` does not
 # provide probabilistic predictions (no `predict_proba` method),
 # but it is often faster to train.
 
-from sklearn.linear_model import RidgeClassifier
+from sflearn.linear_model import RidgeClassifier
 
 clf = RidgeClassifier(tol=1e-2, solver="sparse_cg")
 clf.fit(X_train, y_train)
@@ -159,7 +159,7 @@ pred = clf.predict(X_test)
 # in the classification errors.
 
 import matplotlib.pyplot as plt
-from sklearn.metrics import ConfusionMatrixDisplay
+from sflearn.metrics import ConfusionMatrixDisplay
 
 fig, ax = plt.subplots(figsize=(10, 5))
 ConfusionMatrixDisplay.from_predictions(y_test, pred, ax=ax)
@@ -316,8 +316,8 @@ _ = plot_feature_effects().set_title("Average feature effects on filtered docume
 # training time and testing time. For such purpose we define the following
 # benchmarking utilities:
 
-from sklearn.utils.extmath import density
-from sklearn import metrics
+from sflearn.utils.extmath import density
+from sflearn import metrics
 
 
 def benchmark(clf, custom_name=False):
@@ -362,13 +362,13 @@ def benchmark(clf, custom_name=False):
 # :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_text_feature_extraction.py`
 # for a demo on how such tuning can be done.
 
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import LinearSVC
-from sklearn.linear_model import SGDClassifier
-from sklearn.naive_bayes import ComplementNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neighbors import NearestCentroid
-from sklearn.ensemble import RandomForestClassifier
+from sflearn.linear_model import LogisticRegression
+from sflearn.svm import LinearSVC
+from sflearn.linear_model import SGDClassifier
+from sflearn.naive_bayes import ComplementNB
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.neighbors import NearestCentroid
+from sflearn.ensemble import RandomForestClassifier
 
 
 results = []

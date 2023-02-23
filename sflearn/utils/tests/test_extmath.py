@@ -10,29 +10,29 @@ from scipy.sparse.linalg import eigsh
 from scipy.special import expit
 
 import pytest
-from sklearn.utils import gen_batches
-from sklearn.utils._arpack import _init_arpack_v0
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_allclose_dense_sparse
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import skip_if_32bit
-from sklearn.utils.fixes import _mode, _eigh
+from sflearn.utils import gen_batches
+from sflearn.utils._arpack import _init_arpack_v0
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_allclose_dense_sparse
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import skip_if_32bit
+from sflearn.utils.fixes import _mode, _eigh
 
-from sklearn.utils.extmath import density, _safe_accumulator_op
-from sklearn.utils.extmath import randomized_svd, _randomized_eigsh
-from sklearn.utils.extmath import row_norms
-from sklearn.utils.extmath import weighted_mode
-from sklearn.utils.extmath import cartesian
-from sklearn.utils.extmath import log_logistic
-from sklearn.utils.extmath import svd_flip
-from sklearn.utils.extmath import _incremental_mean_and_var
-from sklearn.utils.extmath import _deterministic_vector_sign_flip
-from sklearn.utils.extmath import softmax
-from sklearn.utils.extmath import stable_cumsum
-from sklearn.utils.extmath import safe_sparse_dot
-from sklearn.datasets import make_low_rank_matrix, make_sparse_spd_matrix
+from sflearn.utils.extmath import density, _safe_accumulator_op
+from sflearn.utils.extmath import randomized_svd, _randomized_eigsh
+from sflearn.utils.extmath import row_norms
+from sflearn.utils.extmath import weighted_mode
+from sflearn.utils.extmath import cartesian
+from sflearn.utils.extmath import log_logistic
+from sflearn.utils.extmath import svd_flip
+from sflearn.utils.extmath import _incremental_mean_and_var
+from sflearn.utils.extmath import _deterministic_vector_sign_flip
+from sflearn.utils.extmath import softmax
+from sflearn.utils.extmath import stable_cumsum
+from sflearn.utils.extmath import safe_sparse_dot
+from sflearn.datasets import make_low_rank_matrix, make_sparse_spd_matrix
 
 
 def test_density():

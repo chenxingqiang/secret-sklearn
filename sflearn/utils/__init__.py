@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.utils` module includes various utilities.
+The :mod:`sflearn.utils` module includes various utilities.
 """
 from collections.abc import Sequence
 from contextlib import contextmanager
@@ -520,7 +520,7 @@ def resample(*arrays, replace=True, n_samples=None, random_state=None, stratify=
       >>> from scipy.sparse import coo_matrix
       >>> X_sparse = coo_matrix(X)
 
-      >>> from sklearn.utils import resample
+      >>> from sflearn.utils import resample
       >>> X, X_sparse, y = resample(X, X_sparse, y, random_state=0)
       >>> X
       array([[1., 0.],
@@ -658,7 +658,7 @@ def shuffle(*arrays, random_state=None, n_samples=None):
       >>> from scipy.sparse import coo_matrix
       >>> X_sparse = coo_matrix(X)
 
-      >>> from sklearn.utils import shuffle
+      >>> from sflearn.utils import shuffle
       >>> X, X_sparse, y = shuffle(X, X_sparse, y, random_state=0)
       >>> X
       array([[0., 0.],
@@ -750,7 +750,7 @@ def gen_batches(n, batch_size, *, min_batch_size=0):
 
     Examples
     --------
-    >>> from sklearn.utils import gen_batches
+    >>> from sflearn.utils import gen_batches
     >>> list(gen_batches(7, 3))
     [slice(0, 3, None), slice(3, 6, None), slice(6, 7, None)]
     >>> list(gen_batches(6, 3))
@@ -807,7 +807,7 @@ def gen_even_slices(n, n_packs, *, n_samples=None):
 
     Examples
     --------
-    >>> from sklearn.utils import gen_even_slices
+    >>> from sflearn.utils import gen_even_slices
     >>> list(gen_even_slices(10, 1))
     [slice(0, 10, None)]
     >>> list(gen_even_slices(10, 10))
@@ -878,7 +878,7 @@ def _to_object_array(sequence):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.utils import _to_object_array
+    >>> from sflearn.utils import _to_object_array
     >>> _to_object_array([np.array([0]), np.array([1])])
     array([array([0]), array([1])], dtype=object)
     >>> _to_object_array([np.array([0]), np.array([1, 2])])
@@ -909,7 +909,7 @@ def indices_to_mask(indices, mask_length):
 
     Examples
     --------
-    >>> from sklearn.utils import indices_to_mask
+    >>> from sflearn.utils import indices_to_mask
     >>> indices = [1, 2 , 3, 4]
     >>> indices_to_mask(indices, 5)
     array([False,  True,  True,  True,  True])
@@ -988,7 +988,7 @@ def get_chunk_n_rows(row_bytes, *, max_n_rows=None, working_memory=None):
     working_memory : int or float, default=None
         The number of rows to fit inside this number of MiB will be
         returned. When None (default), the value of
-        ``sklearn.get_config()['working_memory']`` is used.
+        ``sflearn.get_config()['working_memory']`` is used.
 
     Returns
     -------
@@ -1059,7 +1059,7 @@ def is_scalar_nan(x):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.utils import is_scalar_nan
+    >>> from sflearn.utils import is_scalar_nan
     >>> is_scalar_nan(np.nan)
     True
     >>> is_scalar_nan(float("nan"))
@@ -1102,7 +1102,7 @@ def _approximate_mode(class_counts, n_draws, rng):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.utils import _approximate_mode
+    >>> from sflearn.utils import _approximate_mode
     >>> _approximate_mode(class_counts=np.array([4, 2]), n_draws=3, rng=0)
     array([2, 1])
     >>> _approximate_mode(class_counts=np.array([5, 2]), n_draws=4, rng=0)

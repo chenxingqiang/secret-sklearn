@@ -4,8 +4,8 @@
 
 import pickle
 
-from sklearn.utils.deprecation import _is_deprecated
-from sklearn.utils.deprecation import deprecated
+from sflearn.utils.deprecation import _is_deprecated
+from sflearn.utils.deprecation import deprecated
 import pytest
 
 

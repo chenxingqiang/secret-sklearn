@@ -4,14 +4,14 @@ import numpy as np
 from scipy import sparse
 import pytest
 
-from sklearn.exceptions import NotFittedError
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import _convert_container
-from sklearn.utils import is_scalar_nan
+from sflearn.exceptions import NotFittedError
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import _convert_container
+from sflearn.utils import is_scalar_nan
 
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.preprocessing import OrdinalEncoder
+from sflearn.preprocessing import OneHotEncoder
+from sflearn.preprocessing import OrdinalEncoder
 
 
 def test_one_hot_encoder_sparse_dense():
@@ -884,12 +884,12 @@ def test_ohe_infrequent_two_levels(kwargs, categories):
     X_trans = ohe.transform(X_test)
     assert_allclose(expected, X_trans)
 
-    expected_inv = [[col] for col in ["b"] + ["infrequent_sklearn"] * 4]
+    expected_inv = [[col] for col in ["b"] + ["infrequent_sflearn"] * 4]
     X_inv = ohe.inverse_transform(X_trans)
     assert_array_equal(expected_inv, X_inv)
 
     feature_names = ohe.get_feature_names_out()
-    assert_array_equal(["x0_b", "x0_infrequent_sklearn"], feature_names)
+    assert_array_equal(["x0_b", "x0_infrequent_sflearn"], feature_names)
 
 
 @pytest.mark.parametrize("drop", ["if_binary", "first", ["b"]])
@@ -910,10 +910,10 @@ def test_ohe_infrequent_two_levels_drop_frequent(drop):
     assert_allclose([[0], [1]], X_trans)
 
     feature_names = ohe.get_feature_names_out()
-    assert_array_equal(["x0_infrequent_sklearn"], feature_names)
+    assert_array_equal(["x0_infrequent_sflearn"], feature_names)
 
     X_inverse = ohe.inverse_transform(X_trans)
-    assert_array_equal([["b"], ["infrequent_sklearn"]], X_inverse)
+    assert_array_equal([["b"], ["infrequent_sflearn"]], X_inverse)
 
 
 @pytest.mark.parametrize("drop", [["a"], ["d"]])
@@ -964,16 +964,16 @@ def test_ohe_infrequent_three_levels(kwargs):
 
     expected_inv = [
         ["b"],
-        ["infrequent_sklearn"],
+        ["infrequent_sflearn"],
         ["c"],
-        ["infrequent_sklearn"],
-        ["infrequent_sklearn"],
+        ["infrequent_sflearn"],
+        ["infrequent_sflearn"],
     ]
     X_inv = ohe.inverse_transform(X_trans)
     assert_array_equal(expected_inv, X_inv)
 
     feature_names = ohe.get_feature_names_out()
-    assert_array_equal(["x0_b", "x0_c", "x0_infrequent_sklearn"], feature_names)
+    assert_array_equal(["x0_b", "x0_c", "x0_infrequent_sflearn"], feature_names)
 
 
 @pytest.mark.parametrize("drop", ["first", ["b"]])
@@ -1090,7 +1090,7 @@ def test_ohe_infrequent_two_levels_user_cats():
 
     # 'infrequent' is used to denote the infrequent categories for
     # `inverse_transform`
-    expected_inv = [[col] for col in ["b"] + ["infrequent_sklearn"] * 4]
+    expected_inv = [[col] for col in ["b"] + ["infrequent_sflearn"] * 4]
     X_inv = ohe.inverse_transform(X_trans)
     assert_array_equal(expected_inv, X_inv)
 
@@ -1122,10 +1122,10 @@ def test_ohe_infrequent_three_levels_user_cats():
     # `inverse_transform`
     expected_inv = [
         ["b"],
-        ["infrequent_sklearn"],
+        ["infrequent_sflearn"],
         ["c"],
-        ["infrequent_sklearn"],
-        ["infrequent_sklearn"],
+        ["infrequent_sflearn"],
+        ["infrequent_sflearn"],
     ]
     X_inv = ohe.inverse_transform(X_trans)
     assert_array_equal(expected_inv, X_inv)
@@ -1178,10 +1178,10 @@ def test_ohe_infrequent_multiple_categories():
         [
             "x0_0",
             "x0_3",
-            "x0_infrequent_sklearn",
+            "x0_infrequent_sflearn",
             "x1_0",
             "x1_5",
-            "x1_infrequent_sklearn",
+            "x1_infrequent_sflearn",
             "x2_0",
             "x2_1",
         ],
@@ -1213,7 +1213,7 @@ def test_ohe_infrequent_multiple_categories():
 
     X_inv = ohe.inverse_transform(X_test_trans)
     expected_inv = np.array(
-        [[3, "infrequent_sklearn", None], ["infrequent_sklearn", 0, None]], dtype=object
+        [[3, "infrequent_sflearn", None], ["infrequent_sflearn", 0, None]], dtype=object
     )
     assert_array_equal(expected_inv, X_inv)
 
@@ -1234,7 +1234,7 @@ def test_ohe_infrequent_multiple_categories():
     X_inv = ohe.inverse_transform(X_test_trans)
 
     expected_inv = np.array(
-        [["infrequent_sklearn", "infrequent_sklearn", 1], [3, "infrequent_sklearn", 0]],
+        [["infrequent_sflearn", "infrequent_sflearn", 1], [3, "infrequent_sflearn", 0]],
         dtype=object,
     )
     assert_array_equal(expected_inv, X_inv)
@@ -1287,7 +1287,7 @@ def test_ohe_infrequent_multiple_categories_dtypes():
 
     X_inv = ohe.inverse_transform(X_test_trans)
     expected_inv = np.array(
-        [["infrequent_sklearn", "infrequent_sklearn"], ["f", "infrequent_sklearn"]],
+        [["infrequent_sflearn", "infrequent_sflearn"], ["f", "infrequent_sflearn"]],
         dtype=object,
     )
     assert_array_equal(expected_inv, X_inv)
@@ -1300,7 +1300,7 @@ def test_ohe_infrequent_multiple_categories_dtypes():
 
     X_inv = ohe.inverse_transform(X_test_trans)
     expected_inv = np.array(
-        [["c", "infrequent_sklearn"], ["infrequent_sklearn", 5]], dtype=object
+        [["c", "infrequent_sflearn"], ["infrequent_sflearn", 5]], dtype=object
     )
     assert_array_equal(expected_inv, X_inv)
 

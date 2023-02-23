@@ -88,7 +88,7 @@ class BaseDistancesReductionDispatcher:
         metric : str, default='euclidean'
             The distance metric to use.
             For a list of available metrics, see the documentation of
-            :class:`~sklearn.metrics.DistanceMetric`.
+            :class:`~sflearn.metrics.DistanceMetric`.
 
         Returns
         -------
@@ -209,7 +209,7 @@ class ArgKmin(BaseDistancesReductionDispatcher):
         metric : str, default='euclidean'
             The distance metric to use for argkmin.
             For a list of available metrics, see the documentation of
-            :class:`~sklearn.metrics.DistanceMetric`.
+            :class:`~sflearn.metrics.DistanceMetric`.
 
         chunk_size : int, default=None,
             The number of vectors per chunk. If None (default) looks-up in
@@ -348,7 +348,7 @@ class RadiusNeighbors(BaseDistancesReductionDispatcher):
         metric : str, default='euclidean'
             The distance metric to use.
             For a list of available metrics, see the documentation of
-            :class:`~sklearn.metrics.DistanceMetric`.
+            :class:`~sflearn.metrics.DistanceMetric`.
 
         chunk_size : int, default=None,
             The number of vectors per chunk. If None (default) looks-up in

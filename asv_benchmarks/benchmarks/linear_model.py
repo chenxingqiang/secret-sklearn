@@ -1,4 +1,4 @@
-from sklearn.linear_model import (
+from sflearn.linear_model import (
     LogisticRegression,
     Ridge,
     ElasticNet,

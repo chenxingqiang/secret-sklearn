@@ -4,7 +4,7 @@
 Neural network models (unsupervised)
 ====================================
 
-.. currentmodule:: sklearn.neural_network
+.. currentmodule:: sflearn.neural_network
 
 
 .. _rbm:
@@ -57,7 +57,7 @@ visible and hidden unit, omitted from the image for simplicity.
 
 The energy function measures the quality of a joint assignment:
 
-.. math:: 
+.. math::
 
    E(\mathbf{v}, \mathbf{h}) = -\sum_i \sum_j w_{ij}v_ih_j - \sum_i b_iv_i
      - \sum_j c_jh_j

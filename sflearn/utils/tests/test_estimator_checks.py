@@ -11,10 +11,10 @@ import numpy as np
 import scipy.sparse as sp
 import joblib
 
-from sklearn.base import BaseEstimator, ClassifierMixin, OutlierMixin
-from sklearn.datasets import make_multilabel_classification
-from sklearn.utils import deprecated
-from sklearn.utils._testing import (
+from sflearn.base import BaseEstimator, ClassifierMixin, OutlierMixin
+from sflearn.datasets import make_multilabel_classification
+from sflearn.utils import deprecated
+from sflearn.utils._testing import (
     raises,
     ignore_warnings,
     MinimalClassifier,
@@ -23,23 +23,23 @@ from sklearn.utils._testing import (
     SkipTest,
 )
 
-from sklearn.utils.validation import check_is_fitted, check_X_y
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.linear_model import LinearRegression, SGDClassifier
-from sklearn.mixture import GaussianMixture
-from sklearn.cluster import MiniBatchKMeans
-from sklearn.decomposition import PCA
-from sklearn.linear_model import MultiTaskElasticNet, LogisticRegression
-from sklearn.svm import SVC, NuSVC
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.utils.validation import check_array
-from sklearn.utils import all_estimators
-from sklearn.exceptions import SkipTestWarning
-from sklearn.utils.metaestimators import available_if
-from sklearn.utils.estimator_checks import check_decision_proba_consistency
-from sklearn.utils._param_validation import Interval, StrOptions
+from sflearn.utils.validation import check_is_fitted, check_X_y
+from sflearn.ensemble import ExtraTreesClassifier
+from sflearn.linear_model import LinearRegression, SGDClassifier
+from sflearn.mixture import GaussianMixture
+from sflearn.cluster import MiniBatchKMeans
+from sflearn.decomposition import PCA
+from sflearn.linear_model import MultiTaskElasticNet, LogisticRegression
+from sflearn.svm import SVC, NuSVC
+from sflearn.neighbors import KNeighborsRegressor
+from sflearn.utils.validation import check_array
+from sflearn.utils import all_estimators
+from sflearn.exceptions import SkipTestWarning
+from sflearn.utils.metaestimators import available_if
+from sflearn.utils.estimator_checks import check_decision_proba_consistency
+from sflearn.utils._param_validation import Interval, StrOptions
 
-from sklearn.utils.estimator_checks import (
+from sflearn.utils.estimator_checks import (
     _NotAnArray,
     _set_checking_parameters,
     check_class_weight_balanced_linear_classifier,
@@ -251,8 +251,8 @@ class BadBalancedWeightsClassifier(BaseBadClassifier):
         self.class_weight = class_weight
 
     def fit(self, X, y):
-        from sklearn.preprocessing import LabelEncoder
-        from sklearn.utils import compute_class_weight
+        from sflearn.preprocessing import LabelEncoder
+        from sflearn.utils import compute_class_weight
 
         label_encoder = LabelEncoder().fit(y)
         classes = label_encoder.classes_
@@ -661,7 +661,7 @@ def test_check_estimator_transformer_no_mixin():
 
 def test_check_estimator_clones():
     # check that check_estimator doesn't modify the estimator it receives
-    from sklearn.datasets import load_iris
+    from sflearn.datasets import load_iris
 
     iris = load_iris()
 
@@ -1097,7 +1097,7 @@ def test_check_fit_check_is_fitted():
             return self
 
         @available_if(lambda self: self.behavior in {"method", "always-true"})
-        def __sklearn_is_fitted__(self):
+        def __sflearn_is_fitted__(self):
             if self.behavior == "always-true":
                 return True
             return hasattr(self, "_is_fitted")

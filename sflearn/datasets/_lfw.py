@@ -296,7 +296,7 @@ def fetch_lfw_people(
 
     Returns
     -------
-    dataset : :class:`~sklearn.utils.Bunch`
+    dataset : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : numpy array of shape (13233, 2914)
@@ -481,7 +481,7 @@ def fetch_lfw_pairs(
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : ndarray of shape (2200, 5828). Shape depends on ``subset``.

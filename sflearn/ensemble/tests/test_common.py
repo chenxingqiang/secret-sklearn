@@ -1,21 +1,21 @@
 import numpy as np
 import pytest
 
-from sklearn.base import clone
-from sklearn.base import ClassifierMixin
-from sklearn.base import is_classifier
+from sflearn.base import clone
+from sflearn.base import ClassifierMixin
+from sflearn.base import is_classifier
 
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_regression
-from sklearn.datasets import load_iris, load_diabetes
-from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.svm import LinearSVC, LinearSVR, SVC, SVR
-from sklearn.pipeline import make_pipeline
-from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sflearn.datasets import make_classification
+from sflearn.datasets import make_regression
+from sflearn.datasets import load_iris, load_diabetes
+from sflearn.impute import SimpleImputer
+from sflearn.linear_model import LogisticRegression, LinearRegression
+from sflearn.svm import LinearSVC, LinearSVR, SVC, SVR
+from sflearn.pipeline import make_pipeline
+from sflearn.ensemble import RandomForestClassifier, RandomForestRegressor
 
-from sklearn.ensemble import StackingClassifier, StackingRegressor
-from sklearn.ensemble import VotingClassifier, VotingRegressor
+from sflearn.ensemble import StackingClassifier, StackingRegressor
+from sflearn.ensemble import VotingClassifier, VotingRegressor
 
 X, y = load_iris(return_X_y=True)
 

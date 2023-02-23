@@ -82,9 +82,9 @@ def _get_output_config(method, estimator=None):
         - "dense": specifies the dense container for `method`. This can be
           `"default"` or `"pandas"`.
     """
-    est_sklearn_output_config = getattr(estimator, "_sklearn_output_config", {})
-    if method in est_sklearn_output_config:
-        dense_config = est_sklearn_output_config[method]
+    est_sflearn_output_config = getattr(estimator, "_sflearn_output_config", {})
+    if method in est_sflearn_output_config:
+        dense_config = est_sflearn_output_config[method]
     else:
         dense_config = get_config()[f"{method}_output"]
 
@@ -155,10 +155,10 @@ def _wrap_method_output(f, method):
 def _auto_wrap_is_configured(estimator):
     """Return True if estimator is configured for auto-wrapping the transform method.
 
-    `_SetOutputMixin` sets `_sklearn_auto_wrap_output_keys` to `set()` if auto wrapping
+    `_SetOutputMixin` sets `_sflearn_auto_wrap_output_keys` to `set()` if auto wrapping
     is manually disabled.
     """
-    auto_wrap_output_keys = getattr(estimator, "_sklearn_auto_wrap_output_keys", set())
+    auto_wrap_output_keys = getattr(estimator, "_sflearn_auto_wrap_output_keys", set())
     return (
         hasattr(estimator, "get_feature_names_out")
         and "transform" in auto_wrap_output_keys
@@ -186,7 +186,7 @@ class _SetOutputMixin:
             raise ValueError("auto_wrap_output_keys must be None or a tuple of keys.")
 
         if auto_wrap_output_keys is None:
-            cls._sklearn_auto_wrap_output_keys = set()
+            cls._sflearn_auto_wrap_output_keys = set()
             return
 
         # Mapping from method to key in configurations
@@ -194,12 +194,12 @@ class _SetOutputMixin:
             "transform": "transform",
             "fit_transform": "transform",
         }
-        cls._sklearn_auto_wrap_output_keys = set()
+        cls._sflearn_auto_wrap_output_keys = set()
 
         for method, key in method_to_key.items():
             if not hasattr(cls, method) or key not in auto_wrap_output_keys:
                 continue
-            cls._sklearn_auto_wrap_output_keys.add(key)
+            cls._sflearn_auto_wrap_output_keys.add(key)
 
             # Only wrap methods defined by cls itself
             if method not in cls.__dict__:
@@ -231,10 +231,10 @@ class _SetOutputMixin:
         if transform is None:
             return self
 
-        if not hasattr(self, "_sklearn_output_config"):
-            self._sklearn_output_config = {}
+        if not hasattr(self, "_sflearn_output_config"):
+            self._sflearn_output_config = {}
 
-        self._sklearn_output_config["transform"] = transform
+        self._sflearn_output_config["transform"] = transform
         return self
 
 

@@ -22,9 +22,9 @@ representation of the checkerboard structure.
 import numpy as np
 from matplotlib import pyplot as plt
 
-from sklearn.datasets import make_checkerboard
-from sklearn.cluster import SpectralBiclustering
-from sklearn.metrics import consensus_score
+from sflearn.datasets import make_checkerboard
+from sflearn.cluster import SpectralBiclustering
+from sflearn.metrics import consensus_score
 
 
 n_clusters = (4, 3)

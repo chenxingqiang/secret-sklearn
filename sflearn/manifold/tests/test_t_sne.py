@@ -5,34 +5,34 @@ from numpy.testing import assert_allclose
 import scipy.sparse as sp
 import pytest
 
-from sklearn import config_context
-from sklearn.neighbors import NearestNeighbors
-from sklearn.neighbors import kneighbors_graph
-from sklearn.exceptions import EfficiencyWarning
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import skip_if_32bit
-from sklearn.utils import check_random_state
-from sklearn.manifold._t_sne import _joint_probabilities
-from sklearn.manifold._t_sne import _joint_probabilities_nn
-from sklearn.manifold._t_sne import _kl_divergence
-from sklearn.manifold._t_sne import _kl_divergence_bh
-from sklearn.manifold._t_sne import _gradient_descent
-from sklearn.manifold._t_sne import trustworthiness
-from sklearn.manifold import TSNE
+from sflearn import config_context
+from sflearn.neighbors import NearestNeighbors
+from sflearn.neighbors import kneighbors_graph
+from sflearn.exceptions import EfficiencyWarning
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import skip_if_32bit
+from sflearn.utils import check_random_state
+from sflearn.manifold._t_sne import _joint_probabilities
+from sflearn.manifold._t_sne import _joint_probabilities_nn
+from sflearn.manifold._t_sne import _kl_divergence
+from sflearn.manifold._t_sne import _kl_divergence_bh
+from sflearn.manifold._t_sne import _gradient_descent
+from sflearn.manifold._t_sne import trustworthiness
+from sflearn.manifold import TSNE
 
-# mypy error: Module 'sklearn.manifold' has no attribute '_barnes_hut_tsne'
-from sklearn.manifold import _barnes_hut_tsne  # type: ignore
-from sklearn.manifold._utils import _binary_search_perplexity
-from sklearn.datasets import make_blobs
+# mypy error: Module 'sflearn.manifold' has no attribute '_barnes_hut_tsne'
+from sflearn.manifold import _barnes_hut_tsne  # type: ignore
+from sflearn.manifold._utils import _binary_search_perplexity
+from sflearn.datasets import make_blobs
 from scipy.optimize import check_grad
 from scipy.spatial.distance import pdist
 from scipy.spatial.distance import squareform
-from sklearn.metrics.pairwise import pairwise_distances
-from sklearn.metrics.pairwise import manhattan_distances
-from sklearn.metrics.pairwise import cosine_distances
+from sflearn.metrics.pairwise import pairwise_distances
+from sflearn.metrics.pairwise import manhattan_distances
+from sflearn.metrics.pairwise import cosine_distances
 
 
 x = np.linspace(0, 1, 10)

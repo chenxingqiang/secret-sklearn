@@ -4,27 +4,27 @@ import pytest
 
 from scipy import linalg
 
-from sklearn.base import clone
-from sklearn._config import config_context
-from sklearn.utils import check_random_state
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._array_api import _convert_to_numpy
-from sklearn.utils._testing import _convert_container
+from sflearn.base import clone
+from sflearn._config import config_context
+from sflearn.utils import check_random_state
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._array_api import _convert_to_numpy
+from sflearn.utils._testing import _convert_container
 
-from sklearn.datasets import make_blobs
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.discriminant_analysis import _cov
-from sklearn.covariance import ledoit_wolf
-from sklearn.cluster import KMeans
+from sflearn.datasets import make_blobs
+from sflearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sflearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sflearn.discriminant_analysis import _cov
+from sflearn.covariance import ledoit_wolf
+from sflearn.cluster import KMeans
 
-from sklearn.covariance import ShrunkCovariance
-from sklearn.covariance import LedoitWolf
+from sflearn.covariance import ShrunkCovariance
+from sflearn.covariance import LedoitWolf
 
-from sklearn.preprocessing import StandardScaler
+from sflearn.preprocessing import StandardScaler
 
 # Data is just 6 separable points in the plane
 X = np.array([[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]], dtype="f")

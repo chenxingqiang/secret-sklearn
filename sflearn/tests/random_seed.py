@@ -3,10 +3,10 @@
 The goal of this fixture is to prevent tests that use it to be sensitive
 to a specific seed value while still being deterministic by default.
 
-See the documentation for the SKLEARN_TESTS_GLOBAL_RANDOM_SEED
+See the documentation for the SFLEARN_TESTS_GLOBAL_RANDOM_SEED
 variable for insrtuctions on how to use this fixture.
 
-https://scikit-learn.org/dev/computing/parallelism.html#sklearn-tests-global-random-seed
+https://scikit-learn.org/dev/computing/parallelism.html#sflearn-tests-global-random-seed
 """
 import pytest
 from os import environ
@@ -25,7 +25,7 @@ def pytest_configure(config):
         config.pluginmanager.register(XDistHooks())
 
     RANDOM_SEED_RANGE = list(range(100))  # All seeds in [0, 99] should be valid.
-    random_seed_var = environ.get("SKLEARN_TESTS_GLOBAL_RANDOM_SEED")
+    random_seed_var = environ.get("SFLEARN_TESTS_GLOBAL_RANDOM_SEED")
     if hasattr(config, "workerinput") and "random_seeds" in config.workerinput:
         # Set worker random seed from seed generated from main process
         random_seeds = config.workerinput["random_seeds"]
@@ -47,7 +47,7 @@ def pytest_configure(config):
         if min(random_seeds) < 0 or max(random_seeds) > 99:
             raise ValueError(
                 "The value(s) of the environment variable "
-                "SKLEARN_TESTS_GLOBAL_RANDOM_SEED must be in the range [0, 99] "
+                "SFLEARN_TESTS_GLOBAL_RANDOM_SEED must be in the range [0, 99] "
                 f"(or 'any' or 'all'), got: {random_seed_var}"
             )
     config.option.random_seeds = random_seeds
@@ -60,10 +60,10 @@ def pytest_configure(config):
             All tests that use this fixture accept the contract that they should
             deterministically pass for any seed value from 0 to 99 included.
 
-            See the documentation for the SKLEARN_TESTS_GLOBAL_RANDOM_SEED
+            See the documentation for the SFLEARN_TESTS_GLOBAL_RANDOM_SEED
             variable for insrtuctions on how to use this fixture.
 
-            https://scikit-learn.org/dev/computing/parallelism.html#sklearn-tests-global-random-seed
+            https://scikit-learn.org/dev/computing/parallelism.html#sflearn-tests-global-random-seed
             """
             yield request.param
 
@@ -71,11 +71,11 @@ def pytest_configure(config):
 
 
 def pytest_report_header(config):
-    random_seed_var = environ.get("SKLEARN_TESTS_GLOBAL_RANDOM_SEED")
+    random_seed_var = environ.get("SFLEARN_TESTS_GLOBAL_RANDOM_SEED")
     if random_seed_var == "any":
         return [
             "To reproduce this test run, set the following environment variable:",
-            f'    SKLEARN_TESTS_GLOBAL_RANDOM_SEED="{config.option.random_seeds[0]}"',
+            f'    SFLEARN_TESTS_GLOBAL_RANDOM_SEED="{config.option.random_seeds[0]}"',
             "See: https://scikit-learn.org/dev/computing/parallelism.html"
-            "#sklearn-tests-global-random-seed",
+            "#sflearn-tests-global-random-seed",
         ]

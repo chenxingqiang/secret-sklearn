@@ -9,10 +9,10 @@ The module structure is the following:
   for all the estimators in the module. Regression and classification
   only differ from each other in the loss function that is optimized.
 
-- :class:`~sklearn.ensemble.AdaBoostClassifier` implements adaptive boosting
+- :class:`~sflearn.ensemble.AdaBoostClassifier` implements adaptive boosting
   (AdaBoost-SAMME) for classification problems.
 
-- :class:`~sklearn.ensemble.AdaBoostRegressor` implements adaptive boosting
+- :class:`~sflearn.ensemble.AdaBoostRegressor` implements adaptive boosting
   (AdaBoost.R2) for regression problems.
 """
 
@@ -276,7 +276,7 @@ class BaseWeightBoosting(BaseEnsemble, metaclass=ABCMeta):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
         Returns
         -------
@@ -348,7 +348,7 @@ class AdaBoostClassifier(ClassifierMixin, BaseWeightBoosting):
         The base estimator from which the boosted ensemble is built.
         Support for sample weighting is required, as well as proper
         ``classes_`` and ``n_classes_`` attributes. If ``None``, then
-        the base estimator is :class:`~sklearn.tree.DecisionTreeClassifier`
+        the base estimator is :class:`~sflearn.tree.DecisionTreeClassifier`
         initialized with `max_depth=1`.
 
         .. versionadded:: 1.2
@@ -383,7 +383,7 @@ class AdaBoostClassifier(ClassifierMixin, BaseWeightBoosting):
         The base estimator from which the boosted ensemble is built.
         Support for sample weighting is required, as well as proper
         ``classes_`` and ``n_classes_`` attributes. If ``None``, then
-        the base estimator is :class:`~sklearn.tree.DecisionTreeClassifier`
+        the base estimator is :class:`~sflearn.tree.DecisionTreeClassifier`
         initialized with `max_depth=1`.
 
         .. deprecated:: 1.2
@@ -427,7 +427,7 @@ class AdaBoostClassifier(ClassifierMixin, BaseWeightBoosting):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_features_in_ : int
         Number of features seen during :term:`fit`.
@@ -453,7 +453,7 @@ class AdaBoostClassifier(ClassifierMixin, BaseWeightBoosting):
         classification is a special case where only a single regression tree is
         induced.
 
-    sklearn.tree.DecisionTreeClassifier : A non-parametric supervised learning
+    sflearn.tree.DecisionTreeClassifier : A non-parametric supervised learning
         method used for classification.
         Creates a model that predicts the value of a target variable by
         learning simple decision rules inferred from the data features.
@@ -467,8 +467,8 @@ class AdaBoostClassifier(ClassifierMixin, BaseWeightBoosting):
 
     Examples
     --------
-    >>> from sklearn.ensemble import AdaBoostClassifier
-    >>> from sklearn.datasets import make_classification
+    >>> from sflearn.ensemble import AdaBoostClassifier
+    >>> from sflearn.datasets import make_classification
     >>> X, y = make_classification(n_samples=1000, n_features=4,
     ...                            n_informative=2, n_redundant=0,
     ...                            random_state=0, shuffle=False)
@@ -951,7 +951,7 @@ class AdaBoostRegressor(RegressorMixin, BaseWeightBoosting):
     estimator : object, default=None
         The base estimator from which the boosted ensemble is built.
         If ``None``, then the base estimator is
-        :class:`~sklearn.tree.DecisionTreeRegressor` initialized with
+        :class:`~sflearn.tree.DecisionTreeRegressor` initialized with
         `max_depth=3`.
 
         .. versionadded:: 1.2
@@ -984,7 +984,7 @@ class AdaBoostRegressor(RegressorMixin, BaseWeightBoosting):
     base_estimator : object, default=None
         The base estimator from which the boosted ensemble is built.
         If ``None``, then the base estimator is
-        :class:`~sklearn.tree.DecisionTreeRegressor` initialized with
+        :class:`~sflearn.tree.DecisionTreeRegressor` initialized with
         `max_depth=3`.
 
         .. deprecated:: 1.2
@@ -1021,7 +1021,7 @@ class AdaBoostRegressor(RegressorMixin, BaseWeightBoosting):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_features_in_ : int
         Number of features seen during :term:`fit`.
@@ -1038,7 +1038,7 @@ class AdaBoostRegressor(RegressorMixin, BaseWeightBoosting):
     --------
     AdaBoostClassifier : An AdaBoost classifier.
     GradientBoostingRegressor : Gradient Boosting Classification Tree.
-    sklearn.tree.DecisionTreeRegressor : A decision tree regressor.
+    sflearn.tree.DecisionTreeRegressor : A decision tree regressor.
 
     References
     ----------
@@ -1049,8 +1049,8 @@ class AdaBoostRegressor(RegressorMixin, BaseWeightBoosting):
 
     Examples
     --------
-    >>> from sklearn.ensemble import AdaBoostRegressor
-    >>> from sklearn.datasets import make_regression
+    >>> from sflearn.ensemble import AdaBoostRegressor
+    >>> from sflearn.datasets import make_regression
     >>> X, y = make_regression(n_features=4, n_informative=2,
     ...                        random_state=0, shuffle=False)
     >>> regr = AdaBoostRegressor(random_state=0, n_estimators=100)

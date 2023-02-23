@@ -20,12 +20,12 @@ dataset and is only used to illustrate the usage of FeatureUnion.
 #
 # License: BSD 3 clause
 
-from sklearn.pipeline import Pipeline, FeatureUnion
-from sklearn.model_selection import GridSearchCV
-from sklearn.svm import SVC
-from sklearn.datasets import load_iris
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import SelectKBest
+from sflearn.pipeline import Pipeline, FeatureUnion
+from sflearn.model_selection import GridSearchCV
+from sflearn.svm import SVC
+from sflearn.datasets import load_iris
+from sflearn.decomposition import PCA
+from sflearn.feature_selection import SelectKBest
 
 iris = load_iris()
 

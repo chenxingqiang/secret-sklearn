@@ -9,15 +9,15 @@ import pytest
 
 from scipy import sparse
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_allclose
 
-from sklearn.cluster import MeanShift
-from sklearn.cluster import mean_shift
-from sklearn.cluster import estimate_bandwidth
-from sklearn.cluster import get_bin_seeds
-from sklearn.datasets import make_blobs
-from sklearn.metrics import v_measure_score
+from sflearn.cluster import MeanShift
+from sflearn.cluster import mean_shift
+from sflearn.cluster import estimate_bandwidth
+from sflearn.cluster import get_bin_seeds
+from sflearn.datasets import make_blobs
+from sflearn.metrics import v_measure_score
 
 
 n_clusters = 3

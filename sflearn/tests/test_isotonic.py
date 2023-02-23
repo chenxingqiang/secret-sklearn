@@ -5,21 +5,21 @@ import copy
 
 import pytest
 
-from sklearn.datasets import make_regression
-from sklearn.isotonic import (
+from sflearn.datasets import make_regression
+from sflearn.isotonic import (
     check_increasing,
     isotonic_regression,
     IsotonicRegression,
     _make_unique,
 )
 
-from sklearn.utils.validation import check_array
-from sklearn.utils._testing import (
+from sflearn.utils.validation import check_array
+from sflearn.utils._testing import (
     assert_allclose,
     assert_array_equal,
     assert_array_almost_equal,
 )
-from sklearn.utils import shuffle
+from sflearn.utils import shuffle
 
 from scipy.special import expit
 

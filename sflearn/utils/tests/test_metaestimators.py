@@ -4,8 +4,8 @@ import warnings
 
 import pickle
 
-from sklearn.utils.metaestimators import if_delegate_has_method
-from sklearn.utils.metaestimators import available_if
+from sflearn.utils.metaestimators import if_delegate_has_method
+from sflearn.utils.metaestimators import available_if
 
 
 class Prefix:

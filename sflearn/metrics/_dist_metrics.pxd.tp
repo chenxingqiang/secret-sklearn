@@ -16,7 +16,7 @@ implementation_specific_values = [
     # The metric mapping is adapted accordingly to route to the correct
     # implementations.
     #
-    # We also use 64bit types as defined in `sklearn.utils._typedefs`
+    # We also use 64bit types as defined in `sflearn.utils._typedefs`
     # to maintain backward compatibility at the symbol level for extra
     # safety.
     #

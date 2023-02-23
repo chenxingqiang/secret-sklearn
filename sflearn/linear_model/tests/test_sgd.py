@@ -6,24 +6,24 @@ import numpy as np
 import scipy.sparse as sp
 from unittest.mock import Mock
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import ignore_warnings
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import ignore_warnings
 
-from sklearn import linear_model, datasets, metrics
-from sklearn.base import clone, is_classifier
-from sklearn.svm import OneClassSVM
-from sklearn.preprocessing import LabelEncoder, scale, MinMaxScaler
-from sklearn.preprocessing import StandardScaler
-from sklearn.kernel_approximation import Nystroem
-from sklearn.pipeline import make_pipeline
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.model_selection import StratifiedShuffleSplit, ShuffleSplit
-from sklearn.linear_model import _sgd_fast as sgd_fast
-from sklearn.linear_model import _stochastic_gradient
-from sklearn.model_selection import RandomizedSearchCV
+from sflearn import linear_model, datasets, metrics
+from sflearn.base import clone, is_classifier
+from sflearn.svm import OneClassSVM
+from sflearn.preprocessing import LabelEncoder, scale, MinMaxScaler
+from sflearn.preprocessing import StandardScaler
+from sflearn.kernel_approximation import Nystroem
+from sflearn.pipeline import make_pipeline
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.model_selection import StratifiedShuffleSplit, ShuffleSplit
+from sflearn.linear_model import _sgd_fast as sgd_fast
+from sflearn.linear_model import _stochastic_gradient
+from sflearn.model_selection import RandomizedSearchCV
 
 
 def _update_kwargs(kwargs):

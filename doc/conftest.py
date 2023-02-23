@@ -4,13 +4,13 @@ from os.path import join
 from os import environ
 import warnings
 
-from sklearn.utils import IS_PYPY
-from sklearn.utils._testing import SkipTest
-from sklearn.utils._testing import check_skip_network
-from sklearn.utils.fixes import parse_version
-from sklearn.datasets import get_data_home
-from sklearn.datasets._base import _pkl_filepath
-from sklearn.datasets._twenty_newsgroups import CACHE_NAME
+from sflearn.utils import IS_PYPY
+from sflearn.utils._testing import SkipTest
+from sflearn.utils._testing import check_skip_network
+from sflearn.utils.fixes import parse_version
+from sflearn.datasets import get_data_home
+from sflearn.datasets._base import _pkl_filepath
+from sflearn.datasets._twenty_newsgroups import CACHE_NAME
 
 
 def setup_labeled_faces():
@@ -48,12 +48,12 @@ def setup_loading_other_datasets():
     except ImportError:
         raise SkipTest("Skipping loading_other_datasets.rst, pandas not installed")
 
-    # checks SKLEARN_SKIP_NETWORK_TESTS to see if test should run
-    run_network_tests = environ.get("SKLEARN_SKIP_NETWORK_TESTS", "1") == "0"
+    # checks SFLEARN_SKIP_NETWORK_TESTS to see if test should run
+    run_network_tests = environ.get("SFLEARN_SKIP_NETWORK_TESTS", "1") == "0"
     if not run_network_tests:
         raise SkipTest(
             "Skipping loading_other_datasets.rst, tests can be "
-            "enabled by setting SKLEARN_SKIP_NETWORK_TESTS=0"
+            "enabled by setting SFLEARN_SKIP_NETWORK_TESTS=0"
         )
 
 

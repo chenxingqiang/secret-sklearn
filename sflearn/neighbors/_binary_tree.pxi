@@ -236,7 +236,7 @@ metric : str or DistanceMetric object, default='minkowski'
     {binary_tree}.valid_metrics gives a list of the metrics which are valid for
     {BinaryTree}. See the documentation of `scipy.spatial.distance
     <https://docs.scipy.org/doc/scipy/reference/spatial.distance.html>`_ and the
-    metrics listed in :class:`~sklearn.metrics.pairwise.distance_metrics` for
+    metrics listed in :class:`~sflearn.metrics.pairwise.distance_metrics` for
     more information.
 
 Additional keywords are passed to the distance metric class.
@@ -253,7 +253,7 @@ Examples
 Query for k-nearest neighbors
 
     >>> import numpy as np
-    >>> from sklearn.neighbors import {BinaryTree}
+    >>> from sflearn.neighbors import {BinaryTree}
     >>> rng = np.random.RandomState(0)
     >>> X = rng.random_sample((10, 3))  # 10 points in 3 dimensions
     >>> tree = {BinaryTree}(X, leaf_size=2)              # doctest: +SKIP
@@ -761,7 +761,7 @@ def newObj(obj):
 
 ######################################################################
 # define the reverse mapping of VALID_METRICS
-from sklearn.metrics._dist_metrics import get_valid_metric_ids
+from sflearn.metrics._dist_metrics import get_valid_metric_ids
 VALID_METRIC_IDS = get_valid_metric_ids(VALID_METRICS)
 
 

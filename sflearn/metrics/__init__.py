@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.metrics` module includes score functions, performance metrics
+The :mod:`sflearn.metrics` module includes score functions, performance metrics
 and pairwise metrics and distance computations.
 """
 

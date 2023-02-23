@@ -5,7 +5,7 @@ Effect of transforming the targets in regression model
 ======================================================
 
 In this example, we give an overview of
-:class:`~sklearn.compose.TransformedTargetRegressor`. We use two examples
+:class:`~sflearn.compose.TransformedTargetRegressor`. We use two examples
 to illustrate the benefit of transforming the targets before learning a linear
 regression model. The first example uses synthetic data while the second
 example is based on the Ames housing data set.
@@ -33,7 +33,7 @@ print(__doc__)
 # (`np.expm1`) will be used to transform the targets before training a linear
 # regression model and using it for prediction.
 import numpy as np
-from sklearn.datasets import make_regression
+from sflearn.datasets import make_regression
 
 X, y = make_regression(n_samples=10_000, noise=100, random_state=0)
 y = np.expm1((y + abs(y.min())) / 200)
@@ -43,7 +43,7 @@ y_trans = np.log1p(y)
 # Below we plot the probability density functions of the target
 # before and after applying the logarithmic functions.
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+from sflearn.model_selection import train_test_split
 
 f, (ax0, ax1) = plt.subplots(1, 2)
 
@@ -69,7 +69,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 # prediction. Subsequently, a logarithmic function is used to linearize the
 # targets, allowing better prediction even with a similar linear model as
 # reported by the median absolute error (MedAE).
-from sklearn.metrics import median_absolute_error, r2_score
+from sflearn.metrics import median_absolute_error, r2_score
 
 
 def compute_score(y_true, y_pred):
@@ -80,9 +80,9 @@ def compute_score(y_true, y_pred):
 
 
 # %%
-from sklearn.compose import TransformedTargetRegressor
-from sklearn.linear_model import RidgeCV
-from sklearn.metrics import PredictionErrorDisplay
+from sflearn.compose import TransformedTargetRegressor
+from sflearn.linear_model import RidgeCV
+from sflearn.metrics import PredictionErrorDisplay
 
 f, (ax0, ax1) = plt.subplots(1, 2, sharey=True)
 
@@ -127,8 +127,8 @@ plt.tight_layout()
 # In a similar manner, the Ames housing data set is used to show the impact
 # of transforming the targets before learning a model. In this example, the
 # target to be predicted is the selling price of each house.
-from sklearn.datasets import fetch_openml
-from sklearn.preprocessing import quantile_transform
+from sflearn.datasets import fetch_openml
+from sflearn.preprocessing import quantile_transform
 
 ames = fetch_openml(name="house_prices", as_frame=True, parser="pandas")
 # Keep only numeric columns
@@ -142,9 +142,9 @@ y_trans = quantile_transform(
 ).squeeze()
 
 # %%
-# A :class:`~sklearn.preprocessing.QuantileTransformer` is used to normalize
+# A :class:`~sflearn.preprocessing.QuantileTransformer` is used to normalize
 # the target distribution before applying a
-# :class:`~sklearn.linear_model.RidgeCV` model.
+# :class:`~sflearn.linear_model.RidgeCV` model.
 f, (ax0, ax1) = plt.subplots(1, 2)
 
 ax0.hist(y, bins=100, density=True)
@@ -171,7 +171,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
 # shape due to residual values that vary depending on the value of predicted
 # target. With target transformation, the shape is more linear indicating
 # better model fit.
-from sklearn.preprocessing import QuantileTransformer
+from sflearn.preprocessing import QuantileTransformer
 
 f, (ax0, ax1) = plt.subplots(2, 2, sharey="row", figsize=(6.5, 8))
 

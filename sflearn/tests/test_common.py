@@ -1,5 +1,5 @@
 """
-General tests for all estimators in sklearn.
+General tests for all estimators in sflearn.
 """
 
 # Authors: Andreas Mueller <amueller@ais.uni-bonn.de>
@@ -18,55 +18,55 @@ from functools import partial
 import pytest
 import numpy as np
 
-from sklearn.cluster import (
+from sflearn.cluster import (
     AffinityPropagation,
     Birch,
     MeanShift,
     OPTICS,
     SpectralClustering,
 )
-from sklearn.datasets import make_blobs
-from sklearn.manifold import Isomap, TSNE, LocallyLinearEmbedding
-from sklearn.neighbors import (
+from sflearn.datasets import make_blobs
+from sflearn.manifold import Isomap, TSNE, LocallyLinearEmbedding
+from sflearn.neighbors import (
     LocalOutlierFactor,
     KNeighborsClassifier,
     KNeighborsRegressor,
     RadiusNeighborsClassifier,
     RadiusNeighborsRegressor,
 )
-from sklearn.preprocessing import FunctionTransformer
-from sklearn.semi_supervised import LabelPropagation, LabelSpreading
+from sflearn.preprocessing import FunctionTransformer
+from sflearn.semi_supervised import LabelPropagation, LabelSpreading
 
-from sklearn.utils import all_estimators
-from sklearn.utils._testing import ignore_warnings
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.exceptions import FitFailedWarning
-from sklearn.utils.estimator_checks import check_estimator
+from sflearn.utils import all_estimators
+from sflearn.utils._testing import ignore_warnings
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.exceptions import FitFailedWarning
+from sflearn.utils.estimator_checks import check_estimator
 
-import sklearn
+import sflearn
 
 # make it possible to discover experimental estimators when calling `all_estimators`
-from sklearn.experimental import enable_iterative_imputer  # noqa
-from sklearn.experimental import enable_halving_search_cv  # noqa
+from sflearn.experimental import enable_iterative_imputer  # noqa
+from sflearn.experimental import enable_halving_search_cv  # noqa
 
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, OneHotEncoder
-from sklearn.linear_model._base import LinearClassifierMixin
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import Ridge
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.model_selection import HalvingGridSearchCV
-from sklearn.model_selection import HalvingRandomSearchCV
-from sklearn.pipeline import make_pipeline
+from sflearn.decomposition import PCA
+from sflearn.preprocessing import StandardScaler, MinMaxScaler, OneHotEncoder
+from sflearn.linear_model._base import LinearClassifierMixin
+from sflearn.linear_model import LogisticRegression
+from sflearn.linear_model import Ridge
+from sflearn.model_selection import GridSearchCV
+from sflearn.model_selection import RandomizedSearchCV
+from sflearn.model_selection import HalvingGridSearchCV
+from sflearn.model_selection import HalvingRandomSearchCV
+from sflearn.pipeline import make_pipeline
 
-from sklearn.utils import IS_PYPY
-from sklearn.utils._tags import _DEFAULT_TAGS, _safe_tags
-from sklearn.utils._testing import (
+from sflearn.utils import IS_PYPY
+from sflearn.utils._tags import _DEFAULT_TAGS, _safe_tags
+from sflearn.utils._testing import (
     SkipTest,
     set_random_state,
 )
-from sklearn.utils.estimator_checks import (
+from sflearn.utils.estimator_checks import (
     _construct_instance,
     _set_checking_parameters,
     _get_check_estimator_ids,
@@ -151,7 +151,7 @@ def test_configure():
     # is installed in editable mode by pip build isolation enabled.
     pytest.importorskip("Cython")
     cwd = os.getcwd()
-    setup_path = os.path.abspath(os.path.join(sklearn.__path__[0], ".."))
+    setup_path = os.path.abspath(os.path.join(sflearn.__path__[0], ".."))
     setup_filename = os.path.join(setup_path, "setup.py")
     if not os.path.exists(setup_filename):
         pytest.skip("setup.py not available")
@@ -197,10 +197,10 @@ def test_import_all_consistency():
     # Smoke test to check that any name in a __all__ list is actually defined
     # in the namespace of the module or package.
     pkgs = pkgutil.walk_packages(
-        path=sklearn.__path__, prefix="sklearn.", onerror=lambda _: None
+        path=sflearn.__path__, prefix="sflearn.", onerror=lambda _: None
     )
     submods = [modname for _, modname, _ in pkgs]
-    for modname in submods + ["sklearn"]:
+    for modname in submods + ["sflearn"]:
         if ".tests." in modname:
             continue
         if IS_PYPY and (
@@ -218,11 +218,11 @@ def test_import_all_consistency():
 def test_root_import_all_completeness():
     EXCEPTIONS = ("utils", "tests", "base", "setup", "conftest")
     for _, modname, _ in pkgutil.walk_packages(
-        path=sklearn.__path__, onerror=lambda _: None
+        path=sflearn.__path__, onerror=lambda _: None
     ):
         if "." in modname or modname.startswith("_") or modname in EXCEPTIONS:
             continue
-        assert modname in sklearn.__all__
+        assert modname in sflearn.__all__
 
 
 def test_all_tests_are_importable():
@@ -237,13 +237,13 @@ def test_all_tests_are_importable():
                                       """
     )
     resource_modules = {
-        "sklearn.datasets.data",
-        "sklearn.datasets.descr",
-        "sklearn.datasets.images",
+        "sflearn.datasets.data",
+        "sflearn.datasets.descr",
+        "sflearn.datasets.images",
     }
     lookup = {
         name: ispkg
-        for _, name, ispkg in pkgutil.walk_packages(sklearn.__path__, prefix="sklearn.")
+        for _, name, ispkg in pkgutil.walk_packages(sflearn.__path__, prefix="sflearn.")
     }
     missing_tests = [
         name

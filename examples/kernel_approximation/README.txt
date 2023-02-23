@@ -3,4 +3,4 @@
 Kernel Approximation
 --------------------
 
-Examples concerning the :mod:`sklearn.kernel_approximation` module.
+Examples concerning the :mod:`sflearn.kernel_approximation` module.

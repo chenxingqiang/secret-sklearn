@@ -4,7 +4,7 @@
 Release Highlights for scikit-learn 1.2
 =======================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sflearn
 
 We are pleased to announce the release of scikit-learn 1.2! Many bug fixes
 and improvements were added, as well as some new key features. We detail
@@ -31,9 +31,9 @@ or with conda::
 # (some examples) <https://youtu.be/5bCg8VfX2x8>`__.
 
 import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.preprocessing import StandardScaler, KBinsDiscretizer
-from sklearn.compose import ColumnTransformer
+from sflearn.datasets import load_iris
+from sflearn.preprocessing import StandardScaler, KBinsDiscretizer
+from sflearn.compose import ColumnTransformer
 
 X, y = load_iris(as_frame=True, return_X_y=True)
 sepal_cols = ["sepal length (cm)", "sepal width (cm)"]
@@ -58,8 +58,8 @@ X_out.sample(n=5, random_state=0)
 # with the `interaction_cst` parameter. For details, see the
 # :ref:`User Guide <interaction_cst_hgbt>`. In the following example, features are not
 # allowed to interact.
-from sklearn.datasets import load_diabetes
-from sklearn.ensemble import HistGradientBoostingRegressor
+from sflearn.datasets import load_diabetes
+from sflearn.ensemble import HistGradientBoostingRegressor
 
 X, y = load_diabetes(return_X_y=True, as_frame=True)
 
@@ -74,7 +74,7 @@ hist_no_interact.fit(X, y)
 # :class:`~metrics.PredictionErrorDisplay` provides a way to analyze regression
 # models in a qualitative manner.
 import matplotlib.pyplot as plt
-from sklearn.metrics import PredictionErrorDisplay
+from sflearn.metrics import PredictionErrorDisplay
 
 fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
 _ = PredictionErrorDisplay.from_estimator(
@@ -87,7 +87,7 @@ _ = PredictionErrorDisplay.from_estimator(
 # %%
 # :class:`~model_selection.LearningCurveDisplay` is now available to plot
 # results from :func:`~model_selection.learning_curve`.
-from sklearn.model_selection import LearningCurveDisplay
+from sflearn.model_selection import LearningCurveDisplay
 
 _ = LearningCurveDisplay.from_estimator(
     hist_no_interact, X, y, cv=5, n_jobs=2, train_sizes=np.linspace(0.1, 1, 5)
@@ -97,7 +97,7 @@ _ = LearningCurveDisplay.from_estimator(
 # :class:`~inspection.PartialDependenceDisplay` exposes a new parameter
 # `categorical_features` to display partial dependence for categorical features
 # using bar plots and heatmaps.
-from sklearn.datasets import fetch_openml
+from sflearn.datasets import fetch_openml
 
 X, y = fetch_openml(
     "titanic", version=1, as_frame=True, return_X_y=True, parser="pandas"
@@ -105,8 +105,8 @@ X, y = fetch_openml(
 X = X.select_dtypes(["number", "category"]).drop(columns=["body"])
 
 # %%
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.pipeline import make_pipeline
+from sflearn.preprocessing import OrdinalEncoder
+from sflearn.pipeline import make_pipeline
 
 categorical_features = ["pclass", "sex", "embarked"]
 model = make_pipeline(
@@ -118,7 +118,7 @@ model = make_pipeline(
 ).fit(X, y)
 
 # %%
-from sklearn.inspection import PartialDependenceDisplay
+from sflearn.inspection import PartialDependenceDisplay
 
 fig, ax = plt.subplots(figsize=(14, 4), constrained_layout=True)
 _ = PartialDependenceDisplay.from_estimator(

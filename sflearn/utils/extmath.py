@@ -109,7 +109,7 @@ def fast_logdet(A):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.utils.extmath import fast_logdet
+    >>> from sflearn.utils.extmath import fast_logdet
     >>> a = np.array([[5, 1], [2, 8]])
     >>> fast_logdet(a)
     3.6375861597263857
@@ -413,7 +413,7 @@ def randomized_svd(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.utils.extmath import randomized_svd
+    >>> from sflearn.utils.extmath import randomized_svd
     >>> a = np.array([[1, 2, 3, 5],
     ...               [3, 4, 5, 6],
     ...               [7, 8, 9, 10]])
@@ -661,7 +661,7 @@ def weighted_mode(a, w, *, axis=0):
 
     Examples
     --------
-    >>> from sklearn.utils.extmath import weighted_mode
+    >>> from sflearn.utils.extmath import weighted_mode
     >>> x = [4, 1, 4, 2, 4, 2]
     >>> weights = [1, 1, 1, 1, 1, 1]
     >>> weighted_mode(x, weights)
@@ -732,7 +732,7 @@ def cartesian(arrays, out=None):
 
     Examples
     --------
-    >>> from sklearn.utils.extmath import cartesian
+    >>> from sflearn.utils.extmath import cartesian
     >>> cartesian(([1, 2, 3], [4, 5], [6, 7]))
     array([[1, 4, 6],
            [1, 4, 7],
@@ -773,12 +773,12 @@ def svd_flip(u, v, u_based_decision=True):
     ----------
     u : ndarray
         Parameters u and v are the output of `linalg.svd` or
-        :func:`~sklearn.utils.extmath.randomized_svd`, with matching inner
+        :func:`~sflearn.utils.extmath.randomized_svd`, with matching inner
         dimensions so one can compute `np.dot(u * s, v)`.
 
     v : ndarray
         Parameters u and v are the output of `linalg.svd` or
-        :func:`~sklearn.utils.extmath.randomized_svd`, with matching inner
+        :func:`~sflearn.utils.extmath.randomized_svd`, with matching inner
         dimensions so one can compute `np.dot(u * s, v)`.
         The input v should really be called vt to be consistent with scipy's
         output.

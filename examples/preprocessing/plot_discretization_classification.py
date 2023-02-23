@@ -37,17 +37,17 @@ set.
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import make_moons, make_circles, make_classification
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import KBinsDiscretizer
-from sklearn.svm import SVC, LinearSVC
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.utils._testing import ignore_warnings
-from sklearn.exceptions import ConvergenceWarning
+from sflearn.model_selection import train_test_split
+from sflearn.preprocessing import StandardScaler
+from sflearn.datasets import make_moons, make_circles, make_classification
+from sflearn.linear_model import LogisticRegression
+from sflearn.model_selection import GridSearchCV
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import KBinsDiscretizer
+from sflearn.svm import SVC, LinearSVC
+from sflearn.ensemble import GradientBoostingClassifier
+from sflearn.utils._testing import ignore_warnings
+from sflearn.exceptions import ConvergenceWarning
 
 h = 0.02  # step size in the mesh
 

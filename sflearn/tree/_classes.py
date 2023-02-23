@@ -550,7 +550,7 @@ class BaseDecisionTree(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
 
         Returns
         -------
-        ccp_path : :class:`~sklearn.utils.Bunch`
+        ccp_path : :class:`~sflearn.utils.Bunch`
             Dictionary-like object, with the following attributes.
 
             ccp_alphas : ndarray
@@ -574,7 +574,7 @@ class BaseDecisionTree(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
         Returns
         -------
@@ -744,7 +744,7 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     max_features_ : int
         The inferred value of max_features.
@@ -770,7 +770,7 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
 
     tree_ : Tree instance
         The underlying Tree object. Please refer to
-        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sflearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
@@ -807,9 +807,9 @@ class DecisionTreeClassifier(ClassifierMixin, BaseDecisionTree):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn.model_selection import cross_val_score
-    >>> from sklearn.tree import DecisionTreeClassifier
+    >>> from sflearn.datasets import load_iris
+    >>> from sflearn.model_selection import cross_val_score
+    >>> from sflearn.tree import DecisionTreeClassifier
     >>> clf = DecisionTreeClassifier(random_state=0)
     >>> iris = load_iris()
     >>> cross_val_score(clf, iris.data, iris.target, cv=10)
@@ -1113,7 +1113,7 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     max_features_ : int
         The inferred value of max_features.
@@ -1134,7 +1134,7 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
 
     tree_ : Tree instance
         The underlying Tree object. Please refer to
-        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sflearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
@@ -1166,9 +1166,9 @@ class DecisionTreeRegressor(RegressorMixin, BaseDecisionTree):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_diabetes
-    >>> from sklearn.model_selection import cross_val_score
-    >>> from sklearn.tree import DecisionTreeRegressor
+    >>> from sflearn.datasets import load_diabetes
+    >>> from sflearn.model_selection import cross_val_score
+    >>> from sflearn.tree import DecisionTreeRegressor
     >>> X, y = load_diabetes(return_X_y=True)
     >>> regressor = DecisionTreeRegressor(random_state=0)
     >>> cross_val_score(regressor, X, y, cv=10)
@@ -1444,7 +1444,7 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_features_in_ : int
         Number of features seen during :term:`fit`.
@@ -1462,18 +1462,18 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
 
     tree_ : Tree instance
         The underlying Tree object. Please refer to
-        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sflearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
     See Also
     --------
     ExtraTreeRegressor : An extremely randomized tree regressor.
-    sklearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.
-    sklearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.
-    sklearn.ensemble.RandomForestClassifier : A random forest classifier.
-    sklearn.ensemble.RandomForestRegressor : A random forest regressor.
-    sklearn.ensemble.RandomTreesEmbedding : An ensemble of
+    sflearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.
+    sflearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.
+    sflearn.ensemble.RandomForestClassifier : A random forest classifier.
+    sflearn.ensemble.RandomForestRegressor : A random forest regressor.
+    sflearn.ensemble.RandomTreesEmbedding : An ensemble of
         totally random trees.
 
     Notes
@@ -1492,10 +1492,10 @@ class ExtraTreeClassifier(DecisionTreeClassifier):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.ensemble import BaggingClassifier
-    >>> from sklearn.tree import ExtraTreeClassifier
+    >>> from sflearn.datasets import load_iris
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.ensemble import BaggingClassifier
+    >>> from sflearn.tree import ExtraTreeClassifier
     >>> X, y = load_iris(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...    X, y, random_state=0)
@@ -1692,22 +1692,22 @@ class ExtraTreeRegressor(DecisionTreeRegressor):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     n_outputs_ : int
         The number of outputs when ``fit`` is performed.
 
     tree_ : Tree instance
         The underlying Tree object. Please refer to
-        ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and
+        ``help(sflearn.tree._tree.Tree)`` for attributes of Tree object and
         :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`
         for basic usage of these attributes.
 
     See Also
     --------
     ExtraTreeClassifier : An extremely randomized tree classifier.
-    sklearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.
-    sklearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.
+    sflearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.
+    sflearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.
 
     Notes
     -----
@@ -1725,10 +1725,10 @@ class ExtraTreeRegressor(DecisionTreeRegressor):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_diabetes
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.ensemble import BaggingRegressor
-    >>> from sklearn.tree import ExtraTreeRegressor
+    >>> from sflearn.datasets import load_diabetes
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.ensemble import BaggingRegressor
+    >>> from sflearn.tree import ExtraTreeRegressor
     >>> X, y = load_diabetes(return_X_y=True)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...     X, y, random_state=0)

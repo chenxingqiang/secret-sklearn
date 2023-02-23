@@ -3,15 +3,15 @@
 An example of K-Means++ initialization
 ===========================================================
 
-An example to show the output of the :func:`sklearn.cluster.kmeans_plusplus`
+An example to show the output of the :func:`sflearn.cluster.kmeans_plusplus`
 function for generating initial seeds for clustering.
 
 K-Means++ is used as the default initialization for :ref:`k_means`.
 
 """
 
-from sklearn.cluster import kmeans_plusplus
-from sklearn.datasets import make_blobs
+from sflearn.cluster import kmeans_plusplus
+from sflearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 
 # Generate sample data

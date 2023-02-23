@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.model_selection._validation` module includes classes and
+The :mod:`sflearn.model_selection._validation` module includes classes and
 functions to validate the model.
 """
 
@@ -215,16 +215,16 @@ def cross_validate(
     cross_val_predict : Get predictions from each split of cross-validation for
         diagnostic purposes.
 
-    sklearn.metrics.make_scorer : Make a scorer from a performance metric or
+    sflearn.metrics.make_scorer : Make a scorer from a performance metric or
         loss function.
 
     Examples
     --------
-    >>> from sklearn import datasets, linear_model
-    >>> from sklearn.model_selection import cross_validate
-    >>> from sklearn.metrics import make_scorer
-    >>> from sklearn.metrics import confusion_matrix
-    >>> from sklearn.svm import LinearSVC
+    >>> from sflearn import datasets, linear_model
+    >>> from sflearn.model_selection import cross_validate
+    >>> from sflearn.metrics import make_scorer
+    >>> from sflearn.metrics import confusion_matrix
+    >>> from sflearn.svm import LinearSVC
     >>> diabetes = datasets.load_diabetes()
     >>> X = diabetes.data[:150]
     >>> y = diabetes.target[:150]
@@ -495,13 +495,13 @@ def cross_val_score(
     cross_val_predict : Get predictions from each split of cross-validation for
         diagnostic purposes.
 
-    sklearn.metrics.make_scorer : Make a scorer from a performance metric or
+    sflearn.metrics.make_scorer : Make a scorer from a performance metric or
         loss function.
 
     Examples
     --------
-    >>> from sklearn import datasets, linear_model
-    >>> from sklearn.model_selection import cross_val_score
+    >>> from sflearn import datasets, linear_model
+    >>> from sflearn.model_selection import cross_val_score
     >>> diabetes = datasets.load_diabetes()
     >>> X = diabetes.data[:150]
     >>> y = diabetes.target[:150]
@@ -946,8 +946,8 @@ def cross_val_predict(
 
     Examples
     --------
-    >>> from sklearn import datasets, linear_model
-    >>> from sklearn.model_selection import cross_val_predict
+    >>> from sflearn import datasets, linear_model
+    >>> from sflearn.model_selection import cross_val_predict
     >>> diabetes = datasets.load_diabetes()
     >>> X = diabetes.data[:150]
     >>> y = diabetes.target[:150]
@@ -1124,7 +1124,7 @@ def _enforce_prediction_order(classes, predictions, n_classes, method):
             if predictions.ndim == 2 and predictions.shape[1] != len(classes):
                 # This handles the case when the shape of predictions
                 # does not match the number of classes used to train
-                # it with. This case is found when sklearn.svm.SVC is
+                # it with. This case is found when sflearn.svm.SVC is
                 # set to `decision_function_shape='ovo'`.
                 raise ValueError(
                     "Output shape {} of {} does not match "
@@ -1516,9 +1516,9 @@ def learning_curve(
 
     Examples
     --------
-    >>> from sklearn.datasets import make_classification
-    >>> from sklearn.tree import DecisionTreeClassifier
-    >>> from sklearn.model_selection import learning_curve
+    >>> from sflearn.datasets import make_classification
+    >>> from sflearn.tree import DecisionTreeClassifier
+    >>> from sflearn.model_selection import learning_curve
     >>> X, y = make_classification(n_samples=100, n_features=10, random_state=42)
     >>> tree = DecisionTreeClassifier(max_depth=4, random_state=42)
     >>> train_size_abs, train_scores, test_scores = learning_curve(

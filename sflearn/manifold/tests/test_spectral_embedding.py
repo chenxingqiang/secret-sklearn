@@ -8,19 +8,19 @@ from scipy.sparse import csgraph
 from scipy.linalg import eigh
 from scipy.sparse.linalg import eigsh
 
-from sklearn.manifold import SpectralEmbedding, _spectral_embedding
-from sklearn.manifold._spectral_embedding import _graph_is_connected
-from sklearn.manifold._spectral_embedding import _graph_connected_component
-from sklearn.manifold import spectral_embedding
-from sklearn.metrics.pairwise import rbf_kernel
-from sklearn.metrics import normalized_mutual_info_score, pairwise_distances
-from sklearn.neighbors import NearestNeighbors
-from sklearn.cluster import KMeans
-from sklearn.datasets import make_blobs
-from sklearn.utils.extmath import _deterministic_vector_sign_flip
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils.fixes import lobpcg
+from sflearn.manifold import SpectralEmbedding, _spectral_embedding
+from sflearn.manifold._spectral_embedding import _graph_is_connected
+from sflearn.manifold._spectral_embedding import _graph_connected_component
+from sflearn.manifold import spectral_embedding
+from sflearn.metrics.pairwise import rbf_kernel
+from sflearn.metrics import normalized_mutual_info_score, pairwise_distances
+from sflearn.neighbors import NearestNeighbors
+from sflearn.cluster import KMeans
+from sflearn.datasets import make_blobs
+from sflearn.utils.extmath import _deterministic_vector_sign_flip
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils.fixes import lobpcg
 
 try:
     from pyamg import smoothed_aggregation_solver  # noqa

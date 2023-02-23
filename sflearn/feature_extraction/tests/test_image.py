@@ -7,8 +7,8 @@ from scipy import ndimage
 from scipy.sparse.csgraph import connected_components
 import pytest
 
-from sklearn.utils.fixes import sp_version, parse_version
-from sklearn.feature_extraction.image import (
+from sflearn.utils.fixes import sp_version, parse_version
+from sflearn.feature_extraction.image import (
     img_to_graph,
     grid_to_graph,
     extract_patches_2d,

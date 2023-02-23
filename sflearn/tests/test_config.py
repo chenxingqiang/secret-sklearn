@@ -3,8 +3,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 import pytest
 
-from sklearn import get_config, set_config, config_context
-from sklearn.utils.parallel import delayed, Parallel
+from sflearn import get_config, set_config, config_context
+from sflearn.utils.parallel import delayed, Parallel
 
 
 def test_config_context():

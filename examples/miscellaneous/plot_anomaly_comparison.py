@@ -14,7 +14,7 @@ Decision boundaries between inliers and outliers are displayed in black
 except for Local Outlier Factor (LOF) as it has no predict method to be applied
 on new data when it is used for outlier detection.
 
-The :class:`~sklearn.svm.OneClassSVM` is known to be sensitive to outliers and
+The :class:`~sflearn.svm.OneClassSVM` is known to be sensitive to outliers and
 thus does not perform very well for outlier detection. This estimator is best
 suited for novelty detection when the training set is not contaminated by
 outliers. That said, outlier detection in high-dimension, or without any
@@ -22,24 +22,24 @@ assumptions on the distribution of the inlying data is very challenging, and a
 One-class SVM might give useful results in these situations depending on the
 value of its hyperparameters.
 
-The :class:`sklearn.linear_model.SGDOneClassSVM` is an implementation of the
+The :class:`sflearn.linear_model.SGDOneClassSVM` is an implementation of the
 One-Class SVM based on stochastic gradient descent (SGD). Combined with kernel
 approximation, this estimator can be used to approximate the solution
-of a kernelized :class:`sklearn.svm.OneClassSVM`. We note that, although not
+of a kernelized :class:`sflearn.svm.OneClassSVM`. We note that, although not
 identical, the decision boundaries of the
-:class:`sklearn.linear_model.SGDOneClassSVM` and the ones of
-:class:`sklearn.svm.OneClassSVM` are very similar. The main advantage of using
-:class:`sklearn.linear_model.SGDOneClassSVM` is that it scales linearly with
+:class:`sflearn.linear_model.SGDOneClassSVM` and the ones of
+:class:`sflearn.svm.OneClassSVM` are very similar. The main advantage of using
+:class:`sflearn.linear_model.SGDOneClassSVM` is that it scales linearly with
 the number of samples.
 
-:class:`sklearn.covariance.EllipticEnvelope` assumes the data is Gaussian and
+:class:`sflearn.covariance.EllipticEnvelope` assumes the data is Gaussian and
 learns an ellipse. It thus degrades when the data is not unimodal. Notice
 however that this estimator is robust to outliers.
 
-:class:`~sklearn.ensemble.IsolationForest` and
-:class:`~sklearn.neighbors.LocalOutlierFactor` seem to perform reasonably well
+:class:`~sflearn.ensemble.IsolationForest` and
+:class:`~sflearn.neighbors.LocalOutlierFactor` seem to perform reasonably well
 for multi-modal data sets. The advantage of
-:class:`~sklearn.neighbors.LocalOutlierFactor` over the other estimators is
+:class:`~sflearn.neighbors.LocalOutlierFactor` over the other estimators is
 shown for the third data set, where the two modes have different densities.
 This advantage is explained by the local aspect of LOF, meaning that it only
 compares the score of abnormality of one sample with the scores of its
@@ -47,7 +47,7 @@ neighbors.
 
 Finally, for the last data set, it is hard to say that one sample is more
 abnormal than another sample as they are uniformly distributed in a
-hypercube. Except for the :class:`~sklearn.svm.OneClassSVM` which overfits a
+hypercube. Except for the :class:`~sflearn.svm.OneClassSVM` which overfits a
 little, all estimators present decent solutions for this situation. In such a
 case, it would be wise to look more closely at the scores of abnormality of
 the samples as a good estimator should assign similar scores to all the
@@ -72,14 +72,14 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
-from sklearn import svm
-from sklearn.datasets import make_moons, make_blobs
-from sklearn.covariance import EllipticEnvelope
-from sklearn.ensemble import IsolationForest
-from sklearn.neighbors import LocalOutlierFactor
-from sklearn.linear_model import SGDOneClassSVM
-from sklearn.kernel_approximation import Nystroem
-from sklearn.pipeline import make_pipeline
+from sflearn import svm
+from sflearn.datasets import make_moons, make_blobs
+from sflearn.covariance import EllipticEnvelope
+from sflearn.ensemble import IsolationForest
+from sflearn.neighbors import LocalOutlierFactor
+from sflearn.linear_model import SGDOneClassSVM
+from sflearn.kernel_approximation import Nystroem
+from sflearn.pipeline import make_pipeline
 
 matplotlib.rcParams["contour.negative_linestyle"] = "solid"
 

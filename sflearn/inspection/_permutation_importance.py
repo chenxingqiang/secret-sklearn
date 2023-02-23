@@ -82,7 +82,7 @@ def _create_importances_bunch(baseline_score, permuted_score):
 
     Returns
     -------
-    importances : :class:`~sklearn.utils.Bunch`
+    importances : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
         importances_mean : ndarray, shape (n_features, )
             Mean of feature importance over `n_repeats`.
@@ -195,7 +195,7 @@ def permutation_importance(
 
     Returns
     -------
-    result : :class:`~sklearn.utils.Bunch` or dict of such instances
+    result : :class:`~sflearn.utils.Bunch` or dict of such instances
         Dictionary-like object, with the following attributes.
 
         importances_mean : ndarray of shape (n_features, )
@@ -216,8 +216,8 @@ def permutation_importance(
 
     Examples
     --------
-    >>> from sklearn.linear_model import LogisticRegression
-    >>> from sklearn.inspection import permutation_importance
+    >>> from sflearn.linear_model import LogisticRegression
+    >>> from sflearn.inspection import permutation_importance
     >>> X = [[1, 9, 9],[1, 9, 9],[1, 9, 9],
     ...      [0, 9, 9],[0, 9, 9],[0, 9, 9]]
     >>> y = [1, 1, 1, 0, 0, 0]

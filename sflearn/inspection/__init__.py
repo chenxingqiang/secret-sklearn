@@ -1,4 +1,4 @@
-"""The :mod:`sklearn.inspection` module includes tools for model inspection."""
+"""The :mod:`sflearn.inspection` module includes tools for model inspection."""
 
 
 from ._permutation_importance import permutation_importance

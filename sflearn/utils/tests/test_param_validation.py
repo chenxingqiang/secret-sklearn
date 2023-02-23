@@ -4,31 +4,31 @@ import numpy as np
 from scipy.sparse import csr_matrix
 import pytest
 
-from sklearn.base import BaseEstimator
-from sklearn.model_selection import LeaveOneOut
-from sklearn.utils import deprecated
-from sklearn.utils._param_validation import Hidden
-from sklearn.utils._param_validation import Interval
-from sklearn.utils._param_validation import Options
-from sklearn.utils._param_validation import StrOptions
-from sklearn.utils._param_validation import _ArrayLikes
-from sklearn.utils._param_validation import _Booleans
-from sklearn.utils._param_validation import _Callables
-from sklearn.utils._param_validation import _CVObjects
-from sklearn.utils._param_validation import _InstancesOf
-from sklearn.utils._param_validation import _MissingValues
-from sklearn.utils._param_validation import _PandasNAConstraint
-from sklearn.utils._param_validation import _IterablesNotString
-from sklearn.utils._param_validation import _NoneConstraint
-from sklearn.utils._param_validation import _RandomStates
-from sklearn.utils._param_validation import _SparseMatrices
-from sklearn.utils._param_validation import _VerboseHelper
-from sklearn.utils._param_validation import HasMethods
-from sklearn.utils._param_validation import make_constraint
-from sklearn.utils._param_validation import generate_invalid_param_val
-from sklearn.utils._param_validation import generate_valid_param
-from sklearn.utils._param_validation import validate_params
-from sklearn.utils._param_validation import InvalidParameterError
+from sflearn.base import BaseEstimator
+from sflearn.model_selection import LeaveOneOut
+from sflearn.utils import deprecated
+from sflearn.utils._param_validation import Hidden
+from sflearn.utils._param_validation import Interval
+from sflearn.utils._param_validation import Options
+from sflearn.utils._param_validation import StrOptions
+from sflearn.utils._param_validation import _ArrayLikes
+from sflearn.utils._param_validation import _Booleans
+from sflearn.utils._param_validation import _Callables
+from sflearn.utils._param_validation import _CVObjects
+from sflearn.utils._param_validation import _InstancesOf
+from sflearn.utils._param_validation import _MissingValues
+from sflearn.utils._param_validation import _PandasNAConstraint
+from sflearn.utils._param_validation import _IterablesNotString
+from sflearn.utils._param_validation import _NoneConstraint
+from sflearn.utils._param_validation import _RandomStates
+from sflearn.utils._param_validation import _SparseMatrices
+from sflearn.utils._param_validation import _VerboseHelper
+from sflearn.utils._param_validation import HasMethods
+from sflearn.utils._param_validation import make_constraint
+from sflearn.utils._param_validation import generate_invalid_param_val
+from sflearn.utils._param_validation import generate_valid_param
+from sflearn.utils._param_validation import validate_params
+from sflearn.utils._param_validation import InvalidParameterError
 
 
 # Some helpers for the tests

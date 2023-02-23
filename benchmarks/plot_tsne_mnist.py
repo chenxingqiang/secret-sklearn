@@ -19,7 +19,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--embedding",
         type=str,
-        default=op.join(LOG_DIR, "mnist_sklearn_TSNE_10000.npy"),
+        default=op.join(LOG_DIR, "mnist_sflearn_TSNE_10000.npy"),
         help="2D float numpy array for embedded data",
     )
     args = parser.parse_args()

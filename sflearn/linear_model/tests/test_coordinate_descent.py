@@ -9,27 +9,27 @@ from scipy import interpolate, sparse
 from copy import deepcopy
 import joblib
 
-from sklearn.base import is_classifier
-from sklearn.base import clone
-from sklearn.datasets import load_diabetes
-from sklearn.datasets import make_regression
-from sklearn.model_selection import (
+from sflearn.base import is_classifier
+from sflearn.base import clone
+from sflearn.datasets import load_diabetes
+from sflearn.datasets import make_regression
+from sflearn.model_selection import (
     GridSearchCV,
     LeaveOneGroupOut,
     train_test_split,
 )
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import ignore_warnings
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import StandardScaler
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import ignore_warnings
 
-from sklearn.utils._testing import TempMemmap
+from sflearn.utils._testing import TempMemmap
 
-from sklearn.linear_model import (
+from sflearn.linear_model import (
     ElasticNet,
     ElasticNetCV,
     enet_path,
@@ -53,8 +53,8 @@ from sklearn.linear_model import (
     RidgeCV,
 )
 
-from sklearn.linear_model._coordinate_descent import _set_order
-from sklearn.utils import check_array
+from sflearn.linear_model._coordinate_descent import _set_order
+from sflearn.utils import check_array
 
 
 @pytest.mark.parametrize("order", ["C", "F"])
@@ -274,8 +274,8 @@ def test_lasso_cv():
 
 
 def test_lasso_cv_with_some_model_selection():
-    from sklearn.model_selection import ShuffleSplit
-    from sklearn import datasets
+    from sflearn.model_selection import ShuffleSplit
+    from sflearn import datasets
 
     diabetes = datasets.load_diabetes()
     X = diabetes.data
@@ -1251,7 +1251,7 @@ def test_lassoCV_does_not_set_precompute(monkeypatch, precompute, inner_precompu
             calls += 1
             assert self.precompute == inner_precompute
 
-    monkeypatch.setattr("sklearn.linear_model._coordinate_descent.Lasso", LassoMock)
+    monkeypatch.setattr("sflearn.linear_model._coordinate_descent.Lasso", LassoMock)
     clf = LassoCV(precompute=precompute)
     clf.fit(X, y)
     assert calls > 0

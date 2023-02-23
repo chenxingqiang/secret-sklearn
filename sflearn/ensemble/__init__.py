@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.ensemble` module includes ensemble-based methods for
+The :mod:`sflearn.ensemble` module includes ensemble-based methods for
 classification, regression and anomaly detection.
 """
 from ._base import BaseEnsemble

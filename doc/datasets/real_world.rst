@@ -7,7 +7,7 @@
 Real world datasets
 ===================
 
-.. currentmodule:: sklearn.datasets
+.. currentmodule:: sflearn.datasets
 
 scikit-learn provides tools to load larger datasets, downloading them if
 necessary.
@@ -26,16 +26,16 @@ They can be loaded using the following functions:
    fetch_kddcup99
    fetch_california_housing
 
-.. include:: ../../sklearn/datasets/descr/olivetti_faces.rst
+.. include:: ../../sflearn/datasets/descr/olivetti_faces.rst
 
-.. include:: ../../sklearn/datasets/descr/twenty_newsgroups.rst
+.. include:: ../../sflearn/datasets/descr/twenty_newsgroups.rst
 
-.. include:: ../../sklearn/datasets/descr/lfw.rst
+.. include:: ../../sflearn/datasets/descr/lfw.rst
 
-.. include:: ../../sklearn/datasets/descr/covtype.rst
+.. include:: ../../sflearn/datasets/descr/covtype.rst
 
-.. include:: ../../sklearn/datasets/descr/rcv1.rst
+.. include:: ../../sflearn/datasets/descr/rcv1.rst
 
-.. include:: ../../sklearn/datasets/descr/kddcup99.rst
+.. include:: ../../sflearn/datasets/descr/kddcup99.rst
 
-.. include:: ../../sklearn/datasets/descr/california_housing.rst
+.. include:: ../../sflearn/datasets/descr/california_housing.rst

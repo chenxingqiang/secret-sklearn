@@ -9,14 +9,14 @@ import numpy as np
 import pytest
 
 
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_less
-from sklearn.utils import check_random_state
-from sklearn.linear_model import BayesianRidge, ARDRegression
-from sklearn.linear_model import Ridge
-from sklearn import datasets
-from sklearn.utils.extmath import fast_logdet
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_less
+from sflearn.utils import check_random_state
+from sflearn.linear_model import BayesianRidge, ARDRegression
+from sflearn.linear_model import Ridge
+from sflearn import datasets
+from sflearn.utils.extmath import fast_logdet
 
 diabetes = datasets.load_diabetes()
 

@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.pls` module implements Partial Least Squares (PLS).
+The :mod:`sflearn.pls` module implements Partial Least Squares (PLS).
 """
 
 # Author: Edouard Duchesnay <edouard.duchesnay@cea.fr>
@@ -606,7 +606,7 @@ class PLSRegression(_PLS):
 
     Examples
     --------
-    >>> from sklearn.cross_decomposition import PLSRegression
+    >>> from sflearn.cross_decomposition import PLSRegression
     >>> X = [[0., 0., 1.], [1.,0.,0.], [2.,2.,2.], [2.,5.,4.]]
     >>> Y = [[0.1, -0.2], [0.9, 1.1], [6.2, 5.9], [11.9, 12.3]]
     >>> pls2 = PLSRegression(n_components=2)
@@ -751,7 +751,7 @@ class PLSCanonical(_PLS):
 
     Examples
     --------
-    >>> from sklearn.cross_decomposition import PLSCanonical
+    >>> from sflearn.cross_decomposition import PLSCanonical
     >>> X = [[0., 0., 1.], [1.,0.,0.], [2.,2.,2.], [2.,5.,4.]]
     >>> Y = [[0.1, -0.2], [0.9, 1.1], [6.2, 5.9], [11.9, 12.3]]
     >>> plsca = PLSCanonical(n_components=2)
@@ -873,7 +873,7 @@ class CCA(_PLS):
 
     Examples
     --------
-    >>> from sklearn.cross_decomposition import CCA
+    >>> from sflearn.cross_decomposition import CCA
     >>> X = [[0., 0., 1.], [1.,0.,0.], [2.,2.,2.], [3.,5.,4.]]
     >>> Y = [[0.1, -0.2], [0.9, 1.1], [6.2, 5.9], [11.9, 12.3]]
     >>> cca = CCA(n_components=1)
@@ -954,7 +954,7 @@ class PLSSVD(ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstimator):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.cross_decomposition import PLSSVD
+    >>> from sflearn.cross_decomposition import PLSSVD
     >>> X = np.array([[0., 0., 1.],
     ...               [1., 0., 0.],
     ...               [2., 2., 2.],

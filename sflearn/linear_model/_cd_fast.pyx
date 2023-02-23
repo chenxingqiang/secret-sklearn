@@ -266,7 +266,7 @@ def enet_coordinate_descent(
                         " Linear regression models with null weight for the "
                         "l1 regularization term are more efficiently fitted "
                         "using one of the solvers implemented in "
-                        "sklearn.linear_model.Ridge/RidgeCV instead."
+                        "sflearn.linear_model.Ridge/RidgeCV instead."
                     )
                 warnings.warn(message, ConvergenceWarning)
 

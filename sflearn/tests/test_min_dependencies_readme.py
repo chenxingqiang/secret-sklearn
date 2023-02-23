@@ -7,15 +7,15 @@ import platform
 from pathlib import Path
 
 import pytest
-import sklearn
-from sklearn._min_dependencies import dependent_packages
-from sklearn.utils.fixes import parse_version
+import sflearn
+from sflearn._min_dependencies import dependent_packages
+from sflearn.utils.fixes import parse_version
 
 
 def test_min_dependencies_readme():
     # Test that the minimum dependencies in the README.rst file are
     # consistent with the minimum dependencies defined at the file:
-    # sklearn/_min_dependencies.py
+    # sflearn/_min_dependencies.py
 
     if platform.python_implementation() == "PyPy":
         pytest.skip("PyPy does not always share the same minimum deps")
@@ -27,7 +27,7 @@ def test_min_dependencies_readme():
         + r"( [0-9]+\.[0-9]+(\.[0-9]+)?)"
     )
 
-    readme_path = Path(sklearn.__path__[0]).parents[0]
+    readme_path = Path(sflearn.__path__[0]).parents[0]
     readme_file = readme_path / "README.rst"
 
     if not os.path.exists(readme_file):

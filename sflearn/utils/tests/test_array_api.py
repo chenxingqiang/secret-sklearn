@@ -2,14 +2,14 @@ import numpy
 from numpy.testing import assert_array_equal
 import pytest
 
-from sklearn.base import BaseEstimator
-from sklearn.utils._array_api import get_namespace
-from sklearn.utils._array_api import _NumPyApiWrapper
-from sklearn.utils._array_api import _ArrayAPIWrapper
-from sklearn.utils._array_api import _asarray_with_order
-from sklearn.utils._array_api import _convert_to_numpy
-from sklearn.utils._array_api import _estimator_with_converted_arrays
-from sklearn._config import config_context
+from sflearn.base import BaseEstimator
+from sflearn.utils._array_api import get_namespace
+from sflearn.utils._array_api import _NumPyApiWrapper
+from sflearn.utils._array_api import _ArrayAPIWrapper
+from sflearn.utils._array_api import _asarray_with_order
+from sflearn.utils._array_api import _convert_to_numpy
+from sflearn.utils._array_api import _estimator_with_converted_arrays
+from sflearn._config import config_context
 
 pytestmark = pytest.mark.filterwarnings(
     "ignore:The numpy.array_api submodule:UserWarning"

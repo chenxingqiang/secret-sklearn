@@ -3,7 +3,7 @@ Generalized Linear Models with Exponential Dispersion Family
 """
 
 # Author: Christian Lorentzen <lorentzen.ch@gmail.com>
-# some parts and tricks stolen from other sklearn files.
+# some parts and tricks stolen from other sflearn files.
 # License: BSD 3 clause
 
 from numbers import Integral, Real
@@ -45,7 +45,7 @@ class _GeneralizedLinearRegressor(RegressorMixin, BaseEstimator):
     The parameter ``alpha`` corresponds to the lambda parameter in glmnet.
 
     Instead of implementing the EDM family and a link function separately, we directly
-    use the loss functions `from sklearn._loss` which have the link functions included
+    use the loss functions `from sflearn._loss` which have the link functions included
     in them for performance reasons. We pick the loss functions that implement
     (1/2 times) EDM deviances.
 
@@ -570,7 +570,7 @@ class PoissonRegressor(_GeneralizedLinearRegressor):
 
     Examples
     --------
-    >>> from sklearn import linear_model
+    >>> from sflearn import linear_model
     >>> clf = linear_model.PoissonRegressor()
     >>> X = [[1, 2], [2, 3], [3, 4], [4, 3]]
     >>> y = [12, 17, 22, 21]
@@ -702,7 +702,7 @@ class GammaRegressor(_GeneralizedLinearRegressor):
 
     Examples
     --------
-    >>> from sklearn import linear_model
+    >>> from sflearn import linear_model
     >>> clf = linear_model.GammaRegressor()
     >>> X = [[1, 2], [2, 3], [3, 4], [4, 3]]
     >>> y = [19, 26, 33, 30]
@@ -864,7 +864,7 @@ class TweedieRegressor(_GeneralizedLinearRegressor):
 
     Examples
     --------
-    >>> from sklearn import linear_model
+    >>> from sflearn import linear_model
     >>> clf = linear_model.TweedieRegressor()
     >>> X = [[1, 2], [2, 3], [3, 4], [4, 3]]
     >>> y = [2, 3.5, 5, 5.5]

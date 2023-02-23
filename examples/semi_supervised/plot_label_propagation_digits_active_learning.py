@@ -27,9 +27,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-from sklearn import datasets
-from sklearn.semi_supervised import LabelSpreading
-from sklearn.metrics import classification_report, confusion_matrix
+from sflearn import datasets
+from sflearn.semi_supervised import LabelSpreading
+from sflearn.metrics import classification_report, confusion_matrix
 
 digits = datasets.load_digits()
 rng = np.random.RandomState(0)

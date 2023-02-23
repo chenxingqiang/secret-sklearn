@@ -1,5 +1,5 @@
 """
-Testing for Support Vector Machine module (sklearn.svm)
+Testing for Support Vector Machine module (sflearn.svm)
 
 TODO: remove hard coded numerical results when possible
 """
@@ -13,22 +13,22 @@ from numpy.testing import assert_array_equal, assert_array_almost_equal
 from numpy.testing import assert_almost_equal
 from numpy.testing import assert_allclose
 from scipy import sparse
-from sklearn import svm, linear_model, datasets, metrics, base
-from sklearn.svm import LinearSVC, OneClassSVM, SVR, NuSVR, LinearSVR
-from sklearn.model_selection import train_test_split
-from sklearn.datasets import make_classification, make_blobs
-from sklearn.metrics import f1_score
-from sklearn.metrics.pairwise import rbf_kernel
-from sklearn.utils import check_random_state
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils.validation import _num_samples
-from sklearn.utils import shuffle
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.exceptions import NotFittedError, UndefinedMetricWarning
-from sklearn.multiclass import OneVsRestClassifier
+from sflearn import svm, linear_model, datasets, metrics, base
+from sflearn.svm import LinearSVC, OneClassSVM, SVR, NuSVR, LinearSVR
+from sflearn.model_selection import train_test_split
+from sflearn.datasets import make_classification, make_blobs
+from sflearn.metrics import f1_score
+from sflearn.metrics.pairwise import rbf_kernel
+from sflearn.utils import check_random_state
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils.validation import _num_samples
+from sflearn.utils import shuffle
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.exceptions import NotFittedError, UndefinedMetricWarning
+from sflearn.multiclass import OneVsRestClassifier
 
-# mypy error: Module 'sklearn.svm' has no attribute '_libsvm'
-from sklearn.svm import _libsvm  # type: ignore
+# mypy error: Module 'sflearn.svm' has no attribute '_libsvm'
+from sflearn.svm import _libsvm  # type: ignore
 
 # toy sample
 X = [[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]]
@@ -632,7 +632,7 @@ def test_negative_weight_equal_coeffs(Estimator, sample_weight):
 @ignore_warnings(category=UndefinedMetricWarning)
 def test_auto_weight():
     # Test class weights for imbalanced data
-    from sklearn.linear_model import LogisticRegression
+    from sflearn.linear_model import LogisticRegression
 
     # We take as dataset the two-dimensional projection of iris so
     # that it is not separable and remove half of predictors from
@@ -640,7 +640,7 @@ def test_auto_weight():
     # We add one to the targets as a non-regression test:
     # class_weight="balanced"
     # used to work only when the labels where a range [0..K).
-    from sklearn.utils import compute_class_weight
+    from sflearn.utils import compute_class_weight
 
     X, y = iris.data[:, :2], iris.target + 1
     unbalanced = np.delete(np.arange(y.size), np.where(y > 2)[0][::2])

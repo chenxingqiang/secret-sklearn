@@ -2,14 +2,14 @@ import numpy as np
 
 import pytest
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.neighbors import KernelDensity, KDTree, NearestNeighbors
-from sklearn.neighbors._ball_tree import kernel_norm
-from sklearn.pipeline import make_pipeline
-from sklearn.datasets import make_blobs
-from sklearn.model_selection import GridSearchCV
-from sklearn.preprocessing import StandardScaler
-from sklearn.exceptions import NotFittedError
+from sflearn.utils._testing import assert_allclose
+from sflearn.neighbors import KernelDensity, KDTree, NearestNeighbors
+from sflearn.neighbors._ball_tree import kernel_norm
+from sflearn.pipeline import make_pipeline
+from sflearn.datasets import make_blobs
+from sflearn.model_selection import GridSearchCV
+from sflearn.preprocessing import StandardScaler
+from sflearn.exceptions import NotFittedError
 import joblib
 
 

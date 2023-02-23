@@ -4,8 +4,8 @@
 import pytest
 import numpy as np
 
-from sklearn.mixture import GaussianMixture
-from sklearn.mixture import BayesianGaussianMixture
+from sflearn.mixture import GaussianMixture
+from sflearn.mixture import BayesianGaussianMixture
 
 
 @pytest.mark.parametrize("estimator", [GaussianMixture(), BayesianGaussianMixture()])

@@ -1,4 +1,4 @@
-"""Testing for the boost module (sklearn.ensemble.boost)."""
+"""Testing for the boost module (sflearn.ensemble.boost)."""
 
 import numpy as np
 import pytest
@@ -10,23 +10,23 @@ from scipy.sparse import coo_matrix
 from scipy.sparse import dok_matrix
 from scipy.sparse import lil_matrix
 
-from sklearn.utils._testing import assert_array_equal, assert_array_less
-from sklearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal, assert_array_less
+from sflearn.utils._testing import assert_array_almost_equal
 
-from sklearn.base import BaseEstimator
-from sklearn.base import clone
-from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.ensemble import AdaBoostRegressor
-from sklearn.ensemble._weight_boosting import _samme_proba
-from sklearn.svm import SVC, SVR
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-from sklearn.utils import shuffle
-from sklearn.utils._mocking import NoSampleWeightWrapper
-from sklearn import datasets
+from sflearn.base import BaseEstimator
+from sflearn.base import clone
+from sflearn.dummy import DummyClassifier, DummyRegressor
+from sflearn.linear_model import LinearRegression
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import GridSearchCV
+from sflearn.ensemble import AdaBoostClassifier
+from sflearn.ensemble import AdaBoostRegressor
+from sflearn.ensemble._weight_boosting import _samme_proba
+from sflearn.svm import SVC, SVR
+from sflearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sflearn.utils import shuffle
+from sflearn.utils._mocking import NoSampleWeightWrapper
+from sflearn import datasets
 
 
 # Common random state
@@ -281,7 +281,7 @@ def test_adaboost_classifier_sample_weight_error():
 
 def test_estimator():
     # Test different estimators.
-    from sklearn.ensemble import RandomForestClassifier
+    from sflearn.ensemble import RandomForestClassifier
 
     # XXX doesn't work with y_class because RF doesn't support classes_
     # Shouldn't AdaBoost run a LabelBinarizer?
@@ -291,7 +291,7 @@ def test_estimator():
     clf = AdaBoostClassifier(SVC(), algorithm="SAMME")
     clf.fit(X, y_class)
 
-    from sklearn.ensemble import RandomForestRegressor
+    from sflearn.ensemble import RandomForestRegressor
 
     clf = AdaBoostRegressor(RandomForestRegressor(), random_state=0)
     clf.fit(X, y_regr)

@@ -5,12 +5,12 @@ from contextlib import contextmanager as contextmanager
 import threading
 
 _global_config = {
-    "assume_finite": bool(os.environ.get("SKLEARN_ASSUME_FINITE", False)),
-    "working_memory": int(os.environ.get("SKLEARN_WORKING_MEMORY", 1024)),
+    "assume_finite": bool(os.environ.get("SFLEARN_ASSUME_FINITE", False)),
+    "working_memory": int(os.environ.get("SFLEARN_WORKING_MEMORY", 1024)),
     "print_changed_only": True,
     "display": "diagram",
     "pairwise_dist_chunk_size": int(
-        os.environ.get("SKLEARN_PAIRWISE_DIST_CHUNK_SIZE", 256)
+        os.environ.get("SFLEARN_PAIRWISE_DIST_CHUNK_SIZE", 256)
     ),
     "enable_cython_pairwise_dist": True,
     "array_api_dispatch": False,
@@ -265,12 +265,12 @@ def config_context(
 
     Examples
     --------
-    >>> import sklearn
-    >>> from sklearn.utils.validation import assert_all_finite
-    >>> with sklearn.config_context(assume_finite=True):
+    >>> import sflearn
+    >>> from sflearn.utils.validation import assert_all_finite
+    >>> with sflearn.config_context(assume_finite=True):
     ...     assert_all_finite([float('nan')])
-    >>> with sklearn.config_context(assume_finite=True):
-    ...     with sklearn.config_context(assume_finite=False):
+    >>> with sflearn.config_context(assume_finite=True):
+    ...     with sflearn.config_context(assume_finite=False):
     ...         assert_all_finite([float('nan')])
     Traceback (most recent call last):
     ...

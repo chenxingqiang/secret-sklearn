@@ -1,11 +1,11 @@
 import numpy as np
 
-from sklearn.neural_network._stochastic_optimizers import (
+from sflearn.neural_network._stochastic_optimizers import (
     BaseOptimizer,
     SGDOptimizer,
     AdamOptimizer,
 )
-from sklearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_equal
 
 
 shapes = [(4, 6), (6, 8), (7, 8, 9)]

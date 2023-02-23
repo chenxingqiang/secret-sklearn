@@ -9,14 +9,14 @@ import warnings
 
 from scipy.sparse import csr_matrix
 
-from sklearn.exceptions import ConvergenceWarning, NotFittedError
-from sklearn.utils._testing import assert_array_equal, assert_allclose
+from sflearn.exceptions import ConvergenceWarning, NotFittedError
+from sflearn.utils._testing import assert_array_equal, assert_allclose
 
-from sklearn.cluster import AffinityPropagation
-from sklearn.cluster._affinity_propagation import _equal_similarities_and_preferences
-from sklearn.cluster import affinity_propagation
-from sklearn.datasets import make_blobs
-from sklearn.metrics import euclidean_distances
+from sflearn.cluster import AffinityPropagation
+from sflearn.cluster._affinity_propagation import _equal_similarities_and_preferences
+from sflearn.cluster import affinity_propagation
+from sflearn.datasets import make_blobs
+from sflearn.metrics import euclidean_distances
 
 n_clusters = 3
 centers = np.array([[1, 1], [-1, -1], [1, -1]]) + 10

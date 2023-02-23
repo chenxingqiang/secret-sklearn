@@ -99,12 +99,12 @@ class CheckingClassifier(ClassifierMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.utils._mocking import CheckingClassifier
+    >>> from sflearn.utils._mocking import CheckingClassifier
 
     This helper allow to assert to specificities regarding `X` or `y`. In this
     case we expect `check_X` or `check_y` to return a boolean.
 
-    >>> from sklearn.datasets import load_iris
+    >>> from sflearn.datasets import load_iris
     >>> X, y = load_iris(return_X_y=True)
     >>> clf = CheckingClassifier(check_X=lambda x: x.shape == (150, 4))
     >>> clf.fit(X, y)
@@ -113,7 +113,7 @@ class CheckingClassifier(ClassifierMixin, BaseEstimator):
     We can also provide a check which might raise an error. In this case, we
     expect `check_X` to return `X` and `check_y` to return `y`.
 
-    >>> from sklearn.utils import check_array
+    >>> from sflearn.utils import check_array
     >>> clf = CheckingClassifier(check_X=check_array)
     >>> clf.fit(X, y)
     CheckingClassifier(...)

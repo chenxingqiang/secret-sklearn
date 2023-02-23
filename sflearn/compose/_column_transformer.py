@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.compose._column_transformer` module implements utilities
+The :mod:`sflearn.compose._column_transformer` module implements utilities
 to work with heterogeneous data and to apply different transformers to
 different columns.
 """
@@ -135,7 +135,7 @@ class ColumnTransformer(TransformerMixin, _BaseComposition):
         ``len(transformers_)==len(transformers)+1``, otherwise
         ``len(transformers_)==len(transformers)``.
 
-    named_transformers_ : :class:`~sklearn.utils.Bunch`
+    named_transformers_ : :class:`~sflearn.utils.Bunch`
         Read-only attribute to access any transformer by given name.
         Keys are transformer names and values are the fitted transformer
         objects.
@@ -179,8 +179,8 @@ class ColumnTransformer(TransformerMixin, _BaseComposition):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.compose import ColumnTransformer
-    >>> from sklearn.preprocessing import Normalizer
+    >>> from sflearn.compose import ColumnTransformer
+    >>> from sflearn.preprocessing import Normalizer
     >>> ct = ColumnTransformer(
     ...     [("norm1", Normalizer(norm='l1'), [0, 1]),
     ...      ("norm2", Normalizer(norm='l1'), slice(2, 4))])
@@ -196,8 +196,8 @@ class ColumnTransformer(TransformerMixin, _BaseComposition):
     :class:`ColumnTransformer` can be configured with a transformer that requires
     a 1d array by setting the column to a string:
 
-    >>> from sklearn.feature_extraction import FeatureHasher
-    >>> from sklearn.preprocessing import MinMaxScaler
+    >>> from sflearn.feature_extraction import FeatureHasher
+    >>> from sflearn.preprocessing import MinMaxScaler
     >>> import pandas as pd   # doctest: +SKIP
     >>> X = pd.DataFrame({
     ...     "documents": ["First item", "second one here", "Is this the last?"],
@@ -1015,8 +1015,8 @@ def make_column_transformer(
 
     Examples
     --------
-    >>> from sklearn.preprocessing import StandardScaler, OneHotEncoder
-    >>> from sklearn.compose import make_column_transformer
+    >>> from sflearn.preprocessing import StandardScaler, OneHotEncoder
+    >>> from sflearn.compose import make_column_transformer
     >>> make_column_transformer(
     ...     (StandardScaler(), ['numerical_column']),
     ...     (OneHotEncoder(), ['categorical_column']))
@@ -1074,9 +1074,9 @@ class make_column_selector:
 
     Examples
     --------
-    >>> from sklearn.preprocessing import StandardScaler, OneHotEncoder
-    >>> from sklearn.compose import make_column_transformer
-    >>> from sklearn.compose import make_column_selector
+    >>> from sflearn.preprocessing import StandardScaler, OneHotEncoder
+    >>> from sflearn.compose import make_column_transformer
+    >>> from sflearn.compose import make_column_selector
     >>> import numpy as np
     >>> import pandas as pd  # doctest: +SKIP
     >>> X = pd.DataFrame({'city': ['London', 'London', 'Paris', 'Sallisaw'],

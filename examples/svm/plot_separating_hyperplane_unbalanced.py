@@ -10,7 +10,7 @@ We first find the separating plane with a plain SVC and then plot
 (dashed) the separating hyperplane with automatically correction for
 unbalanced classes.
 
-.. currentmodule:: sklearn.linear_model
+.. currentmodule:: sflearn.linear_model
 
 .. note::
 
@@ -26,9 +26,9 @@ unbalanced classes.
 """
 
 import matplotlib.pyplot as plt
-from sklearn import svm
-from sklearn.datasets import make_blobs
-from sklearn.inspection import DecisionBoundaryDisplay
+from sflearn import svm
+from sflearn.datasets import make_blobs
+from sflearn.inspection import DecisionBoundaryDisplay
 
 # we create two clusters of random points
 n_samples_1 = 1000

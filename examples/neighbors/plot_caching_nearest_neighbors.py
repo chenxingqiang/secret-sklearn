@@ -24,10 +24,10 @@ larger, or when the grid of parameter to search is large.
 from tempfile import TemporaryDirectory
 import matplotlib.pyplot as plt
 
-from sklearn.neighbors import KNeighborsTransformer, KNeighborsClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.datasets import load_digits
-from sklearn.pipeline import Pipeline
+from sflearn.neighbors import KNeighborsTransformer, KNeighborsClassifier
+from sflearn.model_selection import GridSearchCV
+from sflearn.datasets import load_digits
+from sflearn.pipeline import Pipeline
 
 X, y = load_digits(return_X_y=True)
 n_neighbors_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -41,7 +41,7 @@ classifier_model = KNeighborsClassifier(metric="precomputed")
 # Note that we give `memory` a directory to cache the graph computation
 # that will be used several times when tuning the hyperparameters of the
 # classifier.
-with TemporaryDirectory(prefix="sklearn_graph_cache_") as tmpdir:
+with TemporaryDirectory(prefix="sflearn_graph_cache_") as tmpdir:
     full_model = Pipeline(
         steps=[("graph", graph_model), ("classifier", classifier_model)], memory=tmpdir
     )

@@ -11,9 +11,9 @@ class RocCurveDisplay:
     """ROC Curve visualization.
 
     It is recommend to use
-    :func:`~sklearn.metrics.RocCurveDisplay.from_estimator` or
-    :func:`~sklearn.metrics.RocCurveDisplay.from_predictions` to create
-    a :class:`~sklearn.metrics.RocCurveDisplay`. All parameters are
+    :func:`~sflearn.metrics.RocCurveDisplay.from_estimator` or
+    :func:`~sflearn.metrics.RocCurveDisplay.from_predictions` to create
+    a :class:`~sflearn.metrics.RocCurveDisplay`. All parameters are
     stored as attributes.
 
     Read more in the :ref:`User Guide <visualizations>`.
@@ -63,7 +63,7 @@ class RocCurveDisplay:
     --------
     >>> import matplotlib.pyplot as plt
     >>> import numpy as np
-    >>> from sklearn import metrics
+    >>> from sflearn import metrics
     >>> y = np.array([0, 0, 1, 1])
     >>> pred = np.array([0.1, 0.4, 0.35, 0.8])
     >>> fpr, tpr, thresholds = metrics.roc_curve(y, pred)
@@ -102,7 +102,7 @@ class RocCurveDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.plot.RocCurveDisplay`
+        display : :class:`~sflearn.metrics.plot.RocCurveDisplay`
             Object that stores computed values.
         """
         check_matplotlib_support("RocCurveDisplay.plot")
@@ -160,7 +160,7 @@ class RocCurveDisplay:
         Parameters
         ----------
         estimator : estimator instance
-            Fitted classifier or a fitted :class:`~sklearn.pipeline.Pipeline`
+            Fitted classifier or a fitted :class:`~sflearn.pipeline.Pipeline`
             in which the last estimator is a classifier.
 
         X : {array-like, sparse matrix} of shape (n_samples, n_features)
@@ -201,7 +201,7 @@ class RocCurveDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.plot.RocCurveDisplay`
+        display : :class:`~sflearn.metrics.plot.RocCurveDisplay`
             The ROC Curve display.
 
         See Also
@@ -214,10 +214,10 @@ class RocCurveDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import make_classification
-        >>> from sklearn.metrics import RocCurveDisplay
-        >>> from sklearn.model_selection import train_test_split
-        >>> from sklearn.svm import SVC
+        >>> from sflearn.datasets import make_classification
+        >>> from sflearn.metrics import RocCurveDisplay
+        >>> from sflearn.model_selection import train_test_split
+        >>> from sflearn.svm import SVC
         >>> X, y = make_classification(random_state=0)
         >>> X_train, X_test, y_train, y_test = train_test_split(
         ...     X, y, random_state=0)
@@ -304,7 +304,7 @@ class RocCurveDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.RocCurveDisplay`
+        display : :class:`~sflearn.metrics.RocCurveDisplay`
             Object that stores computed values.
 
         See Also
@@ -317,10 +317,10 @@ class RocCurveDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import make_classification
-        >>> from sklearn.metrics import RocCurveDisplay
-        >>> from sklearn.model_selection import train_test_split
-        >>> from sklearn.svm import SVC
+        >>> from sflearn.datasets import make_classification
+        >>> from sflearn.metrics import RocCurveDisplay
+        >>> from sflearn.model_selection import train_test_split
+        >>> from sflearn.svm import SVC
         >>> X, y = make_classification(random_state=0)
         >>> X_train, X_test, y_train, y_test = train_test_split(
         ...     X, y, random_state=0)

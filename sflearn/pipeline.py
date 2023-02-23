@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.pipeline` module implements utilities to build a composite
+The :mod:`sflearn.pipeline` module implements utilities to build a composite
 estimator, as a chain of transforms and estimators.
 """
 # Author: Edouard Duchesnay
@@ -94,7 +94,7 @@ class Pipeline(_BaseComposition):
 
     Attributes
     ----------
-    named_steps : :class:`~sklearn.utils.Bunch`
+    named_steps : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
         Read-only attribute to access any step parameter by user given name.
         Keys are step names and values are steps parameters.
@@ -122,11 +122,11 @@ class Pipeline(_BaseComposition):
 
     Examples
     --------
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.preprocessing import StandardScaler
-    >>> from sklearn.datasets import make_classification
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.pipeline import Pipeline
+    >>> from sflearn.svm import SVC
+    >>> from sflearn.preprocessing import StandardScaler
+    >>> from sflearn.datasets import make_classification
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.pipeline import Pipeline
     >>> X, y = make_classification(random_state=0)
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y,
     ...                                                     random_state=0)
@@ -768,7 +768,7 @@ class Pipeline(_BaseComposition):
         # delegate to first step (which will call _check_is_fitted)
         return self.steps[0][1].feature_names_in_
 
-    def __sklearn_is_fitted__(self):
+    def __sflearn_is_fitted__(self):
         """Indicate whether pipeline has been fit."""
         try:
             # check if the last step of the pipeline is fitted
@@ -862,9 +862,9 @@ def make_pipeline(*steps, memory=None, verbose=False):
 
     Examples
     --------
-    >>> from sklearn.naive_bayes import GaussianNB
-    >>> from sklearn.preprocessing import StandardScaler
-    >>> from sklearn.pipeline import make_pipeline
+    >>> from sflearn.naive_bayes import GaussianNB
+    >>> from sflearn.preprocessing import StandardScaler
+    >>> from sflearn.pipeline import make_pipeline
     >>> make_pipeline(StandardScaler(), GaussianNB(priors=None))
     Pipeline(steps=[('standardscaler', StandardScaler()),
                     ('gaussiannb', GaussianNB())])
@@ -958,7 +958,7 @@ class FeatureUnion(TransformerMixin, _BaseComposition):
 
     Attributes
     ----------
-    named_transformers : :class:`~sklearn.utils.Bunch`
+    named_transformers : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
         Read-only attribute to access any transformer parameter by user
         given name. Keys are transformer names and values are
@@ -980,8 +980,8 @@ class FeatureUnion(TransformerMixin, _BaseComposition):
 
     Examples
     --------
-    >>> from sklearn.pipeline import FeatureUnion
-    >>> from sklearn.decomposition import PCA, TruncatedSVD
+    >>> from sflearn.pipeline import FeatureUnion
+    >>> from sflearn.decomposition import PCA, TruncatedSVD
     >>> union = FeatureUnion([("pca", PCA(n_components=1)),
     ...                       ("svd", TruncatedSVD(n_components=2))])
     >>> X = [[0., 1., 3], [2., 2., 5]]
@@ -1275,7 +1275,7 @@ class FeatureUnion(TransformerMixin, _BaseComposition):
         # X is passed to all transformers so we just delegate to the first one
         return self.transformer_list[0][1].n_features_in_
 
-    def __sklearn_is_fitted__(self):
+    def __sflearn_is_fitted__(self):
         # Delegate whether feature union was fitted
         for _, transformer, _ in self._iter():
             check_is_fitted(transformer)
@@ -1324,8 +1324,8 @@ def make_union(*transformers, n_jobs=None, verbose=False):
 
     Examples
     --------
-    >>> from sklearn.decomposition import PCA, TruncatedSVD
-    >>> from sklearn.pipeline import make_union
+    >>> from sflearn.decomposition import PCA, TruncatedSVD
+    >>> from sflearn.pipeline import make_union
     >>> make_union(PCA(), TruncatedSVD())
      FeatureUnion(transformer_list=[('pca', PCA()),
                                    ('truncatedsvd', TruncatedSVD())])

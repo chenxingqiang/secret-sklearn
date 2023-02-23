@@ -12,7 +12,7 @@ import numpy as np
 from scipy import sparse
 import joblib
 
-from sklearn.utils._testing import (
+from sflearn.utils._testing import (
     assert_allclose,
     assert_array_equal,
     assert_array_almost_equal,
@@ -20,25 +20,25 @@ from sklearn.utils._testing import (
     MinimalRegressor,
     MinimalTransformer,
 )
-from sklearn.exceptions import NotFittedError
-from sklearn.model_selection import train_test_split
-from sklearn.utils.validation import check_is_fitted
-from sklearn.base import clone, is_classifier, BaseEstimator, TransformerMixin
-from sklearn.pipeline import Pipeline, FeatureUnion, make_pipeline, make_union
-from sklearn.svm import SVC
-from sklearn.neighbors import LocalOutlierFactor
-from sklearn.linear_model import LogisticRegression, Lasso
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import accuracy_score, r2_score
-from sklearn.cluster import KMeans
-from sklearn.feature_selection import SelectKBest, f_classif
-from sklearn.dummy import DummyRegressor
-from sklearn.decomposition import PCA, TruncatedSVD
-from sklearn.datasets import load_iris
-from sklearn.preprocessing import StandardScaler
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.impute import SimpleImputer
+from sflearn.exceptions import NotFittedError
+from sflearn.model_selection import train_test_split
+from sflearn.utils.validation import check_is_fitted
+from sflearn.base import clone, is_classifier, BaseEstimator, TransformerMixin
+from sflearn.pipeline import Pipeline, FeatureUnion, make_pipeline, make_union
+from sflearn.svm import SVC
+from sflearn.neighbors import LocalOutlierFactor
+from sflearn.linear_model import LogisticRegression, Lasso
+from sflearn.linear_model import LinearRegression
+from sflearn.metrics import accuracy_score, r2_score
+from sflearn.cluster import KMeans
+from sflearn.feature_selection import SelectKBest, f_classif
+from sflearn.dummy import DummyRegressor
+from sflearn.decomposition import PCA, TruncatedSVD
+from sflearn.datasets import load_iris
+from sflearn.preprocessing import StandardScaler
+from sflearn.feature_extraction.text import CountVectorizer
+from sflearn.ensemble import HistGradientBoostingClassifier
+from sflearn.impute import SimpleImputer
 
 iris = load_iris()
 
@@ -1583,7 +1583,7 @@ def test_pipeline_check_if_fitted():
 
 
 def test_feature_union_check_if_fitted():
-    """Check __sklearn_is_fitted__ is defined correctly."""
+    """Check __sflearn_is_fitted__ is defined correctly."""
 
     X = [[1, 2], [3, 4], [5, 6]]
     y = [0, 1, 2]

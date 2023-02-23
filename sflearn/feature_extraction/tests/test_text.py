@@ -5,30 +5,30 @@ import pytest
 import warnings
 from scipy import sparse
 
-from sklearn.feature_extraction.text import strip_tags
-from sklearn.feature_extraction.text import strip_accents_unicode
-from sklearn.feature_extraction.text import strip_accents_ascii
+from sflearn.feature_extraction.text import strip_tags
+from sflearn.feature_extraction.text import strip_accents_unicode
+from sflearn.feature_extraction.text import strip_accents_ascii
 
-from sklearn.feature_extraction.text import HashingVectorizer
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sflearn.feature_extraction.text import HashingVectorizer
+from sflearn.feature_extraction.text import CountVectorizer
+from sflearn.feature_extraction.text import TfidfTransformer
+from sflearn.feature_extraction.text import TfidfVectorizer
 
-from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+from sflearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import Pipeline
-from sklearn.svm import LinearSVC
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import cross_val_score
+from sflearn.model_selection import GridSearchCV
+from sflearn.pipeline import Pipeline
+from sflearn.svm import LinearSVC
 
-from sklearn.base import clone
+from sflearn.base import clone
 
 import numpy as np
 from numpy.testing import assert_array_almost_equal
 from numpy.testing import assert_array_equal
-from sklearn.utils import IS_PYPY
-from sklearn.utils._testing import (
+from sflearn.utils import IS_PYPY
+from sflearn.utils._testing import (
     assert_almost_equal,
     fails_if_pypy,
     assert_allclose_dense_sparse,
@@ -1311,7 +1311,7 @@ def test_tfidf_transformer_sparse():
     ],
 )
 def test_tfidf_vectorizer_type(vectorizer_dtype, output_dtype, warning_expected):
-    X = np.array(["numpy", "scipy", "sklearn"])
+    X = np.array(["numpy", "scipy", "sflearn"])
     vectorizer = TfidfVectorizer(dtype=vectorizer_dtype)
 
     warning_msg_match = "'dtype' should be used."

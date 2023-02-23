@@ -1085,7 +1085,7 @@ def non_negative_factorization(
     --------
     >>> import numpy as np
     >>> X = np.array([[1,1], [2, 1], [3, 1.2], [4, 1], [5, 0.8], [6, 1]])
-    >>> from sklearn.decomposition import non_negative_factorization
+    >>> from sflearn.decomposition import non_negative_factorization
     >>> W, H, n_iter = non_negative_factorization(
     ...     X, n_components=2, init='random', random_state=0)
     """
@@ -1466,7 +1466,7 @@ class NMF(_BaseNMF):
     --------
     >>> import numpy as np
     >>> X = np.array([[1, 1], [2, 1], [3, 1.2], [4, 1], [5, 0.8], [6, 1]])
-    >>> from sklearn.decomposition import NMF
+    >>> from sflearn.decomposition import NMF
     >>> model = NMF(n_components=2, init='random', random_state=0)
     >>> W = model.fit_transform(X)
     >>> H = model.components_
@@ -1890,7 +1890,7 @@ class MiniBatchNMF(_BaseNMF):
     --------
     >>> import numpy as np
     >>> X = np.array([[1, 1], [2, 1], [3, 1.2], [4, 1], [5, 0.8], [6, 1]])
-    >>> from sklearn.decomposition import MiniBatchNMF
+    >>> from sflearn.decomposition import MiniBatchNMF
     >>> model = MiniBatchNMF(n_components=2, init='random', random_state=0)
     >>> W = model.fit_transform(X)
     >>> H = model.components_

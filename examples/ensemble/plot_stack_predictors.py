@@ -3,7 +3,7 @@
 Combine predictors using stacking
 =================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sflearn
 
 Stacking refers to a method to blend estimators. In this strategy, some
 estimators are individually fitted on some training data while a final
@@ -40,8 +40,8 @@ stacking strategy. Stacking slightly improves the overall performance.
 
 import numpy as np
 
-from sklearn.datasets import fetch_openml
-from sklearn.utils import shuffle
+from sflearn.datasets import fetch_openml
+from sflearn.utils import shuffle
 
 
 def load_ames_housing():
@@ -90,7 +90,7 @@ X, y = load_ames_housing()
 # First, we will select the categorical and numerical columns of the dataset to
 # construct the first step of the pipeline.
 
-from sklearn.compose import make_column_selector
+from sflearn.compose import make_column_selector
 
 cat_selector = make_column_selector(dtype_include=object)
 num_selector = make_column_selector(dtype_include=np.number)
@@ -110,10 +110,10 @@ num_selector(X)
 #
 # We will first design the pipeline required for the tree-based models.
 
-from sklearn.compose import make_column_transformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import OrdinalEncoder
+from sflearn.compose import make_column_transformer
+from sflearn.impute import SimpleImputer
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import OrdinalEncoder
 
 cat_tree_processor = OrdinalEncoder(
     handle_unknown="use_encoded_value",
@@ -131,8 +131,8 @@ tree_preprocessor
 # Then, we will now define the preprocessor used when the ending regressor
 # is a linear model.
 
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.preprocessing import StandardScaler
+from sflearn.preprocessing import OneHotEncoder
+from sflearn.preprocessing import StandardScaler
 
 cat_linear_processor = OneHotEncoder(handle_unknown="ignore")
 num_linear_processor = make_pipeline(
@@ -160,23 +160,23 @@ linear_preprocessor
 # .. note::
 #    Although we will make new pipelines with the processors which we wrote in
 #    the previous section for the 3 learners, the final estimator
-#    :class:`~sklearn.linear_model.RidgeCV()` does not need preprocessing of
+#    :class:`~sflearn.linear_model.RidgeCV()` does not need preprocessing of
 #    the data as it will be fed with the already preprocessed output from the 3
 #    learners.
 
-from sklearn.linear_model import LassoCV
+from sflearn.linear_model import LassoCV
 
 lasso_pipeline = make_pipeline(linear_preprocessor, LassoCV())
 lasso_pipeline
 
 # %%
-from sklearn.ensemble import RandomForestRegressor
+from sflearn.ensemble import RandomForestRegressor
 
 rf_pipeline = make_pipeline(tree_preprocessor, RandomForestRegressor(random_state=42))
 rf_pipeline
 
 # %%
-from sklearn.ensemble import HistGradientBoostingRegressor
+from sflearn.ensemble import HistGradientBoostingRegressor
 
 gbdt_pipeline = make_pipeline(
     tree_preprocessor, HistGradientBoostingRegressor(random_state=0)
@@ -184,8 +184,8 @@ gbdt_pipeline = make_pipeline(
 gbdt_pipeline
 
 # %%
-from sklearn.ensemble import StackingRegressor
-from sklearn.linear_model import RidgeCV
+from sflearn.ensemble import StackingRegressor
+from sflearn.linear_model import RidgeCV
 
 estimators = [
     ("Random Forest", rf_pipeline),
@@ -207,8 +207,8 @@ stacking_regressor
 
 import time
 import matplotlib.pyplot as plt
-from sklearn.metrics import PredictionErrorDisplay
-from sklearn.model_selection import cross_validate, cross_val_predict
+from sflearn.metrics import PredictionErrorDisplay
+from sflearn.model_selection import cross_validate, cross_val_predict
 
 fig, axs = plt.subplots(2, 2, figsize=(9, 7))
 axs = np.ravel(axs)

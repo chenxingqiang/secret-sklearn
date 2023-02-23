@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.feature_extraction.image` submodule gathers utilities to
+The :mod:`sflearn.feature_extraction.image` submodule gathers utilities to
 extract features from images.
 """
 
@@ -359,8 +359,8 @@ def extract_patches_2d(image, patch_size, *, max_patches=None, random_state=None
 
     Examples
     --------
-    >>> from sklearn.datasets import load_sample_image
-    >>> from sklearn.feature_extraction import image
+    >>> from sflearn.datasets import load_sample_image
+    >>> from sflearn.feature_extraction import image
     >>> # Use the array data from the first image in this dataset:
     >>> one_image = load_sample_image("china.jpg")
     >>> print('Image shape: {}'.format(one_image.shape))
@@ -490,8 +490,8 @@ class PatchExtractor(BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_sample_images
-    >>> from sklearn.feature_extraction import image
+    >>> from sflearn.datasets import load_sample_images
+    >>> from sflearn.feature_extraction import image
     >>> # Use the array data from the second image in this dataset:
     >>> X = load_sample_images().images[1]
     >>> print('Image shape: {}'.format(X.shape))

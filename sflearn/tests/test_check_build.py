@@ -7,7 +7,7 @@ Smoke Test the check_build module
 
 import pytest
 
-from sklearn.__check_build import raise_build_error
+from sflearn.__check_build import raise_build_error
 
 
 def test_raise_build_error():

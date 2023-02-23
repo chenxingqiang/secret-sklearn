@@ -392,9 +392,9 @@ class OneHotEncoder(_BaseEncoder):
     --------
     OrdinalEncoder : Performs an ordinal (integer)
       encoding of the categorical features.
-    sklearn.feature_extraction.DictVectorizer : Performs a one-hot encoding of
+    sflearn.feature_extraction.DictVectorizer : Performs a one-hot encoding of
       dictionary items (also handles string-valued features).
-    sklearn.feature_extraction.FeatureHasher : Performs an approximate one-hot
+    sflearn.feature_extraction.FeatureHasher : Performs an approximate one-hot
       encoding of dictionary items or strings.
     LabelBinarizer : Binarizes labels in a one-vs-all
       fashion.
@@ -407,7 +407,7 @@ class OneHotEncoder(_BaseEncoder):
     Given a dataset with two features, we let the encoder find the unique
     values per feature and transform the data to a binary one-hot encoding.
 
-    >>> from sklearn.preprocessing import OneHotEncoder
+    >>> from sflearn.preprocessing import OneHotEncoder
 
     One can discard categories not seen during `fit`:
 
@@ -758,7 +758,7 @@ class OneHotEncoder(_BaseEncoder):
         """Compute the transformed categories used for column `i`.
 
         1. If there are infrequent categories, the category is named
-        'infrequent_sklearn'.
+        'infrequent_sflearn'.
         2. Dropped columns are removed when remove_dropped=True.
         """
         cats = self.categories_[i]
@@ -767,7 +767,7 @@ class OneHotEncoder(_BaseEncoder):
             infreq_map = self._default_to_infrequent_mappings[i]
             if infreq_map is not None:
                 frequent_mask = infreq_map < infreq_map.max()
-                infrequent_cat = "infrequent_sklearn"
+                infrequent_cat = "infrequent_sflearn"
                 # infrequent category is always at the end
                 cats = np.concatenate(
                     (cats[frequent_mask], np.array([infrequent_cat], dtype=object))
@@ -815,7 +815,7 @@ class OneHotEncoder(_BaseEncoder):
 
         y : None
             Ignored. This parameter exists only for compatibility with
-            :class:`~sklearn.pipeline.Pipeline`.
+            :class:`~sflearn.pipeline.Pipeline`.
 
         Returns
         -------
@@ -929,7 +929,7 @@ class OneHotEncoder(_BaseEncoder):
         category will be its inverse.
 
         For a given input feature, if there is an infrequent category,
-        'infrequent_sklearn' will be used to represent the infrequent category.
+        'infrequent_sflearn' will be used to represent the infrequent category.
 
         Parameters
         ----------
@@ -1156,7 +1156,7 @@ class OrdinalEncoder(OneToOneFeatureMixin, _BaseEncoder):
     Given a dataset with two features, we let the encoder find the unique
     values per feature and transform the data to an ordinal encoding.
 
-    >>> from sklearn.preprocessing import OrdinalEncoder
+    >>> from sflearn.preprocessing import OrdinalEncoder
     >>> enc = OrdinalEncoder()
     >>> X = [['Male', 1], ['Female', 3], ['Female', 2]]
     >>> enc.fit(X)
@@ -1223,7 +1223,7 @@ class OrdinalEncoder(OneToOneFeatureMixin, _BaseEncoder):
 
         y : None
             Ignored. This parameter exists only for compatibility with
-            :class:`~sklearn.pipeline.Pipeline`.
+            :class:`~sflearn.pipeline.Pipeline`.
 
         Returns
         -------

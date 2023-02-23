@@ -59,7 +59,7 @@ class LinearModelLoss:
 
     Parameters
     ----------
-    base_loss : instance of class BaseLoss from sklearn._loss.
+    base_loss : instance of class BaseLoss from sflearn._loss.
     fit_intercept : bool
     """
 

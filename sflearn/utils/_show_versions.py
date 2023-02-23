@@ -59,7 +59,7 @@ def _get_deps_info():
     ]
 
     deps_info = {
-        "sklearn": __version__,
+        "sflearn": __version__,
     }
 
     from importlib.metadata import version, PackageNotFoundError

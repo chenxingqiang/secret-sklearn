@@ -9,62 +9,62 @@ import scipy.sparse as sp
 
 import pytest
 
-from sklearn.datasets import make_multilabel_classification
-from sklearn.preprocessing import LabelBinarizer
-from sklearn.utils.multiclass import type_of_target
-from sklearn.utils.validation import _num_samples
-from sklearn.utils.validation import check_random_state
-from sklearn.utils import shuffle
+from sflearn.datasets import make_multilabel_classification
+from sflearn.preprocessing import LabelBinarizer
+from sflearn.utils.multiclass import type_of_target
+from sflearn.utils.validation import _num_samples
+from sflearn.utils.validation import check_random_state
+from sflearn.utils import shuffle
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_less
-from sklearn.utils._testing import ignore_warnings
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_less
+from sflearn.utils._testing import ignore_warnings
 
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import average_precision_score
-from sklearn.metrics import balanced_accuracy_score
-from sklearn.metrics import brier_score_loss
-from sklearn.metrics import cohen_kappa_score
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import coverage_error
-from sklearn.metrics import d2_tweedie_score
-from sklearn.metrics import d2_pinball_score
-from sklearn.metrics import d2_absolute_error_score
-from sklearn.metrics import det_curve
-from sklearn.metrics import explained_variance_score
-from sklearn.metrics import f1_score
-from sklearn.metrics import fbeta_score
-from sklearn.metrics import hamming_loss
-from sklearn.metrics import hinge_loss
-from sklearn.metrics import jaccard_score
-from sklearn.metrics import label_ranking_average_precision_score
-from sklearn.metrics import label_ranking_loss
-from sklearn.metrics import log_loss
-from sklearn.metrics import max_error
-from sklearn.metrics import matthews_corrcoef
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import mean_absolute_percentage_error
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_tweedie_deviance
-from sklearn.metrics import mean_poisson_deviance
-from sklearn.metrics import mean_gamma_deviance
-from sklearn.metrics import median_absolute_error
-from sklearn.metrics import multilabel_confusion_matrix
-from sklearn.metrics import mean_pinball_loss
-from sklearn.metrics import precision_recall_curve
-from sklearn.metrics import precision_score
-from sklearn.metrics import r2_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import roc_auc_score
-from sklearn.metrics import roc_curve
-from sklearn.metrics import zero_one_loss
-from sklearn.metrics import ndcg_score
-from sklearn.metrics import dcg_score
-from sklearn.metrics import top_k_accuracy_score
+from sflearn.metrics import accuracy_score
+from sflearn.metrics import average_precision_score
+from sflearn.metrics import balanced_accuracy_score
+from sflearn.metrics import brier_score_loss
+from sflearn.metrics import cohen_kappa_score
+from sflearn.metrics import confusion_matrix
+from sflearn.metrics import coverage_error
+from sflearn.metrics import d2_tweedie_score
+from sflearn.metrics import d2_pinball_score
+from sflearn.metrics import d2_absolute_error_score
+from sflearn.metrics import det_curve
+from sflearn.metrics import explained_variance_score
+from sflearn.metrics import f1_score
+from sflearn.metrics import fbeta_score
+from sflearn.metrics import hamming_loss
+from sflearn.metrics import hinge_loss
+from sflearn.metrics import jaccard_score
+from sflearn.metrics import label_ranking_average_precision_score
+from sflearn.metrics import label_ranking_loss
+from sflearn.metrics import log_loss
+from sflearn.metrics import max_error
+from sflearn.metrics import matthews_corrcoef
+from sflearn.metrics import mean_absolute_error
+from sflearn.metrics import mean_absolute_percentage_error
+from sflearn.metrics import mean_squared_error
+from sflearn.metrics import mean_tweedie_deviance
+from sflearn.metrics import mean_poisson_deviance
+from sflearn.metrics import mean_gamma_deviance
+from sflearn.metrics import median_absolute_error
+from sflearn.metrics import multilabel_confusion_matrix
+from sflearn.metrics import mean_pinball_loss
+from sflearn.metrics import precision_recall_curve
+from sflearn.metrics import precision_score
+from sflearn.metrics import r2_score
+from sflearn.metrics import recall_score
+from sflearn.metrics import roc_auc_score
+from sflearn.metrics import roc_curve
+from sflearn.metrics import zero_one_loss
+from sflearn.metrics import ndcg_score
+from sflearn.metrics import dcg_score
+from sflearn.metrics import top_k_accuracy_score
 
-from sklearn.metrics._base import _average_binary_score
+from sflearn.metrics._base import _average_binary_score
 
 
 # Note toward developers about metric testing
@@ -179,7 +179,7 @@ def precision_recall_curve_padded_thresholds(*args, **kwargs):
     """
     The dimensions of precision-recall pairs and the threshold array as
     returned by the precision_recall_curve do not match. See
-    func:`sklearn.metrics.precision_recall_curve`
+    func:`sflearn.metrics.precision_recall_curve`
 
     This prevents implicit conversion of return value triple to an higher
     dimensional np.array of dtype('float64') (it will be of dtype('object)

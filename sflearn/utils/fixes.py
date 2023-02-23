@@ -13,7 +13,7 @@ at which the fix is no longer needed.
 from importlib import resources
 import sys
 
-import sklearn
+import sflearn
 import numpy as np
 import scipy
 import scipy.stats
@@ -84,7 +84,7 @@ class loguniform(scipy.stats.reciprocal):
     Examples
     --------
 
-    >>> from sklearn.utils.fixes import loguniform
+    >>> from sflearn.utils.fixes import loguniform
     >>> rv = loguniform(1e-3, 1e1)
     >>> rvs = rv.rvs(random_state=42, size=1000)
     >>> rvs.min()  # doctest: +SKIP
@@ -125,10 +125,10 @@ def _get_threadpool_controller():
     if not hasattr(threadpoolctl, "ThreadpoolController"):
         return None
 
-    if not hasattr(sklearn, "_sklearn_threadpool_controller"):
-        sklearn._sklearn_threadpool_controller = threadpoolctl.ThreadpoolController()
+    if not hasattr(sflearn, "_sflearn_threadpool_controller"):
+        sflearn._sflearn_threadpool_controller = threadpoolctl.ThreadpoolController()
 
-    return sklearn._sklearn_threadpool_controller
+    return sflearn._sflearn_threadpool_controller
 
 
 def threadpool_limits(limits=None, user_api=None):
@@ -154,11 +154,11 @@ threadpool_info.__doc__ = threadpoolctl.threadpool_info.__doc__
 
 
 @deprecated(
-    "The function `delayed` has been moved from `sklearn.utils.fixes` to "
-    "`sklearn.utils.parallel`. This import path will be removed in 1.5."
+    "The function `delayed` has been moved from `sflearn.utils.fixes` to "
+    "`sflearn.utils.parallel`. This import path will be removed in 1.5."
 )
 def delayed(function):
-    from sklearn.utils.parallel import delayed
+    from sflearn.utils.parallel import delayed
 
     return delayed(function)
 

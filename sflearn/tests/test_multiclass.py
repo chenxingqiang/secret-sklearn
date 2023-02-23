@@ -5,24 +5,24 @@ from numpy.testing import assert_allclose
 
 from re import escape
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._mocking import CheckingClassifier
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.multiclass import OneVsOneClassifier
-from sklearn.multiclass import OutputCodeClassifier
-from sklearn.utils.multiclass import check_classification_targets, type_of_target
-from sklearn.utils import (
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._mocking import CheckingClassifier
+from sflearn.multiclass import OneVsRestClassifier
+from sflearn.multiclass import OneVsOneClassifier
+from sflearn.multiclass import OutputCodeClassifier
+from sflearn.utils.multiclass import check_classification_targets, type_of_target
+from sflearn.utils import (
     check_array,
     shuffle,
 )
 
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
+from sflearn.metrics import precision_score
+from sflearn.metrics import recall_score
 
-from sklearn.svm import LinearSVC, SVC
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.linear_model import (
+from sflearn.svm import LinearSVC, SVC
+from sflearn.naive_bayes import MultinomialNB
+from sflearn.linear_model import (
     LinearRegression,
     Lasso,
     ElasticNet,
@@ -31,15 +31,15 @@ from sklearn.linear_model import (
     LogisticRegression,
     SGDClassifier,
 )
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import GridSearchCV, cross_val_score
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.impute import SimpleImputer
-from sklearn import svm
-from sklearn.exceptions import NotFittedError
-from sklearn import datasets
-from sklearn.datasets import load_breast_cancer
+from sflearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.model_selection import GridSearchCV, cross_val_score
+from sflearn.pipeline import Pipeline, make_pipeline
+from sflearn.impute import SimpleImputer
+from sflearn import svm
+from sflearn.exceptions import NotFittedError
+from sflearn import datasets
+from sflearn.datasets import load_breast_cancer
 
 msg = "The default value for `force_alpha` will change"
 pytestmark = pytest.mark.filterwarnings(f"ignore:{msg}:FutureWarning")

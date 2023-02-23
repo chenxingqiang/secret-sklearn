@@ -3,14 +3,14 @@ import scipy
 import numpy as np
 from numpy.testing import assert_array_equal
 
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.feature_selection import SequentialFeatureSelector
-from sklearn.datasets import make_regression, make_blobs
-from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import HistGradientBoostingRegressor
-from sklearn.model_selection import cross_val_score
-from sklearn.cluster import KMeans
+from sflearn.preprocessing import StandardScaler
+from sflearn.pipeline import make_pipeline
+from sflearn.feature_selection import SequentialFeatureSelector
+from sflearn.datasets import make_regression, make_blobs
+from sflearn.linear_model import LinearRegression
+from sflearn.ensemble import HistGradientBoostingRegressor
+from sflearn.model_selection import cross_val_score
+from sflearn.cluster import KMeans
 
 
 def test_bad_n_features_to_select():

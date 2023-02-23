@@ -7,7 +7,7 @@
 Generated datasets
 ==================
 
-.. currentmodule:: sklearn.datasets
+.. currentmodule:: sflearn.datasets
 
 In addition, scikit-learn includes various random sample generators that
 can be used to build artificial datasets of controlled size and complexity.

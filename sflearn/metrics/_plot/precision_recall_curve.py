@@ -1,4 +1,4 @@
-from sklearn.base import is_classifier
+from sflearn.base import is_classifier
 from .base import _get_response
 
 from .. import average_precision_score
@@ -13,9 +13,9 @@ class PrecisionRecallDisplay:
     """Precision Recall visualization.
 
     It is recommend to use
-    :func:`~sklearn.metrics.PrecisionRecallDisplay.from_estimator` or
-    :func:`~sklearn.metrics.PrecisionRecallDisplay.from_predictions` to create
-    a :class:`~sklearn.metrics.PredictionRecallDisplay`. All parameters are
+    :func:`~sflearn.metrics.PrecisionRecallDisplay.from_estimator` or
+    :func:`~sflearn.metrics.PrecisionRecallDisplay.from_predictions` to create
+    a :class:`~sflearn.metrics.PredictionRecallDisplay`. All parameters are
     stored as attributes.
 
     Read more in the :ref:`User Guide <visualizations>`.
@@ -62,7 +62,7 @@ class PrecisionRecallDisplay:
 
     Notes
     -----
-    The average precision (cf. :func:`~sklearn.metrics.average_precision`) in
+    The average precision (cf. :func:`~sflearn.metrics.average_precision`) in
     scikit-learn is computed without any interpolation. To be consistent with
     this metric, the precision-recall curve is plotted without any
     interpolation as well (step-wise style).
@@ -75,11 +75,11 @@ class PrecisionRecallDisplay:
     Examples
     --------
     >>> import matplotlib.pyplot as plt
-    >>> from sklearn.datasets import make_classification
-    >>> from sklearn.metrics import (precision_recall_curve,
+    >>> from sflearn.datasets import make_classification
+    >>> from sflearn.metrics import (precision_recall_curve,
     ...                              PrecisionRecallDisplay)
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.svm import SVC
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.svm import SVC
     >>> X, y = make_classification(random_state=0)
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y,
     ...                                                     random_state=0)
@@ -129,12 +129,12 @@ class PrecisionRecallDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.PrecisionRecallDisplay`
+        display : :class:`~sflearn.metrics.PrecisionRecallDisplay`
             Object that stores computed values.
 
         Notes
         -----
-        The average precision (cf. :func:`~sklearn.metrics.average_precision`)
+        The average precision (cf. :func:`~sflearn.metrics.average_precision`)
         in scikit-learn is computed without any interpolation. To be consistent
         with this metric, the precision-recall curve is plotted without any
         interpolation as well (step-wise style).
@@ -196,7 +196,7 @@ class PrecisionRecallDisplay:
         Parameters
         ----------
         estimator : estimator instance
-            Fitted classifier or a fitted :class:`~sklearn.pipeline.Pipeline`
+            Fitted classifier or a fitted :class:`~sflearn.pipeline.Pipeline`
             in which the last estimator is a classifier.
 
         X : {array-like, sparse matrix} of shape (n_samples, n_features)
@@ -231,7 +231,7 @@ class PrecisionRecallDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.PrecisionRecallDisplay`
+        display : :class:`~sflearn.metrics.PrecisionRecallDisplay`
 
         See Also
         --------
@@ -240,7 +240,7 @@ class PrecisionRecallDisplay:
 
         Notes
         -----
-        The average precision (cf. :func:`~sklearn.metrics.average_precision`)
+        The average precision (cf. :func:`~sflearn.metrics.average_precision`)
         in scikit-learn is computed without any interpolation. To be consistent
         with this metric, the precision-recall curve is plotted without any
         interpolation as well (step-wise style).
@@ -252,10 +252,10 @@ class PrecisionRecallDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import make_classification
-        >>> from sklearn.metrics import PrecisionRecallDisplay
-        >>> from sklearn.model_selection import train_test_split
-        >>> from sklearn.linear_model import LogisticRegression
+        >>> from sflearn.datasets import make_classification
+        >>> from sflearn.metrics import PrecisionRecallDisplay
+        >>> from sflearn.model_selection import train_test_split
+        >>> from sflearn.linear_model import LogisticRegression
         >>> X, y = make_classification(random_state=0)
         >>> X_train, X_test, y_train, y_test = train_test_split(
         ...         X, y, random_state=0)
@@ -331,7 +331,7 @@ class PrecisionRecallDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.PrecisionRecallDisplay`
+        display : :class:`~sflearn.metrics.PrecisionRecallDisplay`
 
         See Also
         --------
@@ -340,7 +340,7 @@ class PrecisionRecallDisplay:
 
         Notes
         -----
-        The average precision (cf. :func:`~sklearn.metrics.average_precision`)
+        The average precision (cf. :func:`~sflearn.metrics.average_precision`)
         in scikit-learn is computed without any interpolation. To be consistent
         with this metric, the precision-recall curve is plotted without any
         interpolation as well (step-wise style).
@@ -352,10 +352,10 @@ class PrecisionRecallDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import make_classification
-        >>> from sklearn.metrics import PrecisionRecallDisplay
-        >>> from sklearn.model_selection import train_test_split
-        >>> from sklearn.linear_model import LogisticRegression
+        >>> from sflearn.datasets import make_classification
+        >>> from sflearn.metrics import PrecisionRecallDisplay
+        >>> from sflearn.model_selection import train_test_split
+        >>> from sflearn.linear_model import LogisticRegression
         >>> X, y = make_classification(random_state=0)
         >>> X_train, X_test, y_train, y_test = train_test_split(
         ...         X, y, random_state=0)

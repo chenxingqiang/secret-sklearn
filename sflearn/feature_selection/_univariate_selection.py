@@ -549,8 +549,8 @@ class SelectPercentile(_BaseFilter):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_digits
-    >>> from sklearn.feature_selection import SelectPercentile, chi2
+    >>> from sflearn.datasets import load_digits
+    >>> from sflearn.feature_selection import SelectPercentile, chi2
     >>> X, y = load_digits(return_X_y=True)
     >>> X.shape
     (1797, 64)
@@ -648,8 +648,8 @@ class SelectKBest(_BaseFilter):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_digits
-    >>> from sklearn.feature_selection import SelectKBest, chi2
+    >>> from sflearn.datasets import load_digits
+    >>> from sflearn.feature_selection import SelectKBest, chi2
     >>> X, y = load_digits(return_X_y=True)
     >>> X.shape
     (1797, 64)
@@ -746,8 +746,8 @@ class SelectFpr(_BaseFilter):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.feature_selection import SelectFpr, chi2
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.feature_selection import SelectFpr, chi2
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> X.shape
     (569, 30)
@@ -830,8 +830,8 @@ class SelectFdr(_BaseFilter):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.feature_selection import SelectFdr, chi2
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.feature_selection import SelectFdr, chi2
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> X.shape
     (569, 30)
@@ -912,8 +912,8 @@ class SelectFwe(_BaseFilter):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.feature_selection import SelectFwe, chi2
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.feature_selection import SelectFwe, chi2
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> X.shape
     (569, 30)
@@ -996,8 +996,8 @@ class GenericUnivariateSelect(_BaseFilter):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.feature_selection import GenericUnivariateSelect, chi2
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.feature_selection import GenericUnivariateSelect, chi2
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> X.shape
     (569, 30)

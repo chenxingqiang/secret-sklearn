@@ -9,25 +9,25 @@ import numpy as np
 from numpy.testing import assert_array_almost_equal, assert_array_equal, assert_allclose
 from scipy import sparse
 
-from sklearn.base import BaseEstimator, ClassifierMixin
-from sklearn.cross_decomposition import PLSCanonical, PLSRegression, CCA
-from sklearn.feature_selection import RFE, RFECV
-from sklearn.datasets import load_iris, make_friedman1
-from sklearn.metrics import zero_one_loss
-from sklearn.svm import SVC, SVR, LinearSVR
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import GroupKFold
-from sklearn.compose import TransformedTargetRegressor
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
+from sflearn.base import BaseEstimator, ClassifierMixin
+from sflearn.cross_decomposition import PLSCanonical, PLSRegression, CCA
+from sflearn.feature_selection import RFE, RFECV
+from sflearn.datasets import load_iris, make_friedman1
+from sflearn.metrics import zero_one_loss
+from sflearn.svm import SVC, SVR, LinearSVR
+from sflearn.linear_model import LogisticRegression
+from sflearn.ensemble import RandomForestClassifier
+from sflearn.model_selection import cross_val_score
+from sflearn.model_selection import GroupKFold
+from sflearn.compose import TransformedTargetRegressor
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import StandardScaler
 
-from sklearn.utils import check_random_state
-from sklearn.utils._testing import ignore_warnings
+from sflearn.utils import check_random_state
+from sflearn.utils._testing import ignore_warnings
 
-from sklearn.metrics import make_scorer
-from sklearn.metrics import get_scorer
+from sflearn.metrics import make_scorer
+from sflearn.metrics import get_scorer
 
 
 class MockClassifier:

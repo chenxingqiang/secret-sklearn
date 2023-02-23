@@ -4,20 +4,20 @@ from itertools import chain
 import pytest
 import numpy as np
 
-from sklearn.metrics.cluster import adjusted_mutual_info_score
-from sklearn.metrics.cluster import adjusted_rand_score
-from sklearn.metrics.cluster import rand_score
-from sklearn.metrics.cluster import completeness_score
-from sklearn.metrics.cluster import fowlkes_mallows_score
-from sklearn.metrics.cluster import homogeneity_score
-from sklearn.metrics.cluster import mutual_info_score
-from sklearn.metrics.cluster import normalized_mutual_info_score
-from sklearn.metrics.cluster import v_measure_score
-from sklearn.metrics.cluster import silhouette_score
-from sklearn.metrics.cluster import calinski_harabasz_score
-from sklearn.metrics.cluster import davies_bouldin_score
+from sflearn.metrics.cluster import adjusted_mutual_info_score
+from sflearn.metrics.cluster import adjusted_rand_score
+from sflearn.metrics.cluster import rand_score
+from sflearn.metrics.cluster import completeness_score
+from sflearn.metrics.cluster import fowlkes_mallows_score
+from sflearn.metrics.cluster import homogeneity_score
+from sflearn.metrics.cluster import mutual_info_score
+from sflearn.metrics.cluster import normalized_mutual_info_score
+from sflearn.metrics.cluster import v_measure_score
+from sflearn.metrics.cluster import silhouette_score
+from sflearn.metrics.cluster import calinski_harabasz_score
+from sflearn.metrics.cluster import davies_bouldin_score
 
-from sklearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_allclose
 
 
 # Dictionaries of metrics

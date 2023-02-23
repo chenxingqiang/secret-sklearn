@@ -3,7 +3,7 @@
 Plot class probabilities calculated by the VotingClassifier
 ===========================================================
 
-.. currentmodule:: sklearn
+.. currentmodule:: sflearn
 
 Plot the class probabilities of the first sample in a toy dataset predicted by
 three different classifiers and averaged by the
@@ -26,10 +26,10 @@ example dataset.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import VotingClassifier
+from sflearn.linear_model import LogisticRegression
+from sflearn.naive_bayes import GaussianNB
+from sflearn.ensemble import RandomForestClassifier
+from sflearn.ensemble import VotingClassifier
 
 clf1 = LogisticRegression(max_iter=1000, random_state=123)
 clf2 = RandomForestClassifier(n_estimators=100, random_state=123)

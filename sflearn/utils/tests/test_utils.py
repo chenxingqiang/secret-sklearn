@@ -8,31 +8,31 @@ import pytest
 import numpy as np
 import scipy.sparse as sp
 
-from sklearn.utils._testing import (
+from sflearn.utils._testing import (
     assert_array_equal,
     assert_allclose_dense_sparse,
     assert_no_warnings,
     _convert_container,
 )
-from sklearn.utils import check_random_state
-from sklearn.utils import _determine_key_type
-from sklearn.utils import deprecated
-from sklearn.utils import gen_batches
-from sklearn.utils import _get_column_indices
-from sklearn.utils import resample
-from sklearn.utils import safe_mask
-from sklearn.utils import column_or_1d
-from sklearn.utils import _safe_indexing
-from sklearn.utils import _safe_assign
-from sklearn.utils import shuffle
-from sklearn.utils import gen_even_slices
-from sklearn.utils import _message_with_time, _print_elapsed_time
-from sklearn.utils import get_chunk_n_rows
-from sklearn.utils import is_scalar_nan
-from sklearn.utils import _to_object_array
-from sklearn.utils import _approximate_mode
-from sklearn.utils._mocking import MockDataFrame
-from sklearn import config_context
+from sflearn.utils import check_random_state
+from sflearn.utils import _determine_key_type
+from sflearn.utils import deprecated
+from sflearn.utils import gen_batches
+from sflearn.utils import _get_column_indices
+from sflearn.utils import resample
+from sflearn.utils import safe_mask
+from sflearn.utils import column_or_1d
+from sflearn.utils import _safe_indexing
+from sflearn.utils import _safe_assign
+from sflearn.utils import shuffle
+from sflearn.utils import gen_even_slices
+from sflearn.utils import _message_with_time, _print_elapsed_time
+from sflearn.utils import get_chunk_n_rows
+from sflearn.utils import is_scalar_nan
+from sflearn.utils import _to_object_array
+from sflearn.utils import _approximate_mode
+from sflearn.utils._mocking import MockDataFrame
+from sflearn import config_context
 
 # toy array
 X_toy = np.arange(9).reshape((3, 3))
@@ -703,7 +703,7 @@ def test_is_scalar_nan(value, result):
 
 
 def test_approximate_mode():
-    """Make sure sklearn.utils._approximate_mode returns valid
+    """Make sure sflearn.utils._approximate_mode returns valid
     results for cases where "class_counts * n_draws" is enough
     to overflow 32-bit signed integer.
 
@@ -726,13 +726,13 @@ def dummy_func():
 def test_deprecation_joblib_api(tmpdir):
 
     # Only parallel_backend and register_parallel_backend are not deprecated in
-    # sklearn.utils
-    from sklearn.utils import parallel_backend, register_parallel_backend
+    # sflearn.utils
+    from sflearn.utils import parallel_backend, register_parallel_backend
 
     assert_no_warnings(parallel_backend, "loky", None)
     assert_no_warnings(register_parallel_backend, "failing", None)
 
-    from sklearn.utils._joblib import joblib
+    from sflearn.utils._joblib import joblib
 
     del joblib.parallel.BACKENDS["failing"]
 

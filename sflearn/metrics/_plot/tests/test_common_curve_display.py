@@ -1,15 +1,15 @@
 import pytest
 
-from sklearn.base import ClassifierMixin, clone
-from sklearn.compose import make_column_transformer
-from sklearn.datasets import load_iris
-from sklearn.exceptions import NotFittedError
-from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.tree import DecisionTreeClassifier
+from sflearn.base import ClassifierMixin, clone
+from sflearn.compose import make_column_transformer
+from sflearn.datasets import load_iris
+from sflearn.exceptions import NotFittedError
+from sflearn.linear_model import LogisticRegression
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import StandardScaler
+from sflearn.tree import DecisionTreeClassifier
 
-from sklearn.metrics import (
+from sflearn.metrics import (
     DetCurveDisplay,
     PrecisionRecallDisplay,
     RocCurveDisplay,

@@ -10,22 +10,22 @@ from scipy.sparse import coo_matrix
 from scipy.sparse import dok_matrix
 from scipy.sparse import lil_matrix
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils.estimator_checks import _NotAnArray
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils.estimator_checks import _NotAnArray
 
-from sklearn.utils.multiclass import unique_labels
-from sklearn.utils.multiclass import is_multilabel
-from sklearn.utils.multiclass import type_of_target
-from sklearn.utils.multiclass import class_distribution
-from sklearn.utils.multiclass import check_classification_targets
-from sklearn.utils.multiclass import _ovr_decision_function
+from sflearn.utils.multiclass import unique_labels
+from sflearn.utils.multiclass import is_multilabel
+from sflearn.utils.multiclass import type_of_target
+from sflearn.utils.multiclass import class_distribution
+from sflearn.utils.multiclass import check_classification_targets
+from sflearn.utils.multiclass import _ovr_decision_function
 
-from sklearn.utils.metaestimators import _safe_split
-from sklearn.model_selection import ShuffleSplit
-from sklearn.svm import SVC
-from sklearn import datasets
+from sflearn.utils.metaestimators import _safe_split
+from sflearn.model_selection import ShuffleSplit
+from sflearn.svm import SVC
+from sflearn import datasets
 
 sparse_multilable_explicit_zero = csc_matrix(np.array([[0, 1], [1, 0]]))
 sparse_multilable_explicit_zero[:, 0] = 0

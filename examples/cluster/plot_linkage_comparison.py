@@ -29,8 +29,8 @@ import warnings
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import cluster, datasets
-from sklearn.preprocessing import StandardScaler
+from sflearn import cluster, datasets
+from sflearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 
 np.random.seed(0)

@@ -2,8 +2,8 @@ import numpy as np
 from numpy.testing import assert_array_equal
 import pytest
 
-from sklearn.feature_extraction import FeatureHasher
-from sklearn.feature_extraction._hashing_fast import transform as _hashing_transform
+from sflearn.feature_extraction import FeatureHasher
+from sflearn.feature_extraction._hashing_fast import transform as _hashing_transform
 
 
 def test_feature_hasher_dicts():

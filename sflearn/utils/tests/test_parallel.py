@@ -5,15 +5,15 @@ import numpy as np
 import pytest
 from numpy.testing import assert_array_equal
 
-from sklearn import config_context, get_config
-from sklearn.compose import make_column_transformer
-from sklearn.datasets import load_iris
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
+from sflearn import config_context, get_config
+from sflearn.compose import make_column_transformer
+from sflearn.datasets import load_iris
+from sflearn.ensemble import RandomForestClassifier
+from sflearn.model_selection import GridSearchCV
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import StandardScaler
 
-from sklearn.utils.parallel import delayed, Parallel
+from sflearn.utils.parallel import delayed, Parallel
 
 
 def get_working_memory():
@@ -34,19 +34,19 @@ def test_configuration_passes_through_to_joblib(n_jobs, backend):
 
 
 def test_parallel_delayed_warnings():
-    """Informative warnings should be raised when mixing sklearn and joblib API"""
-    # We should issue a warning when one wants to use sklearn.utils.fixes.Parallel
+    """Informative warnings should be raised when mixing sflearn and joblib API"""
+    # We should issue a warning when one wants to use sflearn.utils.fixes.Parallel
     # with joblib.delayed. The config will not be propagated to the workers.
-    warn_msg = "`sklearn.utils.parallel.Parallel` needs to be used in conjunction"
+    warn_msg = "`sflearn.utils.parallel.Parallel` needs to be used in conjunction"
     with pytest.warns(UserWarning, match=warn_msg) as records:
         Parallel()(joblib.delayed(time.sleep)(0) for _ in range(10))
     assert len(records) == 10
 
-    # We should issue a warning if one wants to use sklearn.utils.fixes.delayed with
+    # We should issue a warning if one wants to use sflearn.utils.fixes.delayed with
     # joblib.Parallel
     warn_msg = (
-        "`sklearn.utils.parallel.delayed` should be used with "
-        "`sklearn.utils.parallel.Parallel` to make it possible to propagate"
+        "`sflearn.utils.parallel.delayed` should be used with "
+        "`sflearn.utils.parallel.Parallel` to make it possible to propagate"
     )
     with pytest.warns(UserWarning, match=warn_msg) as records:
         joblib.Parallel()(delayed(time.sleep)(0) for _ in range(10))

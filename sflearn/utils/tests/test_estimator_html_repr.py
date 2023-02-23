@@ -4,34 +4,34 @@ from io import StringIO
 
 import pytest
 
-from sklearn import config_context
-from sklearn.linear_model import LogisticRegression
-from sklearn.neural_network import MLPClassifier
-from sklearn.impute import SimpleImputer
-from sklearn.decomposition import PCA
-from sklearn.decomposition import TruncatedSVD
-from sklearn.pipeline import Pipeline
-from sklearn.pipeline import FeatureUnion
-from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import VotingClassifier
-from sklearn.feature_selection import SelectPercentile
-from sklearn.cluster import Birch
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import LinearSVC
-from sklearn.svm import LinearSVR
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.multiclass import OneVsOneClassifier
-from sklearn.ensemble import StackingClassifier
-from sklearn.ensemble import StackingRegressor
-from sklearn.gaussian_process.kernels import ExpSineSquared
-from sklearn.kernel_ridge import KernelRidge
+from sflearn import config_context
+from sflearn.linear_model import LogisticRegression
+from sflearn.neural_network import MLPClassifier
+from sflearn.impute import SimpleImputer
+from sflearn.decomposition import PCA
+from sflearn.decomposition import TruncatedSVD
+from sflearn.pipeline import Pipeline
+from sflearn.pipeline import FeatureUnion
+from sflearn.compose import ColumnTransformer
+from sflearn.ensemble import VotingClassifier
+from sflearn.feature_selection import SelectPercentile
+from sflearn.cluster import Birch
+from sflearn.cluster import AgglomerativeClustering
+from sflearn.preprocessing import OneHotEncoder
+from sflearn.preprocessing import StandardScaler
+from sflearn.svm import LinearSVC
+from sflearn.svm import LinearSVR
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.multiclass import OneVsOneClassifier
+from sflearn.ensemble import StackingClassifier
+from sflearn.ensemble import StackingRegressor
+from sflearn.gaussian_process.kernels import ExpSineSquared
+from sflearn.kernel_ridge import KernelRidge
 
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.utils._estimator_html_repr import _write_label_html
-from sklearn.utils._estimator_html_repr import _get_visual_block
-from sklearn.utils._estimator_html_repr import estimator_html_repr
+from sflearn.model_selection import RandomizedSearchCV
+from sflearn.utils._estimator_html_repr import _write_label_html
+from sflearn.utils._estimator_html_repr import _get_visual_block
+from sflearn.utils._estimator_html_repr import estimator_html_repr
 
 
 @pytest.mark.parametrize("checked", [True, False])

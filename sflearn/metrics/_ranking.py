@@ -75,7 +75,7 @@ def auc(x, y):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn import metrics
+    >>> from sflearn import metrics
     >>> y = np.array([1, 1, 2, 2])
     >>> pred = np.array([0.1, 0.4, 0.35, 0.8])
     >>> fpr, tpr, thresholds = metrics.roc_curve(y, pred, pos_label=2)
@@ -194,7 +194,7 @@ def average_precision_score(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import average_precision_score
+    >>> from sflearn.metrics import average_precision_score
     >>> y_true = np.array([0, 0, 1, 1])
     >>> y_scores = np.array([0.1, 0.4, 0.35, 0.8])
     >>> average_precision_score(y_true, y_scores)
@@ -294,7 +294,7 @@ def det_curve(y_true, y_score, pos_label=None, sample_weight=None):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import det_curve
+    >>> from sflearn.metrics import det_curve
     >>> y_true = np.array([0, 0, 1, 1])
     >>> y_scores = np.array([0.1, 0.4, 0.35, 0.8])
     >>> fpr, fnr, thresholds = det_curve(y_true, y_scores)
@@ -508,9 +508,9 @@ def roc_auc_score(
     --------
     Binary case:
 
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.linear_model import LogisticRegression
-    >>> from sklearn.metrics import roc_auc_score
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.linear_model import LogisticRegression
+    >>> from sflearn.metrics import roc_auc_score
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> clf = LogisticRegression(solver="liblinear", random_state=0).fit(X, y)
     >>> roc_auc_score(y, clf.predict_proba(X)[:, 1])
@@ -520,7 +520,7 @@ def roc_auc_score(
 
     Multiclass case:
 
-    >>> from sklearn.datasets import load_iris
+    >>> from sflearn.datasets import load_iris
     >>> X, y = load_iris(return_X_y=True)
     >>> clf = LogisticRegression(solver="liblinear").fit(X, y)
     >>> roc_auc_score(y, clf.predict_proba(X), multi_class='ovr')
@@ -529,8 +529,8 @@ def roc_auc_score(
     Multilabel case:
 
     >>> import numpy as np
-    >>> from sklearn.datasets import make_multilabel_classification
-    >>> from sklearn.multioutput import MultiOutputClassifier
+    >>> from sflearn.datasets import make_multilabel_classification
+    >>> from sflearn.multioutput import MultiOutputClassifier
     >>> X, y = make_multilabel_classification(random_state=0)
     >>> clf = MultiOutputClassifier(clf).fit(X, y)
     >>> # get a list of n_output containing probability arrays of shape
@@ -540,7 +540,7 @@ def roc_auc_score(
     >>> y_pred = np.transpose([pred[:, 1] for pred in y_pred])
     >>> roc_auc_score(y, y_pred, average=None)
     array([0.82..., 0.86..., 0.94..., 0.85... , 0.94...])
-    >>> from sklearn.linear_model import RidgeClassifierCV
+    >>> from sflearn.linear_model import RidgeClassifierCV
     >>> clf = RidgeClassifierCV().fit(X, y)
     >>> roc_auc_score(y, clf.decision_function(X), average=None)
     array([0.81..., 0.84... , 0.93..., 0.87..., 0.94...])
@@ -863,7 +863,7 @@ def precision_recall_curve(y_true, probas_pred, *, pos_label=None, sample_weight
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import precision_recall_curve
+    >>> from sflearn.metrics import precision_recall_curve
     >>> y_true = np.array([0, 0, 1, 1])
     >>> y_scores = np.array([0.1, 0.4, 0.35, 0.8])
     >>> precision, recall, thresholds = precision_recall_curve(
@@ -978,7 +978,7 @@ def roc_curve(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn import metrics
+    >>> from sflearn import metrics
     >>> y = np.array([1, 1, 2, 2])
     >>> scores = np.array([0.1, 0.4, 0.35, 0.8])
     >>> fpr, tpr, thresholds = metrics.roc_curve(y, scores, pos_label=2)
@@ -1075,7 +1075,7 @@ def label_ranking_average_precision_score(y_true, y_score, *, sample_weight=None
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import label_ranking_average_precision_score
+    >>> from sflearn.metrics import label_ranking_average_precision_score
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])
     >>> label_ranking_average_precision_score(y_true, y_score)
@@ -1466,7 +1466,7 @@ def dcg_score(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import dcg_score
+    >>> from sflearn.metrics import dcg_score
     >>> # we have groud-truth relevance of some answers to a query:
     >>> true_relevance = np.asarray([[10, 0, 0, 1, 5]])
     >>> # we predict scores for the answers
@@ -1619,7 +1619,7 @@ def ndcg_score(y_true, y_score, *, k=None, sample_weight=None, ignore_ties=False
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import ndcg_score
+    >>> from sflearn.metrics import ndcg_score
     >>> # we have groud-truth relevance of some answers to a query:
     >>> true_relevance = np.asarray([[10, 0, 0, 1, 5]])
     >>> # we predict some scores (relevance) for the answers
@@ -1732,7 +1732,7 @@ def top_k_accuracy_score(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.metrics import top_k_accuracy_score
+    >>> from sflearn.metrics import top_k_accuracy_score
     >>> y_true = np.array([0, 1, 2, 2])
     >>> y_score = np.array([[0.5, 0.2, 0.2],  # 0 is in top 2
     ...                     [0.3, 0.4, 0.2],  # 1 is in top 2

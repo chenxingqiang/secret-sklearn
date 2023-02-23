@@ -72,7 +72,7 @@ class KNeighborsClassifier(KNeighborsMixin, ClassifierMixin, NeighborsBase):
         documentation of `scipy.spatial.distance
         <https://docs.scipy.org/doc/scipy/reference/spatial.distance.html>`_ and
         the metrics listed in
-        :class:`~sklearn.metrics.pairwise.distance_metrics` for valid metric
+        :class:`~sflearn.metrics.pairwise.distance_metrics` for valid metric
         values.
 
         If metric is "precomputed", X is assumed to be a distance matrix and
@@ -153,7 +153,7 @@ class KNeighborsClassifier(KNeighborsMixin, ClassifierMixin, NeighborsBase):
     --------
     >>> X = [[0], [1], [2], [3]]
     >>> y = [0, 0, 1, 1]
-    >>> from sklearn.neighbors import KNeighborsClassifier
+    >>> from sflearn.neighbors import KNeighborsClassifier
     >>> neigh = KNeighborsClassifier(n_neighbors=3)
     >>> neigh.fit(X, y)
     KNeighborsClassifier(...)
@@ -377,7 +377,7 @@ class RadiusNeighborsClassifier(RadiusNeighborsMixin, ClassifierMixin, Neighbors
         documentation of `scipy.spatial.distance
         <https://docs.scipy.org/doc/scipy/reference/spatial.distance.html>`_ and
         the metrics listed in
-        :class:`~sklearn.metrics.pairwise.distance_metrics` for valid metric
+        :class:`~sflearn.metrics.pairwise.distance_metrics` for valid metric
         values.
 
         If metric is "precomputed", X is assumed to be a distance matrix and
@@ -465,7 +465,7 @@ class RadiusNeighborsClassifier(RadiusNeighborsMixin, ClassifierMixin, Neighbors
     --------
     >>> X = [[0], [1], [2], [3]]
     >>> y = [0, 0, 1, 1]
-    >>> from sklearn.neighbors import RadiusNeighborsClassifier
+    >>> from sflearn.neighbors import RadiusNeighborsClassifier
     >>> neigh = RadiusNeighborsClassifier(radius=1.0)
     >>> neigh.fit(X, y)
     RadiusNeighborsClassifier(...)

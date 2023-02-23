@@ -2,7 +2,7 @@
 Machine learning module for Python
 ==================================
 
-sklearn is a Python module integrating classical machine
+sflearn is a Python module integrating classical machine
 learning algorithms in the tightly-knit world of scientific Python
 packages (numpy, scipy, matplotlib).
 
@@ -58,21 +58,21 @@ os.environ.setdefault("KMP_INIT_AT_FORK", "FALSE")
 
 try:
     # This variable is injected in the __builtins__ by the build
-    # process. It is used to enable importing subpackages of sklearn when
+    # process. It is used to enable importing subpackages of sflearn when
     # the binaries are not built
-    # mypy error: Cannot determine type of '__SKLEARN_SETUP__'
-    __SKLEARN_SETUP__  # type: ignore
+    # mypy error: Cannot determine type of '__SFLEARN_SETUP__'
+    __SFLEARN_SETUP__  # type: ignore
 except NameError:
-    __SKLEARN_SETUP__ = False
+    __SFLEARN_SETUP__ = False
 
-if __SKLEARN_SETUP__:
-    sys.stderr.write("Partial import of sklearn during the build process.\n")
+if __SFLEARN_SETUP__:
+    sys.stderr.write("Partial import of sflearn during the build process.\n")
     # We are not importing the rest of scikit-learn during the build
     # process, as it may not be compiled yet
 else:
     # `_distributor_init` allows distributors to run custom init code.
     # For instance, for the Windows wheel, this is used to pre-load the
-    # vcomp shared library runtime for OpenMP embedded in the sklearn/.libs
+    # vcomp shared library runtime for OpenMP embedded in the sflearn/.libs
     # sub-folder.
     # It is necessary to do this prior to importing show_versions as the
     # later is linked to the OpenMP runtime to make it possible to introspect
@@ -135,7 +135,7 @@ def setup_module(module):
     import numpy as np
 
     # Check if a random seed exists in the environment, if not create one.
-    _random_seed = os.environ.get("SKLEARN_SEED", None)
+    _random_seed = os.environ.get("SFLEARN_SEED", None)
     if _random_seed is None:
         _random_seed = np.random.uniform() * np.iinfo(np.int32).max
     _random_seed = int(_random_seed)

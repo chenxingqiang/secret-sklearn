@@ -27,9 +27,9 @@ x and y coordinate as output.
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.multioutput import MultiOutputRegressor
+from sflearn.ensemble import RandomForestRegressor
+from sflearn.model_selection import train_test_split
+from sflearn.multioutput import MultiOutputRegressor
 
 
 # Create a random dataset

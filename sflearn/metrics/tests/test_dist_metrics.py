@@ -7,17 +7,17 @@ import pytest
 
 import scipy.sparse as sp
 from scipy.spatial.distance import cdist
-from sklearn.metrics import DistanceMetric
+from sflearn.metrics import DistanceMetric
 
-from sklearn.metrics._dist_metrics import (
+from sflearn.metrics._dist_metrics import (
     BOOL_METRICS,
     # Unexposed private DistanceMetric for 32 bit
     DistanceMetric32,
 )
 
-from sklearn.utils import check_random_state
-from sklearn.utils._testing import assert_allclose, create_memmap_backed_data
-from sklearn.utils.fixes import sp_version, parse_version
+from sflearn.utils import check_random_state
+from sflearn.utils._testing import assert_allclose, create_memmap_backed_data
+from sflearn.utils.fixes import sp_version, parse_version
 
 
 def dist_func(x1, x2, p):
@@ -72,7 +72,7 @@ else:
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize(
     "metric_param_grid", METRICS_DEFAULT_PARAMS, ids=lambda params: params[0]
 )
@@ -109,21 +109,21 @@ def test_cdist(metric_param_grid, X, Y):
 
         # DistanceMetric.pairwise must be consistent for all
         # combinations of formats in {sparse, dense}.
-        D_sklearn = dm.pairwise(X, Y)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn, D_scipy_cdist, **rtol_dict)
+        D_sflearn = dm.pairwise(X, Y)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn, D_scipy_cdist, **rtol_dict)
 
-        D_sklearn = dm.pairwise(X_csr, Y_csr)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn, D_scipy_cdist, **rtol_dict)
+        D_sflearn = dm.pairwise(X_csr, Y_csr)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn, D_scipy_cdist, **rtol_dict)
 
-        D_sklearn = dm.pairwise(X_csr, Y)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn, D_scipy_cdist, **rtol_dict)
+        D_sflearn = dm.pairwise(X_csr, Y)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn, D_scipy_cdist, **rtol_dict)
 
-        D_sklearn = dm.pairwise(X, Y_csr)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn, D_scipy_cdist, **rtol_dict)
+        D_sflearn = dm.pairwise(X, Y_csr)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn, D_scipy_cdist, **rtol_dict)
 
 
 @pytest.mark.parametrize("metric", BOOL_METRICS)
@@ -134,32 +134,32 @@ def test_cdist_bool_metric(metric, X_bool, Y_bool):
     D_scipy_cdist = cdist(X_bool, Y_bool, metric)
 
     dm = DistanceMetric.get_metric(metric)
-    D_sklearn = dm.pairwise(X_bool, Y_bool)
-    assert_allclose(D_sklearn, D_scipy_cdist)
+    D_sflearn = dm.pairwise(X_bool, Y_bool)
+    assert_allclose(D_sflearn, D_scipy_cdist)
 
     # DistanceMetric.pairwise must be consistent
     # on all combinations of format in {sparse, dense}².
     X_bool_csr, Y_bool_csr = sp.csr_matrix(X_bool), sp.csr_matrix(Y_bool)
 
-    D_sklearn = dm.pairwise(X_bool, Y_bool)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_scipy_cdist)
+    D_sflearn = dm.pairwise(X_bool, Y_bool)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_scipy_cdist)
 
-    D_sklearn = dm.pairwise(X_bool_csr, Y_bool_csr)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_scipy_cdist)
+    D_sflearn = dm.pairwise(X_bool_csr, Y_bool_csr)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_scipy_cdist)
 
-    D_sklearn = dm.pairwise(X_bool, Y_bool_csr)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_scipy_cdist)
+    D_sflearn = dm.pairwise(X_bool, Y_bool_csr)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_scipy_cdist)
 
-    D_sklearn = dm.pairwise(X_bool_csr, Y_bool)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_scipy_cdist)
+    D_sflearn = dm.pairwise(X_bool_csr, Y_bool)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_scipy_cdist)
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize(
     "metric_param_grid", METRICS_DEFAULT_PARAMS, ids=lambda params: params[0]
 )
@@ -196,21 +196,21 @@ def test_pdist(metric_param_grid, X):
             D_scipy_pdist = cdist(X, X, metric, **kwargs)
 
         dm = DistanceMetricInterface.get_metric(metric, **kwargs)
-        D_sklearn = dm.pairwise(X)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn, D_scipy_pdist, **rtol_dict)
+        D_sflearn = dm.pairwise(X)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn, D_scipy_pdist, **rtol_dict)
 
-        D_sklearn_csr = dm.pairwise(X_csr)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn_csr, D_scipy_pdist, **rtol_dict)
+        D_sflearn_csr = dm.pairwise(X_csr)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn_csr, D_scipy_pdist, **rtol_dict)
 
-        D_sklearn_csr = dm.pairwise(X_csr, X_csr)
-        assert D_sklearn.flags.c_contiguous
-        assert_allclose(D_sklearn_csr, D_scipy_pdist, **rtol_dict)
+        D_sflearn_csr = dm.pairwise(X_csr, X_csr)
+        assert D_sflearn.flags.c_contiguous
+        assert_allclose(D_sflearn_csr, D_scipy_pdist, **rtol_dict)
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize(
     "metric_param_grid", METRICS_DEFAULT_PARAMS, ids=lambda params: params[0]
 )
@@ -253,16 +253,16 @@ def test_distance_metrics_dtype_consistency(metric_param_grid):
 def test_pdist_bool_metrics(metric, X_bool):
     D_scipy_pdist = cdist(X_bool, X_bool, metric)
     dm = DistanceMetric.get_metric(metric)
-    D_sklearn = dm.pairwise(X_bool)
-    assert_allclose(D_sklearn, D_scipy_pdist)
+    D_sflearn = dm.pairwise(X_bool)
+    assert_allclose(D_sflearn, D_scipy_pdist)
 
     X_bool_csr = sp.csr_matrix(X_bool)
-    D_sklearn = dm.pairwise(X_bool_csr)
-    assert_allclose(D_sklearn, D_scipy_pdist)
+    D_sflearn = dm.pairwise(X_bool_csr)
+    assert_allclose(D_sflearn, D_scipy_pdist)
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize("writable_kwargs", [True, False])
 @pytest.mark.parametrize(
     "metric_param_grid", METRICS_DEFAULT_PARAMS, ids=lambda params: params[0]
@@ -289,7 +289,7 @@ def test_pickle(writable_kwargs, metric_param_grid, X):
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize("metric", BOOL_METRICS)
 @pytest.mark.parametrize("X_bool", [X_bool, X_bool_mmap])
 def test_pickle_bool_metrics(metric, X_bool):
@@ -329,24 +329,24 @@ def test_haversine_metric(X, Y):
 
     haversine = DistanceMetricInterface.get_metric("haversine")
 
-    D_sklearn = haversine.pairwise(X, Y)
+    D_sflearn = haversine.pairwise(X, Y)
     assert_allclose(
-        haversine.dist_to_rdist(D_sklearn), np.sin(0.5 * D_reference) ** 2, rtol=1e-6
+        haversine.dist_to_rdist(D_sflearn), np.sin(0.5 * D_reference) ** 2, rtol=1e-6
     )
 
-    assert_allclose(D_sklearn, D_reference)
+    assert_allclose(D_sflearn, D_reference)
 
-    D_sklearn = haversine.pairwise(X_csr, Y_csr)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_reference)
+    D_sflearn = haversine.pairwise(X_csr, Y_csr)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_reference)
 
-    D_sklearn = haversine.pairwise(X_csr, Y)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_reference)
+    D_sflearn = haversine.pairwise(X_csr, Y)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_reference)
 
-    D_sklearn = haversine.pairwise(X, Y_csr)
-    assert D_sklearn.flags.c_contiguous
-    assert_allclose(D_sklearn, D_reference)
+    D_sflearn = haversine.pairwise(X, Y_csr)
+    assert D_sflearn.flags.c_contiguous
+    assert_allclose(D_sflearn, D_reference)
 
 
 def test_pyfunc_metric():
@@ -386,7 +386,7 @@ def test_input_data_size():
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 def test_readonly_kwargs():
     # Non-regression test for:
     # https://github.com/scikit-learn/scikit-learn/issues/21685
@@ -444,7 +444,7 @@ def test_wminkowski_deprecated():
 
 
 # TODO: Remove in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize("p", [1, 1.5, 3])
 def test_wminkowski_minkowski_equivalence(p):
     w = rng.random_sample(d)

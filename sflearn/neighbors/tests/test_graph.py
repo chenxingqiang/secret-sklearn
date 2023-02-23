@@ -1,10 +1,10 @@
 import numpy as np
 import pytest
 
-from sklearn.metrics import euclidean_distances
-from sklearn.neighbors import KNeighborsTransformer, RadiusNeighborsTransformer
-from sklearn.neighbors._base import _is_sorted_by_data
-from sklearn.utils._testing import assert_array_equal
+from sflearn.metrics import euclidean_distances
+from sflearn.neighbors import KNeighborsTransformer, RadiusNeighborsTransformer
+from sflearn.neighbors._base import _is_sorted_by_data
+from sflearn.utils._testing import assert_array_equal
 
 
 def test_transformer_result():

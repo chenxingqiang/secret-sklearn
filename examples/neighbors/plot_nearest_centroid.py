@@ -11,9 +11,9 @@ It will plot the decision boundaries for each class.
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-from sklearn import datasets
-from sklearn.neighbors import NearestCentroid
-from sklearn.inspection import DecisionBoundaryDisplay
+from sflearn import datasets
+from sflearn.neighbors import NearestCentroid
+from sflearn.inspection import DecisionBoundaryDisplay
 
 n_neighbors = 15
 

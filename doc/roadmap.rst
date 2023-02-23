@@ -224,7 +224,7 @@ the document up to date as we work on these issues.
    (to be discussed);
 
    * Extend documentation to mention how to deploy models in Python-free
-     environments for instance `ONNX <https://github.com/onnx/sklearn-onnx>`_.
+     environments for instance `ONNX <https://github.com/onnx/sflearn-onnx>`_.
      and use the above best practices to assess predictive consistency between
      scikit-learn and ONNX prediction functions on validation set.
    * Document good practices to detect temporal distribution drift for deployed
@@ -235,16 +235,16 @@ the document up to date as we work on these issues.
 Subpackage-specific goals
 -------------------------
 
-:mod:`sklearn.ensemble`
+:mod:`sflearn.ensemble`
 
 * |ss| a stacking implementation, :issue:`11047` |se|
 
-:mod:`sklearn.cluster`
+:mod:`sflearn.cluster`
 
 * kmeans variants for non-Euclidean distances, if we can show these have
   benefits beyond hierarchical clustering.
 
-:mod:`sklearn.model_selection`
+:mod:`sflearn.model_selection`
 
 * |ss| multi-metric scoring is slow :issue:`9326` |se|
 * perhaps we want to be able to get back more than multiple metrics
@@ -260,13 +260,13 @@ Subpackage-specific goals
   above) cf `dask-ml
   <https://ml.dask.org/hyper-parameter-search.html#avoid-repeated-work>`_
 
-:mod:`sklearn.neighbors`
+:mod:`sflearn.neighbors`
 
 * |ss| Ability to substitute a custom/approximate/precomputed nearest neighbors
   implementation for ours in all/most contexts that nearest neighbors are used
   for learning. :issue:`10463` |se|
 
-:mod:`sklearn.pipeline`
+:mod:`sflearn.pipeline`
 
 * Performance issues with `Pipeline.memory`
 * see "Everything in Scikit-learn should conform to our API contract" above

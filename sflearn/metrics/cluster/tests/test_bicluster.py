@@ -2,10 +2,10 @@
 
 import numpy as np
 
-from sklearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_almost_equal
 
-from sklearn.metrics.cluster._bicluster import _jaccard
-from sklearn.metrics import consensus_score
+from sflearn.metrics.cluster._bicluster import _jaccard
+from sflearn.metrics import consensus_score
 
 
 def test_jaccard():

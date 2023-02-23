@@ -570,7 +570,7 @@ class BaggingClassifier(ClassifierMixin, BaseBagging):
     estimator : object, default=None
         The base estimator to fit on random subsets of the dataset.
         If None, then the base estimator is a
-        :class:`~sklearn.tree.DecisionTreeClassifier`.
+        :class:`~sflearn.tree.DecisionTreeClassifier`.
 
         .. versionadded:: 1.2
            `base_estimator` was renamed to `estimator`.
@@ -711,9 +711,9 @@ class BaggingClassifier(ClassifierMixin, BaseBagging):
 
     Examples
     --------
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.ensemble import BaggingClassifier
-    >>> from sklearn.datasets import make_classification
+    >>> from sflearn.svm import SVC
+    >>> from sflearn.ensemble import BaggingClassifier
+    >>> from sflearn.datasets import make_classification
     >>> X, y = make_classification(n_samples=100, n_features=4,
     ...                            n_informative=2, n_redundant=0,
     ...                            random_state=0, shuffle=False)
@@ -1011,7 +1011,7 @@ class BaggingRegressor(RegressorMixin, BaseBagging):
     estimator : object, default=None
         The base estimator to fit on random subsets of the dataset.
         If None, then the base estimator is a
-        :class:`~sklearn.tree.DecisionTreeRegressor`.
+        :class:`~sflearn.tree.DecisionTreeRegressor`.
 
         .. versionadded:: 1.2
            `base_estimator` was renamed to `estimator`.
@@ -1143,9 +1143,9 @@ class BaggingRegressor(RegressorMixin, BaseBagging):
 
     Examples
     --------
-    >>> from sklearn.svm import SVR
-    >>> from sklearn.ensemble import BaggingRegressor
-    >>> from sklearn.datasets import make_regression
+    >>> from sflearn.svm import SVR
+    >>> from sflearn.ensemble import BaggingRegressor
+    >>> from sflearn.datasets import make_regression
     >>> X, y = make_regression(n_samples=100, n_features=4,
     ...                        n_informative=2, n_targets=1,
     ...                        random_state=0, shuffle=False)

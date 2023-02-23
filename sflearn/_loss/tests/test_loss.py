@@ -12,8 +12,8 @@ from scipy.optimize import (
 )
 from scipy.special import logsumexp
 
-from sklearn._loss.link import _inclusive_low_high, IdentityLink
-from sklearn._loss.loss import (
+from sflearn._loss.link import _inclusive_low_high, IdentityLink
+from sflearn._loss.loss import (
     _LOSSES,
     BaseLoss,
     AbsoluteError,
@@ -26,8 +26,8 @@ from sklearn._loss.loss import (
     HalfTweedieLossIdentity,
     PinballLoss,
 )
-from sklearn.utils import assert_all_finite
-from sklearn.utils._testing import create_memmap_backed_data, skip_if_32bit
+from sflearn.utils import assert_all_finite
+from sflearn.utils._testing import create_memmap_backed_data, skip_if_32bit
 
 
 ALL_LOSSES = list(_LOSSES.values())

@@ -8,24 +8,24 @@ from scipy import sparse
 
 import pytest
 
-from sklearn.base import clone
-from sklearn.datasets import load_iris, make_classification
-from sklearn.metrics import log_loss
-from sklearn.metrics import get_scorer
-from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.utils import compute_class_weight, _IS_32BIT
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils import shuffle
-from sklearn.linear_model import SGDClassifier
-from sklearn.preprocessing import scale
-from sklearn.utils._testing import skip_if_no_parallel
+from sflearn.base import clone
+from sflearn.datasets import load_iris, make_classification
+from sflearn.metrics import log_loss
+from sflearn.metrics import get_scorer
+from sflearn.model_selection import StratifiedKFold
+from sflearn.model_selection import GridSearchCV
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import cross_val_score
+from sflearn.preprocessing import LabelEncoder, StandardScaler
+from sflearn.utils import compute_class_weight, _IS_32BIT
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils import shuffle
+from sflearn.linear_model import SGDClassifier
+from sflearn.preprocessing import scale
+from sflearn.utils._testing import skip_if_no_parallel
 
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.linear_model._logistic import (
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.linear_model._logistic import (
     _log_reg_scoring_path,
     _logistic_regression_path,
     LogisticRegression,
@@ -33,7 +33,7 @@ from sklearn.linear_model._logistic import (
 )
 
 pytestmark = pytest.mark.filterwarnings(
-    "error::sklearn.exceptions.ConvergenceWarning:sklearn.*"
+    "error::sflearn.exceptions.ConvergenceWarning:sflearn.*"
 )
 
 

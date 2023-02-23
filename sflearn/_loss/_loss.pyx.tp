@@ -182,8 +182,8 @@ class_list = [
 ]
 }}
 """
-WARNING: Do not edit `sklearn/_loss/_loss.pyx` file directly, as it is generated from
-`sklearn/_loss/_loss.pyx.tp`. Changes must be made there.
+WARNING: Do not edit `sflearn/_loss/_loss.pyx` file directly, as it is generated from
+`sflearn/_loss/_loss.pyx.tp`. Changes must be made there.
 """
 #------------------------------------------------------------------------------
 

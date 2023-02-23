@@ -11,9 +11,9 @@ vectors in LinearSVC.
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.datasets import make_blobs
-from sklearn.svm import LinearSVC
-from sklearn.inspection import DecisionBoundaryDisplay
+from sflearn.datasets import make_blobs
+from sflearn.svm import LinearSVC
+from sflearn.inspection import DecisionBoundaryDisplay
 
 X, y = make_blobs(n_samples=40, centers=2, random_state=0)
 

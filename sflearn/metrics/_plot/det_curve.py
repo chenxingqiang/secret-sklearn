@@ -11,8 +11,8 @@ from ...utils import check_matplotlib_support
 class DetCurveDisplay:
     """DET curve visualization.
 
-    It is recommend to use :func:`~sklearn.metrics.DetCurveDisplay.from_estimator`
-    or :func:`~sklearn.metrics.DetCurveDisplay.from_predictions` to create a
+    It is recommend to use :func:`~sflearn.metrics.DetCurveDisplay.from_estimator`
+    or :func:`~sflearn.metrics.DetCurveDisplay.from_predictions` to create a
     visualizer. All parameters are stored as attributes.
 
     Read more in the :ref:`User Guide <visualizations>`.
@@ -55,10 +55,10 @@ class DetCurveDisplay:
     Examples
     --------
     >>> import matplotlib.pyplot as plt
-    >>> from sklearn.datasets import make_classification
-    >>> from sklearn.metrics import det_curve, DetCurveDisplay
-    >>> from sklearn.model_selection import train_test_split
-    >>> from sklearn.svm import SVC
+    >>> from sflearn.datasets import make_classification
+    >>> from sflearn.metrics import det_curve, DetCurveDisplay
+    >>> from sflearn.model_selection import train_test_split
+    >>> from sflearn.svm import SVC
     >>> X, y = make_classification(n_samples=1000, random_state=0)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...     X, y, test_size=0.4, random_state=0)
@@ -102,7 +102,7 @@ class DetCurveDisplay:
         Parameters
         ----------
         estimator : estimator instance
-            Fitted classifier or a fitted :class:`~sklearn.pipeline.Pipeline`
+            Fitted classifier or a fitted :class:`~sflearn.pipeline.Pipeline`
             in which the last estimator is a classifier.
 
         X : {array-like, sparse matrix} of shape (n_samples, n_features)
@@ -139,7 +139,7 @@ class DetCurveDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.DetCurveDisplay`
+        display : :class:`~sflearn.metrics.DetCurveDisplay`
             Object that stores computed values.
 
         See Also
@@ -151,10 +151,10 @@ class DetCurveDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import make_classification
-        >>> from sklearn.metrics import DetCurveDisplay
-        >>> from sklearn.model_selection import train_test_split
-        >>> from sklearn.svm import SVC
+        >>> from sflearn.datasets import make_classification
+        >>> from sflearn.metrics import DetCurveDisplay
+        >>> from sflearn.model_selection import train_test_split
+        >>> from sflearn.svm import SVC
         >>> X, y = make_classification(n_samples=1000, random_state=0)
         >>> X_train, X_test, y_train, y_test = train_test_split(
         ...     X, y, test_size=0.4, random_state=0)
@@ -234,7 +234,7 @@ class DetCurveDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.DetCurveDisplay`
+        display : :class:`~sflearn.metrics.DetCurveDisplay`
             Object that stores computed values.
 
         See Also
@@ -246,10 +246,10 @@ class DetCurveDisplay:
         Examples
         --------
         >>> import matplotlib.pyplot as plt
-        >>> from sklearn.datasets import make_classification
-        >>> from sklearn.metrics import DetCurveDisplay
-        >>> from sklearn.model_selection import train_test_split
-        >>> from sklearn.svm import SVC
+        >>> from sflearn.datasets import make_classification
+        >>> from sflearn.metrics import DetCurveDisplay
+        >>> from sflearn.model_selection import train_test_split
+        >>> from sflearn.svm import SVC
         >>> X, y = make_classification(n_samples=1000, random_state=0)
         >>> X_train, X_test, y_train, y_test = train_test_split(
         ...     X, y, test_size=0.4, random_state=0)
@@ -298,7 +298,7 @@ class DetCurveDisplay:
 
         Returns
         -------
-        display : :class:`~sklearn.metrics.plot.DetCurveDisplay`
+        display : :class:`~sflearn.metrics.plot.DetCurveDisplay`
             Object that stores computed values.
         """
         check_matplotlib_support("DetCurveDisplay.plot")

@@ -63,7 +63,7 @@ def available_if(check):
 
     Examples
     --------
-    >>> from sklearn.utils.metaestimators import available_if
+    >>> from sflearn.utils.metaestimators import available_if
     >>> class HelloIfEven:
     ...    def __init__(self, x):
     ...        self.x = x

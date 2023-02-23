@@ -7,12 +7,12 @@
 import numpy as np
 import pytest
 
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
 
-from sklearn import datasets
-from sklearn.covariance import (
+from sflearn import datasets
+from sflearn.covariance import (
     empirical_covariance,
     EmpiricalCovariance,
     ShrunkCovariance,

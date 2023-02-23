@@ -1,8 +1,8 @@
 import pytest
 from numpy.testing import assert_allclose
 
-from sklearn.utils import check_random_state
-from sklearn.utils._arpack import _init_arpack_v0
+from sflearn.utils import check_random_state
+from sflearn.utils._arpack import _init_arpack_v0
 
 
 @pytest.mark.parametrize("seed", range(100))

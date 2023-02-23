@@ -4,7 +4,7 @@ Gaussian process regression (GPR) with noise-level estimation
 =============================================================
 
 This example shows the ability of the
-:class:`~sklearn.gaussian_process.kernels.WhiteKernel` to estimate the noise
+:class:`~sflearn.gaussian_process.kernels.WhiteKernel` to estimate the noise
 level in the data. Moreover, we show the importance of kernel hyperparameters
 initialization.
 """
@@ -71,13 +71,13 @@ _ = plt.ylabel("y")
 # ---------------------------------------------
 #
 # Now, we will create a
-# :class:`~sklearn.gaussian_process.GaussianProcessRegressor`
+# :class:`~sflearn.gaussian_process.GaussianProcessRegressor`
 # using an additive kernel adding a
-# :class:`~sklearn.gaussian_process.kernels.RBF` and
-# :class:`~sklearn.gaussian_process.kernels.WhiteKernel` kernels.
-# The :class:`~sklearn.gaussian_process.kernels.WhiteKernel` is a kernel that
+# :class:`~sflearn.gaussian_process.kernels.RBF` and
+# :class:`~sflearn.gaussian_process.kernels.WhiteKernel` kernels.
+# The :class:`~sflearn.gaussian_process.kernels.WhiteKernel` is a kernel that
 # will able to estimate the amount of noise present in the data while the
-# :class:`~sklearn.gaussian_process.kernels.RBF` will serve at fitting the
+# :class:`~sflearn.gaussian_process.kernels.RBF` will serve at fitting the
 # non-linearity between the data and the target.
 #
 # However, we will show that the hyperparameter space contains several local
@@ -85,8 +85,8 @@ _ = plt.ylabel("y")
 #
 # We will create a model using a kernel with a high noise level and a large
 # length scale, which will explain all variations in the data by noise.
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF, WhiteKernel
+from sflearn.gaussian_process import GaussianProcessRegressor
+from sflearn.gaussian_process.kernels import RBF, WhiteKernel
 
 kernel = 1.0 * RBF(length_scale=1e1, length_scale_bounds=(1e-2, 1e3)) + WhiteKernel(
     noise_level=1, noise_level_bounds=(1e-5, 1e1)
@@ -113,9 +113,9 @@ _ = plt.title(
 # model does not provide faithful predictions.
 #
 # Now, we will initialize the
-# :class:`~sklearn.gaussian_process.kernels.RBF` with a
+# :class:`~sflearn.gaussian_process.kernels.RBF` with a
 # larger `length_scale` and the
-# :class:`~sklearn.gaussian_process.kernels.WhiteKernel`
+# :class:`~sflearn.gaussian_process.kernels.WhiteKernel`
 # with a smaller noise level lower bound.
 kernel = 1.0 * RBF(length_scale=1e-1, length_scale_bounds=(1e-2, 1e3)) + WhiteKernel(
     noise_level=1e-2, noise_level_bounds=(1e-10, 1e1)
@@ -146,7 +146,7 @@ _ = plt.title(
 # has a smaller noise level and shorter length scale than the first model.
 #
 # We can inspect the Log-Marginal-Likelihood (LML) of
-# :class:`~sklearn.gaussian_process.GaussianProcessRegressor`
+# :class:`~sflearn.gaussian_process.GaussianProcessRegressor`
 # for different hyperparameters to get a sense of the local minima.
 from matplotlib.colors import LogNorm
 

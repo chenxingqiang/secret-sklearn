@@ -140,9 +140,9 @@ class SelectFromModel(MetaEstimatorMixin, SelectorMixin, BaseEstimator):
         Also accepts a string that specifies an attribute name/path
         for extracting feature importance (implemented with `attrgetter`).
         For example, give `regressor_.coef_` in case of
-        :class:`~sklearn.compose.TransformedTargetRegressor`  or
+        :class:`~sflearn.compose.TransformedTargetRegressor`  or
         `named_steps.clf.feature_importances_` in case of
-        :class:`~sklearn.pipeline.Pipeline` with its last step named `clf`.
+        :class:`~sflearn.pipeline.Pipeline` with its last step named `clf`.
 
         If `callable`, overrides the default feature importance getter.
         The callable is passed with the fitted estimator and it should
@@ -198,8 +198,8 @@ class SelectFromModel(MetaEstimatorMixin, SelectorMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.feature_selection import SelectFromModel
-    >>> from sklearn.linear_model import LogisticRegression
+    >>> from sflearn.feature_selection import SelectFromModel
+    >>> from sflearn.linear_model import LogisticRegression
     >>> X = [[ 0.87, -1.34,  0.31 ],
     ...      [-2.79, -0.02, -0.85 ],
     ...      [-1.34, -0.48, -2.55 ],

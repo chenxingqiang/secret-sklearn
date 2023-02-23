@@ -6,47 +6,47 @@ from itertools import product
 import pytest
 import warnings
 
-from sklearn.utils import _IS_32BIT
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils.estimator_checks import check_sample_weights_invariance
+from sflearn.utils import _IS_32BIT
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils.estimator_checks import check_sample_weights_invariance
 
-from sklearn.exceptions import ConvergenceWarning
+from sflearn.exceptions import ConvergenceWarning
 
-from sklearn import datasets
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import make_scorer
-from sklearn.metrics import get_scorer
+from sflearn import datasets
+from sflearn.metrics import mean_squared_error
+from sflearn.metrics import make_scorer
+from sflearn.metrics import get_scorer
 
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import ridge_regression
-from sklearn.linear_model import Ridge
-from sklearn.linear_model._ridge import _RidgeGCV
-from sklearn.linear_model import RidgeCV
-from sklearn.linear_model import RidgeClassifier
-from sklearn.linear_model import RidgeClassifierCV
-from sklearn.linear_model._ridge import _solve_cholesky
-from sklearn.linear_model._ridge import _solve_cholesky_kernel
-from sklearn.linear_model._ridge import _solve_svd
-from sklearn.linear_model._ridge import _solve_lbfgs
-from sklearn.linear_model._ridge import _check_gcv_mode
-from sklearn.linear_model._ridge import _X_CenterStackOp
-from sklearn.datasets import make_low_rank_matrix
-from sklearn.datasets import make_regression
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_multilabel_classification
+from sflearn.linear_model import LinearRegression
+from sflearn.linear_model import ridge_regression
+from sflearn.linear_model import Ridge
+from sflearn.linear_model._ridge import _RidgeGCV
+from sflearn.linear_model import RidgeCV
+from sflearn.linear_model import RidgeClassifier
+from sflearn.linear_model import RidgeClassifierCV
+from sflearn.linear_model._ridge import _solve_cholesky
+from sflearn.linear_model._ridge import _solve_cholesky_kernel
+from sflearn.linear_model._ridge import _solve_svd
+from sflearn.linear_model._ridge import _solve_lbfgs
+from sflearn.linear_model._ridge import _check_gcv_mode
+from sflearn.linear_model._ridge import _X_CenterStackOp
+from sflearn.datasets import make_low_rank_matrix
+from sflearn.datasets import make_regression
+from sflearn.datasets import make_classification
+from sflearn.datasets import make_multilabel_classification
 
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import KFold
-from sklearn.model_selection import GroupKFold
-from sklearn.model_selection import cross_val_predict
-from sklearn.model_selection import LeaveOneOut
+from sflearn.model_selection import GridSearchCV
+from sflearn.model_selection import KFold
+from sflearn.model_selection import GroupKFold
+from sflearn.model_selection import cross_val_predict
+from sflearn.model_selection import LeaveOneOut
 
-from sklearn.preprocessing import minmax_scale
-from sklearn.utils import check_random_state
+from sflearn.preprocessing import minmax_scale
+from sflearn.utils import check_random_state
 
 
 SOLVERS = ("svd", "sparse_cg", "cholesky", "lsqr", "sag", "saga")

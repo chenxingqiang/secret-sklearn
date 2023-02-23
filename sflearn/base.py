@@ -100,11 +100,11 @@ def clone(estimator, *, safe=True):
                 "either does not set or modifies parameter %s" % (estimator, name)
             )
 
-    # _sklearn_output_config is used by `set_output` to configure the output
+    # _sflearn_output_config is used by `set_output` to configure the output
     # container of an estimator.
-    if hasattr(estimator, "_sklearn_output_config"):
-        new_object._sklearn_output_config = copy.deepcopy(
-            estimator._sklearn_output_config
+    if hasattr(estimator, "_sflearn_output_config"):
+        new_object._sflearn_output_config = copy.deepcopy(
+            estimator._sflearn_output_config
         )
     return new_object
 
@@ -178,7 +178,7 @@ class BaseEstimator:
         """Set the parameters of this estimator.
 
         The method works on simple estimators as well as on nested objects
-        (such as :class:`~sklearn.pipeline.Pipeline`). The latter have
+        (such as :class:`~sflearn.pipeline.Pipeline`). The latter have
         parameters of the form ``<component>__<parameter>`` so that it's
         possible to update each component of a nested object.
 
@@ -274,7 +274,7 @@ class BaseEstimator:
         if getattr(self, "__slots__", None):
             raise TypeError(
                 "You cannot use `__slots__` in objects inheriting from "
-                "`sklearn.base.BaseEstimator`."
+                "`sflearn.base.BaseEstimator`."
             )
 
         try:
@@ -287,14 +287,14 @@ class BaseEstimator:
             # Python < 3.11
             state = self.__dict__.copy()
 
-        if type(self).__module__.startswith("sklearn."):
-            return dict(state.items(), _sklearn_version=__version__)
+        if type(self).__module__.startswith("sflearn."):
+            return dict(state.items(), _sflearn_version=__version__)
         else:
             return state
 
     def __setstate__(self, state):
-        if type(self).__module__.startswith("sklearn."):
-            pickle_version = state.pop("_sklearn_version", "pre-0.18")
+        if type(self).__module__.startswith("sflearn."):
+            pickle_version = state.pop("_sflearn_version", "pre-0.18")
             if pickle_version != __version__:
                 warnings.warn(
                     "Trying to unpickle estimator {0} from version {1} when "
@@ -513,8 +513,8 @@ class BaseEstimator:
             more informative error message in case of invalid input data.
 
         **check_params : kwargs
-            Parameters passed to :func:`sklearn.utils.check_array` or
-            :func:`sklearn.utils.check_X_y`. Ignored if validate_separately
+            Parameters passed to :func:`sflearn.utils.check_array` or
+            :func:`sflearn.utils.check_X_y`. Ignored if validate_separately
             is not False.
 
             `estimator=self` is automatically added to these params to generate
@@ -692,10 +692,10 @@ class RegressorMixin:
         -----
         The :math:`R^2` score used when calling ``score`` on a regressor uses
         ``multioutput='uniform_average'`` from version 0.23 to keep consistent
-        with default value of :func:`~sklearn.metrics.r2_score`.
+        with default value of :func:`~sflearn.metrics.r2_score`.
         This influences the ``score`` method of all the multioutput
         regressors (except for
-        :class:`~sklearn.multioutput.MultiOutputRegressor`).
+        :class:`~sflearn.multioutput.MultiOutputRegressor`).
         """
 
         from .metrics import r2_score

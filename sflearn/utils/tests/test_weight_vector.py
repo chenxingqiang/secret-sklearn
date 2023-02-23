@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from sklearn.utils._weight_vector import (
+from sflearn.utils._weight_vector import (
     WeightVector32,
     WeightVector64,
 )

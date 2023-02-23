@@ -13,8 +13,8 @@ This difference can visually be observed.
 """
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_blobs
-from sklearn.cluster import BisectingKMeans, KMeans
+from sflearn.datasets import make_blobs
+from sflearn.cluster import BisectingKMeans, KMeans
 
 
 print(__doc__)

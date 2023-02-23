@@ -14,48 +14,48 @@ from scipy import sparse, stats
 
 import pytest
 
-from sklearn.utils import gen_batches
+from sflearn.utils import gen_batches
 
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_less
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_allclose_dense_sparse
-from sklearn.utils._testing import skip_if_32bit
-from sklearn.utils._testing import _convert_container
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_less
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_allclose_dense_sparse
+from sflearn.utils._testing import skip_if_32bit
+from sflearn.utils._testing import _convert_container
 
-from sklearn.utils.sparsefuncs import mean_variance_axis
-from sklearn.preprocessing import Binarizer
-from sklearn.preprocessing import KernelCenterer
-from sklearn.preprocessing import Normalizer
-from sklearn.preprocessing import normalize
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import scale
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import minmax_scale
-from sklearn.preprocessing import QuantileTransformer
-from sklearn.preprocessing import quantile_transform
-from sklearn.preprocessing import MaxAbsScaler
-from sklearn.preprocessing import maxabs_scale
-from sklearn.preprocessing import RobustScaler
-from sklearn.preprocessing import robust_scale
-from sklearn.preprocessing import add_dummy_feature
-from sklearn.preprocessing import PowerTransformer
-from sklearn.preprocessing import power_transform
-from sklearn.preprocessing._data import _handle_zeros_in_scale
-from sklearn.preprocessing._data import BOUNDS_THRESHOLD
-from sklearn.metrics.pairwise import linear_kernel
+from sflearn.utils.sparsefuncs import mean_variance_axis
+from sflearn.preprocessing import Binarizer
+from sflearn.preprocessing import KernelCenterer
+from sflearn.preprocessing import Normalizer
+from sflearn.preprocessing import normalize
+from sflearn.preprocessing import StandardScaler
+from sflearn.preprocessing import scale
+from sflearn.preprocessing import MinMaxScaler
+from sflearn.preprocessing import minmax_scale
+from sflearn.preprocessing import QuantileTransformer
+from sflearn.preprocessing import quantile_transform
+from sflearn.preprocessing import MaxAbsScaler
+from sflearn.preprocessing import maxabs_scale
+from sflearn.preprocessing import RobustScaler
+from sflearn.preprocessing import robust_scale
+from sflearn.preprocessing import add_dummy_feature
+from sflearn.preprocessing import PowerTransformer
+from sflearn.preprocessing import power_transform
+from sflearn.preprocessing._data import _handle_zeros_in_scale
+from sflearn.preprocessing._data import BOUNDS_THRESHOLD
+from sflearn.metrics.pairwise import linear_kernel
 
-from sklearn.exceptions import NotFittedError
+from sflearn.exceptions import NotFittedError
 
-from sklearn.base import clone
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import cross_val_predict
-from sklearn.svm import SVR
-from sklearn.utils import shuffle
+from sflearn.base import clone
+from sflearn.pipeline import Pipeline
+from sflearn.model_selection import cross_val_predict
+from sflearn.svm import SVR
+from sflearn.utils import shuffle
 
-from sklearn import datasets
+from sflearn import datasets
 
 
 iris = datasets.load_iris()

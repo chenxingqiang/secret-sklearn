@@ -56,7 +56,7 @@ def _get_response(X, estimator, response_method, pos_label=None):
         Input values.
 
     estimator : estimator instance
-        Fitted classifier or a fitted :class:`~sklearn.pipeline.Pipeline`
+        Fitted classifier or a fitted :class:`~sflearn.pipeline.Pipeline`
         in which the last estimator is a classifier.
 
     response_method: {'auto', 'predict_proba', 'decision_function'}

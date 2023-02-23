@@ -126,7 +126,7 @@ def contingency_matrix(
         ``eps is None``, the dtype of this array will be integer unless set
         otherwise with the ``dtype`` argument. If ``eps`` is given, the dtype
         will be float.
-        Will be a ``sklearn.sparse.csr_matrix`` if ``sparse=True``.
+        Will be a ``sflearn.sparse.csr_matrix`` if ``sparse=True``.
     """
 
     if eps is not None and sparse:
@@ -203,7 +203,7 @@ def pair_confusion_matrix(labels_true, labels_pred):
     Perfectly matching labelings have all non-zero entries on the
     diagonal regardless of actual label values:
 
-      >>> from sklearn.metrics.cluster import pair_confusion_matrix
+      >>> from sflearn.metrics.cluster import pair_confusion_matrix
       >>> pair_confusion_matrix([0, 0, 1, 1], [1, 1, 0, 0])
       array([[8, 0],
              [0, 4]]...
@@ -284,7 +284,7 @@ def rand_score(labels_true, labels_pred):
     --------
     Perfectly matching labelings have a score of 1 even
 
-      >>> from sklearn.metrics.cluster import rand_score
+      >>> from sflearn.metrics.cluster import rand_score
       >>> rand_score([0, 0, 1, 1], [1, 1, 0, 0])
       1.0
 
@@ -368,7 +368,7 @@ def adjusted_rand_score(labels_true, labels_pred):
     --------
     Perfectly matching labelings have a score of 1 even
 
-      >>> from sklearn.metrics.cluster import adjusted_rand_score
+      >>> from sflearn.metrics.cluster import adjusted_rand_score
       >>> adjusted_rand_score([0, 0, 1, 1], [0, 0, 1, 1])
       1.0
       >>> adjusted_rand_score([0, 0, 1, 1], [1, 1, 0, 0])
@@ -541,7 +541,7 @@ def homogeneity_score(labels_true, labels_pred):
 
     Perfect labelings are homogeneous::
 
-      >>> from sklearn.metrics.cluster import homogeneity_score
+      >>> from sflearn.metrics.cluster import homogeneity_score
       >>> homogeneity_score([0, 0, 1, 1], [1, 1, 0, 0])
       1.0
 
@@ -610,7 +610,7 @@ def completeness_score(labels_true, labels_pred):
 
     Perfect labelings are complete::
 
-      >>> from sklearn.metrics.cluster import completeness_score
+      >>> from sflearn.metrics.cluster import completeness_score
       >>> completeness_score([0, 0, 1, 1], [1, 1, 0, 0])
       1.0
 
@@ -691,7 +691,7 @@ def v_measure_score(labels_true, labels_pred, *, beta=1.0):
     --------
     Perfect labelings are both homogeneous and complete, hence have score 1.0::
 
-      >>> from sklearn.metrics.cluster import v_measure_score
+      >>> from sflearn.metrics.cluster import v_measure_score
       >>> v_measure_score([0, 0, 1, 1], [0, 0, 1, 1])
       1.0
       >>> v_measure_score([0, 0, 1, 1], [1, 1, 0, 0])
@@ -906,7 +906,7 @@ def adjusted_mutual_info_score(
     Perfect labelings are both homogeneous and complete, hence have
     score 1.0::
 
-      >>> from sklearn.metrics.cluster import adjusted_mutual_info_score
+      >>> from sflearn.metrics.cluster import adjusted_mutual_info_score
       >>> adjusted_mutual_info_score([0, 0, 1, 1], [0, 0, 1, 1])
       ... # doctest: +SKIP
       1.0
@@ -1019,7 +1019,7 @@ def normalized_mutual_info_score(
     Perfect labelings are both homogeneous and complete, hence have
     score 1.0::
 
-      >>> from sklearn.metrics.cluster import normalized_mutual_info_score
+      >>> from sflearn.metrics.cluster import normalized_mutual_info_score
       >>> normalized_mutual_info_score([0, 0, 1, 1], [0, 0, 1, 1])
       ... # doctest: +SKIP
       1.0
@@ -1120,7 +1120,7 @@ def fowlkes_mallows_score(labels_true, labels_pred, *, sparse=False):
     Perfect labelings are both homogeneous and complete, hence have
     score 1.0::
 
-      >>> from sklearn.metrics.cluster import fowlkes_mallows_score
+      >>> from sflearn.metrics.cluster import fowlkes_mallows_score
       >>> fowlkes_mallows_score([0, 0, 1, 1], [0, 0, 1, 1])
       1.0
       >>> fowlkes_mallows_score([0, 0, 1, 1], [1, 1, 0, 0])

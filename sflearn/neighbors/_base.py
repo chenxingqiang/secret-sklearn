@@ -45,7 +45,7 @@ VALID_METRICS = dict(
     ball_tree=BallTree.valid_metrics,
     kd_tree=KDTree.valid_metrics,
     # The following list comes from the
-    # sklearn.metrics.pairwise doc string
+    # sflearn.metrics.pairwise doc string
     brute=sorted(
         set(PAIRWISE_DISTANCE_FUNCTIONS).union(
             [
@@ -215,7 +215,7 @@ def sort_graph_by_row_values(graph, copy=False, warn_when_not_sorted=True):
         raised.
 
     warn_when_not_sorted : bool, default=True
-        If True, a :class:`~sklearn.exceptions.EfficiencyWarning` is raised
+        If True, a :class:`~sflearn.exceptions.EfficiencyWarning` is raised
         when the input graph is not sorted by row values.
 
     Returns
@@ -233,7 +233,7 @@ def sort_graph_by_row_values(graph, copy=False, warn_when_not_sorted=True):
     if warn_when_not_sorted:
         warnings.warn(
             "Precomputed sparse input was not sorted by row values. Use the function"
-            " sklearn.neighbors.sort_graph_by_row_values to sort the input by row"
+            " sflearn.neighbors.sort_graph_by_row_values to sort the input by row"
             " values, with warn_when_not_sorted=False to remove this warning.",
             EfficiencyWarning,
         )
@@ -433,7 +433,7 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
         elif self.metric not in VALID_METRICS[alg_check]:
             raise ValueError(
                 "Metric '%s' not valid. Use "
-                "sorted(sklearn.neighbors.VALID_METRICS['%s']) "
+                "sorted(sflearn.neighbors.VALID_METRICS['%s']) "
                 "to get valid options. "
                 "Metric can also be a callable function." % (self.metric, alg_check)
             )
@@ -561,7 +561,7 @@ class NeighborsBase(MultiOutputMixin, BaseEstimator, metaclass=ABCMeta):
             ] and not callable(self.effective_metric_):
                 raise ValueError(
                     "Metric '%s' not valid for sparse input. "
-                    "Use sorted(sklearn.neighbors."
+                    "Use sorted(sflearn.neighbors."
                     "VALID_METRICS_SPARSE['brute']) "
                     "to get valid options. "
                     "Metric can also be a callable function." % (self.effective_metric_)
@@ -691,7 +691,7 @@ class KNeighborsMixin:
     def _kneighbors_reduce_func(self, dist, start, n_neighbors, return_distance):
         """Reduce a chunk of distances to the nearest neighbors.
 
-        Callback to :func:`sklearn.metrics.pairwise.pairwise_distances_chunked`
+        Callback to :func:`sflearn.metrics.pairwise.pairwise_distances_chunked`
 
         Parameters
         ----------
@@ -765,7 +765,7 @@ class KNeighborsMixin:
         the closest point to [1,1,1]
 
         >>> samples = [[0., 0., 0.], [0., .5, 0.], [1., 1., .5]]
-        >>> from sklearn.neighbors import NearestNeighbors
+        >>> from sflearn.neighbors import NearestNeighbors
         >>> neigh = NearestNeighbors(n_neighbors=1)
         >>> neigh.fit(samples)
         NearestNeighbors(n_neighbors=1)
@@ -962,7 +962,7 @@ class KNeighborsMixin:
         Examples
         --------
         >>> X = [[0], [3], [1]]
-        >>> from sklearn.neighbors import NearestNeighbors
+        >>> from sflearn.neighbors import NearestNeighbors
         >>> neigh = NearestNeighbors(n_neighbors=2)
         >>> neigh.fit(X)
         NearestNeighbors(n_neighbors=2)
@@ -1021,7 +1021,7 @@ class RadiusNeighborsMixin:
     def _radius_neighbors_reduce_func(self, dist, start, radius, return_distance):
         """Reduce a chunk of distances to the nearest neighbors.
 
-        Callback to :func:`sklearn.metrics.pairwise.pairwise_distances_chunked`
+        Callback to :func:`sflearn.metrics.pairwise.pairwise_distances_chunked`
 
         Parameters
         ----------
@@ -1119,7 +1119,7 @@ class RadiusNeighborsMixin:
 
         >>> import numpy as np
         >>> samples = [[0., 0., 0.], [0., .5, 0.], [1., 1., .5]]
-        >>> from sklearn.neighbors import NearestNeighbors
+        >>> from sflearn.neighbors import NearestNeighbors
         >>> neigh = NearestNeighbors(radius=1.6)
         >>> neigh.fit(samples)
         NearestNeighbors(radius=1.6)
@@ -1318,7 +1318,7 @@ class RadiusNeighborsMixin:
         Examples
         --------
         >>> X = [[0], [3], [1]]
-        >>> from sklearn.neighbors import NearestNeighbors
+        >>> from sflearn.neighbors import NearestNeighbors
         >>> neigh = NearestNeighbors(radius=1.5)
         >>> neigh.fit(X)
         NearestNeighbors(radius=1.5)

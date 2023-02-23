@@ -12,13 +12,13 @@ In this examples we will use a movie review dataset.
 # License: Simplified BSD
 
 import sys
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import LinearSVC
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
-from sklearn.datasets import load_files
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
+from sflearn.feature_extraction.text import TfidfVectorizer
+from sflearn.svm import LinearSVC
+from sflearn.pipeline import Pipeline
+from sflearn.model_selection import GridSearchCV
+from sflearn.datasets import load_files
+from sflearn.model_selection import train_test_split
+from sflearn import metrics
 
 
 if __name__ == "__main__":

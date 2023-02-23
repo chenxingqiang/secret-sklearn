@@ -15,8 +15,8 @@ import numpy as np
 import pandas as pd
 from memory_profiler import memory_usage
 
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import (
+from sflearn.datasets import fetch_20newsgroups
+from sflearn.feature_extraction.text import (
     CountVectorizer,
     TfidfVectorizer,
     HashingVectorizer,

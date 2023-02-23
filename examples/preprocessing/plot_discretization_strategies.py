@@ -23,8 +23,8 @@ The plot shows the regions where the discretized encoding is constant.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.preprocessing import KBinsDiscretizer
-from sklearn.datasets import make_blobs
+from sflearn.preprocessing import KBinsDiscretizer
+from sflearn.datasets import make_blobs
 
 strategies = ["uniform", "quantile", "kmeans"]
 

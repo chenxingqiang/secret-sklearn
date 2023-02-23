@@ -107,7 +107,7 @@ def johnson_lindenstrauss_min_dim(n_samples, *, eps=0.1):
 
     Examples
     --------
-    >>> from sklearn.random_projection import johnson_lindenstrauss_min_dim
+    >>> from sflearn.random_projection import johnson_lindenstrauss_min_dim
     >>> johnson_lindenstrauss_min_dim(1e6, eps=0.5)
     663
 
@@ -533,7 +533,7 @@ class GaussianRandomProjection(BaseRandomProjection):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.random_projection import GaussianRandomProjection
+    >>> from sflearn.random_projection import GaussianRandomProjection
     >>> rng = np.random.RandomState(42)
     >>> X = rng.rand(25, 3000)
     >>> transformer = GaussianRandomProjection(random_state=rng)
@@ -722,7 +722,7 @@ class SparseRandomProjection(BaseRandomProjection):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.random_projection import SparseRandomProjection
+    >>> from sflearn.random_projection import SparseRandomProjection
     >>> rng = np.random.RandomState(42)
     >>> X = rng.rand(25, 3000)
     >>> transformer = SparseRandomProjection(random_state=rng)

@@ -16,16 +16,16 @@ import matplotlib.pyplot as plt
 from joblib import Memory
 import pandas
 
-from sklearn.utils._testing import ignore_warnings
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import NMF
-from sklearn.decomposition._nmf import _initialize_nmf
-from sklearn.decomposition._nmf import _beta_divergence
-from sklearn.decomposition._nmf import _check_init
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.utils.extmath import safe_sparse_dot, squared_norm
-from sklearn.utils import check_array
-from sklearn.utils.validation import check_is_fitted, check_non_negative
+from sflearn.utils._testing import ignore_warnings
+from sflearn.feature_extraction.text import TfidfVectorizer
+from sflearn.decomposition import NMF
+from sflearn.decomposition._nmf import _initialize_nmf
+from sflearn.decomposition._nmf import _beta_divergence
+from sflearn.decomposition._nmf import _check_init
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.utils.extmath import safe_sparse_dot, squared_norm
+from sflearn.utils import check_array
+from sflearn.utils.validation import check_is_fitted, check_non_negative
 
 
 mem = Memory(cachedir=".", verbose=0)
@@ -415,7 +415,7 @@ def run_bench(X, clfs, plot_name, n_components, tol, alpha, l1_ratio):
 def load_20news():
     print("Loading 20 newsgroups dataset")
     print("-----------------------------")
-    from sklearn.datasets import fetch_20newsgroups
+    from sflearn.datasets import fetch_20newsgroups
 
     dataset = fetch_20newsgroups(
         shuffle=True, random_state=1, remove=("headers", "footers", "quotes")
@@ -428,7 +428,7 @@ def load_20news():
 def load_faces():
     print("Loading Olivetti face dataset")
     print("-----------------------------")
-    from sklearn.datasets import fetch_olivetti_faces
+    from sflearn.datasets import fetch_olivetti_faces
 
     faces = fetch_olivetti_faces(shuffle=True)
     return faces.data

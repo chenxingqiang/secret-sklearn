@@ -449,7 +449,7 @@ def ridge_regression(
           both n_samples and n_features are large. Note that 'sag' and
           'saga' fast convergence is only guaranteed on features with
           approximately the same scale. You can preprocess the data with a
-          scaler from sklearn.preprocessing.
+          scaler from sflearn.preprocessing.
 
         - 'lbfgs' uses L-BFGS-B algorithm implemented in
           `scipy.optimize.minimize`. It can be used only when `positive`
@@ -500,7 +500,7 @@ def ridge_regression(
         If True and if X is sparse, the method also returns the intercept,
         and the solver is automatically changed to 'sag'. This is only a
         temporary fix for fitting the intercept with sparse data. For dense
-        data, use sklearn.linear_model._preprocess_data before your regression.
+        data, use sflearn.linear_model._preprocess_data before your regression.
 
         .. versionadded:: 0.17
 
@@ -529,8 +529,8 @@ def ridge_regression(
     Regularization improves the conditioning of the problem and
     reduces the variance of the estimates. Larger values specify stronger
     regularization. Alpha corresponds to ``1 / (2C)`` in other linear
-    models such as :class:`~sklearn.linear_model.LogisticRegression` or
-    :class:`~sklearn.svm.LinearSVC`. If an array is passed, penalties are
+    models such as :class:`~sflearn.linear_model.LogisticRegression` or
+    :class:`~sflearn.svm.LinearSVC`. If an array is passed, penalties are
     assumed to be specific to the targets. Hence they must correspond in
     number.
     """
@@ -997,7 +997,7 @@ class Ridge(MultiOutputMixin, RegressorMixin, _BaseRidge):
           both n_samples and n_features are large. Note that 'sag' and
           'saga' fast convergence is only guaranteed on features with
           approximately the same scale. You can preprocess the data with a
-          scaler from sklearn.preprocessing.
+          scaler from sflearn.preprocessing.
 
         - 'lbfgs' uses L-BFGS-B algorithm implemented in
           `scipy.optimize.minimize`. It can be used only when `positive`
@@ -1053,7 +1053,7 @@ class Ridge(MultiOutputMixin, RegressorMixin, _BaseRidge):
     --------
     RidgeClassifier : Ridge classifier.
     RidgeCV : Ridge regression with built-in cross validation.
-    :class:`~sklearn.kernel_ridge.KernelRidge` : Kernel ridge regression
+    :class:`~sflearn.kernel_ridge.KernelRidge` : Kernel ridge regression
         combines ridge regression with the kernel trick.
 
     Notes
@@ -1061,12 +1061,12 @@ class Ridge(MultiOutputMixin, RegressorMixin, _BaseRidge):
     Regularization improves the conditioning of the problem and
     reduces the variance of the estimates. Larger values specify stronger
     regularization. Alpha corresponds to ``1 / (2C)`` in other linear
-    models such as :class:`~sklearn.linear_model.LogisticRegression` or
-    :class:`~sklearn.svm.LinearSVC`.
+    models such as :class:`~sflearn.linear_model.LogisticRegression` or
+    :class:`~sflearn.svm.LinearSVC`.
 
     Examples
     --------
-    >>> from sklearn.linear_model import Ridge
+    >>> from sflearn.linear_model import Ridge
     >>> import numpy as np
     >>> n_samples, n_features = 10, 5
     >>> rng = np.random.RandomState(0)
@@ -1236,8 +1236,8 @@ class RidgeClassifier(_RidgeClassifierMixin, _BaseRidge):
         improves the conditioning of the problem and reduces the variance of
         the estimates. Larger values specify stronger regularization.
         Alpha corresponds to ``1 / (2C)`` in other linear models such as
-        :class:`~sklearn.linear_model.LogisticRegression` or
-        :class:`~sklearn.svm.LinearSVC`.
+        :class:`~sflearn.linear_model.LogisticRegression` or
+        :class:`~sflearn.svm.LinearSVC`.
 
     fit_intercept : bool, default=True
         Whether to calculate the intercept for this model. If set to false, no
@@ -1295,7 +1295,7 @@ class RidgeClassifier(_RidgeClassifierMixin, _BaseRidge):
           when both n_samples and n_features are large. Note that 'sag' and
           'saga' fast convergence is only guaranteed on features with
           approximately the same scale. You can preprocess the data with a
-          scaler from sklearn.preprocessing.
+          scaler from sflearn.preprocessing.
 
           .. versionadded:: 0.17
              Stochastic Average Gradient descent solver.
@@ -1356,8 +1356,8 @@ class RidgeClassifier(_RidgeClassifierMixin, _BaseRidge):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.linear_model import RidgeClassifier
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.linear_model import RidgeClassifier
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> clf = RidgeClassifier().fit(X, y)
     >>> clf.score(X, y)
@@ -2212,8 +2212,8 @@ class RidgeCV(MultiOutputMixin, RegressorMixin, _BaseRidgeCV):
         improves the conditioning of the problem and reduces the variance of
         the estimates. Larger values specify stronger regularization.
         Alpha corresponds to ``1 / (2C)`` in other linear models such as
-        :class:`~sklearn.linear_model.LogisticRegression` or
-        :class:`~sklearn.svm.LinearSVC`.
+        :class:`~sflearn.linear_model.LogisticRegression` or
+        :class:`~sflearn.svm.LinearSVC`.
         If using Leave-One-Out cross-validation, alphas must be positive.
 
     fit_intercept : bool, default=True
@@ -2239,8 +2239,8 @@ class RidgeCV(MultiOutputMixin, RegressorMixin, _BaseRidgeCV):
         - An iterable yielding (train, test) splits as arrays of indices.
 
         For integer/None inputs, if ``y`` is binary or multiclass,
-        :class:`~sklearn.model_selection.StratifiedKFold` is used, else,
-        :class:`~sklearn.model_selection.KFold` is used.
+        :class:`~sflearn.model_selection.StratifiedKFold` is used, else,
+        :class:`~sflearn.model_selection.KFold` is used.
 
         Refer :ref:`User Guide <cross_validation>` for the various
         cross-validation strategies that can be used here.
@@ -2318,8 +2318,8 @@ class RidgeCV(MultiOutputMixin, RegressorMixin, _BaseRidgeCV):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_diabetes
-    >>> from sklearn.linear_model import RidgeCV
+    >>> from sflearn.datasets import load_diabetes
+    >>> from sflearn.linear_model import RidgeCV
     >>> X, y = load_diabetes(return_X_y=True)
     >>> clf = RidgeCV(alphas=[1e-3, 1e-2, 1e-1, 1]).fit(X, y)
     >>> clf.score(X, y)
@@ -2379,8 +2379,8 @@ class RidgeClassifierCV(_RidgeClassifierMixin, _BaseRidgeCV):
         improves the conditioning of the problem and reduces the variance of
         the estimates. Larger values specify stronger regularization.
         Alpha corresponds to ``1 / (2C)`` in other linear models such as
-        :class:`~sklearn.linear_model.LogisticRegression` or
-        :class:`~sklearn.svm.LinearSVC`.
+        :class:`~sflearn.linear_model.LogisticRegression` or
+        :class:`~sflearn.svm.LinearSVC`.
 
     fit_intercept : bool, default=True
         Whether to calculate the intercept for this model. If set
@@ -2471,8 +2471,8 @@ class RidgeClassifierCV(_RidgeClassifierMixin, _BaseRidgeCV):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_breast_cancer
-    >>> from sklearn.linear_model import RidgeClassifierCV
+    >>> from sflearn.datasets import load_breast_cancer
+    >>> from sflearn.linear_model import RidgeClassifierCV
     >>> X, y = load_breast_cancer(return_X_y=True)
     >>> clf = RidgeClassifierCV(alphas=[1e-3, 1e-2, 1e-1, 1]).fit(X, y)
     >>> clf.score(X, y)

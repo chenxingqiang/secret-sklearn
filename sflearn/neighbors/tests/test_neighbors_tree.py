@@ -6,8 +6,8 @@ import itertools
 import numpy as np
 import pytest
 
-from sklearn.metrics import DistanceMetric
-from sklearn.neighbors._ball_tree import (
+from sflearn.metrics import DistanceMetric
+from sflearn.neighbors._ball_tree import (
     BallTree,
     kernel_norm,
     DTYPE,
@@ -16,14 +16,14 @@ from sklearn.neighbors._ball_tree import (
     simultaneous_sort as simultaneous_sort_bt,
     nodeheap_sort as nodeheap_sort_bt,
 )
-from sklearn.neighbors._kd_tree import (
+from sflearn.neighbors._kd_tree import (
     KDTree,
     NeighborsHeap as NeighborsHeapKDT,
     simultaneous_sort as simultaneous_sort_kdt,
     nodeheap_sort as nodeheap_sort_kdt,
 )
 
-from sklearn.utils import check_random_state
+from sflearn.utils import check_random_state
 from numpy.testing import assert_array_almost_equal, assert_allclose
 
 rng = np.random.RandomState(42)
@@ -234,7 +234,7 @@ def test_gaussian_kde(Cls, n_samples=1000):
 
 
 # TODO: Remove filterwarnings in 1.3 when wminkowski is removed
-@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sklearn")
+@pytest.mark.filterwarnings("ignore:WMinkowskiDistance:FutureWarning:sflearn")
 @pytest.mark.parametrize(
     "Cls, metric",
     itertools.chain(

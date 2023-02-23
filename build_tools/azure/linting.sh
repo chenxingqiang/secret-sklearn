@@ -34,15 +34,15 @@ then
     exit 1
 fi
 
-joblib_delayed_import="$(git grep -l -A 10 -E "joblib import.+delayed" -- "*.py" ":!sklearn/utils/_joblib.py" ":!sklearn/utils/parallel.py")"
+joblib_delayed_import="$(git grep -l -A 10 -E "joblib import.+delayed" -- "*.py" ":!sflearn/utils/_joblib.py" ":!sflearn/utils/parallel.py")"
 if [ ! -z "$joblib_delayed_import" ]; then
-    echo "Use from sklearn.utils.parallel import delayed instead of joblib delayed. The following files contains imports to joblib.delayed:"
+    echo "Use from sflearn.utils.parallel import delayed instead of joblib delayed. The following files contains imports to joblib.delayed:"
     echo "$joblib_delayed_import"
     exit 1
 fi
-joblib_Parallel_import="$(git grep -l -A 10 -E "joblib import.+Parallel" -- "*.py" ":!sklearn/utils/_joblib.py" ":!sklearn/utils/parallel.py")"
+joblib_Parallel_import="$(git grep -l -A 10 -E "joblib import.+Parallel" -- "*.py" ":!sflearn/utils/_joblib.py" ":!sflearn/utils/parallel.py")"
 if [ ! -z "$joblib_Parallel_import" ]; then
-    echo "Use from sklearn.utils.parallel import Parallel instead of joblib Parallel. The following files contains imports to joblib.Parallel:"
+    echo "Use from sflearn.utils.parallel import Parallel instead of joblib Parallel. The following files contains imports to joblib.Parallel:"
     echo "$joblib_Parallel_import"
     exit 1
 fi

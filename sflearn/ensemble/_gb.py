@@ -732,7 +732,7 @@ class BaseGradientBoosting(BaseEnsemble, metaclass=ABCMeta):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
         Returns
         -------
@@ -858,7 +858,7 @@ class GradientBoostingClassifier(ClassifierMixin, BaseGradientBoosting):
     classification is a special case where only a single regression tree is
     induced.
 
-    :class:`sklearn.ensemble.HistGradientBoostingClassifier` is a much faster
+    :class:`sflearn.ensemble.HistGradientBoostingClassifier` is a much faster
     variant of this algorithm for intermediate datasets (`n_samples >= 10_000`).
 
     Read more in the :ref:`User Guide <gradient_boosting>`.
@@ -1066,7 +1066,7 @@ class GradientBoostingClassifier(ClassifierMixin, BaseGradientBoosting):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     oob_improvement_ : ndarray of shape (n_estimators,)
         The improvement in loss (= deviance) on the out-of-bag samples
@@ -1120,7 +1120,7 @@ class GradientBoostingClassifier(ClassifierMixin, BaseGradientBoosting):
     --------
     HistGradientBoostingClassifier : Histogram-based Gradient Boosting
         Classification Tree.
-    sklearn.tree.DecisionTreeClassifier : A decision tree classifier.
+    sflearn.tree.DecisionTreeClassifier : A decision tree classifier.
     RandomForestClassifier : A meta-estimator that fits a number of decision
         tree classifiers on various sub-samples of the dataset and uses
         averaging to improve the predictive accuracy and control over-fitting.
@@ -1154,8 +1154,8 @@ class GradientBoostingClassifier(ClassifierMixin, BaseGradientBoosting):
     The following example shows how to fit a gradient boosting classifier with
     100 decision stumps as weak learners.
 
-    >>> from sklearn.datasets import make_hastie_10_2
-    >>> from sklearn.ensemble import GradientBoostingClassifier
+    >>> from sflearn.datasets import make_hastie_10_2
+    >>> from sflearn.ensemble import GradientBoostingClassifier
 
     >>> X, y = make_hastie_10_2(random_state=0)
     >>> X_train, X_test = X[:2000], X[2000:]
@@ -1423,7 +1423,7 @@ class GradientBoostingRegressor(RegressorMixin, BaseGradientBoosting):
     each stage a regression tree is fit on the negative gradient of the given
     loss function.
 
-    :class:`sklearn.ensemble.HistGradientBoostingRegressor` is a much faster
+    :class:`sflearn.ensemble.HistGradientBoostingRegressor` is a much faster
     variant of this algorithm for intermediate datasets (`n_samples >= 10_000`).
 
     Read more in the :ref:`User Guide <gradient_boosting>`.
@@ -1628,7 +1628,7 @@ class GradientBoostingRegressor(RegressorMixin, BaseGradientBoosting):
 
         Warning: impurity-based feature importances can be misleading for
         high cardinality features (many unique values). See
-        :func:`sklearn.inspection.permutation_importance` as an alternative.
+        :func:`sflearn.inspection.permutation_importance` as an alternative.
 
     oob_improvement_ : ndarray of shape (n_estimators,)
         The improvement in loss (= deviance) on the out-of-bag samples
@@ -1679,8 +1679,8 @@ class GradientBoostingRegressor(RegressorMixin, BaseGradientBoosting):
     --------
     HistGradientBoostingRegressor : Histogram-based Gradient Boosting
         Classification Tree.
-    sklearn.tree.DecisionTreeRegressor : A decision tree regressor.
-    sklearn.ensemble.RandomForestRegressor : A random forest regressor.
+    sflearn.tree.DecisionTreeRegressor : A decision tree regressor.
+    sflearn.ensemble.RandomForestRegressor : A random forest regressor.
 
     Notes
     -----
@@ -1703,9 +1703,9 @@ class GradientBoostingRegressor(RegressorMixin, BaseGradientBoosting):
 
     Examples
     --------
-    >>> from sklearn.datasets import make_regression
-    >>> from sklearn.ensemble import GradientBoostingRegressor
-    >>> from sklearn.model_selection import train_test_split
+    >>> from sflearn.datasets import make_regression
+    >>> from sflearn.ensemble import GradientBoostingRegressor
+    >>> from sflearn.model_selection import train_test_split
     >>> X, y = make_regression(random_state=0)
     >>> X_train, X_test, y_train, y_test = train_test_split(
     ...     X, y, random_state=0)

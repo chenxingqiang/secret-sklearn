@@ -6,35 +6,35 @@ import numpy as np
 from numpy.testing import assert_allclose
 from scipy import sparse
 
-from sklearn.base import BaseEstimator, clone
-from sklearn.dummy import DummyClassifier
-from sklearn.model_selection import LeaveOneOut, train_test_split
+from sflearn.base import BaseEstimator, clone
+from sflearn.dummy import DummyClassifier
+from sflearn.model_selection import LeaveOneOut, train_test_split
 
-from sklearn.utils._testing import (
+from sflearn.utils._testing import (
     assert_array_almost_equal,
     assert_almost_equal,
     assert_array_equal,
 )
-from sklearn.utils.extmath import softmax
-from sklearn.exceptions import NotFittedError
-from sklearn.datasets import make_classification, make_blobs, load_iris
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import KFold, cross_val_predict
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.ensemble import (
+from sflearn.utils.extmath import softmax
+from sflearn.exceptions import NotFittedError
+from sflearn.datasets import make_classification, make_blobs, load_iris
+from sflearn.preprocessing import LabelEncoder
+from sflearn.model_selection import KFold, cross_val_predict
+from sflearn.naive_bayes import MultinomialNB
+from sflearn.ensemble import (
     RandomForestClassifier,
     VotingClassifier,
 )
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import LinearSVC
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.isotonic import IsotonicRegression
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.impute import SimpleImputer
-from sklearn.metrics import brier_score_loss
-from sklearn.calibration import (
+from sflearn.linear_model import LogisticRegression, LinearRegression
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.svm import LinearSVC
+from sflearn.pipeline import Pipeline, make_pipeline
+from sflearn.preprocessing import StandardScaler
+from sflearn.isotonic import IsotonicRegression
+from sflearn.feature_extraction import DictVectorizer
+from sflearn.impute import SimpleImputer
+from sflearn.metrics import brier_score_loss
+from sflearn.calibration import (
     _CalibratedClassifier,
     _SigmoidCalibration,
     _sigmoid_calibration,
@@ -42,8 +42,8 @@ from sklearn.calibration import (
     CalibrationDisplay,
     calibration_curve,
 )
-from sklearn.utils._mocking import CheckingClassifier
-from sklearn.utils._testing import _convert_container
+from sflearn.utils._mocking import CheckingClassifier
+from sflearn.utils._testing import _convert_container
 
 
 N_SAMPLES = 200

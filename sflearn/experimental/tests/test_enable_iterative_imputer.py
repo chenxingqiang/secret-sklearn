@@ -2,7 +2,7 @@
 
 import textwrap
 
-from sklearn.utils._testing import assert_run_python_script
+from sflearn.utils._testing import assert_run_python_script
 
 
 def test_imports_strategies():
@@ -14,15 +14,15 @@ def test_imports_strategies():
     # recommended and can lead to many complications).
 
     good_import = """
-    from sklearn.experimental import enable_iterative_imputer
-    from sklearn.impute import IterativeImputer
+    from sflearn.experimental import enable_iterative_imputer
+    from sflearn.impute import IterativeImputer
     """
     assert_run_python_script(textwrap.dedent(good_import))
 
     good_import_with_ensemble_first = """
-    import sklearn.ensemble
-    from sklearn.experimental import enable_iterative_imputer
-    from sklearn.impute import IterativeImputer
+    import sflearn.ensemble
+    from sflearn.experimental import enable_iterative_imputer
+    from sflearn.impute import IterativeImputer
     """
     assert_run_python_script(textwrap.dedent(good_import_with_ensemble_first))
 
@@ -30,10 +30,10 @@ def test_imports_strategies():
     import pytest
 
     with pytest.raises(ImportError, match='IterativeImputer is experimental'):
-        from sklearn.impute import IterativeImputer
+        from sflearn.impute import IterativeImputer
 
-    import sklearn.experimental
+    import sflearn.experimental
     with pytest.raises(ImportError, match='IterativeImputer is experimental'):
-        from sklearn.impute import IterativeImputer
+        from sflearn.impute import IterativeImputer
     """
     assert_run_python_script(textwrap.dedent(bad_imports))

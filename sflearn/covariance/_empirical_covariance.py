@@ -69,7 +69,7 @@ def empirical_covariance(X, *, assume_centered=False):
 
     Examples
     --------
-    >>> from sklearn.covariance import empirical_covariance
+    >>> from sflearn.covariance import empirical_covariance
     >>> X = [[1,1,1],[1,1,1],[1,1,1],
     ...      [0,0,0],[0,0,0],[0,0,0]]
     >>> empirical_covariance(X)
@@ -151,8 +151,8 @@ class EmpiricalCovariance(BaseEstimator):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.covariance import EmpiricalCovariance
-    >>> from sklearn.datasets import make_gaussian_quantiles
+    >>> from sflearn.covariance import EmpiricalCovariance
+    >>> from sflearn.datasets import make_gaussian_quantiles
     >>> real_cov = np.array([[.8, .3],
     ...                      [.3, .4]])
     >>> rng = np.random.RandomState(0)

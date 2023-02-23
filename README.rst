@@ -143,13 +143,13 @@ Testing
 After installation, you can launch the test suite from outside the source
 directory (you will need to have ``pytest`` >= |PyTestMinVersion| installed)::
 
-    pytest sklearn
+    pytest sflearn
 
 See the web page https://scikit-learn.org/dev/developers/contributing.html#testing-and-improving-test-coverage
 for more information.
 
     Random number generation can be controlled during testing by setting
-    the ``SKLEARN_SEED`` environment variable.
+    the ``SFLEARN_SEED`` environment variable.
 
 Submitting a Pull Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,7 +189,7 @@ Communication
 - Blog: https://blog.scikit-learn.org
 - Calendar: https://blog.scikit-learn.org/calendar/
 - Twitter: https://twitter.com/scikit_learn
-- Twitter (commits): https://twitter.com/sklearn_commits
+- Twitter (commits): https://twitter.com/sflearn_commits
 - Stack Overflow: https://stackoverflow.com/questions/tagged/scikit-learn
 - Github Discussions: https://github.com/scikit-learn/scikit-learn/discussions
 - Website: https://scikit-learn.org

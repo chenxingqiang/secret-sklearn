@@ -18,10 +18,10 @@ import warnings
 
 import matplotlib.pyplot as plt
 
-from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import MinMaxScaler
-from sklearn import datasets
-from sklearn.exceptions import ConvergenceWarning
+from sflearn.neural_network import MLPClassifier
+from sflearn.preprocessing import MinMaxScaler
+from sflearn import datasets
+from sflearn.exceptions import ConvergenceWarning
 
 # different learning rate schedules and momentum parameters
 params = [
@@ -110,7 +110,7 @@ def plot_on_dataset(X, y, ax, name):
         # plots so they are ignored here
         with warnings.catch_warnings():
             warnings.filterwarnings(
-                "ignore", category=ConvergenceWarning, module="sklearn"
+                "ignore", category=ConvergenceWarning, module="sflearn"
             )
             mlp.fit(X, y)
 

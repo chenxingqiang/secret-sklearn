@@ -3,10 +3,10 @@ from inspect import signature
 
 import pytest
 
-from sklearn.utils._param_validation import generate_invalid_param_val
-from sklearn.utils._param_validation import generate_valid_param
-from sklearn.utils._param_validation import make_constraint
-from sklearn.utils._param_validation import InvalidParameterError
+from sflearn.utils._param_validation import generate_invalid_param_val
+from sflearn.utils._param_validation import generate_valid_param
+from sflearn.utils._param_validation import make_constraint
+from sflearn.utils._param_validation import InvalidParameterError
 
 
 def _get_func_info(func_module):
@@ -92,9 +92,9 @@ def _check_function_param_validation(
 
 
 PARAM_VALIDATION_FUNCTION_LIST = [
-    "sklearn.cluster.kmeans_plusplus",
-    "sklearn.metrics.accuracy_score",
-    "sklearn.svm.l1_min_c",
+    "sflearn.cluster.kmeans_plusplus",
+    "sflearn.metrics.accuracy_score",
+    "sflearn.svm.l1_min_c",
 ]
 
 
@@ -113,7 +113,7 @@ def test_function_param_validation(func_module):
 
 
 PARAM_VALIDATION_CLASS_WRAPPER_LIST = [
-    ("sklearn.decomposition.non_negative_factorization", "sklearn.decomposition.NMF"),
+    ("sflearn.decomposition.non_negative_factorization", "sflearn.decomposition.NMF"),
 ]
 
 

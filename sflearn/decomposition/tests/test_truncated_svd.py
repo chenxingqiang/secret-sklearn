@@ -5,9 +5,9 @@ import scipy.sparse as sp
 
 import pytest
 
-from sklearn.decomposition import TruncatedSVD, PCA
-from sklearn.utils import check_random_state
-from sklearn.utils._testing import assert_array_less, assert_allclose
+from sflearn.decomposition import TruncatedSVD, PCA
+from sflearn.utils import check_random_state
+from sflearn.utils._testing import assert_array_less, assert_allclose
 
 SVD_SOLVERS = ["arpack", "randomized"]
 

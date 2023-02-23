@@ -158,7 +158,7 @@ def scale(X, *, axis=0, with_mean=True, with_std=True, copy=True):
     --------
     StandardScaler : Performs scaling to unit variance using the Transformer
         API (e.g. as part of a preprocessing
-        :class:`~sklearn.pipeline.Pipeline`).
+        :class:`~sflearn.pipeline.Pipeline`).
 
     Notes
     -----
@@ -186,13 +186,13 @@ def scale(X, *, axis=0, with_mean=True, with_std=True, copy=True):
 
     .. warning:: Risk of data leak
 
-        Do not use :func:`~sklearn.preprocessing.scale` unless you know
+        Do not use :func:`~sflearn.preprocessing.scale` unless you know
         what you are doing. A common mistake is to apply it to the entire data
         *before* splitting into training and test sets. This will bias the
         model evaluation because information would have leaked from the test
         set to the training set.
         In general, we recommend using
-        :class:`~sklearn.preprocessing.StandardScaler` within a
+        :class:`~sflearn.preprocessing.StandardScaler` within a
         :ref:`Pipeline <pipeline>` in order to prevent most risks of data
         leaking: `pipe = make_pipeline(StandardScaler(), LogisticRegression())`.
     """  # noqa
@@ -363,7 +363,7 @@ class MinMaxScaler(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import MinMaxScaler
+    >>> from sflearn.preprocessing import MinMaxScaler
     >>> data = [[-1, 2], [-0.5, 6], [0, 10], [1, 18]]
     >>> scaler = MinMaxScaler()
     >>> print(scaler.fit(data))
@@ -572,7 +572,7 @@ def minmax_scale(X, feature_range=(0, 1), *, axis=0, copy=True):
 
     .. versionadded:: 0.17
        *minmax_scale* function interface
-       to :class:`~sklearn.preprocessing.MinMaxScaler`.
+       to :class:`~sflearn.preprocessing.MinMaxScaler`.
 
     Parameters
     ----------
@@ -597,13 +597,13 @@ def minmax_scale(X, feature_range=(0, 1), *, axis=0, copy=True):
 
     .. warning:: Risk of data leak
 
-        Do not use :func:`~sklearn.preprocessing.minmax_scale` unless you know
+        Do not use :func:`~sflearn.preprocessing.minmax_scale` unless you know
         what you are doing. A common mistake is to apply it to the entire data
         *before* splitting into training and test sets. This will bias the
         model evaluation because information would have leaked from the test
         set to the training set.
         In general, we recommend using
-        :class:`~sklearn.preprocessing.MinMaxScaler` within a
+        :class:`~sflearn.preprocessing.MinMaxScaler` within a
         :ref:`Pipeline <pipeline>` in order to prevent most risks of data
         leaking: `pipe = make_pipeline(MinMaxScaler(), LogisticRegression())`.
 
@@ -611,7 +611,7 @@ def minmax_scale(X, feature_range=(0, 1), *, axis=0, copy=True):
     --------
     MinMaxScaler : Performs scaling to a given range using the Transformer
         API (e.g. as part of a preprocessing
-        :class:`~sklearn.pipeline.Pipeline`).
+        :class:`~sflearn.pipeline.Pipeline`).
 
     Notes
     -----
@@ -738,7 +738,7 @@ class StandardScaler(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
     --------
     scale : Equivalent function without the estimator API.
 
-    :class:`~sklearn.decomposition.PCA` : Further removes the linear
+    :class:`~sflearn.decomposition.PCA` : Further removes the linear
         correlation across features with 'whiten=True'.
 
     Notes
@@ -756,7 +756,7 @@ class StandardScaler(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import StandardScaler
+    >>> from sflearn.preprocessing import StandardScaler
     >>> data = [[0, 0], [0, 0], [1, 1], [1, 1]]
     >>> scaler = StandardScaler()
     >>> print(scaler.fit(data))
@@ -1117,7 +1117,7 @@ class MaxAbsScaler(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import MaxAbsScaler
+    >>> from sflearn.preprocessing import MaxAbsScaler
     >>> X = [[ 1., -1.,  2.],
     ...      [ 2.,  0.,  0.],
     ...      [ 0.,  1., -1.]]
@@ -1306,13 +1306,13 @@ def maxabs_scale(X, *, axis=0, copy=True):
 
     .. warning:: Risk of data leak
 
-        Do not use :func:`~sklearn.preprocessing.maxabs_scale` unless you know
+        Do not use :func:`~sflearn.preprocessing.maxabs_scale` unless you know
         what you are doing. A common mistake is to apply it to the entire data
         *before* splitting into training and test sets. This will bias the
         model evaluation because information would have leaked from the test
         set to the training set.
         In general, we recommend using
-        :class:`~sklearn.preprocessing.MaxAbsScaler` within a
+        :class:`~sflearn.preprocessing.MaxAbsScaler` within a
         :ref:`Pipeline <pipeline>` in order to prevent most risks of data
         leaking: `pipe = make_pipeline(MaxAbsScaler(), LogisticRegression())`.
 
@@ -1320,7 +1320,7 @@ def maxabs_scale(X, *, axis=0, copy=True):
     --------
     MaxAbsScaler : Performs scaling to the [-1, 1] range using
         the Transformer API (e.g. as part of a preprocessing
-        :class:`~sklearn.pipeline.Pipeline`).
+        :class:`~sflearn.pipeline.Pipeline`).
 
     Notes
     -----
@@ -1442,7 +1442,7 @@ class RobustScaler(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
     See Also
     --------
     robust_scale : Equivalent function without the estimator API.
-    sklearn.decomposition.PCA : Further removes the linear correlation across
+    sflearn.decomposition.PCA : Further removes the linear correlation across
         features with 'whiten=True'.
 
     Notes
@@ -1456,7 +1456,7 @@ class RobustScaler(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import RobustScaler
+    >>> from sflearn.preprocessing import RobustScaler
     >>> X = [[ 1., -2.,  2.],
     ...      [ -2.,  1.,  3.],
     ...      [ 4.,  1., -2.]]
@@ -1693,7 +1693,7 @@ def robust_scale(
     See Also
     --------
     RobustScaler : Performs centering and scaling using the Transformer API
-        (e.g. as part of a preprocessing :class:`~sklearn.pipeline.Pipeline`).
+        (e.g. as part of a preprocessing :class:`~sflearn.pipeline.Pipeline`).
 
     Notes
     -----
@@ -1714,13 +1714,13 @@ def robust_scale(
 
     .. warning:: Risk of data leak
 
-        Do not use :func:`~sklearn.preprocessing.robust_scale` unless you know
+        Do not use :func:`~sflearn.preprocessing.robust_scale` unless you know
         what you are doing. A common mistake is to apply it to the entire data
         *before* splitting into training and test sets. This will bias the
         model evaluation because information would have leaked from the test
         set to the training set.
         In general, we recommend using
-        :class:`~sklearn.preprocessing.RobustScaler` within a
+        :class:`~sflearn.preprocessing.RobustScaler` within a
         :ref:`Pipeline <pipeline>` in order to prevent most risks of data
         leaking: `pipe = make_pipeline(RobustScaler(), LogisticRegression())`.
     """
@@ -1796,7 +1796,7 @@ def normalize(X, norm="l2", *, axis=1, copy=True, return_norm=False):
     See Also
     --------
     Normalizer : Performs normalization using the Transformer API
-        (e.g. as part of a preprocessing :class:`~sklearn.pipeline.Pipeline`).
+        (e.g. as part of a preprocessing :class:`~sflearn.pipeline.Pipeline`).
 
     Notes
     -----
@@ -1921,7 +1921,7 @@ class Normalizer(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import Normalizer
+    >>> from sflearn.preprocessing import Normalizer
     >>> X = [[4, 1, 2, 2],
     ...      [1, 3, 9, 3],
     ...      [5, 7, 5, 1]]
@@ -2020,7 +2020,7 @@ def binarize(X, *, threshold=0.0, copy=True):
     See Also
     --------
     Binarizer : Performs binarization using the Transformer API
-        (e.g. as part of a preprocessing :class:`~sklearn.pipeline.Pipeline`).
+        (e.g. as part of a preprocessing :class:`~sflearn.pipeline.Pipeline`).
     """
     X = check_array(X, accept_sparse=["csr", "csc"], copy=copy)
     if sparse.issparse(X):
@@ -2097,7 +2097,7 @@ class Binarizer(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import Binarizer
+    >>> from sflearn.preprocessing import Binarizer
     >>> X = [[ 1., -1.,  2.],
     ...      [ 2.,  0.,  0.],
     ...      [ 0.,  1., -1.]]
@@ -2192,7 +2192,7 @@ class KernelCenterer(ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEsti
     `KernelCenterer` centers the features without explicitly computing the
     mapping :math:`\phi(\cdot)`. Working with centered kernels is sometime
     expected when dealing with algebra computation such as eigendecomposition
-    for :class:`~sklearn.decomposition.KernelPCA` for instance.
+    for :class:`~sflearn.decomposition.KernelPCA` for instance.
 
     Read more in the :ref:`User Guide <kernel_centering>`.
 
@@ -2217,7 +2217,7 @@ class KernelCenterer(ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEsti
 
     See Also
     --------
-    sklearn.kernel_approximation.Nystroem : Approximate a kernel map
+    sflearn.kernel_approximation.Nystroem : Approximate a kernel map
         using a subset of the training data.
 
     References
@@ -2229,8 +2229,8 @@ class KernelCenterer(ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEsti
 
     Examples
     --------
-    >>> from sklearn.preprocessing import KernelCenterer
-    >>> from sklearn.metrics.pairwise import pairwise_kernels
+    >>> from sflearn.preprocessing import KernelCenterer
+    >>> from sflearn.metrics.pairwise import pairwise_kernels
     >>> X = [[ 1., -2.,  2.],
     ...      [ -2.,  1.,  3.],
     ...      [ 4.,  1., -2.]]
@@ -2343,7 +2343,7 @@ def add_dummy_feature(X, value=1.0):
 
     Examples
     --------
-    >>> from sklearn.preprocessing import add_dummy_feature
+    >>> from sflearn.preprocessing import add_dummy_feature
     >>> add_dummy_feature([[0, 1], [1, 0]])
     array([[1., 0., 1.],
            [1., 1., 0.]])
@@ -2481,7 +2481,7 @@ class QuantileTransformer(OneToOneFeatureMixin, TransformerMixin, BaseEstimator)
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import QuantileTransformer
+    >>> from sflearn.preprocessing import QuantileTransformer
     >>> rng = np.random.RandomState(0)
     >>> X = np.sort(rng.normal(loc=0.5, scale=0.25, size=(25, 1)), axis=0)
     >>> qt = QuantileTransformer(n_quantiles=10, random_state=0)
@@ -2895,7 +2895,7 @@ def quantile_transform(
     --------
     QuantileTransformer : Performs quantile-based scaling using the
         Transformer API (e.g. as part of a preprocessing
-        :class:`~sklearn.pipeline.Pipeline`).
+        :class:`~sflearn.pipeline.Pipeline`).
     power_transform : Maps data to a normal distribution using a
         power transformation.
     scale : Performs standardization that is faster, but less robust
@@ -2910,14 +2910,14 @@ def quantile_transform(
 
     .. warning:: Risk of data leak
 
-        Do not use :func:`~sklearn.preprocessing.quantile_transform` unless
+        Do not use :func:`~sflearn.preprocessing.quantile_transform` unless
         you know what you are doing. A common mistake is to apply it
         to the entire data *before* splitting into training and
         test sets. This will bias the model evaluation because
         information would have leaked from the test set to the
         training set.
         In general, we recommend using
-        :class:`~sklearn.preprocessing.QuantileTransformer` within a
+        :class:`~sflearn.preprocessing.QuantileTransformer` within a
         :ref:`Pipeline <pipeline>` in order to prevent most risks of data
         leaking:`pipe = make_pipeline(QuantileTransformer(),
         LogisticRegression())`.
@@ -2929,7 +2929,7 @@ def quantile_transform(
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import quantile_transform
+    >>> from sflearn.preprocessing import quantile_transform
     >>> rng = np.random.RandomState(0)
     >>> X = np.sort(rng.normal(loc=0.5, scale=0.25, size=(25, 1)), axis=0)
     >>> quantile_transform(X, n_quantiles=10, random_state=0, copy=True)
@@ -3035,7 +3035,7 @@ class PowerTransformer(OneToOneFeatureMixin, TransformerMixin, BaseEstimator):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import PowerTransformer
+    >>> from sflearn.preprocessing import PowerTransformer
     >>> pt = PowerTransformer()
     >>> data = [[1, 2], [3, 2], [4, 5]]
     >>> print(pt.fit(data))
@@ -3406,7 +3406,7 @@ def power_transform(X, method="yeo-johnson", *, standardize=True, copy=True):
     --------
     PowerTransformer : Equivalent transformation with the
         Transformer API (e.g. as part of a preprocessing
-        :class:`~sklearn.pipeline.Pipeline`).
+        :class:`~sflearn.pipeline.Pipeline`).
 
     quantile_transform : Maps data to a standard normal distribution with
         the parameter `output_distribution='normal'`.
@@ -3433,7 +3433,7 @@ def power_transform(X, method="yeo-johnson", *, standardize=True, copy=True):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import power_transform
+    >>> from sflearn.preprocessing import power_transform
     >>> data = [[1, 2], [3, 2], [4, 5]]
     >>> print(power_transform(data, method='box-cox'))
     [[-1.332... -0.707...]
@@ -3441,13 +3441,13 @@ def power_transform(X, method="yeo-johnson", *, standardize=True, copy=True):
      [ 1.076...  1.414...]]
 
     .. warning:: Risk of data leak.
-        Do not use :func:`~sklearn.preprocessing.power_transform` unless you
+        Do not use :func:`~sflearn.preprocessing.power_transform` unless you
         know what you are doing. A common mistake is to apply it to the entire
         data *before* splitting into training and test sets. This will bias the
         model evaluation because information would have leaked from the test
         set to the training set.
         In general, we recommend using
-        :class:`~sklearn.preprocessing.PowerTransformer` within a
+        :class:`~sflearn.preprocessing.PowerTransformer` within a
         :ref:`Pipeline <pipeline>` in order to prevent most risks of data
         leaking, e.g.: `pipe = make_pipeline(PowerTransformer(),
         LogisticRegression())`.

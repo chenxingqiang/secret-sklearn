@@ -5,13 +5,13 @@ import scipy.sparse as sp
 import pytest
 from scipy.sparse import csr_matrix
 
-from sklearn import datasets
-from sklearn.utils._testing import assert_array_equal
-from sklearn.metrics.cluster import silhouette_score
-from sklearn.metrics.cluster import silhouette_samples
-from sklearn.metrics import pairwise_distances
-from sklearn.metrics.cluster import calinski_harabasz_score
-from sklearn.metrics.cluster import davies_bouldin_score
+from sflearn import datasets
+from sflearn.utils._testing import assert_array_equal
+from sflearn.metrics.cluster import silhouette_score
+from sflearn.metrics.cluster import silhouette_samples
+from sflearn.metrics import pairwise_distances
+from sflearn.metrics.cluster import calinski_harabasz_score
+from sflearn.metrics.cluster import davies_bouldin_score
 
 
 def test_silhouette():

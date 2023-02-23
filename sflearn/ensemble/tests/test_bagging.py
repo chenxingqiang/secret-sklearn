@@ -1,5 +1,5 @@
 """
-Testing for the bagging ensemble module (sklearn.ensemble.bagging).
+Testing for the bagging ensemble module (sflearn.ensemble.bagging).
 """
 
 # Author: Gilles Louppe
@@ -10,24 +10,24 @@ import numpy as np
 import joblib
 import pytest
 
-from sklearn.base import BaseEstimator
+from sflearn.base import BaseEstimator
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.model_selection import GridSearchCV, ParameterGrid
-from sklearn.ensemble import BaggingClassifier, BaggingRegressor
-from sklearn.linear_model import Perceptron, LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-from sklearn.svm import SVC, SVR
-from sklearn.random_projection import SparseRandomProjection
-from sklearn.pipeline import make_pipeline
-from sklearn.feature_selection import SelectKBest
-from sklearn.model_selection import train_test_split
-from sklearn.datasets import load_diabetes, load_iris, make_hastie_10_2
-from sklearn.utils import check_random_state
-from sklearn.preprocessing import FunctionTransformer, scale
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.dummy import DummyClassifier, DummyRegressor
+from sflearn.model_selection import GridSearchCV, ParameterGrid
+from sflearn.ensemble import BaggingClassifier, BaggingRegressor
+from sflearn.linear_model import Perceptron, LogisticRegression
+from sflearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
+from sflearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sflearn.svm import SVC, SVR
+from sflearn.random_projection import SparseRandomProjection
+from sflearn.pipeline import make_pipeline
+from sflearn.feature_selection import SelectKBest
+from sflearn.model_selection import train_test_split
+from sflearn.datasets import load_diabetes, load_iris, make_hastie_10_2
+from sflearn.utils import check_random_state
+from sflearn.preprocessing import FunctionTransformer, scale
 from itertools import cycle
 
 from scipy.sparse import csc_matrix, csr_matrix

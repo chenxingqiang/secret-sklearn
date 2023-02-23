@@ -3,7 +3,7 @@
 Pairwise metrics, Affinities and Kernels
 ========================================
 
-The :mod:`sklearn.metrics.pairwise` submodule implements utilities to evaluate
+The :mod:`sflearn.metrics.pairwise` submodule implements utilities to evaluate
 pairwise distances or affinity of sets of samples.
 
 This module contains both distance metrics and kernels. A brief summary is
@@ -33,7 +33,7 @@ the kernel:
     2. ``S = 1. / (D / np.max(D))``
 
 
-.. currentmodule:: sklearn.metrics
+.. currentmodule:: sflearn.metrics
 
 The distances between the row vectors of ``X`` and the row vectors of ``Y``
 can be evaluated using :func:`pairwise_distances`. If ``Y`` is omitted the
@@ -43,8 +43,8 @@ and `Y` using different kernel functions. See the API reference for more
 details.
 
     >>> import numpy as np
-    >>> from sklearn.metrics import pairwise_distances
-    >>> from sklearn.metrics.pairwise import pairwise_kernels
+    >>> from sflearn.metrics import pairwise_distances
+    >>> from sflearn.metrics.pairwise import pairwise_kernels
     >>> X = np.array([[2, 3], [3, 5], [5, 8]])
     >>> Y = np.array([[1, 0], [2, 1]])
     >>> pairwise_distances(X, Y, metric='manhattan')
@@ -61,7 +61,7 @@ details.
            [ 5., 18.]])
 
 
-.. currentmodule:: sklearn.metrics.pairwise
+.. currentmodule:: sflearn.metrics.pairwise
 
 .. _cosine_similarity:
 
@@ -83,7 +83,7 @@ denoted by the vectors.
 This kernel is a popular choice for computing the similarity of documents
 represented as tf-idf vectors.
 :func:`cosine_similarity` accepts ``scipy.sparse`` matrices.
-(Note that the tf-idf functionality in ``sklearn.feature_extraction.text``
+(Note that the tf-idf functionality in ``sflearn.feature_extraction.text``
 can produce normalized vectors, in which case :func:`cosine_similarity`
 is equivalent to :func:`linear_kernel`, only slower.)
 
@@ -165,14 +165,14 @@ the kernel is known as the Gaussian kernel of variance :math:`\sigma^2`.
 
 Laplacian kernel
 ----------------
-The function :func:`laplacian_kernel` is a variant on the radial basis 
+The function :func:`laplacian_kernel` is a variant on the radial basis
 function kernel defined as:
 
 .. math::
 
     k(x, y) = \exp( -\gamma \| x-y \|_1)
 
-where ``x`` and ``y`` are the input vectors and :math:`\|x-y\|_1` is the 
+where ``x`` and ``y`` are the input vectors and :math:`\|x-y\|_1` is the
 Manhattan distance between the input vectors.
 
 It has proven useful in ML applied to noiseless data.
@@ -186,10 +186,10 @@ Chi-squared kernel
 The chi-squared kernel is a very popular choice for training non-linear SVMs in
 computer vision applications.
 It can be computed using :func:`chi2_kernel` and then passed to an
-:class:`~sklearn.svm.SVC` with ``kernel="precomputed"``::
+:class:`~sflearn.svm.SVC` with ``kernel="precomputed"``::
 
-    >>> from sklearn.svm import SVC
-    >>> from sklearn.metrics.pairwise import chi2_kernel
+    >>> from sflearn.svm import SVC
+    >>> from sflearn.metrics.pairwise import chi2_kernel
     >>> X = [[0, 1], [1, 0], [.2, .8], [.7, .3]]
     >>> y = [0, 1, 0, 1]
     >>> K = chi2_kernel(X, gamma=.5)

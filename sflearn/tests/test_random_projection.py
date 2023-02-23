@@ -6,20 +6,20 @@ import numpy as np
 import scipy.sparse as sp
 import pytest
 
-from sklearn.metrics import euclidean_distances
+from sflearn.metrics import euclidean_distances
 
-from sklearn.random_projection import johnson_lindenstrauss_min_dim
-from sklearn.random_projection import _gaussian_random_matrix
-from sklearn.random_projection import _sparse_random_matrix
-from sklearn.random_projection import SparseRandomProjection
-from sklearn.random_projection import GaussianRandomProjection
+from sflearn.random_projection import johnson_lindenstrauss_min_dim
+from sflearn.random_projection import _gaussian_random_matrix
+from sflearn.random_projection import _sparse_random_matrix
+from sflearn.random_projection import SparseRandomProjection
+from sflearn.random_projection import GaussianRandomProjection
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_allclose_dense_sparse
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.exceptions import DataDimensionalityWarning
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_allclose_dense_sparse
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.exceptions import DataDimensionalityWarning
 
 all_sparse_random_matrix: List[Any] = [_sparse_random_matrix]
 all_dense_random_matrix: List[Any] = [_gaussian_random_matrix]

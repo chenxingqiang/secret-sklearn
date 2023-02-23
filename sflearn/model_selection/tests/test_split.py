@@ -10,43 +10,43 @@ from itertools import combinations
 from itertools import combinations_with_replacement
 from itertools import permutations
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils.validation import _num_samples
-from sklearn.utils._mocking import MockDataFrame
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils.validation import _num_samples
+from sflearn.utils._mocking import MockDataFrame
 
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import KFold
-from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import GroupKFold
-from sklearn.model_selection import TimeSeriesSplit
-from sklearn.model_selection import LeaveOneOut
-from sklearn.model_selection import LeaveOneGroupOut
-from sklearn.model_selection import LeavePOut
-from sklearn.model_selection import LeavePGroupsOut
-from sklearn.model_selection import ShuffleSplit
-from sklearn.model_selection import GroupShuffleSplit
-from sklearn.model_selection import StratifiedShuffleSplit
-from sklearn.model_selection import PredefinedSplit
-from sklearn.model_selection import check_cv
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import RepeatedKFold
-from sklearn.model_selection import RepeatedStratifiedKFold
-from sklearn.model_selection import StratifiedGroupKFold
+from sflearn.model_selection import cross_val_score
+from sflearn.model_selection import KFold
+from sflearn.model_selection import StratifiedKFold
+from sflearn.model_selection import GroupKFold
+from sflearn.model_selection import TimeSeriesSplit
+from sflearn.model_selection import LeaveOneOut
+from sflearn.model_selection import LeaveOneGroupOut
+from sflearn.model_selection import LeavePOut
+from sflearn.model_selection import LeavePGroupsOut
+from sflearn.model_selection import ShuffleSplit
+from sflearn.model_selection import GroupShuffleSplit
+from sflearn.model_selection import StratifiedShuffleSplit
+from sflearn.model_selection import PredefinedSplit
+from sflearn.model_selection import check_cv
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import GridSearchCV
+from sflearn.model_selection import RepeatedKFold
+from sflearn.model_selection import RepeatedStratifiedKFold
+from sflearn.model_selection import StratifiedGroupKFold
 
-from sklearn.dummy import DummyClassifier
+from sflearn.dummy import DummyClassifier
 
-from sklearn.model_selection._split import _validate_shuffle_split
-from sklearn.model_selection._split import _build_repr
-from sklearn.model_selection._split import _yields_constant_splits
+from sflearn.model_selection._split import _validate_shuffle_split
+from sflearn.model_selection._split import _build_repr
+from sflearn.model_selection._split import _yields_constant_splits
 
-from sklearn.datasets import load_digits
-from sklearn.datasets import make_classification
+from sflearn.datasets import load_digits
+from sflearn.datasets import make_classification
 
-from sklearn.svm import SVC
+from sflearn.svm import SVC
 
 X = np.ones(10)
 y = np.arange(10) // 2

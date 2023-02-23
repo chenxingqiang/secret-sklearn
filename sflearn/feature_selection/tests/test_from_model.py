@@ -4,17 +4,17 @@ import numpy as np
 import warnings
 from unittest.mock import Mock
 
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import skip_if_32bit
-from sklearn.utils._testing import MinimalClassifier
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import skip_if_32bit
+from sflearn.utils._testing import MinimalClassifier
 
-from sklearn import datasets
-from sklearn.cross_decomposition import CCA, PLSCanonical, PLSRegression
-from sklearn.datasets import make_friedman1
-from sklearn.exceptions import NotFittedError
-from sklearn.linear_model import (
+from sflearn import datasets
+from sflearn.cross_decomposition import CCA, PLSCanonical, PLSRegression
+from sflearn.datasets import make_friedman1
+from sflearn.exceptions import NotFittedError
+from sflearn.linear_model import (
     LogisticRegression,
     SGDClassifier,
     Lasso,
@@ -22,13 +22,13 @@ from sklearn.linear_model import (
     ElasticNet,
     ElasticNetCV,
 )
-from sklearn.svm import LinearSVC
-from sklearn.feature_selection import SelectFromModel
-from sklearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
-from sklearn.linear_model import PassiveAggressiveClassifier
-from sklearn.base import BaseEstimator
-from sklearn.pipeline import make_pipeline
-from sklearn.decomposition import PCA
+from sflearn.svm import LinearSVC
+from sflearn.feature_selection import SelectFromModel
+from sflearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
+from sflearn.linear_model import PassiveAggressiveClassifier
+from sflearn.base import BaseEstimator
+from sflearn.pipeline import make_pipeline
+from sflearn.decomposition import PCA
 
 
 class NaNTag(BaseEstimator):

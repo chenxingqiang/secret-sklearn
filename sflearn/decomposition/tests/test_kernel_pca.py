@@ -3,22 +3,22 @@ import scipy.sparse as sp
 import pytest
 import warnings
 
-from sklearn.utils._testing import (
+from sflearn.utils._testing import (
     assert_array_almost_equal,
     assert_array_equal,
     assert_allclose,
 )
 
-from sklearn.decomposition import PCA, KernelPCA
-from sklearn.datasets import make_circles
-from sklearn.datasets import make_blobs
-from sklearn.exceptions import NotFittedError
-from sklearn.linear_model import Perceptron
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics.pairwise import rbf_kernel
-from sklearn.utils.validation import _check_psd_eigenvalues
+from sflearn.decomposition import PCA, KernelPCA
+from sflearn.datasets import make_circles
+from sflearn.datasets import make_blobs
+from sflearn.exceptions import NotFittedError
+from sflearn.linear_model import Perceptron
+from sflearn.pipeline import Pipeline
+from sflearn.preprocessing import StandardScaler
+from sflearn.model_selection import GridSearchCV
+from sflearn.metrics.pairwise import rbf_kernel
+from sflearn.utils.validation import _check_psd_eigenvalues
 
 
 def test_kernel_pca():

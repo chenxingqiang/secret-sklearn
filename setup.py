@@ -23,11 +23,11 @@ except ImportError:
     import __builtin__ as builtins
 
 # This is a bit (!) hackish: we are setting a global variable so that the main
-# sklearn __init__ can detect if it is being loaded by the setup routine, to
+# sflearn __init__ can detect if it is being loaded by the setup routine, to
 # avoid attempting to load components that aren't built yet.
 # TODO: can this be simplified or removed since the switch to setuptools
 # away from numpy.distutils?
-builtins.__SKLEARN_SETUP__ = True
+builtins.__SFLEARN_SETUP__ = True
 
 
 DISTNAME = "scikit-learn"
@@ -45,15 +45,15 @@ PROJECT_URLS = {
     "Source Code": "https://github.com/scikit-learn/scikit-learn",
 }
 
-# We can actually import a restricted version of sklearn that
+# We can actually import a restricted version of sflearn that
 # does not need the compiled code
-import sklearn  # noqa
-import sklearn._min_dependencies as min_deps  # noqa
-from sklearn._build_utils import _check_cython_version  # noqa
-from sklearn.externals._packaging.version import parse as parse_version  # noqa
+import sflearn  # noqa
+import sflearn._min_dependencies as min_deps  # noqa
+from sflearn._build_utils import _check_cython_version  # noqa
+from sflearn.externals._packaging.version import parse as parse_version  # noqa
 
 
-VERSION = sklearn.__version__
+VERSION = sflearn.__version__
 
 # See: https://numpy.org/doc/stable/reference/c-api/deprecations.html
 DEFINE_MACRO_NUMPY_C_API = (
@@ -68,51 +68,51 @@ DEFINE_MACRO_NUMPY_C_API = (
 # `NPY_1_7_API_VERSION`, and remove this list.
 # See: https://github.com/cython/cython/blob/1777f13461f971d064bd1644b02d92b350e6e7d1/docs/src/userguide/migrating_to_cy30.rst#numpy-c-api # noqa
 USE_NEWEST_NUMPY_C_API = (
-    "sklearn.__check_build._check_build",
-    "sklearn._loss._loss",
-    "sklearn.cluster._dbscan_inner",
-    "sklearn.cluster._k_means_common",
-    "sklearn.cluster._k_means_lloyd",
-    "sklearn.cluster._k_means_elkan",
-    "sklearn.cluster._k_means_minibatch",
-    "sklearn.datasets._svmlight_format_fast",
-    "sklearn.decomposition._cdnmf_fast",
-    "sklearn.ensemble._hist_gradient_boosting._gradient_boosting",
-    "sklearn.ensemble._hist_gradient_boosting.histogram",
-    "sklearn.ensemble._hist_gradient_boosting.splitting",
-    "sklearn.ensemble._hist_gradient_boosting._binning",
-    "sklearn.ensemble._hist_gradient_boosting._predictor",
-    "sklearn.ensemble._hist_gradient_boosting._bitset",
-    "sklearn.ensemble._hist_gradient_boosting.common",
-    "sklearn.ensemble._hist_gradient_boosting.utils",
-    "sklearn.feature_extraction._hashing_fast",
-    "sklearn.linear_model._sgd_fast",
-    "sklearn.manifold._barnes_hut_tsne",
-    "sklearn.metrics.cluster._expected_mutual_info_fast",
-    "sklearn.metrics._pairwise_distances_reduction._datasets_pair",
-    "sklearn.metrics._pairwise_distances_reduction._middle_term_computer",
-    "sklearn.metrics._pairwise_distances_reduction._base",
-    "sklearn.metrics._pairwise_distances_reduction._argkmin",
-    "sklearn.metrics._pairwise_distances_reduction._radius_neighbors",
-    "sklearn.metrics._pairwise_fast",
-    "sklearn.neighbors._partition_nodes",
-    "sklearn.tree._splitter",
-    "sklearn.tree._utils",
-    "sklearn.utils._cython_blas",
-    "sklearn.utils._fast_dict",
-    "sklearn.utils._openmp_helpers",
-    "sklearn.utils._weight_vector",
-    "sklearn.utils._random",
-    "sklearn.utils._logistic_sigmoid",
-    "sklearn.utils._readonly_array_wrapper",
-    "sklearn.utils._typedefs",
-    "sklearn.utils._heap",
-    "sklearn.utils._sorting",
-    "sklearn.utils._vector_sentinel",
-    "sklearn.utils._isfinite",
-    "sklearn.utils.murmurhash",
-    "sklearn.svm._newrand",
-    "sklearn._isotonic",
+    "sflearn.__check_build._check_build",
+    "sflearn._loss._loss",
+    "sflearn.cluster._dbscan_inner",
+    "sflearn.cluster._k_means_common",
+    "sflearn.cluster._k_means_lloyd",
+    "sflearn.cluster._k_means_elkan",
+    "sflearn.cluster._k_means_minibatch",
+    "sflearn.datasets._svmlight_format_fast",
+    "sflearn.decomposition._cdnmf_fast",
+    "sflearn.ensemble._hist_gradient_boosting._gradient_boosting",
+    "sflearn.ensemble._hist_gradient_boosting.histogram",
+    "sflearn.ensemble._hist_gradient_boosting.splitting",
+    "sflearn.ensemble._hist_gradient_boosting._binning",
+    "sflearn.ensemble._hist_gradient_boosting._predictor",
+    "sflearn.ensemble._hist_gradient_boosting._bitset",
+    "sflearn.ensemble._hist_gradient_boosting.common",
+    "sflearn.ensemble._hist_gradient_boosting.utils",
+    "sflearn.feature_extraction._hashing_fast",
+    "sflearn.linear_model._sgd_fast",
+    "sflearn.manifold._barnes_hut_tsne",
+    "sflearn.metrics.cluster._expected_mutual_info_fast",
+    "sflearn.metrics._pairwise_distances_reduction._datasets_pair",
+    "sflearn.metrics._pairwise_distances_reduction._middle_term_computer",
+    "sflearn.metrics._pairwise_distances_reduction._base",
+    "sflearn.metrics._pairwise_distances_reduction._argkmin",
+    "sflearn.metrics._pairwise_distances_reduction._radius_neighbors",
+    "sflearn.metrics._pairwise_fast",
+    "sflearn.neighbors._partition_nodes",
+    "sflearn.tree._splitter",
+    "sflearn.tree._utils",
+    "sflearn.utils._cython_blas",
+    "sflearn.utils._fast_dict",
+    "sflearn.utils._openmp_helpers",
+    "sflearn.utils._weight_vector",
+    "sflearn.utils._random",
+    "sflearn.utils._logistic_sigmoid",
+    "sflearn.utils._readonly_array_wrapper",
+    "sflearn.utils._typedefs",
+    "sflearn.utils._heap",
+    "sflearn.utils._sorting",
+    "sflearn.utils._vector_sentinel",
+    "sflearn.utils._isfinite",
+    "sflearn.utils.murmurhash",
+    "sflearn.svm._newrand",
+    "sflearn._isotonic",
 )
 
 
@@ -138,7 +138,7 @@ class CleanCommand(Command):
             print("Will remove generated .c files")
         if os.path.exists("build"):
             shutil.rmtree("build")
-        for dirpath, dirnames, filenames in os.walk("sklearn"):
+        for dirpath, dirnames, filenames in os.walk("sflearn"):
             for filename in filenames:
                 if any(
                     filename.endswith(suffix)
@@ -169,14 +169,14 @@ class build_ext_subclass(build_ext):
             # Do not override self.parallel if already defined by
             # command-line flag (--parallel or -j)
 
-            parallel = os.environ.get("SKLEARN_BUILD_PARALLEL")
+            parallel = os.environ.get("SFLEARN_BUILD_PARALLEL")
             if parallel:
                 self.parallel = int(parallel)
         if self.parallel:
             print("setting parallel=%d " % self.parallel)
 
     def build_extensions(self):
-        from sklearn._build_utils.openmp_helpers import get_openmp_flag
+        from sflearn._build_utils.openmp_helpers import get_openmp_flag
 
         for ext in self.extensions:
             if ext.name in USE_NEWEST_NUMPY_C_API:
@@ -185,7 +185,7 @@ class build_ext_subclass(build_ext):
             else:
                 print(f"Using old NumPy C API (version 1.7) for extension {ext.name}")
 
-        if sklearn._OPENMP_SUPPORTED:
+        if sflearn._OPENMP_SUPPORTED:
             openmp_flag = get_openmp_flag(self.compiler)
 
             for e in self.extensions:
@@ -457,12 +457,12 @@ libraries = [
         "libsvm-skl",
         {
             "sources": [
-                join("sklearn", "svm", "src", "libsvm", "libsvm_template.cpp"),
+                join("sflearn", "svm", "src", "libsvm", "libsvm_template.cpp"),
             ],
             "depends": [
-                join("sklearn", "svm", "src", "libsvm", "svm.cpp"),
-                join("sklearn", "svm", "src", "libsvm", "svm.h"),
-                join("sklearn", "svm", "src", "newrand", "newrand.h"),
+                join("sflearn", "svm", "src", "libsvm", "svm.cpp"),
+                join("sflearn", "svm", "src", "libsvm", "svm.h"),
+                join("sflearn", "svm", "src", "newrand", "newrand.h"),
             ],
             # Use C++11 to use the random number generator fix
             "extra_compiler_args": ["-std=c++11"],
@@ -473,13 +473,13 @@ libraries = [
         "liblinear-skl",
         {
             "sources": [
-                join("sklearn", "svm", "src", "liblinear", "linear.cpp"),
-                join("sklearn", "svm", "src", "liblinear", "tron.cpp"),
+                join("sflearn", "svm", "src", "liblinear", "linear.cpp"),
+                join("sflearn", "svm", "src", "liblinear", "tron.cpp"),
             ],
             "depends": [
-                join("sklearn", "svm", "src", "liblinear", "linear.h"),
-                join("sklearn", "svm", "src", "liblinear", "tron.h"),
-                join("sklearn", "svm", "src", "newrand", "newrand.h"),
+                join("sflearn", "svm", "src", "liblinear", "linear.h"),
+                join("sflearn", "svm", "src", "liblinear", "tron.h"),
+                join("sflearn", "svm", "src", "newrand", "newrand.h"),
             ],
             # Use C++11 to use the random number generator fix
             "extra_compiler_args": ["-std=c++11"],
@@ -496,8 +496,8 @@ def configure_extension_modules():
     if "sdist" in sys.argv or "--help" in sys.argv:
         return []
 
-    from sklearn._build_utils import cythonize_extensions
-    from sklearn._build_utils import gen_from_templates
+    from sflearn._build_utils import cythonize_extensions
+    from sflearn._build_utils import gen_from_templates
     import numpy
 
     is_pypy = platform.python_implementation() == "PyPy"
@@ -511,7 +511,7 @@ def configure_extension_modules():
 
     default_extra_compile_args = []
     build_with_debug_symbols = (
-        os.environ.get("SKLEARN_BUILD_ENABLE_DEBUG_SYMBOLS", "0") != "0"
+        os.environ.get("SFLEARN_BUILD_ENABLE_DEBUG_SYMBOLS", "0") != "0"
     )
     if os.name == "posix":
         if build_with_debug_symbols:
@@ -523,7 +523,7 @@ def configure_extension_modules():
     cython_exts = []
     for submodule, extensions in extension_config.items():
         submodule_parts = submodule.split(".")
-        parent_dir = join("sklearn", *submodule_parts)
+        parent_dir = join("sflearn", *submodule_parts)
         for extension in extensions:
             if is_pypy and not extension.get("compile_for_pypy", True):
                 continue
@@ -552,9 +552,9 @@ def configure_extension_modules():
             # By convention, our extensions always use the name of the first source
             source_name = os.path.splitext(os.path.basename(sources[0]))[0]
             if submodule:
-                name_parts = ["sklearn", submodule, source_name]
+                name_parts = ["sflearn", submodule, source_name]
             else:
-                name_parts = ["sklearn", source_name]
+                name_parts = ["sflearn", source_name]
             name = ".".join(name_parts)
 
             # Make paths start from the root directory

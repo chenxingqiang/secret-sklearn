@@ -13,27 +13,27 @@ from pytest import importorskip
 import numpy as np
 import scipy.sparse as sp
 
-from sklearn.utils._testing import assert_no_warnings
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils._testing import SkipTest
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_allclose_dense_sparse
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import _convert_container
-from sklearn.utils import as_float_array, check_array, check_symmetric
-from sklearn.utils import check_X_y
-from sklearn.utils import deprecated
-from sklearn.utils._mocking import MockDataFrame
-from sklearn.utils.fixes import parse_version
-from sklearn.utils.estimator_checks import _NotAnArray
-from sklearn.random_projection import _sparse_random_matrix
-from sklearn.linear_model import ARDRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.svm import SVR
-from sklearn.datasets import make_blobs
-from sklearn.utils import _safe_indexing
-from sklearn.utils.validation import (
+from sflearn.utils._testing import assert_no_warnings
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils._testing import SkipTest
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_allclose_dense_sparse
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import _convert_container
+from sflearn.utils import as_float_array, check_array, check_symmetric
+from sflearn.utils import check_X_y
+from sflearn.utils import deprecated
+from sflearn.utils._mocking import MockDataFrame
+from sflearn.utils.fixes import parse_version
+from sflearn.utils.estimator_checks import _NotAnArray
+from sflearn.random_projection import _sparse_random_matrix
+from sflearn.linear_model import ARDRegression
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.ensemble import RandomForestRegressor
+from sflearn.svm import SVR
+from sflearn.datasets import make_blobs
+from sflearn.utils import _safe_indexing
+from sflearn.utils.validation import (
     has_fit_parameter,
     check_is_fitted,
     check_consistent_length,
@@ -53,12 +53,12 @@ from sklearn.utils.validation import (
     _check_feature_names_in,
     _check_fit_params,
 )
-from sklearn.base import BaseEstimator
-import sklearn
+from sflearn.base import BaseEstimator
+import sflearn
 
-from sklearn.exceptions import NotFittedError, PositiveSpectrumWarning
+from sflearn.exceptions import NotFittedError, PositiveSpectrumWarning
 
-from sklearn.utils._testing import TempMemmap
+from sflearn.utils._testing import TempMemmap
 
 
 def test_as_float_array():
@@ -124,7 +124,7 @@ def test_memmap():
 
     asflt = lambda x: as_float_array(x, copy=False)
 
-    with NamedTemporaryFile(prefix="sklearn-test") as tmp:
+    with NamedTemporaryFile(prefix="sflearn-test") as tmp:
         M = np.memmap(tmp, shape=(10, 10), dtype=np.float32)
         M[:] = 0
 
@@ -208,7 +208,7 @@ def test_check_array_links_to_imputer_doc_only_for_X(input_name, retype):
     extended_msg = (
         f"\n{estimator.__class__.__name__} does not accept missing values"
         " encoded as NaN natively. For supervised learning, you might want"
-        " to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor"
+        " to consider sflearn.ensemble.HistGradientBoostingClassifier and Regressor"
         " which accept missing values encoded as NaNs natively."
         " Alternatively, it is possible to preprocess the"
         " data, for instance by using an imputer transformer in a pipeline"
@@ -787,7 +787,7 @@ def test_check_is_fitted_with_is_fitted():
             self._is_fitted = True
             return self
 
-        def __sklearn_is_fitted__(self):
+        def __sflearn_is_fitted__(self):
             return hasattr(self, "_is_fitted") and self._is_fitted
 
     with pytest.raises(NotFittedError):
@@ -914,9 +914,9 @@ def test_suppress_validation():
     X = np.array([0, np.inf])
     with pytest.raises(ValueError):
         assert_all_finite(X)
-    sklearn.set_config(assume_finite=True)
+    sflearn.set_config(assume_finite=True)
     assert_all_finite(X)
-    sklearn.set_config(assume_finite=False)
+    sflearn.set_config(assume_finite=False)
     with pytest.raises(ValueError):
         assert_all_finite(X)
 

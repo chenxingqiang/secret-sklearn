@@ -21,7 +21,7 @@ the margins to be calculated using all the data in the area.
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from sklearn import svm
+from sflearn import svm
 
 # we create 40 separable points
 np.random.seed(0)

@@ -139,11 +139,11 @@ threads than the number of CPUs on a machine. Over-subscription happens when
 a program is running too many threads at the same time.
 
 Suppose you have a machine with 8 CPUs. Consider a case where you're running
-a :class:`~sklearn.model_selection.GridSearchCV` (parallelized with joblib)
+a :class:`~sflearn.model_selection.GridSearchCV` (parallelized with joblib)
 with ``n_jobs=8`` over a
-:class:`~sklearn.ensemble.HistGradientBoostingClassifier` (parallelized with
+:class:`~sflearn.ensemble.HistGradientBoostingClassifier` (parallelized with
 OpenMP). Each instance of
-:class:`~sklearn.ensemble.HistGradientBoostingClassifier` will spawn 8 threads
+:class:`~sflearn.ensemble.HistGradientBoostingClassifier` will spawn 8 threads
 (since you have 8 CPUs). That's a total of ``8 * 8 = 64`` threads, which
 leads to oversubscription of threads for physical CPU resources and thus
 to scheduling overhead.
@@ -157,7 +157,7 @@ number of threads they can use, so as to avoid oversubscription. In practice
 the heuristic that joblib uses is to tell the processes to use ``max_threads
 = n_cpus // n_jobs``, via their corresponding environment variable. Back to
 our example from above, since the joblib backend of
-:class:`~sklearn.model_selection.GridSearchCV` is ``loky``, each process will
+:class:`~sflearn.model_selection.GridSearchCV` is ``loky``, each process will
 only be able to use 1 thread instead of 8, thus mitigating the
 oversubscription issue.
 
@@ -192,7 +192,7 @@ Configuration switches
 Python API
 ..........
 
-:func:`sklearn.set_config` and :func:`sklearn.config_context` can be used to change
+:func:`sflearn.set_config` and :func:`sflearn.config_context` can be used to change
 parameters of the configuration which control aspect of parallelism.
 
 .. _environment_variable:
@@ -202,19 +202,19 @@ Environment variables
 
 These environment variables should be set before importing scikit-learn.
 
-`SKLEARN_ASSUME_FINITE`
+`SFLEARN_ASSUME_FINITE`
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets the default value for the `assume_finite` argument of
-:func:`sklearn.set_config`.
+:func:`sflearn.set_config`.
 
-`SKLEARN_WORKING_MEMORY`
+`SFLEARN_WORKING_MEMORY`
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets the default value for the `working_memory` argument of
-:func:`sklearn.set_config`.
+:func:`sflearn.set_config`.
 
-`SKLEARN_SEED`
+`SFLEARN_SEED`
 ~~~~~~~~~~~~~~
 
 Sets the seed of the global random generator when running the tests, for
@@ -227,7 +227,7 @@ results are independent of the test execution order. However some tests might
 forget to use explicit seeding and this variable is a way to control the initial
 state of the aforementioned singletons.
 
-`SKLEARN_TESTS_GLOBAL_RANDOM_SEED`
+`SFLEARN_TESTS_GLOBAL_RANDOM_SEED`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Controls the seeding of the random number generator used in tests that rely on
@@ -236,7 +236,7 @@ the `global_random_seed`` fixture.
 All tests that use this fixture accept the contract that they should
 deterministically pass for any seed value from 0 to 99 included.
 
-If the `SKLEARN_TESTS_GLOBAL_RANDOM_SEED` environment variable is set to
+If the `SFLEARN_TESTS_GLOBAL_RANDOM_SEED` environment variable is set to
 `"any"` (which should be the case on nightly builds on the CI), the fixture
 will choose an arbitrary seed in the above range (based on the BUILD_NUMBER or
 the current day) and all fixtured tests will run for that specific seed. The
@@ -249,14 +249,14 @@ The range of admissible seed values is limited to [0, 99] because it is often
 not possible to write a test that can work for any possible seed and we want to
 avoid having tests that randomly fail on the CI.
 
-Valid values for `SKLEARN_TESTS_GLOBAL_RANDOM_SEED`:
+Valid values for `SFLEARN_TESTS_GLOBAL_RANDOM_SEED`:
 
-- `SKLEARN_TESTS_GLOBAL_RANDOM_SEED="42"`: run tests with a fixed seed of 42
-- `SKLEARN_TESTS_GLOBAL_RANDOM_SEED="40-42"`: run the tests with all seeds
+- `SFLEARN_TESTS_GLOBAL_RANDOM_SEED="42"`: run tests with a fixed seed of 42
+- `SFLEARN_TESTS_GLOBAL_RANDOM_SEED="40-42"`: run the tests with all seeds
   between 40 and 42 included
-- `SKLEARN_TESTS_GLOBAL_RANDOM_SEED="any"`: run the tests with an arbitrary
+- `SFLEARN_TESTS_GLOBAL_RANDOM_SEED="any"`: run the tests with an arbitrary
   seed selected between 0 and 99 included
-- `SKLEARN_TESTS_GLOBAL_RANDOM_SEED="all"`: run the tests with all seeds
+- `SFLEARN_TESTS_GLOBAL_RANDOM_SEED="all"`: run the tests with all seeds
   between 0 and 99 included. This can take a long time: only use for individual
   tests, not the full test suite!
 
@@ -275,16 +275,16 @@ admissible seeds on your local machine:
 
 .. prompt:: bash $
 
-    SKLEARN_TESTS_GLOBAL_RANDOM_SEED="all" pytest -v -k test_your_test_name
+    SFLEARN_TESTS_GLOBAL_RANDOM_SEED="all" pytest -v -k test_your_test_name
 
-`SKLEARN_SKIP_NETWORK_TESTS`
+`SFLEARN_SKIP_NETWORK_TESTS`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this environment variable is set to a non zero value, the tests that need
 network access are skipped. When this environment variable is not set then
 network tests are skipped.
 
-`SKLEARN_RUN_FLOAT32_TESTS`
+`SFLEARN_RUN_FLOAT32_TESTS`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this environment variable is set to '1', the tests using the
@@ -292,21 +292,21 @@ When this environment variable is set to '1', the tests using the
 When this environment variable is not set, the tests are only run on
 float64 data.
 
-`SKLEARN_ENABLE_DEBUG_CYTHON_DIRECTIVES`
+`SFLEARN_ENABLE_DEBUG_CYTHON_DIRECTIVES`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this environment variable is set to a non zero value, the `Cython`
 derivative, `boundscheck` is set to `True`. This is useful for finding
 segfaults.
 
-`SKLEARN_BUILD_ENABLE_DEBUG_SYMBOLS`
+`SFLEARN_BUILD_ENABLE_DEBUG_SYMBOLS`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When this environment variable is set to a non zero value, the debug symbols
 will be included in the compiled C extensions. Only debug symbols for POSIX
 systems is configured.
 
-`SKLEARN_PAIRWISE_DIST_CHUNK_SIZE`
+`SFLEARN_PAIRWISE_DIST_CHUNK_SIZE`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This sets the size of chunk to be used by the underlying `PairwiseDistancesReductions`

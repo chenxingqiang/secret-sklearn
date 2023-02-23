@@ -182,7 +182,7 @@ def check_supervised_y_no_nan(name, estimator_orig):
         y = _enforce_estimator_tags_y(estimator, y)
 
         module_name = estimator.__module__
-        if module_name.startswith("sklearn.") and not (
+        if module_name.startswith("sflearn.") and not (
             "test_" in module_name or module_name.endswith("_testing")
         ):
             # In scikit-learn we want the error message to mention the input
@@ -513,13 +513,13 @@ def parametrize_with_checks(estimators):
 
     Examples
     --------
-    >>> from sklearn.utils.estimator_checks import parametrize_with_checks
-    >>> from sklearn.linear_model import LogisticRegression
-    >>> from sklearn.tree import DecisionTreeRegressor
+    >>> from sflearn.utils.estimator_checks import parametrize_with_checks
+    >>> from sflearn.linear_model import LogisticRegression
+    >>> from sflearn.tree import DecisionTreeRegressor
 
     >>> @parametrize_with_checks([LogisticRegression(),
     ...                           DecisionTreeRegressor()])
-    ... def test_sklearn_compatible_estimator(estimator, check):
+    ... def test_sflearn_compatible_estimator(estimator, check):
     ...     check(estimator)
 
     """
@@ -553,7 +553,7 @@ def check_estimator(estimator=None, generate_only=False, Estimator="deprecated")
     conventions as detailed in :ref:`rolling_your_own_estimator`.
     Additional tests for classifiers, regressors, clustering or transformers
     will be run if the Estimator class inherits from the corresponding mixin
-    from sklearn.base.
+    from sflearn.base.
 
     Setting `generate_only=True` returns a generator that yields (estimator,
     check) tuples where the check can be called independently from each
@@ -561,7 +561,7 @@ def check_estimator(estimator=None, generate_only=False, Estimator="deprecated")
     independently and report the checks that are failing.
 
     scikit-learn provides a pytest specific decorator,
-    :func:`~sklearn.utils.parametrize_with_checks`, making it easier to test
+    :func:`~sflearn.utils.parametrize_with_checks`, making it easier to test
     multiple estimators.
 
     Parameters
@@ -1883,10 +1883,10 @@ def check_estimators_pickle(name, estimator_orig):
     # pickle and unpickle!
     pickled_estimator = pickle.dumps(estimator)
     module_name = estimator.__module__
-    if module_name.startswith("sklearn.") and not (
+    if module_name.startswith("sflearn.") and not (
         "test_" in module_name or module_name.endswith("_testing")
     ):
-        # strict check for sklearn estimators that are not implemented in test
+        # strict check for sflearn estimators that are not implemented in test
         # modules.
         assert b"version" in pickled_estimator
     unpickled_estimator = pickle.loads(pickled_estimator)
@@ -3886,7 +3886,7 @@ def check_dataframe_column_names_consistency(name, estimator_orig):
             "error",
             message="X does not have valid feature names",
             category=UserWarning,
-            module="sklearn",
+            module="sflearn",
         )
         estimator.fit(X, y)
 
@@ -3899,10 +3899,10 @@ def check_dataframe_column_names_consistency(name, estimator_orig):
     assert estimator.feature_names_in_.dtype == object
     assert_array_equal(estimator.feature_names_in_, names)
 
-    # Only check sklearn estimators for feature_names_in_ in docstring
+    # Only check sflearn estimators for feature_names_in_ in docstring
     module_name = estimator_orig.__module__
     if (
-        module_name.startswith("sklearn.")
+        module_name.startswith("sflearn.")
         and not ("test_" in module_name or module_name.endswith("_testing"))
         and ("feature_names_in_" not in (estimator_orig.__doc__))
     ):
@@ -3934,7 +3934,7 @@ def check_dataframe_column_names_consistency(name, estimator_orig):
                 "error",
                 message="X does not have valid feature names",
                 category=UserWarning,
-                module="sklearn",
+                module="sflearn",
             )
             method(X)  # works without UserWarning for valid features
 

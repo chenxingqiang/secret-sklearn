@@ -18,7 +18,7 @@ classes are plotted surrounded by two colored circles.
 
 The classification is performed by projecting to the first two principal
 components found by PCA and CCA for visualisation purposes, followed by using
-the :class:`~sklearn.multiclass.OneVsRestClassifier` metaclassifier using two
+the :class:`~sflearn.multiclass.OneVsRestClassifier` metaclassifier using two
 SVCs with linear kernels to learn a discriminative model for each class.
 Note that PCA is used to perform an unsupervised dimensionality reduction,
 while CCA is used to perform a supervised one.
@@ -35,11 +35,11 @@ have a label.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_multilabel_classification
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.svm import SVC
-from sklearn.decomposition import PCA
-from sklearn.cross_decomposition import CCA
+from sflearn.datasets import make_multilabel_classification
+from sflearn.multiclass import OneVsRestClassifier
+from sflearn.svm import SVC
+from sflearn.decomposition import PCA
+from sflearn.cross_decomposition import CCA
 
 
 def plot_hyperplane(clf, min_x, max_x, linestyle, label):

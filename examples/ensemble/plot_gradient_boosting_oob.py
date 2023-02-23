@@ -29,10 +29,10 @@ but is computationally more demanding.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import ensemble
-from sklearn.model_selection import KFold
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import log_loss
+from sflearn import ensemble
+from sflearn.model_selection import KFold
+from sflearn.model_selection import train_test_split
+from sflearn.metrics import log_loss
 
 from scipy.special import expit
 

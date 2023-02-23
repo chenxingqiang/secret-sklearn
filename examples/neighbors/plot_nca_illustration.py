@@ -14,8 +14,8 @@ space. Please refer to the :ref:`User Guide <nca>` for more information.
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.neighbors import NeighborhoodComponentsAnalysis
+from sflearn.datasets import make_classification
+from sflearn.neighbors import NeighborhoodComponentsAnalysis
 from matplotlib import cm
 from scipy.special import logsumexp
 
@@ -77,7 +77,7 @@ plt.show()
 # %%
 # Learning an embedding
 # ---------------------
-# We use :class:`~sklearn.neighbors.NeighborhoodComponentsAnalysis` to learn an
+# We use :class:`~sflearn.neighbors.NeighborhoodComponentsAnalysis` to learn an
 # embedding and plot the points after the transformation. We then take the
 # embedding and find the nearest neighbors.
 

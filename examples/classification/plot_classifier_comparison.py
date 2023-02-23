@@ -28,20 +28,20 @@ set.
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.datasets import make_moons, make_circles, make_classification
-from sklearn.neural_network import MLPClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.inspection import DecisionBoundaryDisplay
+from sflearn.model_selection import train_test_split
+from sflearn.preprocessing import StandardScaler
+from sflearn.pipeline import make_pipeline
+from sflearn.datasets import make_moons, make_circles, make_classification
+from sflearn.neural_network import MLPClassifier
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.svm import SVC
+from sflearn.gaussian_process import GaussianProcessClassifier
+from sflearn.gaussian_process.kernels import RBF
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sflearn.naive_bayes import GaussianNB
+from sflearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sflearn.inspection import DecisionBoundaryDisplay
 
 names = [
     "Nearest Neighbors",

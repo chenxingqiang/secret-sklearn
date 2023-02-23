@@ -24,15 +24,15 @@ enhance the functionality of scikit-learn's estimators.
 - `Fast svmlight / libsvm file loader <https://github.com/mblondel/svmlight-loader>`_
   Fast and memory-efficient svmlight / libsvm file loader for Python.
 
-- `sklearn_pandas <https://github.com/paulgb/sklearn-pandas/>`_ bridge for
+- `sflearn_pandas <https://github.com/paulgb/sflearn-pandas/>`_ bridge for
   scikit-learn pipelines and pandas data frame with dedicated transformers.
 
-- `sklearn_xarray <https://github.com/phausamann/sklearn-xarray/>`_ provides
+- `sflearn_xarray <https://github.com/phausamann/sflearn-xarray/>`_ provides
   compatibility of scikit-learn estimators with xarray data structures.
 
 **Auto-ML**
 
-- `auto-sklearn <https://github.com/automl/auto-sklearn/>`_
+- `auto-sflearn <https://github.com/automl/auto-sflearn/>`_
   An automated machine learning toolkit and a drop-in replacement for a
   scikit-learn estimator
 
@@ -62,7 +62,7 @@ enhance the functionality of scikit-learn's estimators.
   EvalML is an AutoML library which builds, optimizes, and evaluates
   machine learning pipelines using domain-specific objective functions.
   It incorporates multiple modeling libraries under one API, and
-  the objects that EvalML creates use an sklearn-compatible API.
+  the objects that EvalML creates use an sflearn-compatible API.
 
 **Experimentation frameworks**
 
@@ -94,7 +94,7 @@ enhance the functionality of scikit-learn's estimators.
 - `mlxtend <https://github.com/rasbt/mlxtend>`_ Includes model visualization
   utilities.
 
-- `sklearn-evaluation <https://github.com/ploomber/sklearn-evaluation>`_ 
+- `sflearn-evaluation <https://github.com/ploomber/sflearn-evaluation>`_
   Machine learning model evaluation made easy: plots, tables, HTML reports,
   experiment tracking and Jupyter notebook analysis. Visual analysis, model
   selection, evaluation and diagnostics.
@@ -111,12 +111,12 @@ enhance the functionality of scikit-learn's estimators.
   includes a replacement for ``GridSearchCV`` or ``RandomizedSearchCV`` to do
   cross-validated parameter search using any of these strategies.
 
-- `sklearn-deap <https://github.com/rsteca/sklearn-deap>`_ Use evolutionary
+- `sflearn-deap <https://github.com/rsteca/sflearn-deap>`_ Use evolutionary
   algorithms instead of gridsearch in scikit-learn.
 
 **Model export for production**
 
-- `sklearn-onnx <https://github.com/onnx/sklearn-onnx>`_ Serialization of many
+- `sflearn-onnx <https://github.com/onnx/sflearn-onnx>`_ Serialization of many
   Scikit-learn pipelines to `ONNX <https://onnx.ai/>`_ for interchange and
   prediction.
 
@@ -124,12 +124,12 @@ enhance the functionality of scikit-learn's estimators.
   persistence model more secure than pickle, which can be used instead of
   pickle in most common cases.
 
-- `sklearn2pmml <https://github.com/jpmml/sklearn2pmml>`_
+- `sflearn2pmml <https://github.com/jpmml/sflearn2pmml>`_
   Serialization of a wide variety of scikit-learn estimators and transformers
-  into PMML with the help of `JPMML-SkLearn <https://github.com/jpmml/jpmml-sklearn>`_
+  into PMML with the help of `JPMML-SkLearn <https://github.com/jpmml/jpmml-sflearn>`_
   library.
 
-- `sklearn-porter <https://github.com/nok/sklearn-porter>`_
+- `sflearn-porter <https://github.com/nok/sflearn-porter>`_
   Transpile trained scikit-learn models to C, Java, Javascript and others.
 
 - `m2cgen <https://github.com/BayesWitnesses/m2cgen>`_
@@ -166,10 +166,10 @@ and tasks.
 - `pomegranate <https://github.com/jmschrei/pomegranate>`_ Probabilistic modelling
   for Python, with an emphasis on hidden Markov models.
 
-- `sklearn-crfsuite <https://github.com/TeamHG-Memex/sklearn-crfsuite>`_
+- `sflearn-crfsuite <https://github.com/TeamHG-Memex/sflearn-crfsuite>`_
   Linear-chain conditional random fields
   (`CRFsuite <http://www.chokkan.org/software/crfsuite/>`_ wrapper with
-  sklearn-like API).
+  sflearn-like API).
 
 **Deep neural networks etc.**
 
@@ -241,7 +241,7 @@ and tasks.
   Dirichlet allocation in Cython which uses `Gibbs sampling
   <https://en.wikipedia.org/wiki/Gibbs_sampling>`_ to sample from the true
   posterior distribution. (scikit-learn's
-  :class:`~sklearn.decomposition.LatentDirichletAllocation` implementation uses
+  :class:`~sflearn.decomposition.LatentDirichletAllocation` implementation uses
   `variational inference
   <https://en.wikipedia.org/wiki/Variational_Bayesian_methods>`_ to sample from
   a tractable approximation of a topic model's posterior distribution.)
@@ -260,14 +260,14 @@ and tasks.
 
 - `categorical-encoding
   <https://github.com/scikit-learn-contrib/categorical-encoding>`_ A
-  library of sklearn compatible categorical variable encoders.
+  library of sflearn compatible categorical variable encoders.
 
 - `imbalanced-learn
   <https://github.com/scikit-learn-contrib/imbalanced-learn>`_ Various
   methods to under- and over-sample datasets.
 
 - `Feature-engine <https://github.com/solegalli/feature_engine>`_ A library
-  of sklearn compatible transformers for missing data imputation, categorical
+  of sflearn compatible transformers for missing data imputation, categorical
   encoding, variable transformation, discretization, outlier handling and more.
   Feature-engine allows the application of preprocessing steps to selected groups
   of variables and it is fully compatible with the Scikit-learn Pipeline.
@@ -359,12 +359,12 @@ contact the authors of the translation.
 Some available translations are linked here to improve their dissemination
 and promote community efforts.
 
-- `Chinese translation <https://sklearn.apachecn.org/>`_
-  (`source <https://github.com/apachecn/sklearn-doc-zh>`__)
-- `Persian translation <https://sklearn.ir/>`_
+- `Chinese translation <https://sflearn.apachecn.org/>`_
+  (`source <https://github.com/apachecn/sflearn-doc-zh>`__)
+- `Persian translation <https://sflearn.ir/>`_
   (`source <https://github.com/mehrdad-dev/scikit-learn>`__)
-- `Spanish translation <https://qu4nt.github.io/sklearn-doc-es/>`_
-  (`source <https://github.com/qu4nt/sklearn-doc-es>`__)
+- `Spanish translation <https://qu4nt.github.io/sflearn-doc-es/>`_
+  (`source <https://github.com/qu4nt/sflearn-doc-es>`__)
 - `Korean translation <https://panda5176.github.io/scikit-learn-korean/>`_
   (`source <https://github.com/panda5176/scikit-learn-korean>`__)
 

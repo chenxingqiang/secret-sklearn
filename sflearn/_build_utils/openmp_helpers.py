@@ -96,7 +96,7 @@ def check_openmp_support():
         openmp_exception = exception
 
     if not openmp_supported:
-        if os.getenv("SKLEARN_FAIL_NO_OPENMP"):
+        if os.getenv("SFLEARN_FAIL_NO_OPENMP"):
             raise Exception(
                 "Failed to build scikit-learn with OpenMP support"
             ) from openmp_exception

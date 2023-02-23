@@ -27,9 +27,9 @@ using :ref:`grid_search`.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import svm, datasets
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import ConfusionMatrixDisplay
+from sflearn import svm, datasets
+from sflearn.model_selection import train_test_split
+from sflearn.metrics import ConfusionMatrixDisplay
 
 # import some data to play with
 iris = datasets.load_iris()

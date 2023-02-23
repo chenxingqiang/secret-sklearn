@@ -224,7 +224,7 @@ def fetch_20newsgroups(
 
     Returns
     -------
-    bunch : :class:`~sklearn.utils.Bunch`
+    bunch : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : list of shape (n_samples,)
@@ -352,16 +352,16 @@ def fetch_20newsgroups_vectorized(
 
     This is a convenience function; the transformation is done using the
     default settings for
-    :class:`~sklearn.feature_extraction.text.CountVectorizer`. For more
+    :class:`~sflearn.feature_extraction.text.CountVectorizer`. For more
     advanced usage (stopword filtering, n-gram extraction, etc.), combine
     fetch_20newsgroups with a custom
-    :class:`~sklearn.feature_extraction.text.CountVectorizer`,
-    :class:`~sklearn.feature_extraction.text.HashingVectorizer`,
-    :class:`~sklearn.feature_extraction.text.TfidfTransformer` or
-    :class:`~sklearn.feature_extraction.text.TfidfVectorizer`.
+    :class:`~sflearn.feature_extraction.text.CountVectorizer`,
+    :class:`~sflearn.feature_extraction.text.HashingVectorizer`,
+    :class:`~sflearn.feature_extraction.text.TfidfTransformer` or
+    :class:`~sflearn.feature_extraction.text.TfidfVectorizer`.
 
     The resulting counts are normalized using
-    :func:`sklearn.preprocessing.normalize` unless normalize is set to False.
+    :func:`sflearn.preprocessing.normalize` unless normalize is set to False.
 
     =================   ==========
     Classes                     20
@@ -404,7 +404,7 @@ def fetch_20newsgroups_vectorized(
 
     normalize : bool, default=True
         If True, normalizes each document's feature vector to unit norm using
-        :func:`sklearn.preprocessing.normalize`.
+        :func:`sflearn.preprocessing.normalize`.
 
         .. versionadded:: 0.22
 
@@ -418,7 +418,7 @@ def fetch_20newsgroups_vectorized(
 
     Returns
     -------
-    bunch : :class:`~sklearn.utils.Bunch`
+    bunch : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data: {sparse matrix, dataframe} of shape (n_samples, n_features)

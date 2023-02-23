@@ -24,7 +24,7 @@ class QuantileRegressor(LinearModel, RegressorMixin, BaseEstimator):
     desired `quantile` and is robust to outliers.
 
     This model uses an L1 regularization like
-    :class:`~sklearn.linear_model.Lasso`.
+    :class:`~sflearn.linear_model.Lasso`.
 
     Read more in the :ref:`User Guide <quantile_regression>`.
 
@@ -93,14 +93,14 @@ class QuantileRegressor(LinearModel, RegressorMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.linear_model import QuantileRegressor
+    >>> from sflearn.linear_model import QuantileRegressor
     >>> import numpy as np
     >>> n_samples, n_features = 10, 2
     >>> rng = np.random.RandomState(0)
     >>> y = rng.randn(n_samples)
     >>> X = rng.randn(n_samples, n_features)
     >>> # the two following lines are optional in practice
-    >>> from sklearn.utils.fixes import sp_version, parse_version
+    >>> from sflearn.utils.fixes import sp_version, parse_version
     >>> solver = "highs" if sp_version >= parse_version("1.6.0") else "interior-point"
     >>> reg = QuantileRegressor(quantile=0.8, solver=solver).fit(X, y)
     >>> np.mean(y <= reg.predict(X))

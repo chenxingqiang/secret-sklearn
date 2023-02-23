@@ -15,15 +15,15 @@ The dataset used in this example is a preprocessed excerpt of the
 from time import time
 import matplotlib.pyplot as plt
 
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.datasets import fetch_lfw_people
-from sklearn.metrics import classification_report
-from sklearn.metrics import ConfusionMatrixDisplay
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.svm import SVC
-from sklearn.utils.fixes import loguniform
+from sflearn.model_selection import train_test_split
+from sflearn.model_selection import RandomizedSearchCV
+from sflearn.datasets import fetch_lfw_people
+from sflearn.metrics import classification_report
+from sflearn.metrics import ConfusionMatrixDisplay
+from sflearn.preprocessing import StandardScaler
+from sflearn.decomposition import PCA
+from sflearn.svm import SVC
+from sflearn.utils.fixes import loguniform
 
 
 # %%

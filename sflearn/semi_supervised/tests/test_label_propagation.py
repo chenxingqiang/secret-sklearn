@@ -5,13 +5,13 @@ import pytest
 import warnings
 
 from scipy.sparse import issparse
-from sklearn.semi_supervised import _label_propagation as label_propagation
-from sklearn.metrics.pairwise import rbf_kernel
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import NearestNeighbors
-from sklearn.datasets import make_classification
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.utils._testing import (
+from sflearn.semi_supervised import _label_propagation as label_propagation
+from sflearn.metrics.pairwise import rbf_kernel
+from sflearn.model_selection import train_test_split
+from sflearn.neighbors import NearestNeighbors
+from sflearn.datasets import make_classification
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.utils._testing import (
     assert_allclose,
     assert_array_equal,
 )

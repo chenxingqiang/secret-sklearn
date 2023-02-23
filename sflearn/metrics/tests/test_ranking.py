@@ -5,38 +5,38 @@ import warnings
 from scipy.sparse import csr_matrix
 from scipy import stats
 
-from sklearn import datasets
-from sklearn import svm
+from sflearn import datasets
+from sflearn import svm
 
-from sklearn.utils.extmath import softmax
-from sklearn.datasets import make_multilabel_classification
-from sklearn.random_projection import _sparse_random_matrix
-from sklearn.utils.validation import check_array, check_consistent_length
-from sklearn.utils.validation import check_random_state
+from sflearn.utils.extmath import softmax
+from sflearn.datasets import make_multilabel_classification
+from sflearn.random_projection import _sparse_random_matrix
+from sflearn.utils.validation import check_array, check_consistent_length
+from sflearn.utils.validation import check_random_state
 
-from sklearn.utils._testing import assert_allclose
-from sklearn.utils._testing import assert_almost_equal
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
+from sflearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_almost_equal
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
 
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import auc
-from sklearn.metrics import average_precision_score
-from sklearn.metrics import coverage_error
-from sklearn.metrics import det_curve
-from sklearn.metrics import label_ranking_average_precision_score
-from sklearn.metrics import precision_recall_curve
-from sklearn.metrics import label_ranking_loss
-from sklearn.metrics import roc_auc_score
-from sklearn.metrics import roc_curve
-from sklearn.metrics._ranking import _ndcg_sample_scores, _dcg_sample_scores
-from sklearn.metrics import ndcg_score, dcg_score
-from sklearn.metrics import top_k_accuracy_score
+from sflearn.metrics import accuracy_score
+from sflearn.metrics import auc
+from sflearn.metrics import average_precision_score
+from sflearn.metrics import coverage_error
+from sflearn.metrics import det_curve
+from sflearn.metrics import label_ranking_average_precision_score
+from sflearn.metrics import precision_recall_curve
+from sflearn.metrics import label_ranking_loss
+from sflearn.metrics import roc_auc_score
+from sflearn.metrics import roc_curve
+from sflearn.metrics._ranking import _ndcg_sample_scores, _dcg_sample_scores
+from sflearn.metrics import ndcg_score, dcg_score
+from sflearn.metrics import top_k_accuracy_score
 
-from sklearn.exceptions import UndefinedMetricWarning
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import label_binarize
+from sflearn.exceptions import UndefinedMetricWarning
+from sflearn.model_selection import train_test_split
+from sflearn.linear_model import LogisticRegression
+from sflearn.preprocessing import label_binarize
 
 
 ###############################################################################

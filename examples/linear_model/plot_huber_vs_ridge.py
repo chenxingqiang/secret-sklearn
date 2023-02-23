@@ -19,8 +19,8 @@ function approaches that of the ridge.
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_regression
-from sklearn.linear_model import HuberRegressor, Ridge
+from sflearn.datasets import make_regression
+from sflearn.linear_model import HuberRegressor, Ridge
 
 # Generate toy data.
 rng = np.random.RandomState(0)

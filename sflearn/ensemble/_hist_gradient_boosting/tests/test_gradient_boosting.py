@@ -4,31 +4,31 @@ import re
 import numpy as np
 import pytest
 from numpy.testing import assert_allclose, assert_array_equal
-from sklearn._loss.loss import (
+from sflearn._loss.loss import (
     AbsoluteError,
     HalfBinomialLoss,
     HalfSquaredError,
     PinballLoss,
 )
-from sklearn.datasets import make_classification, make_regression
-from sklearn.datasets import make_low_rank_matrix
-from sklearn.preprocessing import KBinsDiscretizer, MinMaxScaler, OneHotEncoder
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.base import clone, BaseEstimator, TransformerMixin
-from sklearn.base import is_regressor
-from sklearn.pipeline import make_pipeline
-from sklearn.metrics import mean_poisson_deviance
-from sklearn.dummy import DummyRegressor
-from sklearn.exceptions import NotFittedError
-from sklearn.compose import make_column_transformer
+from sflearn.datasets import make_classification, make_regression
+from sflearn.datasets import make_low_rank_matrix
+from sflearn.preprocessing import KBinsDiscretizer, MinMaxScaler, OneHotEncoder
+from sflearn.model_selection import train_test_split, cross_val_score
+from sflearn.base import clone, BaseEstimator, TransformerMixin
+from sflearn.base import is_regressor
+from sflearn.pipeline import make_pipeline
+from sflearn.metrics import mean_poisson_deviance
+from sflearn.dummy import DummyRegressor
+from sflearn.exceptions import NotFittedError
+from sflearn.compose import make_column_transformer
 
-from sklearn.ensemble import HistGradientBoostingRegressor
-from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.ensemble._hist_gradient_boosting.grower import TreeGrower
-from sklearn.ensemble._hist_gradient_boosting.binning import _BinMapper
-from sklearn.ensemble._hist_gradient_boosting.common import G_H_DTYPE
-from sklearn.utils import shuffle
-from sklearn.utils._openmp_helpers import _openmp_effective_n_threads
+from sflearn.ensemble import HistGradientBoostingRegressor
+from sflearn.ensemble import HistGradientBoostingClassifier
+from sflearn.ensemble._hist_gradient_boosting.grower import TreeGrower
+from sflearn.ensemble._hist_gradient_boosting.binning import _BinMapper
+from sflearn.ensemble._hist_gradient_boosting.common import G_H_DTYPE
+from sflearn.utils import shuffle
+from sflearn.utils._openmp_helpers import _openmp_effective_n_threads
 
 
 n_threads = _openmp_effective_n_threads()

@@ -9,9 +9,9 @@ from time import time
 
 import numpy as np
 
-from sklearn.linear_model import lars_path, lars_path_gram
-from sklearn.linear_model import lasso_path
-from sklearn.datasets import make_regression
+from sflearn.linear_model import lars_path, lars_path_gram
+from sflearn.linear_model import lasso_path
+from sflearn.datasets import make_regression
 
 
 def compute_bench(samples_range, features_range):

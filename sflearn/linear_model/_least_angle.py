@@ -21,7 +21,7 @@ from ._base import LinearModel, LinearRegression
 from ._base import _deprecate_normalize, _preprocess_data
 from ..base import RegressorMixin, MultiOutputMixin
 
-# mypy error: Module 'sklearn.utils' has no attribute 'arrayfuncs'
+# mypy error: Module 'sflearn.utils' has no attribute 'arrayfuncs'
 from ..utils import arrayfuncs, as_float_array  # type: ignore
 from ..utils import check_random_state
 from ..utils._param_validation import Hidden, Interval, StrOptions
@@ -149,7 +149,7 @@ def lars_path(
     Lars : Least Angle Regression model a.k.a. LAR.
     LassoLarsCV : Cross-validated Lasso, using the LARS algorithm.
     LarsCV : Cross-validated Least Angle Regression model.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     References
     ----------
@@ -293,7 +293,7 @@ def lars_path_gram(
     Lars : Least Angle Regression model a.k.a. LAR.
     LassoLarsCV : Cross-validated Lasso, using the LARS algorithm.
     LarsCV : Cross-validated Least Angle Regression model.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     References
     ----------
@@ -444,7 +444,7 @@ def _lars_path_solver(
     Lars
     LassoLarsCV
     LarsCV
-    sklearn.decomposition.sparse_encode
+    sflearn.decomposition.sparse_encode
 
     References
     ----------
@@ -863,7 +863,7 @@ class Lars(MultiOutputMixin, RegressorMixin, LinearModel):
         If True, the regressors X will be normalized before regression by
         subtracting the mean and dividing by the l2-norm.
         If you wish to standardize, please use
-        :class:`~sklearn.preprocessing.StandardScaler` before calling ``fit``
+        :class:`~sflearn.preprocessing.StandardScaler` before calling ``fit``
         on an estimator with ``normalize=False``.
 
         .. versionchanged:: 1.2
@@ -955,11 +955,11 @@ class Lars(MultiOutputMixin, RegressorMixin, LinearModel):
     lars_path: Compute Least Angle Regression or Lasso
         path using LARS algorithm.
     LarsCV : Cross-validated Least Angle Regression model.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     Examples
     --------
-    >>> from sklearn import linear_model
+    >>> from sflearn import linear_model
     >>> reg = linear_model.Lars(n_nonzero_coefs=1)
     >>> reg.fit([[-1, 1], [0, 0], [1, 1]], [-1.1111, 0, -1.1111])
     Lars(n_nonzero_coefs=1)
@@ -1187,7 +1187,7 @@ class LassoLars(Lars):
         If True, the regressors X will be normalized before regression by
         subtracting the mean and dividing by the l2-norm.
         If you wish to standardize, please use
-        :class:`~sklearn.preprocessing.StandardScaler` before calling ``fit``
+        :class:`~sflearn.preprocessing.StandardScaler` before calling ``fit``
         on an estimator with ``normalize=False``.
 
         .. versionchanged:: 1.2
@@ -1297,11 +1297,11 @@ class LassoLars(Lars):
     LassoLarsCV: Cross-validated Lasso, using the LARS algorithm.
     LassoLarsIC : Lasso model fit with Lars using BIC
         or AIC for model selection.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     Examples
     --------
-    >>> from sklearn import linear_model
+    >>> from sflearn import linear_model
     >>> reg = linear_model.LassoLars(alpha=0.01)
     >>> reg.fit([[-1, 1], [0, 0], [1, 1]], [-1, 0, -1])
     LassoLars(alpha=0.01)
@@ -1424,7 +1424,7 @@ def _lars_path_residues(
         If True, the regressors X will be normalized before regression by
         subtracting the mean and dividing by the l2-norm.
         If you wish to standardize, please use
-        :class:`~sklearn.preprocessing.StandardScaler` before calling ``fit``
+        :class:`~sflearn.preprocessing.StandardScaler` before calling ``fit``
         on an estimator with ``normalize=False``.
 
         .. versionchanged:: 1.2
@@ -1522,7 +1522,7 @@ class LarsCV(Lars):
         If True, the regressors X will be normalized before regression by
         subtracting the mean and dividing by the l2-norm.
         If you wish to standardize, please use
-        :class:`~sklearn.preprocessing.StandardScaler` before calling ``fit``
+        :class:`~sflearn.preprocessing.StandardScaler` before calling ``fit``
         on an estimator with ``normalize=False``.
 
         .. versionchanged:: 1.2
@@ -1627,7 +1627,7 @@ class LarsCV(Lars):
     LassoLars : Lasso model fit with Least Angle Regression a.k.a. Lars.
     LassoLarsIC : Lasso model fit with Lars using BIC
         or AIC for model selection.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     Notes
     -----
@@ -1636,8 +1636,8 @@ class LarsCV(Lars):
 
     Examples
     --------
-    >>> from sklearn.linear_model import LarsCV
-    >>> from sklearn.datasets import make_regression
+    >>> from sflearn.linear_model import LarsCV
+    >>> from sflearn.datasets import make_regression
     >>> X, y = make_regression(n_samples=200, noise=4.0, random_state=0)
     >>> reg = LarsCV(cv=5).fit(X, y)
     >>> reg.score(X, y)
@@ -1827,7 +1827,7 @@ class LassoLarsCV(LarsCV):
         If True, the regressors X will be normalized before regression by
         subtracting the mean and dividing by the l2-norm.
         If you wish to standardize, please use
-        :class:`~sklearn.preprocessing.StandardScaler` before calling ``fit``
+        :class:`~sflearn.preprocessing.StandardScaler` before calling ``fit``
         on an estimator with ``normalize=False``.
 
         .. versionchanged:: 1.2
@@ -1943,17 +1943,17 @@ class LassoLarsCV(LarsCV):
     LassoLars : Lasso model fit with Least Angle Regression a.k.a. Lars.
     LassoLarsIC : Lasso model fit with Lars using BIC
         or AIC for model selection.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     Notes
     -----
     The object solves the same problem as the
-    :class:`~sklearn.linear_model.LassoCV` object. However, unlike the
-    :class:`~sklearn.linear_model.LassoCV`, it find the relevant alphas values
+    :class:`~sflearn.linear_model.LassoCV` object. However, unlike the
+    :class:`~sflearn.linear_model.LassoCV`, it find the relevant alphas values
     by itself. In general, because of this property, it will be more stable.
     However, it is more fragile to heavily multicollinear datasets.
 
-    It is more efficient than the :class:`~sklearn.linear_model.LassoCV` if
+    It is more efficient than the :class:`~sflearn.linear_model.LassoCV` if
     only a small number of features are selected compared to the total number,
     for instance if there are very few samples compared to the number of
     features.
@@ -1963,8 +1963,8 @@ class LassoLarsCV(LarsCV):
 
     Examples
     --------
-    >>> from sklearn.linear_model import LassoLarsCV
-    >>> from sklearn.datasets import make_regression
+    >>> from sflearn.linear_model import LassoLarsCV
+    >>> from sflearn.datasets import make_regression
     >>> X, y = make_regression(noise=4.0, random_state=0)
     >>> reg = LassoLarsCV(cv=5).fit(X, y)
     >>> reg.score(X, y)
@@ -2045,7 +2045,7 @@ class LassoLarsIC(LassoLars):
         If True, the regressors X will be normalized before regression by
         subtracting the mean and dividing by the l2-norm.
         If you wish to standardize, please use
-        :class:`~sklearn.preprocessing.StandardScaler` before calling ``fit``
+        :class:`~sflearn.preprocessing.StandardScaler` before calling ``fit``
         on an estimator with ``normalize=False``.
 
         .. versionchanged:: 1.2
@@ -2146,7 +2146,7 @@ class LassoLarsIC(LassoLars):
         along a regularization path.
     LassoLars : Lasso model fit with Least Angle Regression a.k.a. Lars.
     LassoLarsCV: Cross-validated Lasso, using the LARS algorithm.
-    sklearn.decomposition.sparse_encode : Sparse coding.
+    sflearn.decomposition.sparse_encode : Sparse coding.
 
     Notes
     -----
@@ -2170,7 +2170,7 @@ class LassoLarsIC(LassoLars):
 
     Examples
     --------
-    >>> from sklearn import linear_model
+    >>> from sflearn import linear_model
     >>> reg = linear_model.LassoLarsIC(criterion='bic')
     >>> X = [[-2, 2], [-1, 1], [0, 0], [1, 1], [2, 2]]
     >>> y = [-2.2222, -1.1111, 0, -1.1111, -2.2222]

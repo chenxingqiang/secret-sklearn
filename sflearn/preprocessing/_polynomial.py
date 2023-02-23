@@ -104,7 +104,7 @@ class PolynomialFeatures(TransformerMixin, BaseEstimator):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import PolynomialFeatures
+    >>> from sflearn.preprocessing import PolynomialFeatures
     >>> X = np.arange(6).reshape(3, 2)
     >>> X
     array([[0, 1],
@@ -566,7 +566,7 @@ class SplineTransformer(TransformerMixin, BaseEstimator):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import SplineTransformer
+    >>> from sflearn.preprocessing import SplineTransformer
     >>> X = np.arange(6).reshape(6, 1)
     >>> spline = SplineTransformer(degree=2, n_knots=3)
     >>> spline.fit_transform(X)

@@ -1,5 +1,5 @@
 """
-Testing for export functions of decision trees (sklearn.tree.export).
+Testing for export functions of decision trees (sflearn.tree.export).
 """
 from re import finditer, search
 from textwrap import dedent
@@ -7,12 +7,12 @@ from textwrap import dedent
 from numpy.random import RandomState
 import pytest
 
-from sklearn.base import is_classifier
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.tree import export_graphviz, plot_tree, export_text
+from sflearn.base import is_classifier
+from sflearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sflearn.ensemble import GradientBoostingClassifier
+from sflearn.tree import export_graphviz, plot_tree, export_text
 from io import StringIO
-from sklearn.exceptions import NotFittedError
+from sflearn.exceptions import NotFittedError
 
 # toy sample
 X = [[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]]

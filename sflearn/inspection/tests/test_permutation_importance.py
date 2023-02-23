@@ -3,31 +3,31 @@ import numpy as np
 
 from numpy.testing import assert_allclose
 
-from sklearn.compose import ColumnTransformer
-from sklearn.datasets import load_diabetes
-from sklearn.datasets import load_iris
-from sklearn.datasets import make_classification
-from sklearn.datasets import make_regression
-from sklearn.dummy import DummyClassifier
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import LogisticRegression
-from sklearn.impute import SimpleImputer
-from sklearn.inspection import permutation_importance
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import (
+from sflearn.compose import ColumnTransformer
+from sflearn.datasets import load_diabetes
+from sflearn.datasets import load_iris
+from sflearn.datasets import make_classification
+from sflearn.datasets import make_regression
+from sflearn.dummy import DummyClassifier
+from sflearn.ensemble import RandomForestRegressor
+from sflearn.ensemble import RandomForestClassifier
+from sflearn.linear_model import LinearRegression
+from sflearn.linear_model import LogisticRegression
+from sflearn.impute import SimpleImputer
+from sflearn.inspection import permutation_importance
+from sflearn.model_selection import train_test_split
+from sflearn.metrics import (
     get_scorer,
     mean_squared_error,
     r2_score,
 )
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import KBinsDiscretizer
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import scale
-from sklearn.utils import parallel_backend
-from sklearn.utils._testing import _convert_container
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import KBinsDiscretizer
+from sflearn.preprocessing import OneHotEncoder
+from sflearn.preprocessing import StandardScaler
+from sflearn.preprocessing import scale
+from sflearn.utils import parallel_backend
+from sflearn.utils._testing import _convert_container
 
 
 @pytest.mark.parametrize("n_jobs", [1, 2])

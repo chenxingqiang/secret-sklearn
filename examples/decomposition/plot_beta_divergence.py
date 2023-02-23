@@ -4,13 +4,13 @@ Beta-divergence loss functions
 ==============================
 
 A plot that compares the various Beta-divergence loss functions supported by
-the Multiplicative-Update ('mu') solver in :class:`~sklearn.decomposition.NMF`.
+the Multiplicative-Update ('mu') solver in :class:`~sflearn.decomposition.NMF`.
 
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.decomposition._nmf import _beta_divergence
+from sflearn.decomposition._nmf import _beta_divergence
 
 x = np.linspace(0.001, 4, 1000)
 y = np.zeros(x.shape)

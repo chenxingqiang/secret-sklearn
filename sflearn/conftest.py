@@ -8,18 +8,18 @@ import numpy as np
 from threadpoolctl import threadpool_limits
 from _pytest.doctest import DoctestItem
 
-from sklearn.utils import _IS_32BIT
-from sklearn.utils._openmp_helpers import _openmp_effective_n_threads
-from sklearn._min_dependencies import PYTEST_MIN_VERSION
-from sklearn.utils.fixes import parse_version
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.datasets import fetch_20newsgroups_vectorized
-from sklearn.datasets import fetch_california_housing
-from sklearn.datasets import fetch_covtype
-from sklearn.datasets import fetch_kddcup99
-from sklearn.datasets import fetch_olivetti_faces
-from sklearn.datasets import fetch_rcv1
-from sklearn.tests import random_seed
+from sflearn.utils import _IS_32BIT
+from sflearn.utils._openmp_helpers import _openmp_effective_n_threads
+from sflearn._min_dependencies import PYTEST_MIN_VERSION
+from sflearn.utils.fixes import parse_version
+from sflearn.datasets import fetch_20newsgroups
+from sflearn.datasets import fetch_20newsgroups_vectorized
+from sflearn.datasets import fetch_california_housing
+from sflearn.datasets import fetch_covtype
+from sflearn.datasets import fetch_kddcup99
+from sflearn.datasets import fetch_olivetti_faces
+from sflearn.datasets import fetch_rcv1
+from sflearn.tests import random_seed
 
 
 if parse_version(pytest.__version__) < parse_version(PYTEST_MIN_VERSION):
@@ -39,8 +39,8 @@ dataset_fetchers = {
 }
 
 _SKIP32_MARK = pytest.mark.skipif(
-    environ.get("SKLEARN_RUN_FLOAT32_TESTS", "0") != "1",
-    reason="Set SKLEARN_RUN_FLOAT32_TESTS=1 to run float32 dtype tests",
+    environ.get("SFLEARN_RUN_FLOAT32_TESTS", "0") != "1",
+    reason="Set SFLEARN_RUN_FLOAT32_TESTS=1 to run float32 dtype tests",
 )
 
 
@@ -52,7 +52,7 @@ def global_dtype(request):
 
 def _fetch_fixture(f):
     """Fetch dataset (download if missing and requested by environment)."""
-    download_if_missing = environ.get("SKLEARN_SKIP_NETWORK_TESTS", "1") == "0"
+    download_if_missing = environ.get("SFLEARN_SKIP_NETWORK_TESTS", "1") == "0"
 
     @wraps(f)
     def wrapped(*args, **kwargs):
@@ -62,7 +62,7 @@ def _fetch_fixture(f):
         except IOError as e:
             if str(e) != "Data not found and `download_if_missing` is False":
                 raise
-            pytest.skip("test is enabled when SKLEARN_SKIP_NETWORK_TESTS=0")
+            pytest.skip("test is enabled when SFLEARN_SKIP_NETWORK_TESTS=0")
 
     return pytest.fixture(lambda: wrapped)
 
@@ -85,9 +85,9 @@ def pytest_collection_modifyitems(config, items):
     config : pytest config
     items : list of collected items
     """
-    run_network_tests = environ.get("SKLEARN_SKIP_NETWORK_TESTS", "1") == "0"
+    run_network_tests = environ.get("SFLEARN_SKIP_NETWORK_TESTS", "1") == "0"
     skip_network = pytest.mark.skip(
-        reason="test is enabled when SKLEARN_SKIP_NETWORK_TESTS=0"
+        reason="test is enabled when SFLEARN_SKIP_NETWORK_TESTS=0"
     )
 
     # download datasets during collection to avoid thread unsafe behavior
@@ -165,7 +165,7 @@ def pytest_collection_modifyitems(config, items):
                 # mark to a doctest in a contextmanager, see
                 # https://github.com/pytest-dev/pytest/issues/8796 for more
                 # details.
-                if item.name != "sklearn._config.config_context":
+                if item.name != "sflearn._config.config_context":
                     item.add_marker(skip_marker)
     try:
         import PIL  # noqa
@@ -178,8 +178,8 @@ def pytest_collection_modifyitems(config, items):
         skip_marker = pytest.mark.skip(reason="pillow (or PIL) not installed!")
         for item in items:
             if item.name in [
-                "sklearn.feature_extraction.image.PatchExtractor",
-                "sklearn.feature_extraction.image.extract_patches_2d",
+                "sflearn.feature_extraction.image.PatchExtractor",
+                "sflearn.feature_extraction.image.extract_patches_2d",
             ]:
                 item.add_marker(skip_marker)
 
@@ -234,5 +234,5 @@ def pytest_configure(config):
         pass
 
     # Register global_random_seed plugin if it is not already registered
-    if not config.pluginmanager.hasplugin("sklearn.tests.random_seed"):
+    if not config.pluginmanager.hasplugin("sflearn.tests.random_seed"):
         config.pluginmanager.register(random_seed)

@@ -11,7 +11,7 @@ from numpy.testing import (
 from scipy.optimize import check_grad
 import pytest
 
-from sklearn._loss.glm_distribution import (
+from sflearn._loss.glm_distribution import (
     TweedieDistribution,
     NormalDistribution,
     PoissonDistribution,

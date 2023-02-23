@@ -7,7 +7,7 @@
 #
 # License: BSD 3 clause
 """
-The :mod:`sklearn.feature_extraction.text` submodule gathers utilities to
+The :mod:`sflearn.feature_extraction.text` submodule gathers utilities to
 build feature vectors from text documents.
 """
 
@@ -733,7 +733,7 @@ class HashingVectorizer(
 
     Examples
     --------
-    >>> from sklearn.feature_extraction.text import HashingVectorizer
+    >>> from sflearn.feature_extraction.text import HashingVectorizer
     >>> corpus = [
     ...     'This is the first document.',
     ...     'This document is the second document.',
@@ -899,7 +899,7 @@ class HashingVectorizer(
             constructor argument) which will be tokenized and hashed.
         y : any
             Ignored. This parameter exists only for compatibility with
-            sklearn.pipeline.Pipeline.
+            sflearn.pipeline.Pipeline.
 
         Returns
         -------
@@ -1104,7 +1104,7 @@ class CountVectorizer(_VectorizerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.feature_extraction.text import CountVectorizer
+    >>> from sflearn.feature_extraction.text import CountVectorizer
     >>> corpus = [
     ...     'This is the first document.',
     ...     'This document is the second document.',
@@ -1603,9 +1603,9 @@ class TfidfTransformer(
 
     Examples
     --------
-    >>> from sklearn.feature_extraction.text import TfidfTransformer
-    >>> from sklearn.feature_extraction.text import CountVectorizer
-    >>> from sklearn.pipeline import Pipeline
+    >>> from sflearn.feature_extraction.text import TfidfTransformer
+    >>> from sflearn.feature_extraction.text import CountVectorizer
+    >>> from sflearn.pipeline import Pipeline
     >>> corpus = ['this is the first document',
     ...           'this document is the second document',
     ...           'and this is the third one',
@@ -1948,7 +1948,7 @@ class TfidfVectorizer(CountVectorizer):
 
     Examples
     --------
-    >>> from sklearn.feature_extraction.text import TfidfVectorizer
+    >>> from sflearn.feature_extraction.text import TfidfVectorizer
     >>> corpus = [
     ...     'This is the first document.',
     ...     'This document is the second document.',

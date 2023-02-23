@@ -4,15 +4,15 @@ The API and results of these estimators might change without any deprecation
 cycle.
 
 Importing this file dynamically sets the
-:class:`~sklearn.model_selection.HalvingRandomSearchCV` and
-:class:`~sklearn.model_selection.HalvingGridSearchCV` as attributes of the
+:class:`~sflearn.model_selection.HalvingRandomSearchCV` and
+:class:`~sflearn.model_selection.HalvingGridSearchCV` as attributes of the
 `model_selection` module::
 
     >>> # explicitly require this experimental feature
-    >>> from sklearn.experimental import enable_halving_search_cv # noqa
+    >>> from sflearn.experimental import enable_halving_search_cv # noqa
     >>> # now you can import normally from model_selection
-    >>> from sklearn.model_selection import HalvingRandomSearchCV
-    >>> from sklearn.model_selection import HalvingGridSearchCV
+    >>> from sflearn.model_selection import HalvingRandomSearchCV
+    >>> from sflearn.model_selection import HalvingGridSearchCV
 
 
 The ``# noqa`` comment comment can be removed: it just tells linters like

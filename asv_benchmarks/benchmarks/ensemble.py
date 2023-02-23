@@ -1,4 +1,4 @@
-from sklearn.ensemble import (
+from sflearn.ensemble import (
     RandomForestClassifier,
     GradientBoostingClassifier,
     HistGradientBoostingClassifier,

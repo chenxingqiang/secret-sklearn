@@ -118,7 +118,7 @@ class FunctionTransformer(TransformerMixin, BaseEstimator):
     Examples
     --------
     >>> import numpy as np
-    >>> from sklearn.preprocessing import FunctionTransformer
+    >>> from sflearn.preprocessing import FunctionTransformer
     >>> transformer = FunctionTransformer(np.log1p)
     >>> X = np.array([[0, 1], [2, 3]])
     >>> transformer.transform(X)
@@ -306,7 +306,7 @@ class FunctionTransformer(TransformerMixin, BaseEstimator):
 
         return func(X, **(kw_args if kw_args else {}))
 
-    def __sklearn_is_fitted__(self):
+    def __sflearn_is_fitted__(self):
         """Return True since FunctionTransfomer is stateless."""
         return True
 

@@ -1,4 +1,4 @@
-from sklearn.neighbors import KNeighborsClassifier
+from sflearn.neighbors import KNeighborsClassifier
 
 from .common import Benchmark, Estimator, Predictor
 from .datasets import _20newsgroups_lowdim_dataset

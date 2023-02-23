@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
-from sklearn.utils.parallel import delayed, Parallel
+from sflearn.utils.parallel import delayed, Parallel
 
-from sklearn.neighbors._kd_tree import KDTree
+from sflearn.neighbors._kd_tree import KDTree
 
 DIMENSION = 3
 

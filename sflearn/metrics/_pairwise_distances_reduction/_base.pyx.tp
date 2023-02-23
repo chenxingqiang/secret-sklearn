@@ -6,7 +6,7 @@ implementation_specific_values = [
     #       name_suffix, INPUT_DTYPE_t, INPUT_DTYPE
     #
     # We also use the float64 dtype and C-type names as defined in
-    # `sklearn.utils._typedefs` to maintain consistency.
+    # `sflearn.utils._typedefs` to maintain consistency.
     #
     ('64', 'DTYPE_t', 'DTYPE'),
     ('32', 'cnp.float32_t', 'np.float32')
@@ -28,8 +28,8 @@ import numpy as np
 
 from scipy.sparse import issparse
 from numbers import Integral
-from sklearn import get_config
-from sklearn.utils import check_scalar
+from sflearn import get_config
+from sflearn.utils import check_scalar
 from ...utils._openmp_helpers import _openmp_effective_n_threads
 from ...utils._typedefs import DTYPE, SPARSE_INDEX_TYPE
 
@@ -131,7 +131,7 @@ cpdef DTYPE_t[::1] _sqeuclidean_row_norms{{name_suffix}}(
 ):
     if issparse(X):
         # TODO: remove this instruction which is a cast in the float32 case
-        # by moving squared row norms computations in MiddleTermComputer. 
+        # by moving squared row norms computations in MiddleTermComputer.
         X_data = np.asarray(X.data, dtype=DTYPE)
         X_indptr = np.asarray(X.indptr, dtype=SPARSE_INDEX_TYPE)
         return _sqeuclidean_row_norms64_sparse(X_data, X_indptr, num_threads)

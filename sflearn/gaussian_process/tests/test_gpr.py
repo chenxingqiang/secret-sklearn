@@ -13,16 +13,16 @@ from scipy.optimize import approx_fprime
 
 import pytest
 
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import (
+from sflearn.gaussian_process import GaussianProcessRegressor
+from sflearn.gaussian_process.kernels import (
     RBF,
     ConstantKernel as C,
     WhiteKernel,
 )
-from sklearn.gaussian_process.kernels import DotProduct, ExpSineSquared
-from sklearn.gaussian_process.tests._mini_sequence_kernel import MiniSeqKernel
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.utils._testing import (
+from sflearn.gaussian_process.kernels import DotProduct, ExpSineSquared
+from sflearn.gaussian_process.tests._mini_sequence_kernel import MiniSeqKernel
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.utils._testing import (
     assert_array_less,
     assert_almost_equal,
     assert_array_almost_equal,
@@ -690,7 +690,7 @@ def test_gpr_predict_error():
 def test_predict_shapes(normalize_y, n_targets):
     """Check the shapes of y_mean, y_std, and y_cov in single-output
     (n_targets=None) and multi-output settings, including the edge case when
-    n_targets=1, where the sklearn convention is to squeeze the predictions.
+    n_targets=1, where the sflearn convention is to squeeze the predictions.
 
     Non-regression test for:
     https://github.com/scikit-learn/scikit-learn/issues/17394
@@ -730,7 +730,7 @@ def test_predict_shapes(normalize_y, n_targets):
 def test_sample_y_shapes(normalize_y, n_targets):
     """Check the shapes of y_samples in single-output (n_targets=0) and
     multi-output settings, including the edge case when n_targets=1, where the
-    sklearn convention is to squeeze the predictions.
+    sflearn convention is to squeeze the predictions.
 
     Non-regression test for:
     https://github.com/scikit-learn/scikit-learn/issues/22175

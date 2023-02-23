@@ -5,23 +5,23 @@ from inspect import signature
 import numpy as np
 import pytest
 
-from sklearn.base import BaseEstimator
-from sklearn.base import is_regressor
-from sklearn.datasets import make_classification
-from sklearn.utils import all_estimators
-from sklearn.utils.estimator_checks import _enforce_estimator_tags_X
-from sklearn.utils.estimator_checks import _enforce_estimator_tags_y
-from sklearn.utils.validation import check_is_fitted
-from sklearn.utils._testing import set_random_state
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_selection import RFE, RFECV
-from sklearn.ensemble import BaggingClassifier
-from sklearn.exceptions import NotFittedError
-from sklearn.semi_supervised import SelfTrainingClassifier
-from sklearn.linear_model import Ridge, LogisticRegression
-from sklearn.preprocessing import StandardScaler, MaxAbsScaler
+from sflearn.base import BaseEstimator
+from sflearn.base import is_regressor
+from sflearn.datasets import make_classification
+from sflearn.utils import all_estimators
+from sflearn.utils.estimator_checks import _enforce_estimator_tags_X
+from sflearn.utils.estimator_checks import _enforce_estimator_tags_y
+from sflearn.utils.validation import check_is_fitted
+from sflearn.utils._testing import set_random_state
+from sflearn.pipeline import Pipeline, make_pipeline
+from sflearn.model_selection import GridSearchCV, RandomizedSearchCV
+from sflearn.feature_extraction.text import TfidfVectorizer
+from sflearn.feature_selection import RFE, RFECV
+from sflearn.ensemble import BaggingClassifier
+from sflearn.exceptions import NotFittedError
+from sflearn.semi_supervised import SelfTrainingClassifier
+from sflearn.linear_model import Ridge, LogisticRegression
+from sflearn.preprocessing import StandardScaler, MaxAbsScaler
 
 
 class DelegatorData:

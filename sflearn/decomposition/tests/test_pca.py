@@ -5,13 +5,13 @@ from numpy.testing import assert_array_equal
 import pytest
 import warnings
 
-from sklearn.utils._testing import assert_allclose
+from sflearn.utils._testing import assert_allclose
 
-from sklearn import datasets
-from sklearn.decomposition import PCA
-from sklearn.datasets import load_iris
-from sklearn.decomposition._pca import _assess_dimension
-from sklearn.decomposition._pca import _infer_dimension
+from sflearn import datasets
+from sflearn.decomposition import PCA
+from sflearn.datasets import load_iris
+from sflearn.decomposition._pca import _assess_dimension
+from sflearn.decomposition._pca import _infer_dimension
 
 iris = datasets.load_iris()
 PCA_SOLVERS = ["full", "arpack", "randomized", "auto"]

@@ -3,22 +3,22 @@ import numpy as np
 from numpy.testing import assert_allclose
 
 
-from sklearn.compose import make_column_transformer
-from sklearn.datasets import load_iris
+from sflearn.compose import make_column_transformer
+from sflearn.datasets import load_iris
 
-from sklearn.datasets import load_breast_cancer
-from sklearn.exceptions import NotFittedError
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import roc_curve
-from sklearn.metrics import auc
+from sflearn.datasets import load_breast_cancer
+from sflearn.exceptions import NotFittedError
+from sflearn.linear_model import LogisticRegression
+from sflearn.metrics import roc_curve
+from sflearn.metrics import auc
 
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.utils import shuffle
+from sflearn.model_selection import train_test_split
+from sflearn.pipeline import make_pipeline
+from sflearn.preprocessing import StandardScaler
+from sflearn.utils import shuffle
 
 
-from sklearn.metrics import RocCurveDisplay
+from sflearn.metrics import RocCurveDisplay
 
 
 @pytest.fixture(scope="module")

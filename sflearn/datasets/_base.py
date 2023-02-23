@@ -27,9 +27,9 @@ import numpy as np
 
 from urllib.request import urlretrieve
 
-DATA_MODULE = "sklearn.datasets.data"
-DESCR_MODULE = "sklearn.datasets.descr"
-IMAGES_MODULE = "sklearn.datasets.images"
+DATA_MODULE = "sflearn.datasets.data"
+DESCR_MODULE = "sflearn.datasets.descr"
+IMAGES_MODULE = "sflearn.datasets.images"
 
 RemoteFileMetadata = namedtuple("RemoteFileMetadata", ["filename", "url", "checksum"])
 
@@ -53,7 +53,7 @@ def get_data_home(data_home=None) -> str:
     ----------
     data_home : str, default=None
         The path to scikit-learn data directory. If `None`, the default path
-        is `~/sklearn_learn_data`.
+        is `~/sflearn_learn_data`.
 
     Returns
     -------
@@ -74,7 +74,7 @@ def clear_data_home(data_home=None):
     ----------
     data_home : str, default=None
         The path to scikit-learn data directory. If `None`, the default path
-        is `~/sklearn_learn_data`.
+        is `~/sflearn_learn_data`.
     """
     data_home = get_data_home(data_home)
     shutil.rmtree(data_home)
@@ -134,14 +134,14 @@ def load_files(
     load the files in memory.
 
     To use text files in a scikit-learn classification or clustering algorithm,
-    you will need to use the :mod`~sklearn.feature_extraction.text` module to
+    you will need to use the :mod`~sflearn.feature_extraction.text` module to
     build a feature extraction transformer that suits your problem.
 
     If you set load_content=True, you should also specify the encoding of the
     text using the 'encoding' parameter. For many modern text files, 'utf-8'
     will be the correct encoding. If you leave encoding equal to None, then the
     content will be made of bytes instead of Unicode, and you will not be able
-    to use most functions in :mod:`~sklearn.feature_extraction.text`.
+    to use most functions in :mod:`~sflearn.feature_extraction.text`.
 
     Similar feature extractors should be built for other kind of unstructured
     data input such as images, audio, video, ...
@@ -195,7 +195,7 @@ def load_files(
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : list of str
@@ -285,8 +285,8 @@ def load_csv_data(
         Name of csv file to be loaded from `data_module/data_file_name`.
         For example `'wine_data.csv'`.
 
-    data_module : str or module, default='sklearn.datasets.data'
-        Module where data lives. The default is `'sklearn.datasets.data'`.
+    data_module : str or module, default='sflearn.datasets.data'
+        Module where data lives. The default is `'sflearn.datasets.data'`.
 
     descr_file_name : str, default=None
         Name of rst file to be loaded from `descr_module/descr_file_name`.
@@ -294,9 +294,9 @@ def load_csv_data(
         If not None, also returns the corresponding description of
         the dataset.
 
-    descr_module : str or module, default='sklearn.datasets.descr'
+    descr_module : str or module, default='sflearn.datasets.descr'
         Module where `descr_file_name` lives. See also :func:`load_descr`.
-        The default is `'sklearn.datasets.descr'`.
+        The default is `'sflearn.datasets.descr'`.
 
     Returns
     -------
@@ -358,8 +358,8 @@ def load_gzip_compressed_csv_data(
         Name of gzip-compressed csv file  (`'*.csv.gz'`) to be loaded from
         `data_module/data_file_name`. For example `'diabetes_data.csv.gz'`.
 
-    data_module : str or module, default='sklearn.datasets.data'
-        Module where data lives. The default is `'sklearn.datasets.data'`.
+    data_module : str or module, default='sflearn.datasets.data'
+        Module where data lives. The default is `'sflearn.datasets.data'`.
 
     descr_file_name : str, default=None
         Name of rst file to be loaded from `descr_module/descr_file_name`.
@@ -367,9 +367,9 @@ def load_gzip_compressed_csv_data(
         If not None, also returns the corresponding description of
         the dataset.
 
-    descr_module : str or module, default='sklearn.datasets.descr'
+    descr_module : str or module, default='sflearn.datasets.descr'
         Module where `descr_file_name` lives. See also :func:`load_descr`.
-        The default  is `'sklearn.datasets.descr'`.
+        The default  is `'sflearn.datasets.descr'`.
 
     encoding : str, default="utf-8"
         Name of the encoding that the gzip-decompressed file will be
@@ -412,9 +412,9 @@ def load_descr(descr_file_name, *, descr_module=DESCR_MODULE):
         If not None, also returns the corresponding description of
         the dataset.
 
-    descr_module : str or module, default='sklearn.datasets.descr'
+    descr_module : str or module, default='sflearn.datasets.descr'
         Module where `descr_file_name` lives. See also :func:`load_descr`.
-        The default  is `'sklearn.datasets.descr'`.
+        The default  is `'sflearn.datasets.descr'`.
 
     Returns
     -------
@@ -465,7 +465,7 @@ def load_wine(*, return_X_y=False, as_frame=False):
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : {ndarray, dataframe} of shape (178, 13)
@@ -496,7 +496,7 @@ def load_wine(*, return_X_y=False, as_frame=False):
     Let's say you are interested in the samples 10, 80, and 140, and want to
     know their class name.
 
-    >>> from sklearn.datasets import load_wine
+    >>> from sflearn.datasets import load_wine
     >>> data = load_wine()
     >>> data.target[[10, 80, 140]]
     array([0, 1, 2])
@@ -581,7 +581,7 @@ def load_iris(*, return_X_y=False, as_frame=False):
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : {ndarray, dataframe} of shape (150, 4)
@@ -626,7 +626,7 @@ def load_iris(*, return_X_y=False, as_frame=False):
     Let's say you are interested in the samples 10, 25, and 50, and want to
     know their class name.
 
-    >>> from sklearn.datasets import load_iris
+    >>> from sflearn.datasets import load_iris
     >>> data = load_iris()
     >>> data.target[[10, 25, 50]]
     array([0, 0, 1])
@@ -708,7 +708,7 @@ def load_breast_cancer(*, return_X_y=False, as_frame=False):
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : {ndarray, dataframe} of shape (569, 30)
@@ -747,7 +747,7 @@ def load_breast_cancer(*, return_X_y=False, as_frame=False):
     Let's say you are interested in the samples 10, 50, and 85, and want to
     know their class name.
 
-    >>> from sklearn.datasets import load_breast_cancer
+    >>> from sflearn.datasets import load_breast_cancer
     >>> data = load_breast_cancer()
     >>> data.target[[10, 50, 85]]
     array([0, 1, 0])
@@ -858,7 +858,7 @@ def load_digits(*, n_class=10, return_X_y=False, as_frame=False):
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : {ndarray, dataframe} of shape (1797, 64)
@@ -897,7 +897,7 @@ def load_digits(*, n_class=10, return_X_y=False, as_frame=False):
     --------
     To load the data and visualize the images::
 
-        >>> from sklearn.datasets import load_digits
+        >>> from sflearn.datasets import load_digits
         >>> digits = load_digits()
         >>> print(digits.data.shape)
         (1797, 64)
@@ -995,7 +995,7 @@ def load_diabetes(*, return_X_y=False, as_frame=False, scaled=True):
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : {ndarray, dataframe} of shape (442, 10)
@@ -1095,7 +1095,7 @@ def load_linnerud(*, return_X_y=False, as_frame=False):
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         data : {ndarray, dataframe} of shape (20, 3)
@@ -1179,7 +1179,7 @@ def load_sample_images():
 
     Returns
     -------
-    data : :class:`~sklearn.utils.Bunch`
+    data : :class:`~sflearn.utils.Bunch`
         Dictionary-like object, with the following attributes.
 
         images : list of ndarray of shape (427, 640, 3)
@@ -1193,7 +1193,7 @@ def load_sample_images():
     --------
     To load the data and visualize the images:
 
-    >>> from sklearn.datasets import load_sample_images
+    >>> from sflearn.datasets import load_sample_images
     >>> dataset = load_sample_images()     #doctest: +SKIP
     >>> len(dataset.images)                #doctest: +SKIP
     2
@@ -1245,7 +1245,7 @@ def load_sample_image(image_name):
     Examples
     --------
 
-    >>> from sklearn.datasets import load_sample_image
+    >>> from sflearn.datasets import load_sample_image
     >>> china = load_sample_image('china.jpg')   # doctest: +SKIP
     >>> china.dtype                              # doctest: +SKIP
     dtype('uint8')

@@ -13,24 +13,24 @@ import scipy
 from scipy import linalg
 from scipy.optimize import minimize, root
 
-from sklearn.base import clone
-from sklearn._loss import HalfBinomialLoss, HalfPoissonLoss, HalfTweedieLoss
-from sklearn._loss.glm_distribution import TweedieDistribution
-from sklearn._loss.link import IdentityLink, LogLink
+from sflearn.base import clone
+from sflearn._loss import HalfBinomialLoss, HalfPoissonLoss, HalfTweedieLoss
+from sflearn._loss.glm_distribution import TweedieDistribution
+from sflearn._loss.link import IdentityLink, LogLink
 
-from sklearn.datasets import make_low_rank_matrix, make_regression
-from sklearn.linear_model import (
+from sflearn.datasets import make_low_rank_matrix, make_regression
+from sflearn.linear_model import (
     GammaRegressor,
     PoissonRegressor,
     Ridge,
     TweedieRegressor,
 )
-from sklearn.linear_model._glm import _GeneralizedLinearRegressor
-from sklearn.linear_model._glm._newton_solver import NewtonCholeskySolver
-from sklearn.linear_model._linear_loss import LinearModelLoss
-from sklearn.exceptions import ConvergenceWarning
-from sklearn.metrics import d2_tweedie_score, mean_poisson_deviance
-from sklearn.model_selection import train_test_split
+from sflearn.linear_model._glm import _GeneralizedLinearRegressor
+from sflearn.linear_model._glm._newton_solver import NewtonCholeskySolver
+from sflearn.linear_model._linear_loss import LinearModelLoss
+from sflearn.exceptions import ConvergenceWarning
+from sflearn.metrics import d2_tweedie_score, mean_poisson_deviance
+from sflearn.model_selection import train_test_split
 
 
 SOLVERS = ["lbfgs", "newton-cholesky"]

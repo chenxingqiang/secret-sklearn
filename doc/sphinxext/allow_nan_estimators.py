@@ -1,6 +1,6 @@
-from sklearn.utils import all_estimators
-from sklearn.utils.estimator_checks import _construct_instance
-from sklearn.utils._testing import SkipTest
+from sflearn.utils import all_estimators
+from sflearn.utils.estimator_checks import _construct_instance
+from sflearn.utils._testing import SkipTest
 from docutils import nodes
 from contextlib import suppress
 

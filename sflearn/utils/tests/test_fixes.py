@@ -9,9 +9,9 @@ import numpy as np
 import pytest
 import scipy.stats
 
-from sklearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import assert_array_equal
 
-from sklearn.utils.fixes import _object_dtype_isnan, delayed, loguniform
+from sflearn.utils.fixes import _object_dtype_isnan, delayed, loguniform
 
 
 @pytest.mark.parametrize("dtype, val", ([object, 1], [object, "a"], [float, 1]))
@@ -53,6 +53,6 @@ def test_delayed_deprecation():
     def func(x):
         return x
 
-    warn_msg = "The function `delayed` has been moved from `sklearn.utils.fixes`"
+    warn_msg = "The function `delayed` has been moved from `sflearn.utils.fixes`"
     with pytest.warns(FutureWarning, match=warn_msg):
         delayed(func)

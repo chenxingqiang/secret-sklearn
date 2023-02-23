@@ -15,16 +15,16 @@ We will be using two datasets:
       the post is written about.
 
 We will model the complexity influence on three different estimators:
-    - :class:`~sklearn.linear_model.SGDClassifier` (for classification data)
+    - :class:`~sflearn.linear_model.SGDClassifier` (for classification data)
       which implements stochastic gradient descent learning;
 
-    - :class:`~sklearn.svm.NuSVR` (for regression data) which implements
+    - :class:`~sflearn.svm.NuSVR` (for regression data) which implements
       Nu support vector regression;
 
-    - :class:`~sklearn.ensemble.GradientBoostingRegressor` builds an additive
+    - :class:`~sflearn.ensemble.GradientBoostingRegressor` builds an additive
       model in a forward stage-wise fashion. Notice that
-      :class:`~sklearn.ensemble.HistGradientBoostingRegressor` is much faster
-      than :class:`~sklearn.ensemble.GradientBoostingRegressor` starting with
+      :class:`~sflearn.ensemble.HistGradientBoostingRegressor` is much faster
+      than :class:`~sflearn.ensemble.GradientBoostingRegressor` starting with
       intermediate datasets (`n_samples >= 10_000`), which is not the case for
       this example.
 
@@ -45,13 +45,13 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-from sklearn.svm import NuSVR
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import hamming_loss
+from sflearn import datasets
+from sflearn.model_selection import train_test_split
+from sflearn.metrics import mean_squared_error
+from sflearn.svm import NuSVR
+from sflearn.ensemble import GradientBoostingRegressor
+from sflearn.linear_model import SGDClassifier
+from sflearn.metrics import hamming_loss
 
 # Initialize random generator
 np.random.seed(0)
@@ -63,7 +63,7 @@ np.random.seed(0)
 # First we load both datasets.
 #
 # .. note:: We are using
-#    :func:`~sklearn.datasets.fetch_20newsgroups_vectorized` to download 20
+#    :func:`~sflearn.datasets.fetch_20newsgroups_vectorized` to download 20
 #    newsgroups dataset. It returns ready-to-use features.
 #
 # .. note:: ``X`` of the 20 newsgroups dataset is a sparse matrix while ``X``

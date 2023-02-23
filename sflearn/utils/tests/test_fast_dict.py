@@ -2,7 +2,7 @@
 """
 import numpy as np
 
-from sklearn.utils._fast_dict import IntFloatDict, argmin
+from sflearn.utils._fast_dict import IntFloatDict, argmin
 
 
 def test_int_float_dict():

@@ -19,14 +19,14 @@ import numpy as np
 
 from scipy.interpolate import interp1d
 
-from sklearn.metrics import roc_curve, auc
-from sklearn.datasets import fetch_kddcup99, fetch_covtype
-from sklearn.preprocessing import LabelBinarizer, StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.utils import shuffle
-from sklearn.kernel_approximation import Nystroem
-from sklearn.svm import OneClassSVM
-from sklearn.linear_model import SGDOneClassSVM
+from sflearn.metrics import roc_curve, auc
+from sflearn.datasets import fetch_kddcup99, fetch_covtype
+from sflearn.preprocessing import LabelBinarizer, StandardScaler
+from sflearn.pipeline import make_pipeline
+from sflearn.utils import shuffle
+from sflearn.kernel_approximation import Nystroem
+from sflearn.svm import OneClassSVM
+from sflearn.linear_model import SGDOneClassSVM
 
 import matplotlib.pyplot as plt
 import matplotlib

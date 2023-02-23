@@ -1,5 +1,5 @@
 """
-The :mod:`sklearn.neighbors` module implements the k-nearest neighbors
+The :mod:`sflearn.neighbors` module implements the k-nearest neighbors
 algorithm.
 """
 

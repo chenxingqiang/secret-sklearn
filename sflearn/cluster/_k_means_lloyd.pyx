@@ -4,7 +4,7 @@
 # fused types and when the array may be read-only (for instance when it's
 # provided by the user). This is fixed in cython > 0.3.
 
-IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
     cimport openmp
 from cython cimport floating
 from cython.parallel import prange, parallel
@@ -94,7 +94,7 @@ def lloyd_iter_chunked_dense(
         floating *centers_new_chunk
         floating *weight_in_clusters_chunk
         floating *pairwise_distances_chunk
-        IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+        IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
             openmp.omp_lock_t lock
 
     # count remainder chunk in total number of chunks
@@ -106,7 +106,7 @@ def lloyd_iter_chunked_dense(
     if update_centers:
         memset(&centers_new[0, 0], 0, n_clusters * n_features * sizeof(floating))
         memset(&weight_in_clusters[0], 0, n_clusters * sizeof(floating))
-        IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+        IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
             openmp.omp_init_lock(&lock)
 
     with nogil, parallel(num_threads=n_threads):
@@ -135,7 +135,7 @@ def lloyd_iter_chunked_dense(
 
         # reduction from local buffers.
         if update_centers:
-            IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+            IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
                 # The lock is necessary to avoid race conditions when aggregating
                 # info from different thread-local buffers.
                 openmp.omp_set_lock(&lock)
@@ -143,7 +143,7 @@ def lloyd_iter_chunked_dense(
                 weight_in_clusters[j] += weight_in_clusters_chunk[j]
                 for k in range(n_features):
                     centers_new[j, k] += centers_new_chunk[j * n_features + k]
-            IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+            IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
                 openmp.omp_unset_lock(&lock)
 
         free(centers_new_chunk)
@@ -151,7 +151,7 @@ def lloyd_iter_chunked_dense(
         free(pairwise_distances_chunk)
 
     if update_centers:
-        IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+        IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
             openmp.omp_destroy_lock(&lock)
         _relocate_empty_clusters_dense(X, sample_weight, centers_old,
                                     centers_new, weight_in_clusters, labels)
@@ -292,7 +292,7 @@ def lloyd_iter_chunked_sparse(
         floating *centers_new_chunk
         floating *weight_in_clusters_chunk
 
-        IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+        IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
             openmp.omp_lock_t lock
 
     # count remainder chunk in total number of chunks
@@ -304,7 +304,7 @@ def lloyd_iter_chunked_sparse(
     if update_centers:
         memset(&centers_new[0, 0], 0, n_clusters * n_features * sizeof(floating))
         memset(&weight_in_clusters[0], 0, n_clusters * sizeof(floating))
-        IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+        IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
             openmp.omp_init_lock(&lock)
 
     with nogil, parallel(num_threads=n_threads):
@@ -333,7 +333,7 @@ def lloyd_iter_chunked_sparse(
 
         # reduction from local buffers.
         if update_centers:
-            IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+            IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
                 # The lock is necessary to avoid race conditions when aggregating
                 # info from different thread-local buffers.
                 openmp.omp_set_lock(&lock)
@@ -341,14 +341,14 @@ def lloyd_iter_chunked_sparse(
                 weight_in_clusters[j] += weight_in_clusters_chunk[j]
                 for k in range(n_features):
                     centers_new[j, k] += centers_new_chunk[j * n_features + k]
-            IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+            IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
                 openmp.omp_unset_lock(&lock)
 
         free(centers_new_chunk)
         free(weight_in_clusters_chunk)
 
     if update_centers:
-        IF SKLEARN_OPENMP_PARALLELISM_ENABLED:
+        IF SFLEARN_OPENMP_PARALLELISM_ENABLED:
             openmp.omp_destroy_lock(&lock)
         _relocate_empty_clusters_sparse(
             X_data, X_indices, X_indptr, sample_weight,

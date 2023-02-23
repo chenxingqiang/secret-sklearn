@@ -11,9 +11,9 @@ are represented by the dashed lines.
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import datasets
-from sklearn.linear_model import SGDClassifier
-from sklearn.inspection import DecisionBoundaryDisplay
+from sflearn import datasets
+from sflearn.linear_model import SGDClassifier
+from sflearn.inspection import DecisionBoundaryDisplay
 
 # import some data to play with
 iris = datasets.load_iris()

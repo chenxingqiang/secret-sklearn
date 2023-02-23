@@ -4,27 +4,27 @@ import pytest
 import re
 import numpy as np
 
-from sklearn.utils._testing import assert_almost_equal, assert_array_equal
-from sklearn.utils._testing import assert_array_almost_equal
-from sklearn.exceptions import NotFittedError
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import VotingClassifier, VotingRegressor
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn import datasets
-from sklearn.model_selection import cross_val_score, train_test_split
-from sklearn.datasets import make_multilabel_classification
-from sklearn.svm import SVC
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.base import BaseEstimator, ClassifierMixin, clone
-from sklearn.dummy import DummyRegressor
-from sklearn.preprocessing import StandardScaler
+from sflearn.utils._testing import assert_almost_equal, assert_array_equal
+from sflearn.utils._testing import assert_array_almost_equal
+from sflearn.exceptions import NotFittedError
+from sflearn.linear_model import LinearRegression
+from sflearn.linear_model import LogisticRegression
+from sflearn.naive_bayes import GaussianNB
+from sflearn.ensemble import RandomForestClassifier
+from sflearn.ensemble import RandomForestRegressor
+from sflearn.ensemble import VotingClassifier, VotingRegressor
+from sflearn.tree import DecisionTreeClassifier
+from sflearn.tree import DecisionTreeRegressor
+from sflearn.model_selection import GridSearchCV
+from sflearn import datasets
+from sflearn.model_selection import cross_val_score, train_test_split
+from sflearn.datasets import make_multilabel_classification
+from sflearn.svm import SVC
+from sflearn.multiclass import OneVsRestClassifier
+from sflearn.neighbors import KNeighborsClassifier
+from sflearn.base import BaseEstimator, ClassifierMixin, clone
+from sflearn.dummy import DummyRegressor
+from sflearn.preprocessing import StandardScaler
 
 # Load datasets
 iris = datasets.load_iris()

@@ -465,9 +465,9 @@ class MDS(BaseEstimator):
 
     See Also
     --------
-    sklearn.decomposition.PCA : Principal component analysis that is a linear
+    sflearn.decomposition.PCA : Principal component analysis that is a linear
         dimensionality reduction method.
-    sklearn.decomposition.KernelPCA : Non-linear dimensionality reduction using
+    sflearn.decomposition.KernelPCA : Non-linear dimensionality reduction using
         kernels and PCA.
     TSNE : T-distributed Stochastic Neighbor Embedding.
     Isomap : Manifold learning based on Isometric Mapping.
@@ -487,8 +487,8 @@ class MDS(BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_digits
-    >>> from sklearn.manifold import MDS
+    >>> from sflearn.datasets import load_digits
+    >>> from sflearn.manifold import MDS
     >>> X, _ = load_digits(return_X_y=True)
     >>> X.shape
     (1797, 64)

@@ -9,21 +9,21 @@ from scipy.sparse import csr_matrix
 from scipy.sparse import dok_matrix
 from scipy.sparse import lil_matrix
 
-from sklearn.utils.multiclass import type_of_target
+from sflearn.utils.multiclass import type_of_target
 
-from sklearn.utils._testing import assert_array_equal
-from sklearn.utils._testing import ignore_warnings
-from sklearn.utils import _to_object_array
+from sflearn.utils._testing import assert_array_equal
+from sflearn.utils._testing import ignore_warnings
+from sflearn.utils import _to_object_array
 
-from sklearn.preprocessing._label import LabelBinarizer
-from sklearn.preprocessing._label import MultiLabelBinarizer
-from sklearn.preprocessing._label import LabelEncoder
-from sklearn.preprocessing._label import label_binarize
+from sflearn.preprocessing._label import LabelBinarizer
+from sflearn.preprocessing._label import MultiLabelBinarizer
+from sflearn.preprocessing._label import LabelEncoder
+from sflearn.preprocessing._label import label_binarize
 
-from sklearn.preprocessing._label import _inverse_binarize_thresholding
-from sklearn.preprocessing._label import _inverse_binarize_multiclass
+from sflearn.preprocessing._label import _inverse_binarize_thresholding
+from sflearn.preprocessing._label import _inverse_binarize_multiclass
 
-from sklearn import datasets
+from sflearn import datasets
 
 iris = datasets.load_iris()
 

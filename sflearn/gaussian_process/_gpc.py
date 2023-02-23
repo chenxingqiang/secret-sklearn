@@ -630,9 +630,9 @@ class GaussianProcessClassifier(ClassifierMixin, BaseEstimator):
 
     Examples
     --------
-    >>> from sklearn.datasets import load_iris
-    >>> from sklearn.gaussian_process import GaussianProcessClassifier
-    >>> from sklearn.gaussian_process.kernels import RBF
+    >>> from sflearn.datasets import load_iris
+    >>> from sflearn.gaussian_process import GaussianProcessClassifier
+    >>> from sflearn.gaussian_process.kernels import RBF
     >>> X, y = load_iris(return_X_y=True)
     >>> kernel = 1.0 * RBF(1.0)
     >>> gpc = GaussianProcessClassifier(kernel=kernel,

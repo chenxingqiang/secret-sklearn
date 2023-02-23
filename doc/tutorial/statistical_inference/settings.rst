@@ -16,7 +16,7 @@ these arrays is the **samples** axis, while the second is the
 
     ::
 
-        >>> from sklearn import datasets
+        >>> from sflearn import datasets
         >>> iris = datasets.load_iris()
         >>> data = iris.data
         >>> data.shape
@@ -41,7 +41,7 @@ needs to be preprocessed in order to be used by scikit-learn.
         >>> plt.imshow(digits.images[-1],
         ...            cmap=plt.cm.gray_r)
         <...>
-    
+
     .. image:: /auto_examples/datasets/images/sphx_glr_plot_digits_last_image_001.png
         :target: ../../auto_examples/datasets/plot_digits_last_image.html
         :align: center
@@ -58,7 +58,7 @@ Estimators objects
 
 .. Some code to make the doctests run
 
-   >>> from sklearn.base import BaseEstimator
+   >>> from sflearn.base import BaseEstimator
    >>> class Estimator(BaseEstimator):
    ...      def __init__(self, param1=0, param2=0):
    ...          self.param1 = param1
