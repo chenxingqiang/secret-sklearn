@@ -1,4 +1,6 @@
-# API Reference
+# [Xgboost scikit-learn likely API reference](https://xgboost.readthedocs.io/en/stable/python/python_api.html#module-xgboost.sklearn)
+
+# sklearn API Reference
 
 This is the class and function reference of scikit-learn. Please refer to the [full user guide](https://scikit-learn.org/stable/user_guide.html#user-guide) for further details, as the class and function raw specifications may not be enough to give full guidelines on their uses. For reference on concepts repeated across the API, see [Glossary of Common Terms and API Elements](https://scikit-learn.org/stable/glossary.html#glossary).
 
