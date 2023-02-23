@@ -1,6 +1,32 @@
-# Secret [Scikit-learn](https://scikit-learn.org/stable/): Privacy Preserved machine learning in Python based by [SecretFlow](https://github.com/secretflow/secretflow)
+# SecretFlow-learn](https://scikit-learn.org/stable/): Privacy Preserved machine learning in Python based by [SecretFlow](https://github.com/secretflow/secretflow)
 
-machine learning algorithms implements  with jax.
+# SecretFlow
+
+[SecretFlow](https://github.com/secretflow/secretflow) 是一个隐私保护数据分析和机器学习的统一框架。
+
+SecretFlow 提供
+
+- 设备抽象，将多方安全计算（MPC）、同态加密（HE）、可信执行环境（TEE）等隐私计算技术抽象为密文设备，将明文计算抽象为明文设备。
+- 基于抽象设备的计算图，使数据分析和机器学习工作流程能够表示为计算图。
+- 基于计算图的机器学习/数据分析能力，支持数据水平/垂直/混合分割等场景。
+
+![_images/secretflow_arch.svg](https://gw.alipayobjects.com/render/p/yuyan/180020010001209636/docs/secretflow/zh_CN/_images/secretflow_arch.svg)
+
+## 为什么是 SecretFlow
+
+目前，隐私计算技术日益普及。 然而，无论是技术还是市场，都还没有真正成熟。为了应对隐私计算技术和应用的发展不确定性，我们提出了一个通用的隐私计算框架 - SecretFlow。SecretFlow将坚持以下原则，使框架具有最大的包容性和可扩展性，以应对未来隐私计算技术和应用的发展。
+
+- 完备性：支持多种隐私计算技术，可灵活组装，满足不同场景需求。
+- 透明性：构建统一的技术框架，尽量让底层技术迭代对上层透明应用，具有高内聚和低耦合。
+- 开放性：不同专业方向的人可以轻松参与框架的建设，共同加速隐私计算技术的发展。
+- 连接性：不同底层技术支持的场景中的数据可以相互连接。
+
+
+
+
+
+machine learning algorithms tasks.
+
 | IF DONE | Module Name | Reference API | Instructions |
 | --- | --- | --- | --- |
 |     | BaseEstimator | [base.BaseEstimator](https://scikit-learn.org/stable/modules/generated/sflearn.base.BaseEstimator.html#sflearn.base.BaseEstimator) | Base class for all estimators in scikit-learn. |
